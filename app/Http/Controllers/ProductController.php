@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Subcate;
 use App\Nsx;
 use App\Product;
+use App\Image;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -48,24 +50,45 @@ class ProductController extends Controller
         $product->product_model = $request->product_model;
         $product->product_tag = $request->product_tag;
         $product->product_salevalue = $request->product_salevalue;
-        if ($request->hasFile('product_img')) {
-            $file = $request->file('product_img');
-            $name = $file->getClientOriginalName();
-            $product_img = str_random(4)."_".$name;
-            while (file_exists("upload/product/".$product_img)) {
-                $product_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/product",$product_img);
-            $product->product_img = $product_img;
-        } else{
-            $product->product_img = "";
-        }
+		$product->product_img = "";
+		
+		
+		
         /*if ($request->hasFile('product_pic')) {
             $product->product_pic = $request->file(product_pic);
         }   else{
             $product->product_pic = "";
         }*/
         $product->save();
+		if ($request->hasFile('product_img')) {
+			$listFileUpload = $request->file('product_img');
+			$i= 1;
+			while($i < 6){
+				
+				if(isset($listFileUpload[$i])){
+					$file = $listFileUpload[$i];
+					$name = $file->getClientOriginalName();
+					$product_img = str_random(4)."_".$name;
+					while (file_exists("upload/product/".$product_img)) {
+						$product_img = str_random(4)."_".$name;
+					}
+					$file->move("upload/product",$product_img);
+					$newImage = new Image;
+					$newImage->product_id = $product->id;
+					$newImage->sort = $i;
+					$newImage->name = $product_img;
+					$newImage->save();
+				}
+				if($i == 1){
+					$productEditImage = Product::find($product->id);
+					$productEditImage->product_img = $product_img; 
+					$productEditImage->save();
+				}
+				$i++;
+			}
+		}
+		
+
         return redirect('admin/product/list')->with('thongbao','Thêm sản phẩm thành công');
     }
     
@@ -73,7 +96,8 @@ class ProductController extends Controller
         $nsx = Nsx::all();
         $subcate = Subcate::all();
         $product = Product::find($id);
-        return view('admin.product.edit',['product'=>$product,'subcate'=>$subcate,'nsx'=>$nsx]);
+		$images = $product->images()->orderBy("sort")->get();
+        return view('admin.product.edit',['product'=>$product,'subcate'=>$subcate,'nsx'=>$nsx, 'images'=>$images]);
     }
 
     public function postEdit(Request $request,$id){
@@ -100,17 +124,40 @@ class ProductController extends Controller
         $product->product_model = $request->product_model;
         $product->product_tag = $request->product_tag;
         $product->product_salevalue = $request->product_salevalue;
-        if ($request->hasFile('product_img')) {
-            $file = $request->file('product_img');
-            $name = $file->getClientOriginalName();
-            $product_img = str_random(4)."_".$name;
-            while (file_exists("upload/product/".$product_img)) {
-                $product_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/product",$product_img);
-            //unlink("upload/product/".$product->product_img);
-            $product->product_img = $product_img;
-        }
+		if ($request->hasFile('product_img')) {
+			$listFileUpload = $request->file('product_img');
+			$i= 1;
+			while($i < 6){
+				if(isset($listFileUpload[$i])){
+					$file = $listFileUpload[$i];
+					$oldImage = Product::find($id)->images()->orderBy("sort")->get();
+					foreach($oldImage as $removeOldImage){
+						if($removeOldImage->sort == $i){
+							Image::find($removeOldImage->id)->delete();
+						}
+					}
+					
+					$name = $file->getClientOriginalName();
+					$product_img = str_random(4)."_".$name;
+					while (file_exists("upload/product/".$product_img)) {
+						$product_img = str_random(4)."_".$name;
+					}
+					$file->move("upload/product",$product_img);
+					$newImage = new Image;
+					$newImage->product_id = $id;
+					$newImage->sort = $i;
+					$newImage->name = $product_img;
+					$newImage->save();
+				}
+				$i++;
+			}
+			
+			$checkProductImage = Product::find($id);
+			$imageNew =  $checkProductImage->images()->orderBy("sort")->first();
+			$product->product_img = $imageNew->name;
+			
+		}
+		
         $product->save();
         return redirect('admin/product/list')->with('thongbao','Sửa thành công');
     }

@@ -4,8 +4,45 @@
 	<div class="main">
 		<div class="w-left">
 			<div class="img">
-					<img id="zoom_01" src='upload/product/{{$product4->product_img}}' data-zoom-image='upload/product/{{$product4->product_img}}' alt='{{$product4->product_namekd}}'>
+					<section id="demos">
+					  <div class="row">
+						<div class="large-12 columns">
+							<div class="owl-carousel owl-theme">
+								<?php foreach($images as $image){ ?>
+								<div class="item">
+								  <img id="zoom_01" src='upload/product/{{$image->name}}' data-zoom-image='upload/product/{{$image->name}}' alt='{{$product4->product_namekd}}'>
+								</div>
+								<?php } ?>
+							</div>
+							<script>
+								$(document).ready(function() {
+									var owl = $('.owl-carousel');
+									owl.owlCarousel({
+										margin: 10,
+										nav: false,
+										loop: true,
+										responsive: {
+										0: {
+											items: 1
+										}
+									}
+								  })
+								})
+							</script>
+						</div>
+					  </div>
+					</section>
 			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			<div class="name">
 					<span>{{$product4->product_name}}</span>
 			</div>

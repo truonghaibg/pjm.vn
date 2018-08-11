@@ -73,7 +73,37 @@
 
                     <div class="form-group">
                         <label>Ảnh sản phẩm</label>
-                        <input class="form-control" type="file" name="product_img" />
+                        <div class="form-group">
+							<?php 
+							$i =1;
+							while($i < 6){ ?>
+								
+									<div class="image_block" >
+										<p>
+											<input class="form-control" multiple="multiple" type="file" name="product_img[{{$i}}]"  />
+										</p>
+									</div>	
+							<?php
+							$i++;							
+							}
+							?>
+
+							<style>
+								.image_block {
+									width: 19%;
+									foat: left;
+									padding: 10px;
+									display: inline-block;
+									position: relative;
+								}
+								.remove_image {
+									position : absolute;
+									top:0;
+									right:20px
+								}
+							</style>
+							
+						</div>
                     </div>
 
                     <div class="form-group">

@@ -20,9 +20,17 @@
     <script src="template_asset/js/jquery.elevatezoom.js"></script>
     <script src="template_asset/js/script.js"></script>
     <script src="template_asset/js/menu.js"></script>
+	
+	<script src="{{url('/')}}/js/owl.carousel.js"></script>
+	<script src="{{url('/')}}/js/owl.carousel.min.js"></script>
+	
+	
+	
     <script src="template_asset/js/myscript.js"></script>
     <script src="js/numeric/jquery.numeric.min.js"></script>
     <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
+	<link rel="stylesheet" href="{{url('/')}}/owl.carousel.min.css" type="text/css" />
+	<link rel="stylesheet" href="{{url('/')}}/owl.theme.default.min.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/themes/default/default.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
     <!-- Import New -->

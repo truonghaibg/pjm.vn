@@ -147,7 +147,8 @@ class PageController extends Controller
     }
     function sanpham($product_namekd){
       $product = Product::where('product_namekd',$product_namekd)->first();
-      return view('pages.sanpham',['product4'=>$product]);
+	  $images = $product->images()->orderBy("sort")->get();
+      return view('pages.sanpham',['product4'=>$product, 'images'=>$images]);
     }
     function tintuc($cate_namekd,$subcate_namekd,$post_titlekd){
     	$cate = Cate::where('cate_namekd',$cate_namekd)->first();

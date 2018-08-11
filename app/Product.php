@@ -14,4 +14,8 @@ class Product extends Model
     public function subcate(){
     	return $this->belongsTo('App\Subcate','subcate_id','id');
     }
+	public function images()
+    {
+		return $this->hasMany('App\Image');
+    }
 }

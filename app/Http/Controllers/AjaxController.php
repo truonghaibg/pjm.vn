@@ -7,6 +7,8 @@ use App\Subcate;
 use App\Nsx;
 use App\Post;
 use App\Product;
+use App\Image;
+
 
 class AjaxController extends Controller
 {
@@ -23,6 +25,10 @@ class AjaxController extends Controller
 			echo "<option value='".$sc->id."'>".$sc->nsx_name."</option>";
 		}
 	}
+	public function removeImage($id){
+		$imagesRemove = Image::find($id);
+		$imagesRemove->delete();
+		echo "ok";
+	}
     
-    //
 }

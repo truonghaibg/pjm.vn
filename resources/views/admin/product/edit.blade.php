@@ -1,3 +1,4 @@
+
 @extends('admin.layout.index')
 @section('content')
 <div id="page-wrapper">
@@ -105,10 +106,73 @@
                     </div>
                     <div class="form-group">
                         <label>Ảnh sản phẩm</label>
-                        <p>
-                            <img width="200px" src="upload/product/{{$product->product_img}}" alt="">
-                        </p>
-                        <input class="form-control" type="file" name="product_img" />
+						<div class="form-group">
+							<?php 
+							$i =1;
+							while($i < 6){ 
+								$hasImage = false;
+								foreach($images as $image){
+									if(isset($image->sort) && $i == $image->sort){ ?>
+										<div class="image_block" id="image-{{$image->id}}">
+											<p>
+												<button type="button" class="remove_image" onclick="removeImage({{$image->id}})"><i class="fa fa-trash-o  fa-fw"></i><button>
+												<img width="200px" src="upload/product/{{$image->name}}" alt="">
+												<input class="form-control" multiple="multiple" type="file" name="product_img[{{$i}}]"  />
+											</p>
+										</div>	
+							<?php	
+									$hasImage = true;
+									}  
+							?>		
+							<?php	
+								}
+								if(!$hasImage){ ?>
+									<div class="image_block" >
+										<p>
+											<input class="form-control" multiple="multiple" type="file" name="product_img[{{$i}}]"  />
+										</p>
+									</div>	
+							<?php	} 
+							$i++;
+							}
+							?>
+							
+							<!--
+							/*
+							
+								*/
+							-->
+							<script>
+								// remove image  by ajax
+								// sau khi remove .Chuyen tat ca len truoc.tao ra block phia sau
+								function removeImage(image_id) {
+									var baseAdminUrl = $('#baseAdminUrl').val();
+									$.ajax({
+										type: 'GET',
+										url: baseAdminUrl + "/ajax/remove-product-image/"+image_id,
+										success: function (rs) {
+											$("#image-"+image_id+" .remove_image").remove();
+											$("#image-"+image_id+" img").remove();
+										}
+									});	
+								}
+							</script>
+							<style>
+								.image_block {
+									width: 19%;
+									foat: left;
+									padding: 10px;
+									display: inline-block;
+									position: relative;
+								}
+								.remove_image {
+									position : absolute;
+									top:0;
+									right:20px
+								}
+							</style>
+							
+						</div>
                     </div>
                     <div class="form-group">
                         <label>Tag sản phẩm</label>
