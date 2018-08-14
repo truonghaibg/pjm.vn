@@ -53,7 +53,7 @@
                </a>
             </li>
          </ul>
-       <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
+       <?php if (Route::getCurrentRoute()->uri() != '/') { ?>
        <script>
            $(document).ready(function () {
                 $("#main_menu").click(function() {
