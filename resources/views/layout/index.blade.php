@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
 	<link rel="stylesheet" href="{{url('/')}}/owl.carousel.min.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('/')}}/owl.theme.default.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('/')}}/newstyle.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/themes/default/default.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
     <!-- Import New -->

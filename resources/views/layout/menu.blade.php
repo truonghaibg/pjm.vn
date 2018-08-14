@@ -4,19 +4,19 @@
             <li class="danhmuc">
                <a href="{{url('')}}">DANH MỤC SẢN PHẨM</a>
             </li>
-            <li class="khuyenmai">
+            <li class="toplink">
                <a href="{{url('tin-tuc/khuyen-mai')}}">
-                  <img src="template_asset/images/site/flyout/khuyenmai.png" alt="">
+                   Khuyền mãi
                </a>
             </li>
-            <li class="baohanh">
+            <li class="toplink">
                <a href="{{url('tin-tuc/chinh-sach-bao-hanh')}}">
-                  <img src="template_asset/images/site/flyout/baohanh.png" alt="">
+                    Hình ảnh dự án
                </a>
             </li>
-            <li class="tuyendung">
-               <a href="{{url('tin-tuc/tuyen-dung')}}">
-                  <img src="template_asset/images/site/flyout/tuyendung.png" alt="">
+            <li class="toplink">
+               <a href="{{url('tin-tuc')}}">
+                  Tin tức
                </a>
             </li>
          </ul>

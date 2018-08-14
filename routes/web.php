@@ -137,6 +137,8 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		//admin/cate/list
 		Route::get('list','NewsController@getList');
 
+        Route::get('list-tin-tuc','NewsController@getListNews');
+
 		Route::get('edit/{id}','NewsController@getEdit');
 
 		Route::post('edit/{id}','NewsController@postEdit');

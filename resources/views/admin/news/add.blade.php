@@ -1,5 +1,6 @@
 @extends('admin.layout.index')
 @section('content')
+
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -26,7 +27,13 @@
                 <form action="admin/news/add" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-
+                    <div class="form-group">
+                        <label>Danh mục</label>
+                        <select  class="form-control" name="category">
+                            <option value="1">Danh mục tin tức mới</option>
+                            <option value="0">Danh mục bài viết cố định</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Tiêu đề</label>
                         <input class="form-control" name="title" placeholder="Điền Tiêu đề" />
@@ -35,6 +42,26 @@
                         <label>Ảnh</label>
                         <input class="form-control" type="file" name="img" />
                     </div>
+					 <div class="form-group">
+                        <label>Tags</label>
+						<input class="form-control" name="tags" id="mySingleField" value="" readonly="readonly">
+                         <script>
+                             var country_list = new Array();
+                             <?php
+                             foreach($tags as $item){ ?>
+
+                             country_list.push("<?php echo $item->name; ?>");
+                                    
+                             <?php
+                                }
+                             ?>
+                         </script>
+						<br/>
+						<ul class="form-control" id="singleFieldTags"></ul>
+						<link rel="stylesheet" href="{{url("/")}}/jquery-ui.css">
+						<link rel="stylesheet" href="{{url("/")}}/jquery.tagit.css" >
+                    </div>
+					<br/>
                     <div class="form-group">
                         <label>Nội dung</label>
                         <textarea class="form-control summernote" rows="5" name="content"></textarea>

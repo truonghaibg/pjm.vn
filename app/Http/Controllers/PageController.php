@@ -14,6 +14,8 @@ use App\Events;
 use Cart;
 use Excel;
 use App\Order;
+use App\Tags;
+use App\TagsBelong;
 class PageController extends Controller
 {
     //
@@ -59,8 +61,21 @@ class PageController extends Controller
     	return view('pages.contact');
     }
     function news(){
-      $n = News::all();
-    	return view('pages.news',['n'=>$n]);
+         $n = News::where('news_category_id', 0)->orderBy('id','DESC')->get();
+         $news = News::where('news_category_id', 1)->orderBy('id','DESC')->get();
+         $i = 0;
+         foreach($news as $item){
+             $tagsNameArray = [];
+             $tagsList = TagsBelong::where("news_id", $item->id)->get();
+             foreach($tagsList as $tagId){
+                 $singleTag = Tags::where("id",$tagId->tags_id)->get()->first();
+                 $tagsNameArray[] = $singleTag;
+             }
+             $news[$i]->tags = $tagsNameArray;
+             $i++;
+         }
+        
+    	return view('pages.news',['n'=>$n, 'news'=>$news]);
     }
     function newsNoidung($titlekd){
       $new = News::where('titlekd',$titlekd)->first();
@@ -176,16 +191,16 @@ class PageController extends Controller
               json_decode($product);
               $pro = array_merge($pro, json_decode($product));
               // array_push($product, json_decode($product));
-              
+
               // array_push($product,json_decode($product));
-              
+
             }
             usort($pro, function($a, $b)
             {
                 if($a->id==$b->id) return 0;
               return ($a->id) < ($b->id)?1:-1;
                 return strcmp($a->id, $b->id);
-            }); 
+            });
             // usort($pro, array($this, "cmp"));
             // dd($pro);
             $pro=(object)$pro;
@@ -203,16 +218,16 @@ class PageController extends Controller
               json_decode($product);
               $pro = array_merge($pro, json_decode($product));
               // array_push($product, json_decode($product));
-              
+
               // array_push($product,json_decode($product));
-              
+
             }
             usort($pro, function($a, $b)
             {
                 if($a->product_price==$b->product_price) return 0;
               return ($a->product_price) > ($b->product_price)?1:-1;
                 return strcmp($a->product_price, $b->product_price);
-            }); 
+            });
             // usort($pro, array($this, "cmp"));
             // dd($pro);
             $pro=(object)$pro;
@@ -230,17 +245,17 @@ class PageController extends Controller
               json_decode($product);
               $pro = array_merge($pro, json_decode($product));
               // array_push($product, json_decode($product));
-              
+
               // array_push($product,json_decode($product));
-              
+
             }
-            
+
             usort($pro, function($a, $b)
             {
               if($a->product_price==$b->product_price) return 0;
               return ($a->product_price) < ($b->product_price)?1:-1;
                 return strcmp($a->product_price, $b->product_price);
-            }); 
+            });
             // usort($pro, array($this, "cmp"));
             // dd($pro);
             $pro=(object)$pro;
@@ -259,15 +274,15 @@ class PageController extends Controller
               json_decode($product);
               $pro = array_merge($pro, json_decode($product));
               // array_push($product, json_decode($product));
-              
+
               // array_push($product,json_decode($product));
-              
-            } 
-            
+
+            }
+
             usort($pro, function($a, $b)
             {
                 return strcmp($a->product_name, $b->product_name);
-            }); 
+            });
             // usort($pro, array($this, "cmp"));
             // dd($pro);
             $pro=(object)$pro;
@@ -276,7 +291,7 @@ class PageController extends Controller
             // dd($pro);
             break;
         }
-        
+
       // dd($product);
 
       return view('pages.chuyenmuc',['cate2'=>$cate,'subcate3'=>$subcate,'product_sapxep'=>$pro]);
