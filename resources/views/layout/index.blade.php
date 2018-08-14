@@ -23,6 +23,7 @@
 	
 	<script src="{{url('/')}}/js/owl.carousel.js"></script>
 	<script src="{{url('/')}}/js/owl.carousel.min.js"></script>
+	<script src="{{url('/')}}/js/jquery-ui.min.js"></script>
 	
 	
 	
@@ -34,6 +35,9 @@
     <link rel="stylesheet" href="{{url('/')}}/newstyle.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/themes/default/default.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
+
+
     <!-- Import New -->
 
 

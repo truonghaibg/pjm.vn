@@ -8,9 +8,9 @@
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\admin\\layout",
-    "\\resources\\views\\pages",
-    "\\routes"
+    "\\resources\\views\\admin\\partners",
+    "\\resources\\views\\layout"
   ],
-  "SelectedNode": "\\resources\\views\\pages\\news.blade.php",
+  "SelectedNode": "\\resources\\views\\layout\\header.blade.php",
   "PreviewInSolutionExplorer": false
 }
