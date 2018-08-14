@@ -53,6 +53,7 @@
                </a>
             </li>
          </ul>
+       <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
        <script>
            $(document).ready(function () {
                 $("#main_menu").click(function() {
@@ -60,6 +61,7 @@
                 });
            })
        </script>
+       <?php } ?>
       </div>
   <div style="clear: both;"></div>
    
