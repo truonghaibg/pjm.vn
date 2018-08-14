@@ -119,6 +119,16 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('del/{id}','PostController@getDel');
 	});
+
+    Route::group(['prefix'=>'partners'],function(){
+		Route::get('/','PartnersController@getList');
+		Route::get('list','PartnersController@getList');
+		Route::get('add','PartnersController@getAdd');
+        Route::post('add','PartnersController@postAdd');
+        Route::get('edit/{id}','PartnersController@getEdit');
+        Route::post('edit/{id}','PartnersController@postEdit');
+	});
+
 	Route::group(['prefix'=>'product'],function(){
 		//admin/cate/list
 		Route::get('list','ProductController@getList');

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use App\Partners;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+		view()->composer('layout.header', function ($view) {
+            $headerData = Partners::all();
+            $view->headerData = $headerData;
+        });
     }
 
     /**

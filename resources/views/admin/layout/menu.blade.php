@@ -60,6 +60,18 @@
             </ul>
             <!-- /.nav-second-level -->
         </li>
+         <li>
+            <a href="admin/partners"><i class="fa fa-barcode fa-fw"></i> Đối tác<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="admin/partners/list">Danh sách</a>
+                </li>
+                <li>
+                    <a href="admin/partners/add">Thêm mới</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
         <li>
             <a href="admin/product/list"><i class="fa fa-barcode fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
