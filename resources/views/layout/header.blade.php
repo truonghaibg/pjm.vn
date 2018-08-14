@@ -4,16 +4,18 @@
         <section id="demos">
             <div class="row">
                 <div class="large-12 columns">
-                    <div class="owl-carousel owl-theme">
+                    <div class="owl-carousel owl-theme" id="partners">
                         <?php foreach($headerData as $item){ ?>
                         <div class="item">
-                            <a href="{{$item->link}}"><img src='upload/partners/{{$item->logo}}' alt='{{$item->name}}' /></a>
+                            <a href="{{$item->link}}">
+                                <img src='upload/partners/{{$item->logo}}' alt='{{$item->name}}' />
+                            </a>
                         </div>
                         <?php } ?>
                     </div>
                     <script>
                         $(document).ready(function () {
-                            var owl = $('.owl-carousel');
+                            var owl = $('#partners');
                             owl.owlCarousel({
                                 margin: 0,
                                 nav: false,
