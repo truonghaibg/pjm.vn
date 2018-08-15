@@ -45,7 +45,7 @@
     <a href="{{url('')}}"><img src="template_asset/images/logo/logo.png" alt=""></a>
     <form action="{{url('tim-kiem')}}" class="search" method="POST">
       <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-      <input class="txt-search" type="text" name="search" size="80" placeholder="Nhập tên hoặc mã sản phẩm">
+      <input class="txt-search" type="text" name="search" size="90" placeholder="Nhập tên hoặc mã sản phẩm cần tìm kiếm...">
       <button type="submit" class="btn-red ok" name="ok">Tìm kiếm</button>
     </form>
 

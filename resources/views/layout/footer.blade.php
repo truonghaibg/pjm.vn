@@ -48,13 +48,22 @@
 
 <div style="clear: both;"></div>
 <div class="if">
-  <span>NGÔ XUÂN TÀI, ĐH CÔNG NGHỆ THÔNG TIN THÁI NGUYÊN. GPĐKKD số: 09686868 do Sở KHĐT THÁI NGUYÊN cấp ngày 6/8/2016</span><br>
-  <span>Email: ngotai94@gmail.com. Điện thoại: 0986 666 888</span><br>
+  <span>CÔNG TY CỔ PHẦN PJM</span><br>
+  <span>Email: giapvu.pjm@gmail.com. Điện thoại: 0939.66.10.10</span><br>
   <img src="template_asset/images/site/fend/dathongbao.png" alt="">
   <img src="template_asset/images/site/fend/dadangky.png" alt="">
 </div>
 
-<script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",64843]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);</script>
+<script type='text/javascript'>
+    window._sbzq||function(e){e._sbzq=[];
+    var t=e._sbzq;t.push(["_setAccount",64843]);
+    var n=e.location.protocol=="https:"?"https:":"http:";
+    var r=document.createElement("script");
+    r.type="text/javascript";r.async=true;
+    r.src=n+"//static.subiz.com/public/js/loader.js";
+    var i=document.getElementsByTagName("script")[0];
+    i.parentNode.insertBefore(r,i)}(window);
+</script>
 <a href="{{url('')}}" class="back-to-top" style="display: none;">
   <img src="template_asset/images/site/scroll-to-up/scrollbutton4-white.png" alt="">
 </a>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PROJECT 2017">
     <meta name="author" content="">
-    <title>Ngọc Cường Computer</title>
+    <title>Công ty cổ phần PJM</title>
     <base href="{{asset('')}}">
 
     <!-- Mobile Specific Metas
@@ -25,8 +25,6 @@
 	<script src="{{url('/')}}/js/owl.carousel.min.js"></script>
 	<script src="{{url('/')}}/js/jquery-ui.min.js"></script>
 	
-	
-	
     <script src="template_asset/js/myscript.js"></script>
     <script src="js/numeric/jquery.numeric.min.js"></script>
     <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
@@ -37,10 +35,7 @@
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
 
-
     <!-- Import New -->
-
-
 
 	@yield('css')
 
@@ -53,7 +48,6 @@
   	@yield('content')
   	@include('layout.footer')
   	@yield('script')
-
 
 </body>
 </html>

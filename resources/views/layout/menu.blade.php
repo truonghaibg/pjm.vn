@@ -120,9 +120,5 @@
         <iframe width="300" height="216" src="https://www.youtube.com/embed/99DlqDCeuIw" frameborder="0" allowfullscreen></iframe>
     </div>
     <?php } ?>
-    
-   
-
-
 </div>
 <div style="clear: both;"></div>

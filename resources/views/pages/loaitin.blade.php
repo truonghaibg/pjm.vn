@@ -47,57 +47,48 @@
                         case ',':
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/x42.png')}}" alt=""></span><?php
                           break;
+
                         case '0':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/0x42.png')}}" alt=""></span><?php
                           break;
+
                         case '1':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/1x42.png')}}" alt=""></span><?php
                           break;
 
                         case '2':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/2x42.png')}}" alt=""></span><?php
                           break;
 
                         case '3':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/3x42.png')}}" alt=""></span><?php
                           break;
 
                         case '4':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/4x42.png')}}" alt=""></span><?php
                           break;
 
                         case '5':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/5x42.png')}}" alt=""></span><?php
                           break;
 
                         case '6':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/6x42.png')}}" alt=""></span><?php
                           break;
 
                         case '7':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/7x42.png')}}" alt=""></span><?php
                           break;
 
                         case '8':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/8x42.png')}}" alt=""></span><?php
                           break;
+
                         case '9':
-                          # code...
                           ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/9x42.png')}}" alt=""></span><?php
                           break;
 
-
                         default:
-                          # code...
                           break;
                       }
                      ?>
