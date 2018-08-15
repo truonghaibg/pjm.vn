@@ -73,20 +73,6 @@
     </script>
 	<script src="{{url("/")}}/js/jquery-ui.min.js"></script>
 						<script src="{{url("/")}}/js/tag-it.min.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			
-            console.log(country_list);
-			$('#singleFieldTags').tagit({
-				availableTags: country_list,
-				// This will make Tag-it submit a single form value, as a comma-delimited field.
-				singleField: true,
-				singleFieldNode: $('#mySingleField'),
-				allowSpaces: true
-			});
-
-		});
-	</script>
     @yield('script')
 	
 </body>

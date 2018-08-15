@@ -7,10 +7,8 @@
     "\\public",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\admin\\layout",
-    "\\resources\\views\\admin\\partners",
     "\\resources\\views\\layout"
   ],
-  "SelectedNode": "\\resources\\views\\layout\\header.blade.php",
+  "SelectedNode": "\\resources\\views\\layout\\menu.blade.php",
   "PreviewInSolutionExplorer": false
 }
