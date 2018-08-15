@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2018 at 07:12 PM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Generation Time: Aug 15, 2018 at 07:51 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -121,10 +121,90 @@ CREATE TABLE `image` (
 --
 
 INSERT INTO `image` (`id`, `product_id`, `sort`, `name`, `created_at`, `updated_at`) VALUES
-(4, 1, 2, '0q0G_32211_asus_gaming_gl552vx_1.jpg', '0000-00-00', '0000-00-00'),
-(10, 1, 3, 'L5qU_Tower1.png', '2018-08-11', '2018-08-11'),
-(17, 1, 1, 'olTa_slothide.jpg', '2018-08-11', '2018-08-11'),
-(18, 1, 4, 'Ua3D_backkgrounbd.jpg', '2018-08-11', '2018-08-11');
+(20, 2, 1, '6M7P_Asrock B150M Pro4.jpg', '2018-08-16', '2018-08-16'),
+(21, 3, 1, 'tp7U_ASUS R7260X OC 2GD5.jpg', '2018-08-16', '2018-08-16'),
+(22, 4, 1, 'p4aW_33387_001.png', '2018-08-16', '2018-08-16'),
+(23, 5, 1, 'CCm1_35771_1.png', '2018-08-16', '2018-08-16'),
+(24, 6, 1, 'ATp0_33199_msi_gamingcx62_6qd.png', '2018-08-16', '2018-08-16'),
+(25, 7, 1, 'NegY_34325_01.jpg', '2018-08-16', '2018-08-16'),
+(26, 8, 1, 'fCNM_34258_01.jpg', '2018-08-16', '2018-08-16'),
+(27, 9, 1, 'BsyB_34906_01.jpg', '2018-08-16', '2018-08-16'),
+(28, 10, 1, '0q0G_32211_asus_gaming_gl552vx_1.jpg', '2018-08-16', '2018-08-16'),
+(29, 11, 1, '9nhG_33260_01.jpeg', '2018-08-16', '2018-08-16'),
+(30, 12, 1, '6Ynh_32022_yoga_900_13isk.jpg', '2018-08-16', '2018-08-16'),
+(31, 13, 1, 'gibH_32225_1b_notebook.jpg', '2018-08-16', '2018-08-16'),
+(32, 14, 1, 'xQxd_17559_0_ram_corsair_vengeance_4gb_ddr3_bus_1600_for_laptop___cmsx4gx3m1a1600c9.jpg', '2018-08-16', '2018-08-16'),
+(33, 15, 1, 'Jdjz_32340_hdd_hitachi_hgst_500gb.jpg', '2018-08-16', '2018-08-16'),
+(34, 16, 1, 'LZmI_12120_hdd_hitachi_500gb.jpg', '2018-08-16', '2018-08-16'),
+(35, 17, 1, 'JRwT_34266_pcws016_1.jpg', '2018-08-16', '2018-08-16'),
+(36, 18, 1, 'utOK_33450_pcwscase.jpg', '2018-08-16', '2018-08-16'),
+(37, 19, 1, 'aOMD_33974_pcws015_2.jpg', '2018-08-16', '2018-08-16'),
+(38, 20, 1, 'QI7c_33452_ae800ws.jpeg', '2018-08-16', '2018-08-16'),
+(39, 21, 1, 'tpiX_35855_pcgm033__1_.jpg', '2018-08-16', '2018-08-16'),
+(40, 22, 1, 'aZsw_35505_pcgm032__2_.jpg', '2018-08-16', '2018-08-16'),
+(41, 23, 1, 'oCFx_35117_gheg304_001.jpg', '2018-08-16', '2018-08-16'),
+(42, 24, 1, 'bSPO_34393_gheg296_001.jpg', '2018-08-16', '2018-08-16'),
+(43, 25, 1, 'eLFF_28942_1.jpg', '2018-08-16', '2018-08-16'),
+(44, 26, 1, 'pW6r_28762_248756165428_956.jpg', '2018-08-16', '2018-08-16'),
+(45, 27, 1, 'K4Rt_15110_dhl_font_b_filco_b_font_font_b_majestouch_b_font_convertible_font_b_2_b.jpg', '2018-08-16', '2018-08-16'),
+(46, 28, 1, 'GSYz_31823_screen_shot_2016_03_18_at_2_17_00_pm.jpg', '2018-08-16', '2018-08-16'),
+(47, 29, 1, 'UTHz_34371_00.jpg', '2018-08-16', '2018-08-16'),
+(48, 30, 1, 'fke2_15138_0_tnss013_001.jpg', '2018-08-16', '2018-08-16'),
+(49, 31, 1, 'FOIA_35342_msi_b250m_gaming_pro_intel_motherboard_1000px_v1_0002.jpg', '2018-08-16', '2018-08-16'),
+(50, 32, 1, 'g4IU_35167_mbgi464__1_.png', '2018-08-16', '2018-08-16'),
+(51, 33, 1, 'pzOT_33858_mbgi450.jpg', '2018-08-16', '2018-08-16'),
+(52, 34, 1, 'T9yA_34597_i7_7700.jpg', '2018-08-16', '2018-08-16'),
+(53, 35, 1, 'Ot0H_34247_xeon_e5_v4.jpg', '2018-08-16', '2018-08-16'),
+(54, 36, 1, 'Dpl6_35040_vgms269_1.jpg', '2018-08-16', '2018-08-16'),
+(55, 37, 1, 'Lkgi_34458_vgms258_1.jpg', '2018-08-16', '2018-08-16'),
+(56, 38, 1, 'Xet5_28238_001.jpg', '2018-08-16', '2018-08-16'),
+(57, 39, 1, '2sJ6_26176_001.jpg', '2018-08-16', '2018-08-16'),
+(58, 40, 1, 'pKNA_29008_1.jpg', '2018-08-16', '2018-08-16'),
+(59, 41, 1, 'HJ0Y_30943_616_1446138826_1.jpg', '2018-08-16', '2018-08-16'),
+(60, 42, 1, 'Wwuy_26439_1.jpg', '2018-08-16', '2018-08-16'),
+(61, 43, 1, 'Wtla_33121_tb2gkmepfxxxxxgxxxxxxxxxxxx___68100854.jpg', '2018-08-16', '2018-08-16'),
+(62, 44, 1, '7zDe_15693_0_loa_sound_max_a_8900_4_1.jpg', '2018-08-16', '2018-08-16'),
+(63, 47, 1, '2wyH_35464_untitled_1.jpg', '2018-08-16', '2018-08-16'),
+(64, 48, 1, 'FAKb_4652_spmi023_001.jpg', '2018-08-16', '2018-08-16'),
+(65, 49, 1, 'NPte_28286_sped043_001.jpg', '2018-08-16', '2018-08-16'),
+(66, 50, 1, 'JMWk_28449_tnse066.jpg', '2018-08-16', '2018-08-16'),
+(67, 51, 1, 'iGdV_33914_18712086.jpg', '2018-08-16', '2018-08-16'),
+(68, 52, 1, 'G9yb_28801_tai_nghe_audio_technica_ath_msr7_brown.jpg', '2018-08-16', '2018-08-16'),
+(69, 53, 1, 'WGly_33915_000.jpg', '2018-08-16', '2018-08-16'),
+(70, 54, 1, 'hoPG_untitled.png', '2018-08-16', '2018-08-16'),
+(71, 55, 1, 'BPva_31283_hdse103.jpg', '2018-08-16', '2018-08-16'),
+(72, 56, 1, 'DeN3_12825_14090_20508_ee1ac24b2367df516c7473c432aaddad.jpg', '2018-08-16', '2018-08-16'),
+(73, 45, 1, '8rDk_33295_xres_revo_d5_pwm_140__incl_pump_pwm_800_2.jpg', '2018-08-16', '2018-08-16'),
+(74, 46, 1, 'Sn0u_35645_tb2ahmbdcxlpufjy0fexxcjbfxa___68100854.jpg', '2018-08-16', '2018-08-16'),
+(75, 57, 1, '49Yx_34866_c80.jpg', '2018-08-16', '2018-08-16'),
+(76, 58, 1, 'DqUU_30353_axp8162.jpg', '2018-08-16', '2018-08-16'),
+(77, 59, 1, '3tw6_34873_sp032gbsth010v10sp.jpg', '2018-08-16', '2018-08-16'),
+(78, 60, 1, 'WxQr_30219_001.jpg', '2018-08-16', '2018-08-16'),
+(79, 61, 1, '05Rx_34869_blaze_b10___1.jpg', '2018-08-16', '2018-08-16'),
+(80, 62, 1, 'RzWr_2167_967_299110373f9ce2d63217a69ebd7cbb19.jpg', '2018-08-16', '2018-08-16'),
+(81, 63, 1, '6k0y_2503_7970_hanoicomputer_112428_1.jpg', '2018-08-16', '2018-08-16'),
+(82, 64, 1, 'SQiD_35364_9_700x390.jpg', '2018-08-16', '2018-08-16'),
+(83, 65, 1, 'FE7e_7963_epson_t60.jpg', '2018-08-16', '2018-08-16'),
+(84, 66, 1, 'ygZ9_27713_m__y_in_canon_mf_221d_in_laser___a_ch___c_n__ng_1.jpg', '2018-08-16', '2018-08-16'),
+(85, 67, 1, 'kzcn_2370_925_9249429d1c51f276b7e5c01efc388cc8.jpg.gif', '2018-08-16', '2018-08-16'),
+(86, 68, 1, 'uavg_27426_m__y_scan_canon_lide_220.jpg', '2018-08-16', '2018-08-16'),
+(87, 69, 1, '7cuX_27834_chvs049_001.jpg', '2018-08-16', '2018-08-16'),
+(88, 70, 1, 'w3Ri_31431_28765_cahi042_001.jpg', '2018-08-16', '2018-08-16'),
+(89, 71, 1, '4uk8_15931_cavt014_001.png', '2018-08-16', '2018-08-16'),
+(90, 72, 1, 'A5xV_27198_dvvt036_001.png', '2018-08-16', '2018-08-16'),
+(91, 73, 1, 'oyw8_28841_dvhi030_001.jpg', '2018-08-16', '2018-08-16'),
+(92, 74, 1, 'Wcwt_35382_10.jpg', '2018-08-16', '2018-08-16'),
+(93, 75, 1, 'zhOW_34892_camera_ip_wifi_dahua_dh_ipc_a15p_1_.jpg', '2018-08-16', '2018-08-16'),
+(94, 76, 1, 'Hilb_25869_0_dvvi028_001.jpg.png', '2018-08-16', '2018-08-16'),
+(95, 77, 1, 'rQoI_31239_hcvr4104c_s2.jpg', '2018-08-16', '2018-08-16'),
+(96, 79, 1, '', '2018-08-16', '2018-08-16'),
+(97, 80, 1, '', '2018-08-16', '2018-08-16'),
+(98, 81, 1, 'C7uV_Tower2.png', '2018-08-16', '2018-08-16'),
+(146, 1, 1, 'D8ns_2016-12-14-013839.jpeg', '2018-08-16', '2018-08-16'),
+(147, 1, 2, 'db4r_349-2018-05-30-034200.png', '2018-08-16', '2018-08-16'),
+(148, 1, 3, 'eMmw_351-2018-05-30-035322.png', '2018-08-16', '2018-08-16'),
+(149, 1, 4, 'DIWE_2016-12-14-220730.jpeg', '2018-08-16', '2018-08-16'),
+(150, 1, 5, 'V0dd_2016-12-15-003202.jpeg', '2018-08-16', '2018-08-16');
 
 -- --------------------------------------------------------
 
@@ -298,19 +378,18 @@ CREATE TABLE `partners` (
 --
 
 INSERT INTO `partners` (`id`, `name`, `description`, `link`, `logo`, `address`, `mobile_phone`, `created_at`, `updated_at`) VALUES
-(1, 'cty1', 'asdasd', 'google.com.vn', '20.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(2, 'cty2', 'asdasd', 'google.com.vn', '21.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(3, 'cty3', 'asdasd', 'google.com.vn', '25-2018.05.29.051053.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(4, 'cty4', 'asdasd', 'google.com.vn', '28.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(5, 'cty5', 'asdasd', 'google.com.vn', '30.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(6, 'cty6', 'asdasd', 'google.com.vn', '31-2018.05.29.053546.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(7, 'cty7', 'asdasd', 'google.com.vn', '32.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(8, 'cty8', 'asdasd', 'google.com.vn', '33-2018.05.29.054909.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(9, 'cty9', 'asdasd', 'google.com.vn', '34-2018.05.30.024902.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(10, 'cty10', 'asdasd', 'google.com.vn', '40-2018.06.14.045002.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(16, 'cty5', 'asdasd', 'google.com.vn', '30.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(17, 'cty8', 'asdasd', 'google.com.vn', '33-2018.05.29.054909.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
-(18, 'cty1', 'asdasd', 'google.com.vn', '20.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00');
+(2, 'cty2', 'asdasd', 'https://daisan.vn/', '21.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(3, 'cty3', 'asdasd', 'https://daisan.vn/', '25-2018.05.29.051053.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(4, 'cty4', 'asdasd', 'https://daisan.vn/', '28.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(5, 'cty5', 'asdasd', 'https://daisan.vn/', '30.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(6, 'cty6', 'asdasd', 'https://daisan.vn/', '31-2018.05.29.053546.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(7, 'cty7', 'asdasd', 'https://daisan.vn/', '32.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(8, 'cty8', 'asdasd', 'https://daisan.vn/', '33-2018.05.29.054909.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(9, 'cty9', 'asdasd', 'https://daisan.vn/', '34-2018.05.30.024902.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(10, 'cty10', 'asdasd', 'https://daisan.vn/', '40-2018.06.14.045002.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(16, 'cty5', 'asdasd', 'https://daisan.vn/', '30.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(17, 'cty8', 'asdasd', 'https://daisan.vn/', '33-2018.05.29.054909.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00'),
+(18, 'cty1', 'asdasd', 'https://daisan.vn/', '20.png', 'Ha Noi', '01689950505', '2018-08-14', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -368,7 +447,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `product_name`, `product_namekd`, `subcate_id`, `nsx_id`, `product_img`, `product_price`, `product_info`, `product_status`, `product_model`, `product_tag`, `product_salevalue`, `created_at`, `updated_at`) VALUES
-(1, 'WORKSTATION X1605 C232', 'workstation-x1605-c232', 12, 0, 'olTa_slothide.jpg', 32990000, '<p><br></p><table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Hãng sản xuất</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>HNC</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chủng loại</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>WORKSTATION</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Part Number</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>X1704</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Kiểu dáng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Mid Tower</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bộ vi xử lý</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chipset</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Intel® C602-A PCH</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bộ nhớ trong</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>DDRam III Samsung ECC 16GB/1600Mhz Registered (8x2)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Số khe cắm</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>8</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Dung lượng tối đa</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>256GB</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>VGA</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Onboard Aspeed AST1300 với 64MB VRAM</p>\r\n<p>Khả năng mở rộng VGA Tùy chọn </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Ổ cứng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Giao tiếp mạng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>2 x Intel® 82574L</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Khe cắm mở rộng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Tổng số khe cắm : 5</p>\r\n<p>Khe cắm vị trí 2 : PCI-E x8 (Liên kết X4 Gen2)</p>\r\n<p>Khe cắm vị trí 3 : PCI-E x16 (Liên kết X16 Gen3) , tự động chuyển sang x8 link nếu slot 4 đã được dùng</p>\r\n<p>Khe cắm vị trí 4 : PCI-E x8 (Liên kết X8 Gen3)</p>\r\n<p>Khe cắm vị trí 5 : PCI-E x16 (Liên kết X16 Gen3) , tự động chuyển sang x8 link nếu slot 6 đã được dùng</p>\r\n<p>Khe cắm vị trí 6 : PCI-E x8 (Liên kết X8 Gen3) , hỗ trợ MIO</p>\r\n<p>Theo SSI Location#</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Cổng giao tiếp</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>1 x Cổng nối tiếp bên ngoài</p>\r\n<p>4 x Cổng USB bên ngoài</p>\r\n<p>﹝2 x USB 3.0, 2 x USB 2.0﹞</p>\r\n<p>1 x Cổng VGA</p>\r\n<p>2 x RJ-45</p>\r\n<p>1 x PS/2 KB/chuột</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Ổ quang</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Công suất nguồn</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>750 Modular 80 PLUS Gold +</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bàn phím</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chuột</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Kích thước (rộng x dài x cao)</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>200 x 472 x 430mm </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Hệ điều hành</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Support Microsoft OS, Linux OS</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><p>\r\n<br></p><p><strong>CHI TIẾT SẢN PHẨM</strong></p><p><strong></strong>\r\n<br></p><table style=\"height: 236px; width: 577px;\" cellspacing=\"0\" cellpadding=\"0\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">STT</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">MÃ SP</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"278\">\r\n<p align=\"center\">THÔNG TIN SẢN PHẨM</p>\r\n</td>\r\n<td width=\"47\">\r\n<p align=\"center\">SL</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">MAINBOARD</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">MBAS407</p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"278\">\r\n<p>Mainboard ASUS Z9PA-D8C (DUAL CPU WORKSTATION)</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CPU</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">CPUI210</p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p>CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">RAM</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">RASA002</p>\r\n</td>\r\n<td width=\"278\">\r\n<p>DDRam III Samsung ECC 8GB/1600Mhz Registered</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">VGA</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p> </p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">HDD</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\"> </td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">SSD</p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"278\"> </td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">PSU</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">PWFP013</p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p><span style=\"font-size: small;\"><strong>FSP Power Supply HYDRO G Series Model HG750 - Active PFC - 80 Plus Gold, Full Modula</strong>r</span></p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CASE</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">CSAE015</p>\r\n</td>\r\n<td width=\"278\">Case Aero Cool PGS-A Aero-800 Grey</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CPU FAN</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">FANC264</p>\r\n</td>\r\n<td width=\"278\">\r\n<p>Tản nhiệt CPU Deepcool Ice Blade Pro V2</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><p>\r\n          	\r\n        \r\n          <br></p><div id=\"tab5\" class=\"content_scroll_tab\">\r\n            </div><p><br></p>', '2', 'LTMS203', 'CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011', 10, '2017-03-28', '2018-08-11'),
+(1, 'WORKSTATION X1605 C232', 'workstation-x1605-c232', 12, 0, 'D8ns_2016-12-14-013839.jpeg', 32990000, '<p><br></p><table cellspacing=\"0\" cellpadding=\"0\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Hãng sản xuất</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>HNC</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chủng loại</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>WORKSTATION</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Part Number</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>X1704</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Kiểu dáng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Mid Tower</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bộ vi xử lý</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chipset</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Intel® C602-A PCH</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bộ nhớ trong</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>DDRam III Samsung ECC 16GB/1600Mhz Registered (8x2)</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Số khe cắm</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>8</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Dung lượng tối đa</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>256GB</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>VGA</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Onboard Aspeed AST1300 với 64MB VRAM</p>\r\n<p>Khả năng mở rộng VGA Tùy chọn </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Ổ cứng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Giao tiếp mạng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>2 x Intel® 82574L</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Khe cắm mở rộng</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Tổng số khe cắm : 5</p>\r\n<p>Khe cắm vị trí 2 : PCI-E x8 (Liên kết X4 Gen2)</p>\r\n<p>Khe cắm vị trí 3 : PCI-E x16 (Liên kết X16 Gen3) , tự động chuyển sang x8 link nếu slot 4 đã được dùng</p>\r\n<p>Khe cắm vị trí 4 : PCI-E x8 (Liên kết X8 Gen3)</p>\r\n<p>Khe cắm vị trí 5 : PCI-E x16 (Liên kết X16 Gen3) , tự động chuyển sang x8 link nếu slot 6 đã được dùng</p>\r\n<p>Khe cắm vị trí 6 : PCI-E x8 (Liên kết X8 Gen3) , hỗ trợ MIO</p>\r\n<p>Theo SSI Location#</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Cổng giao tiếp</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>1 x Cổng nối tiếp bên ngoài</p>\r\n<p>4 x Cổng USB bên ngoài</p>\r\n<p>﹝2 x USB 3.0, 2 x USB 2.0﹞</p>\r\n<p>1 x Cổng VGA</p>\r\n<p>2 x RJ-45</p>\r\n<p>1 x PS/2 KB/chuột</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Ổ quang</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Công suất nguồn</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>750 Modular 80 PLUS Gold +</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Bàn phím</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Chuột</p>\r\n</td>\r\n<td width=\"435\"> </td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Kích thước (rộng x dài x cao)</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>200 x 472 x 430mm </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td width=\"134\">\r\n<p>Hệ điều hành</p>\r\n</td>\r\n<td width=\"435\">\r\n<p>Support Microsoft OS, Linux OS</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><p>\r\n<br></p><p><strong>CHI TIẾT SẢN PHẨM</strong></p><p><strong></strong>\r\n<br></p><table style=\"height: 236px; width: 577px;\" cellspacing=\"0\" cellpadding=\"0\" border=\"1\">\r\n<tbody>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">STT</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">MÃ SP</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"278\">\r\n<p align=\"center\">THÔNG TIN SẢN PHẨM</p>\r\n</td>\r\n<td width=\"47\">\r\n<p align=\"center\">SL</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">MAINBOARD</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">MBAS407</p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"278\">\r\n<p>Mainboard ASUS Z9PA-D8C (DUAL CPU WORKSTATION)</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CPU</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">CPUI210</p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p>CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">RAM</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">RASA002</p>\r\n</td>\r\n<td width=\"278\">\r\n<p>DDRam III Samsung ECC 8GB/1600Mhz Registered</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">VGA</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p> </p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">HDD</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\"> </td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">SSD</p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"91\">\r\n<p align=\"center\"> </p>\r\n</td>\r\n<td nowrap=\"nowrap\" valign=\"bottom\" width=\"278\"> </td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">PSU</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"91\">\r\n<p align=\"center\">PWFP013</p>\r\n</td>\r\n<td valign=\"bottom\" width=\"278\">\r\n<p><span style=\"font-size: small;\"><strong>FSP Power Supply HYDRO G Series Model HG750 - Active PFC - 80 Plus Gold, Full Modula</strong>r</span></p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CASE</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">CSAE015</p>\r\n</td>\r\n<td width=\"278\">Case Aero Cool PGS-A Aero-800 Grey</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">1</p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td nowrap=\"nowrap\" width=\"84\">\r\n<p align=\"center\">CPU FAN</p>\r\n</td>\r\n<td width=\"91\">\r\n<p align=\"center\">FANC264</p>\r\n</td>\r\n<td width=\"278\">\r\n<p>Tản nhiệt CPU Deepcool Ice Blade Pro V2</p>\r\n</td>\r\n<td nowrap=\"nowrap\" width=\"47\">\r\n<p align=\"center\">2</p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table><p>\r\n          	\r\n        \r\n          <br></p><div id=\"tab5\" class=\"content_scroll_tab\">\r\n            </div><p><br></p>', '2', 'LTMS203', 'CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011', 10, '2017-03-28', '2018-08-16'),
 (2, 'MSI GAMING GL62 7RD 675XVN', 'msi-gaming-gl62-7rd-675xvn', 15, 0, '6M7P_Asrock B150M Pro4.jpg', 23290000, '', '3', 'LTMS200', 'CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011', 10, '2017-03-28', '2017-04-02'),
 (3, 'WORKSTATION X1704 C602 E5 2670 DUAL', 'workstation-x1704-c602-e5-2670-dual', 32, 0, 'tp7U_ASUS R7260X OC 2GD5.jpg', 15900000, '', '1', 'test', 'CPU Intel Xeon E5-2670 2.60 GHz / 20MB / 8 Cores 16 Threads/ Socket 2011', 12, '2017-04-02', '2017-05-18'),
 (4, 'Laptop MSI Prestige PE70 6QE', 'laptop-msi-prestige-pe70-6qe', 7, 2, 'p4aW_33387_001.png', 21699000, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--content_scroll_tab--><div class=\"clear\"></div>          	 <!--?php echo stripslashes($description);?--><table border=\"0\" cellspacing=\"0\" cellpadding=\"0\"><tbody><tr style=\"height: 12.75pt;\"><td width=\"500\" valign=\"bottom\" style=\"padding: 0in 5.4pt; width: 375.35pt; height: 12.75pt; background: #b7e7ff none repeat scroll 0% 0%;\" colspan=\"2\"><p><strong><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Mô tả chi tiết</span></strong></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Hãng sản xuất</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\"><b>MSI</b></span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Chủng loại</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><strong><span style=\"font-family: \'Arial\',\'sans-serif\';\"><font size=\"2\">PE70 6QE </font></span></strong></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Part Number</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><strong><span style=\"font-family: \'Arial\',\'sans-serif\';\"><font size=\"2\">627XVN</font></span></strong></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Mầu sắc</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Màu Bạc</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Bộ vi xử lý</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><strong><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Skylake </span></strong><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\"> i7-6700HQ</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Chipset</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Intel </span><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">HM170</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Bộ nhớ trong</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">8GB DDR4 2133Mhz </span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Số k<b>he cắm</b></span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">2</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\"><b>Dung lượng tối đa</b></span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">&nbsp;</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">VGA</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><strong><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">NVIDIA® GeForce GTX960M 2GB GDDR5</span></strong></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Ổ cứng</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><strong><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">1TB Sata 7200rpm </span></strong></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Ổ quang</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Super Multi</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Card Reader</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">&nbsp;</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Bảo mật, Công nghê</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Keyboard w/ backlight </span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Màn hình</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\'; color: black;\">17.3\" Full HD (1920 x 1080)</span></p></td></tr><tr style=\"height: 15.25pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 15.25pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Webcam</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 15.25pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Yes</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Audio</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\'; color: black;\">&nbsp;</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Giao tiếp mạng</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Gigabit</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Giao tiếp không dây</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">802.11ac; BT 4.0 M.2 type </span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\"><font face=\"Tahoma\">Cổng giao tiếp</font></span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">USB2.0, 2 * USB3.0, 1 USB 3.1 Type C, HDMI</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Pin</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">6 Cell </span></p></td></tr><tr style=\"height: 25.5pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 25.5pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Kích thước (rộng x dài x cao)</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 25.5pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 9pt; font-family: \'Tahoma\',\'sans-serif\';\"><font face=\"Arial\" size=\"2\">&nbsp;</font></span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Cân nặng</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p>&nbsp;<span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">2.9kg</span></p></td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Hệ điều hành</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt; background: #f0f0f0 none repeat scroll 0% 0%;\">&nbsp;</td></tr><tr style=\"height: 12.75pt;\"><td width=\"157\" valign=\"bottom\" style=\"padding: 0in; width: 118pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">Phụ kiện đi kèm</span></p></td><td width=\"343\" valign=\"bottom\" style=\"padding: 0in; width: 257.35pt; height: 12.75pt;\"><p><span style=\"font-size: 10pt; font-family: \'Arial\',\'sans-serif\';\">AC Adapter</span></p></td></tr></tbody></table>', '1', 'PE706QE', 'Skylake i7-6700HQ ', 5, '2017-05-16', '2017-05-19'),
@@ -646,7 +725,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `level`, `info`, `remember_token`, `created_at`, `updated_at`) VALUES
-(0, 'admin', 'admin', '$2y$12$7h5EHzse8zbBtBK.rX00dOB0dS7SdJt58oTyKH.iKSKmDrwEjoBka', 0, 'nv', '0', '2016-12-15', '2017-04-15'),
+(0, 'admin', 'admin', '$2y$12$7h5EHzse8zbBtBK.rX00dOB0dS7SdJt58oTyKH.iKSKmDrwEjoBka', 0, 'nv', 'l0auQSDqmkTpRIpiDqJw5lpIRyzk5D3LFwr4aRsQeYZVgmt0j2ZSrOL94Nym', '2016-12-15', '2018-08-16'),
 (1, 'Ngô Xuân Tài', 'ngotai94@gmail.com', '$2y$10$12.vtMCqcE.dOIS.82AXeet0Pvsw7QlrDRpPVRlEHQMgPo2j5A6mS', 1, 'Gd', 'WNjFc7yGLJNCKjusw74TmVW587bT2c7ihbhIMHynl2FrtMvukPGmgkTNpC3x', '0000-00-00', '2017-04-15');
 
 --
@@ -765,76 +844,91 @@ ALTER TABLE `users`
 --
 ALTER TABLE `cate`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `nsx`
 --
 ALTER TABLE `nsx`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
   MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
 --
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
 --
 -- AUTO_INCREMENT for table `subcate`
 --
 ALTER TABLE `subcate`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `tag_belong`
 --
 ALTER TABLE `tag_belong`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
