@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="MOBIFONE THAI NGUYEN 2016">
     <meta name="author" content="">
-    <title>MÁY TÍNH NGỌC CƯỜNG</title>
+    <title>PJM COMPANY</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
     <base href="{{asset('')}}">
     <!-- Bootstrap Core CSS -->
@@ -63,13 +63,18 @@
     <script src="admin_asset/tinymce/jquery.tinymce.min.js"></script>
     <script src="admin_asset/summernote-master/dist/summernote.js"></script>
     <link href="admin_asset/summernote-master/dist/summernote.css" rel="stylesheet">
+
     <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
+        function checkDelete () {
+            if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
+                return false;
+            };
+        }
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                    responsive: true
+            });
         });
-    });
-	
     </script>
 	<script src="{{url("/")}}/js/jquery-ui.min.js"></script>
 						<script src="{{url("/")}}/js/tag-it.min.js"></script>

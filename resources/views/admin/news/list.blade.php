@@ -1,13 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<script type="text/javascript">
-function kiemtra () {
-    // body...
-    if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
-        return false;
-    };
-}
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -28,8 +20,7 @@ function kiemtra () {
                         <th>ID</th>
                         <th>Tiêu đề</th>
                         <th>Tóm tắt</th>
-                        <th>Xóa</th>
-                        <th>Sửa</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,8 +29,14 @@ function kiemtra () {
                         <td>{{$p->id}}</td>
                         <td>{{$p->title}}</td>
                         <td>{{$p->sum}}</td>
-                        <td class="center"><i class="fa fa-trash-o fa-fw"></i><a href="admin/news/del/{{$p->id}}" onclick="return kiemtra();"> Xóa</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/news/edit/{{$p->id}}">Sửa</a></td>
+                        <td class="center">
+                            <a href="{{url("admin/news/edit", $p->id)}}">
+                                <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                            </a>
+                            <a href="{{url("admin/news/del", $p->id)}}" onclick="return checkDelete()">
+                                <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

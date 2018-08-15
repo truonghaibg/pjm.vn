@@ -1,13 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<script type="text/javascript">
-function kiemtra () {
-    // body...
-    if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
-        return false;
-    };
-}
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -28,8 +20,7 @@ function kiemtra () {
                         <th>ID</th>
                         <th>Tên Chuyên mục</th>
                         <th>Danh mục</th>
-                        <th>Xóa</th>
-                        <th>Sửa</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,8 +29,14 @@ function kiemtra () {
                         <td>{{$tl->id}}</td>
                         <td>{{$tl->subcate_name}}</td>
                         <td>{{isset($tl->cate->cate_name)?$tl->cate->cate_name:""}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/subcate/del/{{$tl->id}}" onclick="return kiemtra();"> Xóa</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/subcate/edit/{{$tl->id}}">Sửa</a></td>
+                        <td class="center">
+                            <a href="{{url("admin/subcate/edit", $tl->id)}}">
+                                <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                            </a>
+                            <a href="{{url("admin/subcate/del", $tl->id)}}" onclick="return checkDelete()">
+                                <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </a>
+                        </td>
                     </tr>
                     @empty
                         Không có chuyên mục nào

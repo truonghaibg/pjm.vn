@@ -45,8 +45,10 @@
                         <label>Nội dung tóm tắt</label>
                         <textarea class="form-control" rows="3" name="subcate_sum"></textarea>
                     </div>
+
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                     <button type="submit" class="btn btn-default">Thêm mới</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
                 </form>
             </div>
         </div>

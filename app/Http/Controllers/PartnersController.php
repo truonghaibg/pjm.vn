@@ -7,13 +7,11 @@ use App\Partners;
 
 class PartnersController extends Controller
 {
-    //
 
     public function getList(){
         $partners = Partners::all();
         return view('admin.partners.list',['partners'=>$partners]);
     }
-
 
     public function getAdd(){
     	return view('admin.partners.add');
@@ -85,21 +83,13 @@ class PartnersController extends Controller
             $file->move("upload/partners",$img);
             $partners->logo = $img;
         }
-
-
-
-
-
-
-
         $partners->save();
         return redirect('admin/partners/list')->with('thongbao','Sửa thành công');
     }
 
-    public function getDel($id){
+    public function getDelete($id){
         $partners = Partners::find($id);
         $partners->delete();
         return redirect('admin/partners/list')->with('thongbao','Xóa thành công');
     }
-    //
 }

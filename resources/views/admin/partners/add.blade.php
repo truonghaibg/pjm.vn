@@ -25,37 +25,39 @@
                 </div>
             @endif
                 <form action="admin/partners/add" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                    <div class="form-group">
-                        <label>Tên đối tác</label>
-                        <input class="form-control" name="name" placeholder="Điền tên đối tác" />
+                        <div class="form-group">
+                            <label>Tên đối tác</label>
+                            <input class="form-control" name="name" placeholder="Điền tên đối tác" />
+                        </div>
+                        <div class="form-group">
+                            <label>Logo</label>
+                            <input class="form-control" type="file" name="logo" />
+                        </div>
+
+                        <br/>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control summernote" rows="5" name="description"></textarea>
+                        </div>
+                       <div class="form-group">
+                            <label>Website</label>
+                            <input class="form-control" name="link" placeholder="Website" />
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ</label>
+                            <input class="form-control" name="address" placeholder="address" />
+                        </div>
+                        <div class="form-group">
+                            <label>Điện thoại</label>
+                            <input class="form-control" name="mobile_phone" placeholder="Điện thoại" />
+                        </div>
+                        <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                        <button type="submit" class="btn btn-default">Thêm mới</button>
+                        <button type="reset" class="btn btn-default">Làm mới</button>
                     </div>
-                    <div class="form-group">
-                        <label>Logo</label>
-                        <input class="form-control" type="file" name="logo" />
-                    </div>
-					
-					<br/>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control summernote" rows="5" name="description"></textarea>
-                    </div>
-                   <div class="form-group">
-                        <label>Website</label>
-                        <input class="form-control" name="link" placeholder="Website" />
-                    </div>
-                    <div class="form-group">
-                        <label>Địa chỉ</label>
-                        <input class="form-control" name="address" placeholder="address" />
-                    </div>
-                    <div class="form-group">
-                        <label>Điện thoại</label>
-                        <input class="form-control" name="mobile_phone" placeholder="Điện thoại" />
-                    </div>
-                    <button type="submit" class="btn btn-default">Thêm mới</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                </form>
             </div>
         </div>
         <!-- /.row -->

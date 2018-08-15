@@ -71,9 +71,11 @@
                         <textarea class="form-control" name="sum"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Thêm mới</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                        <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                        <button type="submit" class="btn btn-default">Thêm mới</button>
+                        <button type="reset" class="btn btn-default">Làm mới</button>
+                    </div>
+                </form>
             </div>
         </div>
         <!-- /.row -->

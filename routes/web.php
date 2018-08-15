@@ -127,6 +127,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         Route::post('add','PartnersController@postAdd');
         Route::get('edit/{id}','PartnersController@getEdit');
         Route::post('edit/{id}','PartnersController@postEdit');
+        Route::get('delete/{id}','PartnersController@getDelete');
 	});
 
 	Route::group(['prefix'=>'product'],function(){

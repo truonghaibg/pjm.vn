@@ -126,9 +126,11 @@
                             <input name="post_high" value="1" type="radio">Có
                         </label>
                     </div>
+
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                     <button type="submit" class="btn btn-default">Thêm mới</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

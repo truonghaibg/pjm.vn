@@ -116,10 +116,10 @@
                         <textarea class="form-control summernote" rows="5" name="product_info"></textarea>
                     </div>
 
-
-                    <button type="submit" class="btn btn-default">Thêm sản phẩm</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Thêm mới</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

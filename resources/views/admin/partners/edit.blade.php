@@ -27,41 +27,42 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
 
-                    <div class="form-group">
-                    <div class="form-group">
-                        <label>Tên đối tác</label>
-                        <input class="form-control" name="name" placeholder="Điền tên đối tác" value="{{$partners->name}}"/>
-                    </div>
-                    <div class="form-group">
-                        <label>Logo</label>
-                        <img style="width: 200px" src="{{url('/')}}/upload/partners/{{$partners->logo}}" />
-                        <input class="form-control" type="file" name="logo" />
-                    </div>
-					
-					<br/>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control summernote" rows="5" name="description">{{$partners->description}}</textarea>
-                    </div>
-                   <div class="form-group">
-                        <label>Website</label>
-                        <input class="form-control" name="link" placeholder="Website" value="{{$partners->link}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Địa chỉ</label>
-                        <input class="form-control" name="address" placeholder="address" value="{{$partners->address}}" />
-                    </div>
-                    <div class="form-group">
-                        <label>Điện thoại</label>
-                        <input class="form-control" name="mobile_phone" placeholder="Điện thoại" value="{{$partners->mobile_phone}}" />
-                    </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label>Tên đối tác</label>
+                                <input class="form-control" name="name" placeholder="Điền tên đối tác" value="{{$partners->name}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Logo</label>
+                                <img style="width: 200px" src="{{url('/')}}/upload/partners/{{$partners->logo}}" />
+                                <input class="form-control" type="file" name="logo" />
+                            </div>
 
+                            <br/>
+                            <div class="form-group">
+                                <label>Description</label>
+                                <textarea class="form-control summernote" rows="5" name="description">{{$partners->description}}</textarea>
+                            </div>
+                           <div class="form-group">
+                                <label>Website</label>
+                                <input class="form-control" name="link" placeholder="Website" value="{{$partners->link}}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Địa chỉ</label>
+                                <input class="form-control" name="address" placeholder="address" value="{{$partners->address}}" />
+                            </div>
+                            <div class="form-group">
+                                <label>Điện thoại</label>
+                                <input class="form-control" name="mobile_phone" placeholder="Điện thoại" value="{{$partners->mobile_phone}}" />
+                            </div>
 
+                            <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                            <button type="submit" class="btn btn-default">Cập nhật</button>
+                            <button type="reset" class="btn btn-default">Làm mới</button>
 
-                    <button type="submit" class="btn btn-default">Sửa tin</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
-            </div>
+                        </div>
+                    </div>
+                </form>
         </div>
         <!-- /.row -->
     </div>

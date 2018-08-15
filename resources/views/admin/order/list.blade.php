@@ -1,13 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<script type="text/javascript">
-function kiemtra () {
-    // body...
-    if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
-        return false;
-    };
-}
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">

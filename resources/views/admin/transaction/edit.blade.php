@@ -119,9 +119,10 @@
                         <textarea class="form-control summernote" rows="5" name="product_info">{{$product->product_info}}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Post Edit</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

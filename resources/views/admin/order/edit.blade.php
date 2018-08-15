@@ -180,9 +180,10 @@
                   <input type="text" name="qty" value="{{$order2->qty}}" style="display:none";>
                   <input type="text" name="amount" value="{{$order2->amount}}" style="display:none";>
 
-                    <button type="submit" class="btn btn-default">Sửa sản phẩm</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

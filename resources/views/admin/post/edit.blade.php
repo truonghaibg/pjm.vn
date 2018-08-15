@@ -84,9 +84,10 @@
                                 @endif>Có
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Sửa bài viết</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

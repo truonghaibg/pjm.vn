@@ -1,13 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<script type="text/javascript">
-function kiemtra () {
-    // body...
-    if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
-        return false;
-    };
-}
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -25,8 +17,7 @@ function kiemtra () {
                         <th>Email</th>
                         <th>Chức vụ</th>
                         <th>Thông tin</th>
-                        <th>Xóa</th>
-                        <th>Sửa</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,14 +28,20 @@ function kiemtra () {
                         <td>{{$u->email}}</td>
                         <td>
                             @if($u->level == 1)
-                            {{"Quản lý"}}
+                                {{"Quản lý"}}
                             @else
-                            {{"Nhân viên"}}
+                                {{"Nhân viên"}}
                             @endif
                         </td>
                         <td>{{$u->info}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/user/del/{{$u->id}}" onclick="return kiemtra();"> Xóa</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/user/edit/{{$u->id}}">Sửa</a></td>
+                        <td class="center">
+                            <a href="{{url("admin/user/edit", $u->id)}}">
+                                <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                            </a>
+                            <a href="{{url("admin/user/del", $u->id)}}" onclick="return checkDelete()">
+                                <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

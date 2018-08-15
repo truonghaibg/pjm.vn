@@ -43,9 +43,11 @@
                             <input name="rdoStatus" value="2" type="radio">Invisible
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-default">Category Add</button>
-                    <button type="reset" class="btn btn-default">Reset</button>
-                <form>
+
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Thêm mới</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

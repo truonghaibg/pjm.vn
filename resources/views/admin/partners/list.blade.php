@@ -1,13 +1,5 @@
 @extends('admin.layout.index')
 @section('content')
-<script type="text/javascript">
-function kiemtra () {
-    // body...
-    if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {
-        return false;
-    };
-}
-</script>
 <div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
@@ -26,29 +18,32 @@ function kiemtra () {
                 <thead>
                     <tr align="center">
                         <th>ID</th>
-                        <th>Tên</th>
+                        <th>Tên đối tác</th>
                         <th>Logo</th>
-                        <th>Description</th>
-                        <th>Website</th
+                        <th>Website</th>
                         <th>Địa chỉ</th>
                         <th>Điện thoại</th>
                         <th>Hành động</th>
-
                     </tr>
                 </thead>
                 <tbody>
                 @foreach($partners as $item)
                     <tr class="odd gradeX" align="center">
+                        <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td><img style="width: 100px;" src="{{url('/')}}/upload/partners/{{$item->logo}}" /></td>
-                        <td>{{$item->description}}</td>
+                        <td>
+                            <img style="width: 100px;" src="{{url('/')}}/upload/partners/{{$item->logo}}" />
+                        </td>
                         <td>{{$item->link}}</td>
                         <td>{{$item->address}}</td>
                         <td>{{$item->mobile_phone}}</td>
-
                         <td class="center">
-                            <i class="fa fa-trash-o fa-fw"></i><a href="admin/partners/del/{{$item->id}}" onclick="return kiemtra();"> Xóa</a>
-                            <i class="fa fa-pencil fa-fw"></i> <a href="admin/partners/edit/{{$item->id}}">Sửa</a>
+                            <a href="{{url("admin/partners/edit", $item->id)}}">
+                                <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                            </a>
+                            <a href="{{url("admin/partners/delete", $item->id)}}" onclick="return kiemtra()">
+                                <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

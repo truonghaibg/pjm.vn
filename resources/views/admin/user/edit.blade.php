@@ -62,9 +62,10 @@
                         <textarea name="info" class="form-control" rows="3">{{$user->info}}</textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-default">Sửa thông tin</button>
-                    <button type="reset" class="btn btn-default">Nhập lại</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

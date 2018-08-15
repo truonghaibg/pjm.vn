@@ -1,4 +1,3 @@
-
 @extends('admin.layout.index')
 @section('content')
 <div id="page-wrapper">
@@ -137,11 +136,6 @@
 							}
 							?>
 							
-							<!--
-							/*
-							
-								*/
-							-->
 							<script>
 								// remove image  by ajax
 								// sau khi remove .Chuyen tat ca len truoc.tao ra block phia sau
@@ -171,7 +165,6 @@
 									right:20px
 								}
 							</style>
-							
 						</div>
                     </div>
                     <div class="form-group">
@@ -182,10 +175,10 @@
                         <label>Thông tin sản phẩm</label>
                         <textarea class="form-control summernote" rows="5" name="product_info">{{$product->product_info}}</textarea>
                     </div>
-
-                    <button type="submit" class="btn btn-default">Sửa sản phẩm</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->

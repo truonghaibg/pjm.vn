@@ -52,9 +52,11 @@
                         <label>Nội dung tóm tắt</label>
                         <textarea class="form-control" rows="3" name="subcate_sum">{{$subcate->subcate_sum}}</textarea>
                     </div>
-                    <button type="submit" class="btn btn-default">Sửa chuyên mục</button>
-                    <button type="reset" class="btn btn-default">Viết lại</button>
-                <form>
+
+                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
+                    <button type="submit" class="btn btn-default">Cập nhật</button>
+                    <button type="reset" class="btn btn-default">Làm mới</button>
+                </form>
             </div>
         </div>
         <!-- /.row -->
