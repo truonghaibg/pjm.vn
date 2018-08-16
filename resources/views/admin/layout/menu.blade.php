@@ -87,8 +87,12 @@
         <li>
             <a href="admin/news/list"><i class="fa fa-edit fa-fw"></i> Tin tức<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
+                
                 <li>
                     <a href="admin/news/list">Danh sách bài viết cố định</a>
+                </li>
+                <li>
+                    <a href="admin/news/news-cate-list">Danh mục tin tức</a>
                 </li>
 				 <li>
                     <a href="admin/news/list-tin-tuc">Danh sách tin tức mới</a>

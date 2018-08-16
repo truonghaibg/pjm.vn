@@ -9,8 +9,10 @@
     "\\public\\template_asset\\js",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\layout"
+    "\\resources\\views\\admin",
+    "\\resources\\views\\admin\\layout",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\layout\\menu.blade.php",
+  "SelectedNode": "\\routes\\web.php",
   "PreviewInSolutionExplorer": false
 }

@@ -31,6 +31,15 @@
                             <label>Tiêu đề</label>
                             <input class="form-control" name="title" placeholder="Điền Tiêu đề" value="{{$news->title}}" />
                         </div>
+						<div class="form-group">
+                        <label>Danh mục</label>
+                        <select  class="form-control" name="category" >
+							<option value="0" <?php if($news->news_category_id == 0){ ?>  selected="selected" <?php } ?>>Danh mục bài viết cố định</option>
+                            @foreach($newsCategory as $item)
+							<option value="{{$item->id}}" <?php if($news->news_category_id == $item->id){ ?>  selected="selected" <?php } ?>>{{$item->name}}</option>
+							@endforeach
+                        </select>
+                    </div>
                         <div class="form-group">
                             <label>Ảnh</label>
                             <p>

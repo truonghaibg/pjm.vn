@@ -19,6 +19,7 @@
                     <tr align="center">
                         <th>ID</th>
                         <th>Tiêu đề</th>
+						<th>Danh mục</th>
                         <th>Tóm tắt</th>
                         <th>Action</th>
                     </tr>
@@ -28,6 +29,7 @@
                     <tr class="odd gradeX" align="center">
                         <td>{{$p->id}}</td>
                         <td>{{$p->title}}</td>
+						<td>{{$p->cate_name}}</td>
                         <td>{{$p->sum}}</td>
                         <td class="center">
                             <a href="{{url("admin/news/edit", $p->id)}}">

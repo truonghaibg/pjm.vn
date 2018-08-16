@@ -27,16 +27,19 @@
                 <form action="admin/news/add" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                    <div class="form-group">
-                        <label>Danh mục</label>
-                        <select  class="form-control" name="category">
-                            <option value="1">Danh mục tin tức mới</option>
-                            <option value="0">Danh mục bài viết cố định</option>
-                        </select>
-                    </div>
+                    
                     <div class="form-group">
                         <label>Tiêu đề</label>
                         <input class="form-control" name="title" placeholder="Điền Tiêu đề" />
+                    </div>
+					<div class="form-group">
+                        <label>Danh mục</label>
+                        <select  class="form-control" name="category">
+							<option value="0">Danh mục bài viết cố định</option>
+                            @foreach($newsCategory as $item)
+							<option value="{{$item->id}}">{{$item->name}}</option>
+							@endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Ảnh</label>

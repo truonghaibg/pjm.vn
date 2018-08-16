@@ -5,24 +5,53 @@ use Illuminate\Http\Request;
 use App\News;
 use App\Tags;
 use App\TagsBelong;
+use App\NewsCategory;
 
 class NewsController extends Controller
 {
     //
-
     public function getList(){
         $news = News::where('news_category_id', 0)->orderBy('id','DESC')->get();
         return view('admin.news.list',['news'=>$news]);
     }
     public function getListNews(){
-        $news = News::where('news_category_id', 1)->orderBy('id','DESC')->get();
+        $news = News::where('news_category_id', "!=" , 0)->orderBy('id','DESC')->get();
+		$i = 0;
+		foreach($news as $item){
+			$newscate = NewsCategory::find($item->news_category_id)->get()->first();
+			$news[$i]->cate_name = $newscate->name;
+			$i++;
+		}
+		
         return view('admin.news.list',['news'=>$news]);
     }
-
+    public function getListNewsCate(){
+        $newscate = NewsCategory::all();
+        return view('admin.news.newscatelist',['newscate'=>$newscate]);
+    }
     public function getAdd(){
     	$news = News::all();
         $tags = Tags::all();
-    	return view('admin.news.add',['news'=>$news, "tags" => $tags]);
+		$newsCategory = NewsCategory::all();
+    	return view('admin.news.add',['news'=>$news, "tags" => $tags, "newsCategory" => $newsCategory]);
+    }
+	public function getAddNewsCate(){
+    	return view('admin.news.newscateadd');
+    }
+	public function postAddNewsCate(Request $request){
+    	$this->validate($request,
+            [
+                'name'=>'required|min:3',
+            ],
+            [
+                'name.required'=>'Tên danh mục không được để trống',
+                'title.min'=>'Tên danh mục phải có ít nhất 3 kí tự'
+            ]);
+
+        $newsCategory = new NewsCategory;
+        $newsCategory->name = $request->name;
+        $newsCategory->save();
+        return redirect('admin/news/news-cate-list')->with('thongbao','Thêm danh mục thành công');
     }
     public function postAdd(Request $request){
         $this->validate($request,
@@ -82,13 +111,14 @@ class NewsController extends Controller
     public function getEdit($id){
         $news = News::find($id);
         $tags = Tags::all();
+		$newsCategory = NewsCategory::all();
         $findTagBelong = TagsBelong::where('news_id', $id)->get();
         $tagArray = [];
         foreach($findTagBelong as $tagBelong){
             $tag = Tags::where("id" ,$tagBelong->tags_id)->get()->first();
             $tagArray[] = $tag->name;
         }
-        return view('admin.news.edit',['news'=>$news, "tagArray" => $tagArray, "tags" => $tags]);
+        return view('admin.news.edit',['news'=>$news, "tagArray" => $tagArray, "tags" => $tags, "newsCategory"=>$newsCategory]);
     }
 
     public function postEdit(Request $request,$id){
@@ -105,7 +135,7 @@ class NewsController extends Controller
             $news->titlekd = changeTitle($request->title);
             $news->content = $request->content;
             $news->sum = $request->sum;
-
+			$news->news_category_id = $request->category;
             if ($request->hasFile('img')) {
                 $file = $request->file('img');
                 $name = $file->getClientOriginalName();
@@ -145,7 +175,28 @@ class NewsController extends Controller
         $news->save();
         return redirect('admin/news/list-tin-tuc')->with('thongbao','Sửa thành công');
     }
+	public function getEditNewsCate($id){
+        $newsCategory = NewsCategory::find($id);
+        return view('admin.news.newscateedit',['newsCategory'=>$newsCategory]);
+    }
+	public function postEditNewsCate(Request $request,$id){
+        $newsCategory = NewsCategory::find($id);
+        $this->validate($request,
+            [
+                'name'=>'required|min:3',
+            ],
+            [
+                'name.required'=>'Tên danh mục không được để trống',
+                'name.min'=>'Tên danh mục phải có ít nhất 3 kí tự'
+            ]);
+            $newsCategory->name = $request->name;
+            
+        $newsCategory->save();
+        return redirect('admin/news/news-cate-list')->with('thongbao','Sửa thành công');
+    }
+	
 
+	
     public function getDel($id){
         $news = News::find($id);
         $news->delete();

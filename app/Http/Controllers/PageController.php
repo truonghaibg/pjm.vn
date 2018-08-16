@@ -16,6 +16,7 @@ use Excel;
 use App\Order;
 use App\Tags;
 use App\TagsBelong;
+use App\NewsCategory;
 class PageController extends Controller
 {
     //
@@ -61,10 +62,10 @@ class PageController extends Controller
     	return view('pages.contact');
     }
     function news(){
-         $n = News::where('news_category_id', 0)->orderBy('id','DESC')->get();
-         $news = News::where('news_category_id', 1)->orderBy('id','DESC')->get();
-         $i = 0;
-         foreach($news as $item){
+        $news = News::where('news_category_id',"!=", 0)->orderBy('id','DESC')->get();
+		$newsCategory = NewsCategory::all();
+        $i = 0;
+        foreach($news as $item){
              $tagsNameArray = [];
              $tagsList = TagsBelong::where("news_id", $item->id)->get();
              foreach($tagsList as $tagId){
@@ -73,10 +74,25 @@ class PageController extends Controller
              }
              $news[$i]->tags = $tagsNameArray;
              $i++;
-         }
-        
-    	return view('pages.news',['n'=>$n, 'news'=>$news]);
+        } 
+    	return view('pages.news',['news'=>$news, "newsCategory"=>$newsCategory]);
     }
+	function newsCategory($id){
+		 $news = News::where('news_category_id',$id)->orderBy('id','DESC')->get();
+		$newsCategory = NewsCategory::all();
+        $i = 0;
+        foreach($news as $item){
+             $tagsNameArray = [];
+             $tagsList = TagsBelong::where("news_id", $item->id)->get();
+             foreach($tagsList as $tagId){
+                 $singleTag = Tags::where("id",$tagId->tags_id)->get()->first();
+                 $tagsNameArray[] = $singleTag;
+             }
+             $news[$i]->tags = $tagsNameArray;
+             $i++;
+        } 
+    	return view('pages.news',['news'=>$news, "newsCategory"=>$newsCategory]);
+	}
     function newsNoidung($titlekd){
       $new = News::where('titlekd',$titlekd)->first();
     	$n = News::all();

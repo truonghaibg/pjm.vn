@@ -1,18 +1,7 @@
 @extends('layout.index')
 @section('content')
+<br/>
 <div class="news">
-  <div class="content_left">
-    <div class="box_left">
-        <div class="title_box_left">Danh mục tin tức</div>
-        <div class="content_box_left list_cat_news">
-          <ul class="ul">
-            @foreach($n as $item)
-              <li><a href="{{url('tin-tuc/'.$item->titlekd)}}">{{$item->title}}</a></li>
-            @endforeach
-          </ul>
-        </div>
-    </div><!--box_left-->
-  </div>
   <div class="content_news_page">
     <h1>Tin tức mới</h1>
       <br />
@@ -67,6 +56,18 @@
         </div>
         @endforeach
     </div>
+  </div>
+  <div class="content_right">
+    <div class="box_left">
+        <div class="title_box_left">Danh mục tin tức</div>
+        <div class="content_box_left list_cat_news">
+          <ul class="ul">
+            @foreach($newsCategory as $item)
+              <li><a href="{{url('danh-muc-tin-tuc/'.$item->id)}}">{{$item->name}}</a></li>
+            @endforeach
+          </ul>
+        </div>
+    </div><!--box_left-->
   </div>
 </div>
 <div style="clear: both;"></div>

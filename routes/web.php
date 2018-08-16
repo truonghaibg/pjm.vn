@@ -21,6 +21,7 @@ Route::get('success','PageController@success');
 Route::post('tim-kiem','PageController@timkiem');
 
 Route::get('tin-tuc','PageController@news');
+Route::get('danh-muc-tin-tuc/{id}','PageController@newsCategory');
 Route::get('tin-tuc/{titlekd}','PageController@newsNoidung');
 Route::get('events','PageController@events');
 Route::get('events/{id}','PageController@eventsNoidung');
@@ -150,6 +151,18 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
         Route::get('list-tin-tuc','NewsController@getListNews');
 
+        Route::get('news-cate-list','NewsController@getListNewsCate');
+
+		Route::get('news-cate-add','NewsController@getAddNewsCate');
+		
+		Route::post('news-cate-add','NewsController@postAddNewsCate');
+		
+		Route::get('news-cate-edit/{id}','NewsController@getEditNewsCate');
+		
+		Route::post('news-cate-edit/{id}','NewsController@postEditNewsCate');
+		
+		Route::get('news-cate-delete/{id}','NewsController@deleteNewsCate');
+		
 		Route::get('edit/{id}','NewsController@getEdit');
 
 		Route::post('edit/{id}','NewsController@postEdit');
