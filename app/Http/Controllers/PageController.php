@@ -78,7 +78,7 @@ class PageController extends Controller
     	return view('pages.news',['news'=>$news, "newsCategory"=>$newsCategory]);
     }
 	function newsCategory($id){
-		 $news = News::where('news_category_id',$id)->orderBy('id','DESC')->get();
+		$news = News::where('news_category_id',$id)->orderBy('id','DESC')->get();
 		$newsCategory = NewsCategory::all();
         $i = 0;
         foreach($news as $item){
@@ -94,9 +94,10 @@ class PageController extends Controller
     	return view('pages.news',['news'=>$news, "newsCategory"=>$newsCategory]);
 	}
     function newsNoidung($titlekd){
-      $new = News::where('titlekd',$titlekd)->first();
+		$newsCategory = NewsCategory::all();
+		$new = News::where('titlekd',$titlekd)->first();
     	$n = News::all();
-    	return view('pages.newsNoidung',['new'=>$new,'n'=>$n]);
+    	return view('pages.newsNoidung',['new'=>$new,'n'=>$n, "newsCategory" => $newsCategory]);
     }
     function events(){
       return view('pages.events');
