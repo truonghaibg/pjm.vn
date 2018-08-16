@@ -43,7 +43,7 @@
                             <a class='a3' href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd.'/'.$nsx->nsx_namekd)}}">
                                 <span>
                                     {{$nsx->nsx_name}}
-                                    <span>
+                                    </span>
                             </a>
                         </li>
                         @endforeach
