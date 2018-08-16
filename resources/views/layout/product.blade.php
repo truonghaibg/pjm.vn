@@ -111,9 +111,12 @@
 									 ?>
 							</a>
 						</li>
-						<?php $i++; if ($i==8) {
-							break;
-						} ?>
+						<?php
+							$i++;
+							if ($i == 8) {
+								break;
+							}
+						?>
 					@endforeach
 					@endforeach
 				</ul>
