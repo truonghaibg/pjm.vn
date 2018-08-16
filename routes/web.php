@@ -172,6 +172,8 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::post('add','NewsController@postAdd');
 
 		Route::get('del/{id}','NewsController@getDel');
+		Route::get('news-cate-del/{id}','NewsController@getDelCate');
+		
 	});
 
 	Route::group(['prefix'=>'order'],function(){

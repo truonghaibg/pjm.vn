@@ -202,5 +202,12 @@ class NewsController extends Controller
         $news->delete();
         return redirect('admin/news/list-tin-tuc')->with('thongbao','Xóa thành công');
     }
+	
+	 public function getDelCate($id){
+        $newsCategory = newsCategory::find($id);
+        $newsCategory->delete();
+        return redirect('admin/news/news-cate-list')->with('thongbao','Xóa thành công');
+    }
+	
     //
 }
