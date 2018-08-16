@@ -3,39 +3,7 @@
          <ul>
             <li class="danhmuc">
                <a href="javascript:void(0)" id="main_menu">DANH MỤC SẢN PHẨM</a>
-                <?php if (Route::getCurrentRoute()->uri() != '/') { ?>
-                <ul class="ul1" style="display: none;">
-                    @foreach ($cate as $c)
-                    <li class="sub1">
-                        <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}">
-                            <img src='template_asset/images/site/flyout/{{$c->cate_name}}.png' alt='' />
-                            <span class=''>{{$c->cate_name}}</span>
-                            <img class="arow" src="template_asset/images/site/flyout/forward2.png" alt="" />
-                        </a>
-                        <ul class="ul2">
-                            @foreach($c->subcate as $sc)
-                            <li class="sub2">
-                                <a class='a2' href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd)}}">
-                                    <span>{{$sc->subcate_name}}</span>
-                                </a>
-                                <ul class='ul3'>
-                                    @foreach($sc->nsx as $nsx)
-                                    <li class='sub3'>
-                                        <a class='a3' href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd.'/'.$nsx->nsx_namekd)}}">
-                                            <span>
-                                                {{$nsx->nsx_name}}
-                                                <span>
-                                        </a>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                    @endforeach
-                </ul>
-                <?php } ?>
+                
             </li>
             <li class="toplink">
                <a href="{{url('tin-tuc/khuyen-mai')}}">
@@ -53,20 +21,9 @@
                </a>
             </li>
          </ul>
-       <?php if (Route::getCurrentRoute()->uri() != '/') { ?>
-       <script>
-           $(document).ready(function () {
-                $("#main_menu").click(function() {
-                    $( ".ul1" ).toggle( "slow" );
-                });
-           })
-       </script>
-       <?php } ?>
       </div>
   <div style="clear: both;"></div>
-   
-    <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
-    <ul class="ul1" style="display: block;position: relative !important">
+    <ul id="mainmenu" class="ul1" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display: block;position: relative !important <?php } else { ?> display: none;position: absolute !important <?php } ?>">
         @foreach ($cate as $c)
         <li class="sub1">
             <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}">
@@ -97,6 +54,18 @@
         </li>
         @endforeach
     </ul>
+    <?php if (Route::getCurrentRoute()->uri() != '/') { ?>
+    <script>
+
+        $(document).ready(function () {
+            $("#main_menu").click(function () {
+                $(".ul1").slideDown("slow");
+            });
+        })
+       
+    </script>
+    <?php } ?>
+    <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
     <div class="slider theme-default">
         <div id="slider" class="nivoSlider">
             <img src="template_asset/images/site/slide/b1.jpg" />

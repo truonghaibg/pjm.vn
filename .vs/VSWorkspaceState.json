@@ -5,6 +5,8 @@
     "\\app\\Http",
     "\\app\\Http\\Controllers",
     "\\public",
+    "\\public\\template_asset",
+    "\\public\\template_asset\\js",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\layout"
