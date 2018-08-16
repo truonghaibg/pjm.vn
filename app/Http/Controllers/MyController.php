@@ -10,14 +10,19 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class MyController extends Controller
 {
-    public function Xinchao(){
+    public function Xinchao()
+    {
         echo "Xin chao cac ban";
     }
-    public function MyView(){
-    	return view('myview');
+
+    public function MyView()
+    {
+        return view('myview');
     }
-    public function truyenview($t){
-    	return view('myview',['bien'=>$t]);
+
+    public function truyenview($t)
+    {
+        return view('myview', ['bien' => $t]);
     }
     //
 }

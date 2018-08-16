@@ -10,11 +10,11 @@ use Excel;
 class OrderController extends Controller
 {
     //
-
     public function getList(){
         $order = Order::orderBy('id','DESC')->get();
         return view('admin.order.list',['order'=>$order]);
     }
+
     function exportorder(){
       $export2 = Order::all();
       $now = getdate();
@@ -59,11 +59,9 @@ class OrderController extends Controller
               $sheet->setCellValue('P1', 'NGÀY ĐẶT MUA');
               $sheet->setCellValue('Q1', 'NGÀY CẬP NHẬT');
               $sheet->row(1, function($row) {
-
                   // call cell manipulation methods
                   $row->setBackground('#b0eb78');
                   $row->setAlignment('center');
-
               });
           });
 

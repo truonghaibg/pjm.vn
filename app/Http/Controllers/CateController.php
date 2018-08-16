@@ -97,8 +97,6 @@ class CateController extends Controller
         $cate->delete();
         return redirect('admin/cate/list')->with('thongbao','Xóa thành công');
     }
-
-    
     //
 }
 

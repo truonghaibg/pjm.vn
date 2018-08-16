@@ -68,14 +68,16 @@
     <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
     <div class="slider theme-default">
         <div id="slider" class="nivoSlider">
-            <img src="template_asset/images/site/slide/b1.jpg" />
-            <a href="{{url('fb.com/profile.php?id=100001243054025')}}">
+            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
+                <img src="template_asset/images/site/slide/b1.jpg" />
+            </a>
+            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
                 <img class="img-slide" src="template_asset/images/site/slide/b2.jpg" />
             </a>
-            <a href="{{url('fb.com/profile.php?id=100001243054025')}}">
+            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
                 <img class="img-slide" src="template_asset/images/site/slide/b3.jpg" />
             </a>
-            <a href="{{url('fb.com/profile.php?id=100001243054025')}}">
+            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
                 <img class="img-slide" src="template_asset/images/site/slide/b4.jpg" />
             </a>
         </div>
@@ -86,7 +88,7 @@
         </a>
     </div>
     <div class="video-news">
-        <iframe width="300" height="216" src="https://www.youtube.com/embed/99DlqDCeuIw" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="216" src="https://www.youtube.com/embed/4ORbTUqsYqc" frameborder="0" allowfullscreen></iframe>
     </div>
     <?php } ?>
 </div>

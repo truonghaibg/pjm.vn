@@ -9,7 +9,6 @@ use App\Subcate;
 class NsxController extends Controller
 {
     //
-
     public function getList(){
         $nsx = Nsx::all();
         //echo "testcase";
@@ -72,7 +71,5 @@ class NsxController extends Controller
         $nsx->delete();
         return redirect('admin/nsx/list')->with('thongbao','Xóa thành công');
     }
-
-    
     //
 }

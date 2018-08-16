@@ -60,11 +60,6 @@ class PostController extends Controller
         } else{
             $post->post_img = "";
         }
-        /*if ($request->hasFile('post_pic')) {
-            $post->post_pic = $request->file(post_pic);
-        }   else{
-            $post->post_pic = "";
-        }*/
         $post->save();
         return redirect('admin/post/list')->with('thongbao','Thêm tin tức thành công');
     }

@@ -33,9 +33,7 @@ use App\Order;
             'log.LogLevel' => 'FINE'
         ));
     }
-    /*
-   * Process payment using credit card
-   */
+
    public function create()
     {
         return View::make('payment.order');
@@ -120,13 +118,6 @@ use App\Order;
           $order->status = 4;
           $order->save();
           Cart::destroy();
-          // $cart = array($request->buyer_name,$request->buyer_email,$request->buyer_tel);
-          // Excel::create('Đơn hàng của bạn', function ($excel) use($cart){
-          //   $excel->sheet('sheet', function ($sheet) use($cart){
-          //       $sheet->fromArray($cart);
-          //   });
-          // })->export('xls');
-
           return redirect('success')->with('donhang',$donhang);
     	}
 

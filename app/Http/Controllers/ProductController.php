@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     //
-
     public function getList(){
         $product = Product::orderBy('id','DESC')->get();
         return view('admin.product.list',['product'=>$product]);
@@ -52,13 +51,6 @@ class ProductController extends Controller
         $product->product_salevalue = $request->product_salevalue;
 		$product->product_img = "";
 		
-		
-		
-        /*if ($request->hasFile('product_pic')) {
-            $product->product_pic = $request->file(product_pic);
-        }   else{
-            $product->product_pic = "";
-        }*/
         $product->save();
 		if ($request->hasFile('product_img')) {
 			$listFileUpload = $request->file('product_img');
@@ -87,8 +79,6 @@ class ProductController extends Controller
 				$i++;
 			}
 		}
-		
-
         return redirect('admin/product/list')->with('thongbao','Thêm sản phẩm thành công');
     }
     
@@ -151,13 +141,10 @@ class ProductController extends Controller
 				}
 				$i++;
 			}
-			
 			$checkProductImage = Product::find($id);
 			$imageNew =  $checkProductImage->images()->orderBy("sort")->first();
 			$product->product_img = $imageNew->name;
-			
 		}
-		
         $product->save();
         return redirect('admin/product/list')->with('thongbao','Sửa thành công');
     }

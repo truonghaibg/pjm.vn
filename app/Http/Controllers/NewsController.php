@@ -195,8 +195,6 @@ class NewsController extends Controller
         return redirect('admin/news/news-cate-list')->with('thongbao','Sửa thành công');
     }
 	
-
-	
     public function getDel($id){
         $news = News::find($id);
         $news->delete();
@@ -208,6 +206,4 @@ class NewsController extends Controller
         $newsCategory->delete();
         return redirect('admin/news/news-cate-list')->with('thongbao','Xóa thành công');
     }
-	
-    //
 }
