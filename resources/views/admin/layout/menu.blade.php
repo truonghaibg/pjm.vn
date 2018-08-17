@@ -12,6 +12,18 @@
             </div>
             <!-- /input-group -->
         </li>
+		<li>
+            <a href="admin/siteoption"><i class="fa fa-archive fa-fw"></i> Quản lý trang web<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="admin/manager/slider">Slide home page</a>
+                </li>
+                <li>
+                    <a href="admin/manager/add-slider-item">Thêm mới</a>
+                </li>
+            </ul>
+            <!-- /.nav-second-level -->
+        </li>
         <li>
             <a href="admin/cate/list"><i class="fa fa-archive fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">

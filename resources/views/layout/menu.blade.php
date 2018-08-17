@@ -23,7 +23,7 @@
          </ul>
       </div>
   <div style="clear: both;"></div>
-    <ul id="mainmenu" class="ul1" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display: block;position: relative !important <?php } else { ?> display: none;position: absolute !important <?php } ?>">
+    <ul id="mainmenu" class="ul1" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display: block;position: relative !important <?php } else { ?> display: none;position: absolute !important; z-index:999 <?php } ?>">
         @foreach ($cate as $c)
         <li class="sub1">
             <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}">
@@ -68,18 +68,11 @@
     <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
     <div class="slider theme-default">
         <div id="slider" class="nivoSlider">
-            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
-                <img src="template_asset/images/site/slide/b1.jpg" />
+			@foreach($slider as $item)
+            <a href="{{$item->link}}" target="_blank">
+                <img src="{{url('/')}}/upload/slider/{{$item->image}}" />
             </a>
-            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
-                <img class="img-slide" src="template_asset/images/site/slide/b2.jpg" />
-            </a>
-            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
-                <img class="img-slide" src="template_asset/images/site/slide/b3.jpg" />
-            </a>
-            <a href="https://www.facebook.com/pjmcompany/" target="_blank">
-                <img class="img-slide" src="template_asset/images/site/slide/b4.jpg" />
-            </a>
+             @endforeach
         </div>
     </div>
     <div class="baner-fly">

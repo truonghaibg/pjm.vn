@@ -77,7 +77,7 @@ class NewsController extends Controller
             while (file_exists("upload/news/".$img)) {
                 $img = str_random(4)."_".$name;
             }
-            $file->move("upload/news",$img);
+            $file->move("upload/news/",$img);
             $news->img = $img;
         } else{
             $news->img = "";
@@ -143,7 +143,7 @@ class NewsController extends Controller
                 while (file_exists("upload/news/".$img)) {
                     $img = str_random(4)."_".$name;
                 }
-                $file->move("upload/news",$img);
+                $file->move("upload/news/",$img);
                 //unlink("upload/product/".$product->product_img);
                 $news->img = $img;
             }

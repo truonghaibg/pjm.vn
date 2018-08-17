@@ -130,7 +130,18 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
         Route::post('edit/{id}','PartnersController@postEdit');
         Route::get('delete/{id}','PartnersController@getDelete');
 	});
-
+	 Route::group(['prefix'=>'manager'],function(){
+		Route::get('slider','ManagerController@slider');
+		Route::get('add-slider-item','ManagerController@getSliderAdd');
+		Route::post('add-slider-item','ManagerController@postSliderAdd');
+		Route::get('edit-slider-item/{id}','ManagerController@getSliderEdit');
+		Route::post('edit-slider-item/{id}','ManagerController@postSliderEdit');
+		
+		Route::get('delete-slider-item/{id}','ManagerController@sliderDelete');
+		Route::get('videonew','ManagerController@video');
+		Route::post('videonew','ManagerController@video');
+		
+	});
 	Route::group(['prefix'=>'product'],function(){
 		//admin/cate/list
 		Route::get('list','ProductController@getList');
