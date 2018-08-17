@@ -19,7 +19,10 @@
                     <a href="admin/manager/slider">Slide home page</a>
                 </li>
                 <li>
-                    <a href="admin/manager/add-slider-item">Thêm mới</a>
+                    <a href="admin/manager/add-slider-item">Thêm mới Slider</a>
+                </li>
+				 <li>
+                    <a href="admin/manager/video">Video youtube</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

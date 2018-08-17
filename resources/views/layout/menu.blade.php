@@ -81,7 +81,11 @@
         </a>
     </div>
     <div class="video-news">
-        <iframe width="300" height="216" src="https://www.youtube.com/embed/4ORbTUqsYqc" frameborder="0" allowfullscreen></iframe>
+		<?php 
+			$codes = explode("/", $video->link);
+			$code = $codes[count($codes)- 1];
+		?>
+        <iframe width="300" height="216" src="https://www.youtube.com/embed/{{str_replace("watch?v=", "",$code )}}" frameborder="0" allowfullscreen></iframe>
     </div>
     <?php } ?>
 </div>

@@ -141,6 +141,11 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::get('videonew','ManagerController@video');
 		Route::post('videonew','ManagerController@video');
 		
+		Route::get('video','ManagerController@getVideo');
+		Route::post('video','ManagerController@postVideo');
+		
+		
+		
 	});
 	Route::group(['prefix'=>'product'],function(){
 		//admin/cate/list

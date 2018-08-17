@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Slider;
+use App\Video;
 
 class ManagerController extends Controller
 {   
@@ -45,7 +46,7 @@ class ManagerController extends Controller
         return view('admin.manager.editslider', ["slider" => $slider ]);
     }
 	public function postSliderEdit(Request $request,$id){
-        $slider = slider::find($id);
+        $slider = Slider::find($id);
         $this->validate($request,
               [
                 'image'=>'required',
@@ -68,9 +69,20 @@ class ManagerController extends Controller
         return redirect('admin/manager/slider')->with('thongbao','Sửa thành công');
     }
 	public function sliderDelete($id){
-        $slider = slider::find($id);
+        $slider = Slider::find($id);
         $slider->delete();
         return redirect('admin/manager/slider')->with('thongbao','Xóa thành công');
     }
+	public function getVideo(){
+		$video = Video::all()->first();
+		return view('admin.manager.video', ["video" => $video ]);
+	}
+	public function postVideo(Request $request){
+		$video = Video::all()->first();
+		$video->link = $request->link;
+		$video->save();
+		return redirect('admin/manager/video')->with('thongbao','Sửa thành công');
+	}
+	
 	
 }
