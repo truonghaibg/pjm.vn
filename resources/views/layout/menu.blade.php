@@ -26,7 +26,7 @@
     <ul id="mainmenu" class="ul1" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display: block;position: relative !important <?php } else { ?> display: none;position: absolute !important; z-index:999 <?php } ?>">
         @foreach ($cate as $c)
         <li class="sub1">
-            <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}">
+            <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}" style="padding: 13px 5px">
                 <img src='template_asset/images/site/flyout/{{$c->cate_name}}.png' alt='' />
                 <span class=''>{{$c->cate_name}}</span>
                 <img class="arow" src="template_asset/images/site/flyout/forward2.png" alt="" />
@@ -67,7 +67,7 @@
     <?php } ?>
     <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
     <div class="slider theme-default">
-        <div id="slider" class="nivoSlider">
+        <div id="slider" class="nivoSlider" style="height: 332px">
 			@foreach($slider as $item)
             <a href="{{$item->link}}" target="_blank">
                 <img src="{{url('/')}}/upload/slider/{{$item->image}}" />
@@ -76,8 +76,8 @@
         </div>
     </div>
     <div class="baner-fly">
-        <a href="{{url('')}}">
-            <img src="template_asset/images/site/baner/baner.png" alt="" />
+        <a href="{{url('')}}" target="_blank">
+            <img src="{{url('/')}}/upload/slider/image_0.jpg" alt="" />
         </a>
     </div>
     <div class="video-news">
@@ -85,7 +85,7 @@
 			$codes = explode("/", $video->link);
 			$code = $codes[count($codes)- 1];
 		?>
-        <iframe width="300" height="216" src="https://www.youtube.com/embed/{{str_replace("watch?v=", "",$code )}}" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="160" src="https://www.youtube.com/embed/{{str_replace("watch?v=", "",$code )}}" frameborder="0" allowfullscreen></iframe>
     </div>
     <?php } ?>
 </div>
