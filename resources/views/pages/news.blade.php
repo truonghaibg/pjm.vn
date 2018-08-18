@@ -30,13 +30,14 @@
 		        <div class="post-content">
 			        <div class="post-description clearfix">
 				        <div class="post-text-hld clearfix">
-							<?php echo $item->sum; ?> ...
-                        </div>
-                        <a class="post-read-more" href="{{url('/')}}/tin-tuc/{{$item->titlekd}}" title="{{$item->title}}">
+							<?php echo $item->sum; ?> ... <a class="post-read-more" href="{{url('/')}}/tin-tuc/{{$item->titlekd}}" title="{{$item->title}}">
                             Đọc tiếp »
                         </a>
+                        </div>
+                       
 			        </div>
 		        </div>
+				<br />
 		        <div class="post-footer">
                     <div class="post-info clear">
                         <div class="item post-posed-date">
@@ -44,6 +45,7 @@
                             <span class="value">{{$item->created_at->format('d/m/Y')}}</span>
                         </div>
                         <br />
+						<br />
                         <div class="item post-categories">
                             <span class="label">Tags:</span>
                             @foreach($item->tags as $tag)
