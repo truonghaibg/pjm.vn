@@ -3,7 +3,6 @@
          <ul>
             <li class="danhmuc">
                <a href="javascript:void(0)" id="main_menu">DANH MỤC SẢN PHẨM</a>
-                
             </li>
             <li class="toplink">
                <a href="{{url('tin-tuc/khuyen-mai')}}">
