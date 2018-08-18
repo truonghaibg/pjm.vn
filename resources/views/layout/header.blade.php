@@ -12,10 +12,10 @@
       {{--<li><a href="{{url('tin-tuc/quy-dinh-ve-doi-tra-lai-hang')}}" ><img src="template_asset/images/site/header/btn-doitra30.png" alt=""></a></li>--}}
       {{--<li><a href="{{url('tin-tuc/chinh-sach-van-chuyen-hang')}}" ><img src="template_asset/images/site/header/btn-mienphivanchuyen.png" alt=""></a></li>--}}
       {{--<li><a href="{{url('tin-tuc/huong-dan-mua-tra-gop')}}" ><img src="template_asset/images/site/header/btn-tragop0lai.png" alt=""></a></li>--}}
-      <li><img src="template_asset/images/site/header/btn-tuvan.png" alt=""></li>
+      <li><img class="tuvan" src="template_asset/images/site/header/btn-tuvan.png" alt=""></li>
       <li>  <?php
         $result=count(Cart::content());
-     ?><a class="mycart" href="{{url('gio-hang')}}"><img src="{{url('/')}}/template_asset/images/site/pro/cart.png" /> (<?php echo $result; ?>)</a></li>
+     ?><a class="mycart" href="{{url('gio-hang')}}"><img src="{{url('/')}}/images/grocery-cart-icon-7482.png" /> <span>(<?php echo $result; ?>)</span></a></li>
     </ul>
     <?php
         $result=count(Cart::content());
