@@ -1,4 +1,45 @@
+
 <div class="f1">
+<div style="width: 100%;text-align: center; background: #e0e0e0; height: 100px;">
+    <div class="top_partners" style="width:1200px;text-align: center;">
+        <section id="demos">
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="owl-carousel owl-theme" id="partners">
+                        <?php foreach($headerData as $item){ ?>
+                        <div class="item">
+                            <a href="{{$item->link}}" target="_blank">
+                                <img src='upload/partners/{{$item->logo}}' alt='{{$item->name}}' />
+                            </a>
+                        </div>
+                        <?php } ?>
+                    </div>
+                    <script>
+                        $(document).ready(function () {
+                            var owl = $('#partners');
+                            owl.owlCarousel({
+                                margin: 0,
+                                nav: false,
+                                loop: true,
+                                autoplay: true,
+                                responsive: {
+                                    0: {
+                                        items: 12
+                                    }
+                                }
+                            })
+                        })
+                    </script>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<style>
+    .top_partners .owl-dots {
+    display: none;
+    }
+</style>
   <div class="footer">
     <div class="ttc">
       <h4 class="f-h4">Thông tin chung</h4>

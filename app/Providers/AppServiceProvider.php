@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-		view()->composer('layout.header', function ($view) {
+		view()->composer('layout.footer', function ($view) {
             $headerData = Partners::all();
             $view->headerData = $headerData;
         });
