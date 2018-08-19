@@ -7,7 +7,7 @@
 					<section id="demos">
 					  <div class="row">
 						<div class="large-12 columns">
-							<div class="owl-carousel owl-theme">
+							<div class="owl-carousel owl-theme" id="slider_product">
 								<?php foreach($images as $image){ ?>
 								<div class="item">
 								  <img id="zoom_01" src='upload/product/{{$image->name}}' data-zoom-image='upload/product/{{$image->name}}' alt='{{$product4->product_namekd}}'>
@@ -16,7 +16,7 @@
 							</div>
 							<script>
 								$(document).ready(function() {
-									var owl = $('.owl-carousel');
+									var owl = $('#slider_product');
 									owl.owlCarousel({
 										margin: 10,
 										nav: false,
