@@ -55,79 +55,26 @@ function cmp($a,$b){
 								$tiensale = ($p['product_price'])*$phantram;
 								$price=($p['product_price'])-$tiensale ?>
 								<div id="pro-price3">
-									  @forelse(str_split(number_format($price,0)) as $p1)
-										<?php
-										  switch ($p1) {
-											case ',':
-											  ?>
-												<span>
-													<img class="pro-price3" src="{{url('template_asset/images/site/pro/x42.png')}}" alt="">
-												</span><?php
-											  break;
+									{{number_format($price,0,",",".")}} đ
+								</div>
 
-											case '0':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/0x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '1':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/1x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '2':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/2x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '3':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/3x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '4':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/4x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '5':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/5x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '6':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/6x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '7':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/7x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '8':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/8x42.png')}}" alt=""></span><?php
-											  break;
-
-											case '9':
-											  ?><span><img class="pro-price3" src="{{url('template_asset/images/site/pro/9x42.png')}}" alt=""></span><?php
-											  break;
-
-											default:
-											  break;
-										  }
-										 ?>
-									  @empty
-									  @endforelse
-									</div>
 								<span class='pro-price2' <?php if ($p['product_salevalue']==0) {
 										echo "style='display:none;'";
-									} ?>>{{number_format($p['product_price'],0,",",".")}}</span>
+									} ?>>
+									{{number_format($p['product_price'],0,",",".")}} đ
+								</span>
 								<span class='pro-name' title=''>{{$p['product_name']}}</span>
-								<span class='pro-info' title=''>{{$p['product_tag']}}</span>
-									<?php
-										if ($p['product_status'] == 1) {
-											 echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
-										}
-										if ($p['product_status'] == 2) {
-											echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
-										}
-										if ($p['product_status'] == 3) {
-											echo "<span class='pro-sale-info' title=''><img src='template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
-										}
-									 ?>
+								<?php
+									if ($p['product_status'] == 1) {
+										 echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
+									}
+									if ($p['product_status'] == 2) {
+										echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
+									}
+									if ($p['product_status'] == 3) {
+										echo "<span class='pro-sale-info' title=''><img src='template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
+									}
+								 ?>
 							</a>
 						</li>
 					<?php 
