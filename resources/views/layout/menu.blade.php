@@ -57,9 +57,9 @@
     <script>
 
         $(document).ready(function () {
-            $("#main_menu").click(function () {
-                $(".ul1").slideDown("slow");
-            });
+           $("#main_menu").click(function() {
+				$( ".ul1" ).slideToggle( "slow", function() {});
+			});
         })
        
     </script>
