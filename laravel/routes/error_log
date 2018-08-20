@@ -1,0 +1,4 @@
+[19-Aug-2018 21:08:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/duongvuv/public_html/routes/api.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/duongvuv/public_html/routes/api.php on line 16
