@@ -1,8 +1,7 @@
 <?php
 function cmp($a,$b){
-	return strtotime($a['created_at'])<strtotime($b['created_at'])?1:-1;
+    return strtotime($a['created_at'])<strtotime($b['created_at'])?1:-1;
 }
-
 ?>
 @foreach ($cate as $c)
 	<div class='product'>
@@ -28,7 +27,6 @@ function cmp($a,$b){
 					@foreach($s->product as $p)
 					<?php 
 						$productArray[] = $p->toArray();
-					
 					?>
 					@endforeach
 					@endforeach
@@ -41,7 +39,7 @@ function cmp($a,$b){
 					?>
 						<li class='pro-li'>
 							<a class='pro-a' href="{{url('item/'.$p['product_namekd'])}}" title='{{$p['product_namekd']}}'>
-								<img class='pro-img' src='upload/product/{{$p['product_img']}}'>
+								<img class='pro-img' src='upload/product/{{$p['product_img']}}' >
 								<img class='sale-value-img' <?php if ($p['product_salevalue']==0) {
 										echo "style='display:none;'";
 									} ?>src='template_asset/images/site/pro/sale-img.png'>
@@ -51,19 +49,21 @@ function cmp($a,$b){
 									} ?>
 								>{{$p['product_salevalue']}}%</span>
 								<?php
-								$phantram = ($p['product_salevalue'])/100;
-								$tiensale = ($p['product_price'])*$phantram;
-								$price=($p['product_price'])-$tiensale ?>
+									$phantram = ($p['product_salevalue'])/100;
+									$tiensale = ($p['product_price'])*$phantram;
+									$price = ($p['product_price'])-$tiensale;
+								?>
+								<span class='pro-name' title=''>{{$p['product_name']}}</span>
 								<div id="pro-price3">
-									{{number_format($price,0,",",".")}} đ
+									{{number_format($price)}} đ
 								</div>
 
 								<span class='pro-price2' <?php if ($p['product_salevalue']==0) {
 										echo "style='display:none;'";
 									} ?>>
-									{{number_format($p['product_price'],0,",",".")}} đ
+									{{number_format($p['product_price'])}} đ
 								</span>
-								<span class='pro-name' title=''>{{$p['product_name']}}</span>
+
 								<?php
 									if ($p['product_status'] == 1) {
 										 echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
@@ -84,10 +84,8 @@ function cmp($a,$b){
 						}
 					}
 					?>
-					
 				</ul>
 			</div>
-			<!--<div class='pro-banner'><img src='upload/cate/{{$c->id}}.png'></div>-->
 		</div>
 	</div>
 	<div style="clear: both;"></div>
