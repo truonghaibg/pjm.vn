@@ -6,17 +6,22 @@
             </li>
             <li class="toplink">
                <a href="{{url('tin-tuc/khuyen-mai')}}">
-                   Khuyền mãi
+                   Giới thiệu
                </a>
             </li>
+             <li class="toplink">
+                 <a href="{{url('tin-tuc')}}">
+                     Sản phẩm
+                 </a>
+             </li>
             <li class="toplink">
-               <a href="{{url('tin-tuc/chinh-sach-bao-hanh')}}">
-                    Hình ảnh dự án
+               <a href="{{url('tin-tuc')}}">
+                    Tin tức
                </a>
             </li>
             <li class="toplink">
                <a href="{{url('tin-tuc')}}">
-                  Tin tức
+                  Liên hệ
                </a>
             </li>
          </ul>
