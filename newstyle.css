@@ -118,14 +118,7 @@ img {
 	line-height: 25px;
     margin-left: 5px;
 }
-.header-right {
-    padding-top: 25px;
-    display: inline-block;
-	width: 230px;
-}
-.header-right li {
-	float: left;
-}
+
 .header2 .tuvan {
     padding: 0px 0 0 23px;
 }
