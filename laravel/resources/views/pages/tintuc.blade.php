@@ -34,11 +34,7 @@
                   	</div>
                   <!-- single blog nex & prev button -->
                   <!-- <div class="single_blog_prevnext">
-                    <a class="prev_post wow fadeInLeft" href="#"><i class="fa fa-angle-left"></i>Previous Post</a>
-                    <a class="next_post wow fadeInRight" href="#">Next Post<i class="fa fa-angle-right"></i></a>
-                  </div> -->
-                </div>
-                <!-- End single blog -->                
+                <!-- End single blog -->
               </div>
               <!-- end blog archive  -->
               <!-- start related post -->
@@ -94,37 +90,6 @@
 				@endforeach                 
                 </ul>
               </div>
-              <!-- End single sidebar -->
-              <!-- start single sidebar -->
-              <!-- <div class="single_sidebar">
-                <h2>Category <span class="fa fa-angle-double-right"></span></h2>
-                <ul>
-                  <li><a href="#">Food</a></li>
-                  <li><a href="#">Technology</a></li>
-                  <li><a href="#">Fashion</a></li>
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Games</a></li>
-                </ul>
-              </div> -->
-              <!-- End single sidebar -->
-              <!-- start single sidebar -->
-              <!-- <div class="single_sidebar">
-                <h2>Tags <span class="fa fa-angle-double-right"></span></h2>
-                <ul class="tags_nav">
-                  <li><a href="#"><i class="fa fa-tags"></i>Creative</a></li>
-                  <li><a href="#"><i class="fa fa-tags"></i>News</a></li>
-                  <li><a href="#"><i class="fa fa-tags"></i>Technology</a></li>
-                  <li><a href="#"><i class="fa fa-tags"></i>Art</a></li>
-                  <li><a href="#"><i class="fa fa-tags"></i>Audio</a></li>
-                  <li><a href="#"><i class="fa fa-tags"></i>video</a></li>
-                </ul>
-              </div> -->
-              <!-- End single sidebar -->
-              <!-- start single sidebar -->
-              <!-- <div class="single_sidebar">
-                <h2>Sponsor Add <span class="fa fa-angle-double-right"></span></h2>
-                <a class="side_add" href="#"><img src="img/side-add.jpg" alt="img"></a>
-              </div> -->
               <!-- End single sidebar -->
             </div>
           </div>
