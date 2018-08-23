@@ -25,10 +25,6 @@
                 </div>
             </li>
         </ul>
-        <?php
-        $result = count(Cart::content());
-        ?>
-
     </div>
 
 </div>

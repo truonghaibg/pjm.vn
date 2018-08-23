@@ -202,6 +202,7 @@ class PageController extends Controller
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
         $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();//1 item
         $product = Product::where('subcate_id', $subcate->id)->paginate(100);//array
+		
         return view('pages.loaitin', ['cate1' => $cate, 'subcate2' => $subcate, 'product2' => $product]);
     }
 
@@ -215,8 +216,10 @@ class PageController extends Controller
     function sanpham($product_namekd)
     {
         $product = Product::where('product_namekd', $product_namekd)->first();
+		view()->share('productview', $product);
         $images = $product->images()->orderBy("sort")->get();
-        return view('pages.sanpham', ['product4' => $product, 'images' => $images]);
+		$relatedProduct = Product::where('subcate_id', $product->subcate_id)->where('id', '!=', $product->id)->take(4)->orderBy('id')->get();
+        return view('pages.sanpham', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct]);
     }
 
     function tintuc($cate_namekd, $subcate_namekd, $post_titlekd)

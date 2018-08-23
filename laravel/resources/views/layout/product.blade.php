@@ -43,9 +43,9 @@ function cmp($a, $b)
                     foreach($productArray as $p){
                     ?>
                     <li class='pro-li'>
-                        <a class='pro-a' href="{{url('item/'.$p['product_namekd'])}}" title='{{$p['product_namekd']}}'>
-                            <img class='pro-img' src='upload/product/{{$p['product_img']}}'>
-                            <img class='sale-value-img' <?php if ($p['product_salevalue'] == 0) {
+                        <a class='pro-a' href="{{url('item/'.$p['product_namekd'])}}" title="{{$p['product_namekd']}}">
+                            <img class="pro-img" src="{{url('/')}}/upload/product/{{$p['product_img']}}">
+                            <img class="sale-value-img" <?php if ($p['product_salevalue'] == 0) {
                                 echo "style='display:none;'";
                             } ?>src='template_asset/images/site/pro/sale-img.png'>
                             <span class='sale-value-txt'

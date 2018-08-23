@@ -122,3 +122,18 @@ img {
 .header2 .tuvan {
     padding: 0px 0 0 23px;
 }
+.main {
+	display: inline-block;
+}
+.pro-detail {
+    width: 100%;
+}
+
+
+.related_product .sale-value-img,
+.related_product .pro-sale-info img{
+    width: auto !important;
+}
+.related_product .pro-sale-info img{
+   float:left;
+}

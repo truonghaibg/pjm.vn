@@ -111,9 +111,87 @@
                         <div class="boder-line"></div>
                     </div>
                     <div class="pro-price"></div>
+					
                 </div>
             </div>
         </div>
+		 <div class='pro'>
+            <div class='pros'>
+		<div class="related_product">
+						<section id="demos">
+							<div class="row">
+								<div class="large-12 columns">
+									<div class="owl-carousel owl-theme" id="related_product">
+										<?php foreach($relatedProduct as $p){ $p->ToArray(); ?>
+										<div class='item pro-li'>
+											<a class='pro-a' href="{{url('item/'.$p['product_namekd'])}}" title="{{$p['product_namekd']}}">
+												<img class='pro-img' src='{{url('/')}}/upload/product/{{$p['product_img']}}'>
+												<img class='sale-value-img' <?php if ($p['product_salevalue'] == 0) {
+													echo "style='display:none;'";
+												} ?>src='{{url('/')}}/template_asset/images/site/pro/sale-img.png'>
+												<span class='sale-value-txt'
+												<?php if ($p['product_salevalue'] == 0) {
+													echo "style='display:none;'";
+												} ?>
+												>{{$p['product_salevalue']}}%</span>
+												<?php
+												$phantram = ($p['product_salevalue']) / 100;
+												$tiensale = ($p['product_price']) * $phantram;
+												$price = ($p['product_price']) - $tiensale;
+												?>
+												<span class='pro-name' title=''>{{$p['product_name']}}</span>
+												<div id="pro-price3">
+													<?php
+													if ($price == 0) {
+														echo 'Liên hệ';
+													} else {
+														echo number_format($price) . ' đ';
+													}
+													?>
+												</div>
+
+												<span class='pro-price2' <?php if ($p['product_salevalue'] == 0) {
+													echo "style='display:none;'";
+												} ?>>
+													{{number_format($p['product_price'])}} đ
+												</span>
+
+												<?php
+												if ($p['product_status'] == 1) {
+													echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='".url('/')."/template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
+												} elseif ($p['product_status'] == 2) {
+													echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='".url('/')."/template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
+												} elseif ($p['product_status'] == 3) {
+													echo "<span class='pro-sale-info' title=''><img src='".url('/')."/template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
+												}
+												?>
+											</a>
+										</div>
+										<?php } ?>
+									</div>
+									<script>
+										$(document).ready(function () {
+											var owl = $('#related_product');
+											owl.owlCarousel({
+												 margin: 0,
+												nav: false,
+												loop: true,
+												autoplay: true,
+												responsive: {
+													0: {
+														items: 4
+													}
+												}
+											})
+										})
+									</script>
+								</div>
+							</div>
+						</section>
+					</div>
+					
+    </div>
+    </div>
     </div>
     <div style="clear: both;"></div>
 @endsection
