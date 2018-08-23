@@ -77,11 +77,11 @@ function cmp($a, $b)
 
                             <?php
                             if ($p['product_status'] == 1) {
-                                echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
+                                echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='".url('')."/template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
                             } elseif ($p['product_status'] == 2) {
-                                echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
+                                echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='".url('')."/template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
                             } elseif ($p['product_status'] == 3) {
-                                echo "<span class='pro-sale-info' title=''><img src='template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
+                                echo "<span class='pro-sale-info' title=''><img src='".url('')."/template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
                             }
                             ?>
                         </a>

@@ -99,25 +99,7 @@ img {
 .header2 {
 	
 }
-.mycart {
-	background: #fff;
-    padding: 3px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	display:inline-block;
-	height: 25px;
-	padding: 3px 5px;
-}
-.mycart img {
-	width: 25px;
-    padding:0;
-	margin-left:0;
-}
-.mycart span {
-	line-height: 25px;
-    margin-left: 5px;
-}
+
 
 .header2 .tuvan {
     padding: 0px 0 0 23px;

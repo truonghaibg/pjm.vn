@@ -271,7 +271,6 @@ li:hover .sp-img {
 .header {
     width: 1200px;
     margin: auto;
-    background-color: #ED1C24;
 }
 
 .header1 {
@@ -302,8 +301,8 @@ li:hover .sp-img {
 }
 
 .header2 img {
-    padding: 6px 0 0 70px;
-    max-width: 143px;
+    padding: 6px 15px;
+    max-width: 180px;
 }
 
 .search {
@@ -317,22 +316,21 @@ li:hover .sp-img {
 .txt-search {
     float: left;
     height: 30px;
-    border: none ! important;
-    box-shadow: none ! important;
+    border: 2px solid #ff0808;
     outline: none ! important;
     text-indent: 10px;
 }
 
 .txt-search:focus {
-    border: none ! important;
     box-shadow: none ! important;
     outline: none ! important;
 }
 
-.ok {
+.btn-search {
     float: right;
-    margin: 3px 6px 0 0;
+    margin: 0px 2px 6px -5px;
     border: none;
+    height: 34px !important;
 }
 
 .header-right {
@@ -721,13 +719,39 @@ li:hover .pro-img {
 }
 
 .pro-detail .hotline {
-    font-size: 18px;
     text-align: left;
     padding: 15px 0px;
-    font-weight: bold;
     color: #ff0000;
-    font-weight: bold;
+    line-height: 35px;
     font-size: 18px;
+}
+
+.header .hotline {
+    float: left;
+    text-align: left;
+    padding: 7px 25px;
+    color: #ff0000;
+    font-size: 18px;
+}
+
+.header .mycart {
+    background: #fff;
+    padding: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display:inline-block;
+    height: 25px;
+    padding: 3px 5px;
+}
+.header .mycart img {
+    width: 25px;
+    padding:0;
+    margin-left:0;
+}
+.header .mycart span {
+    line-height: 25px;
+    margin-left: 5px;
 }
 
 .pro-price {
