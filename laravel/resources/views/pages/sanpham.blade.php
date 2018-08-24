@@ -74,9 +74,11 @@
                             <?php if ($price!=0) { ?>
                             <div class="pr-price2">
                                 <span>[Giá đã bao gồm VAT] </span></br>
+                                <?php if ($product4->product_salevalue != 0) {?>
                                 <span>Giá chính hãng: </span>
                                 <span style="text-decoration: line-through"> {{number_format($product4->product_price)}}
                                     đ</span>
+                                <?php } ?>
                                 <span class="percent_off"
                                 <?php if ($product4->product_salevalue == 0) {
                                     echo "style='display:none;'";
@@ -113,12 +115,15 @@
                         </div>
                         <div class="boder-line"></div>
                     </div>
-                    <div class="pro-price"></div>
-					
                 </div>
             </div>
         </div>
-        <div class='pro'>
+        <div class='pro related-product'>
+            <div class='pro-title'>
+                <div class='title-name'>
+                    <a href="">Sản phẩm liên quan</a>
+                </div>
+            </div>
             <div class='pros'>
                 <div class="related_product">
                     <section id="demos">
@@ -184,7 +189,7 @@
                                             autoplay: true,
                                             responsive: {
                                                 0: {
-                                                    items: 4
+                                                    items: 5
                                                 }
                                             }
                                         })

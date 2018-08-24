@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
+    <title>PJM - Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">

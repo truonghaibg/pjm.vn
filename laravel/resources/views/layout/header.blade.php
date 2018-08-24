@@ -2,18 +2,19 @@
 
 </div>
 <div class="header">
-    <div class="header2">
-        <a class="main-logo" href="{{url('')}}"><img src="{{url('')}}/template_asset/images/logo/logo.png" alt=""></a>
-        <form action="{{url('tim-kiem')}}" class="search" method="POST">
-            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-            <input class="txt-search" type="text" name="search" size="70"
-                   placeholder="Nhập tên hoặc mã sản phẩm cần tìm kiếm...">
-            <span>
+    <a class="main-logo" href="{{url('')}}">
+        <img src="{{url('')}}/template_asset/images/logo/logo.png" alt="">
+    </a>
+    <form action="{{url('tim-kiem')}}" class="search" method="POST">
+        <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+        <input class="txt-search" type="text" name="search" size="70"
+               placeholder="Nhập tên hoặc mã sản phẩm cần tìm kiếm...">
+        <span>
                 <button type="submit" class="btn-red btn-search" name="Tìm kiếm">Tìm kiếm</button>
-            </span>
-        </form>
-
-        <ul class="header-right">
+        </span>
+    </form>
+    <div class="header-right">
+        <ul >
             <li>
                 <span class="hotline">Hotline: 0939 66 1010</span>
             </li>

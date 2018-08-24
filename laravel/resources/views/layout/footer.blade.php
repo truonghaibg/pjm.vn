@@ -1,4 +1,4 @@
-<div class="f1">
+<div class="partners">
     <div style="width: 100%;text-align: center; background: #e0e0e0; height: 100px;">
         <div class="top_partners" style="width:1200px;text-align: center;">
             <section id="aaa">
@@ -40,65 +40,65 @@
             display: none;
         }
     </style>
-    <div class="footer">
-        <div class="ttc">
-            <h4 class="f-h4">Thông tin chung</h4>
-            <ul class="f-ul">
-                <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc/tuyen-dung')}}">Tuyển dụng</a></li>
-                <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc')}}">Tin tức</a></li>
-                <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc')}}">Ý kiến khách hàng*</a></li>
-                <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc')}}">Liên hệ, Hợp tác*</a></li>
+</div>
+<div style="clear: both;"></div>
+<div class="footer-wrap">
+
+    <div style="clear: both;"></div>
+    <div class="footer-menu">
+        <div class="footer-block">
+            <h4 class="header-footer">Thông tin chung</h4>
+            <ul class="list-footer">
+                <li><a href="{{url('tin-tuc/tuyen-dung')}}">Tuyển dụng</a></li>
+                <li><a href="{{url('tin-tuc')}}">Tin tức</a></li>
+                <li><a href="{{url('tin-tuc')}}">Ý kiến khách hàng*</a></li>
+                <li><a href="{{url('tin-tuc')}}">Liên hệ, Hợp tác*</a></li>
             </ul>
         </div>
-        <div class="htkh">
-            <h4 class="f-h4">Chính sách chung</h4>
-            <ul class="f-ul">
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc/quy-dinh-chung')}}">Chính sách, quy định chung</a>
+        <div class="footer-block">
+            <h4 class="header-footer">Chính sách chung</h4>
+            <ul class="list-footer">
+                <li><a href="{{url('tin-tuc/quy-dinh-chung')}}">Chính sách, quy định chung</a>
                 </li>
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc/chinh-sach-van-chuyen-hang')}}">Chính sách vận
+                <li><a href="{{url('tin-tuc/chinh-sach-van-chuyen-hang')}}">Chính sách vận
                         chuyển</a></li>
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc/chinh-sach-bao-hanh')}}">Chính sách bảo hành</a>
+                <li><a href="{{url('tin-tuc/chinh-sach-bao-hanh')}}">Chính sách bảo hành</a>
                 </li>
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc/quy-dinh-ve-doi-tra-lai-hang')}}">Chính sách đổi,
+                <li><a href="{{url('tin-tuc/quy-dinh-ve-doi-tra-lai-hang')}}">Chính sách đổi,
                         trả lại hàng</a></li>
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc')}}">Chính sách cho doanh nghiệp*</a></li>
+                <li><a href="{{url('tin-tuc')}}">Chính sách cho doanh nghiệp*</a></li>
             </ul>
         </div>
-        <div class="gtct">
-            <h4 class="f-h4">Thông tin khuyến mãi</h4>
-            <ul class="f-ul">
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc')}}">Sản phẩm bán chạy*</a></li>
-                <li class="f-li"><a class="f-a" href="{{url('tin-tuc*')}}">Sản phẩm khuyến mãi</a></li>
-                <li class="f-li"><a class="f-a" target="_blank" href="{{url('/admin')}}">Đăng nhập</a></li>
+        <div class="footer-block">
+            <h4 class="header-footer">Thông tin khuyến mãi</h4>
+            <ul class="list-footer">
+                <li><a href="{{url('tin-tuc')}}">Sản phẩm bán chạy*</a></li>
+                <li><a href="{{url('tin-tuc*')}}">Sản phẩm khuyến mãi</a></li>
+                <li><a href="{{url('/admin')}}">Đăng nhập</a></li>
             </ul>
         </div>
-        <div class="td">
-            <h4 class="f-h4">Hỗ trợ khách hàng</h4>
-                <ul class="f-ul">
-                    <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc/huong-dan-mua-online')}}">Mua
-                            hàng trực tuyến</a></li>
-                    <li class="f-li"><a class="f-a" target="_blank" href="{{url('')}}">Hướng dẫn thanh toán*</a></li>
-                    <li class="f-li"><a class="f-a" target="_blank" href="{{url('tin-tuc/huong-dan-mua-tra-gop')}}">Hướng
-                            dẫn mua hàng trả góp</a></li>
-                    <li class="f-li"><a class="f-a" target="_blank" href="{{url('')}}">Gửi yêu cầu hỗ trợ*</a></li>
-                </ul>
-        </div>
-        <div class="htkh">
-            <h4 class="f-h4">Thanh toán an toàn</h4>
-            <a href="{{url('')}}"><img src="template_asset/images/site/footer/sprite.png" alt=""></a>
-            <a href="{{url('')}}"><img src="template_asset/images/site/footer/ieb.png" alt=""></a>
-            <a href="{{url('')}}"><img src="template_asset/images/site/footer/ck.png" alt=""></a>
-            <a href="{{url('')}}"><img src="template_asset/images/site/footer/paypal-checkout.png" alt=""></a>
+        <div class="footer-block">
+            <h4 class="header-footer">Hỗ trợ khách hàng</h4>
+            <ul class="list-footer">
+                <li><a href="{{url('tin-tuc/huong-dan-mua-online')}}">Mua
+                        hàng trực tuyến</a></li>
+                <li><a href="{{url('')}}">Hướng dẫn thanh toán*</a></li>
+                <li><a href="{{url('tin-tuc/huong-dan-mua-tra-gop')}}">Hướng
+                        dẫn mua hàng trả góp</a></li>
+                <li><a href="{{url('')}}">Gửi yêu cầu hỗ trợ*</a></li>
+            </ul>
         </div>
     </div>
 </div>
 
 <div style="clear: both;"></div>
-<div class="if">
-    <span>CÔNG TY CỔ PHẦN PJM</span><br>
-    <span>Email: giapvu.pjm@gmail.com. Điện thoại: 0939.66.10.10</span><br>
-    <img src="{{url('/')}}/template_asset/images/site/fend/dathongbao.png" alt="">
-    <img src="{{url('/')}}/template_asset/images/site/fend/dadangky.png" alt="">
+<div class="footer-info">
+    <h2>CÔNG TY CỔ PHẦN PJM</h2>
+    <span>Trụ sở: Số nhà 20/109/559 Phố Kim Ngưu, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Thành Phố Hà Nội.</span><br>
+    <span>VPGD: P1603, Tầng 16CT2, Tòa nhà CT14 Bắc Hà, Đường Tố Hữu, Phường Trung Văn, Quận Từ Liêm, TP Hà Nội</span><br>
+    <span>Website: http://pjm.vn --- Email: giapvu@pjm.vn --- Điện thoại: 0939.66.10.10</span><br>
+    {{--<img src="{{url('/')}}/template_asset/images/site/fend/dathongbao.png" alt="">--}}
+    {{--<img src="{{url('/')}}/template_asset/images/site/fend/dadangky.png" alt="">--}}
 </div>
 
 <script type='text/javascript'>

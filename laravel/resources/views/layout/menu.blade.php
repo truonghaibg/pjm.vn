@@ -11,7 +11,7 @@
             </li>
              <li class="toplink">
                  <a href="{{url('tin-tuc')}}">
-                     Sản phẩm
+                     Hoạt động
                  </a>
              </li>
             <li class="toplink">
@@ -31,9 +31,8 @@
         @foreach ($cate as $c)
         <li class="sub1">
             <a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}" style="padding: 13px 5px">
-                <img src='template_asset/images/site/flyout/{{$c->cate_name}}.png' alt='' />
                 <span class=''>{{$c->cate_name}}</span>
-                <img class="arow" src="template_asset/images/site/flyout/forward2.png" alt="" />
+                <img class="arow" src="{{url('')}}/template_asset/images/site/flyout/forward2.png" alt="" />
             </a>
             <ul class="ul2">
                 @foreach($c->subcate as $sc)
