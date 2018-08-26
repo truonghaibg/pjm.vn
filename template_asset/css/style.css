@@ -34,7 +34,6 @@ body {
 #menu {
     margin: auto;
     width: 1200px;
-    background: #ff0;
 
 }
 
@@ -141,12 +140,10 @@ body {
 }
 
 .header3 {
-    background: transparent url("../images/site/flyout/menu-bg.png") repeat-x scroll 0 0;
     height: 42px;
     margin: 0 auto;
     position: relative;
     width: 100%;
-    border-top: 2px solid #fff;
 }
 
 .danhmuc {
@@ -160,9 +157,10 @@ body {
     display: block;
     font: 16px/42px Arial;
     height: 42px;
-    padding: 0 30px 0 0;
+    padding: 0 35px 0 0;
     text-align: right;
     text-transform: none;
+    font-weight: bold;
 }
 
 .khuyenmai > a, .baohanh > a, .tuyendung > a {
@@ -269,6 +267,9 @@ li:hover .sp-img {
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////// HEADERSTYLE */
+.menu-wrap {
+    background: #2e314f;
+}
 .header {
     width: 1200px;
     margin: auto;

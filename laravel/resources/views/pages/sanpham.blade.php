@@ -105,8 +105,8 @@
                         </script>
                         <div class="boder-line"></div>
                         <div class="hotline">
-                            <h4><i class="fa fa-phone"></i>&nbsp;Liên hệ Mr. Vũ: 0939 66 1010</h4>
-                            <h4><i class="fa fa-phone"></i>&nbsp;Liên hệ Ms. Vân: 096 434 9191</h4>
+                            <h4><i class="fa fa-phone"></i>&nbsp;Hotline Mr. Vũ: 0939 66 1010</h4>
+                            <h4><i class="fa fa-phone"></i>&nbsp;Hotline Ms. Vân: 096 434 9191</h4>
                         </div>
                         <div class="boder-line"></div>
                         <div class='p-spec'>

@@ -75,7 +75,7 @@ function cmp($a, $b)
                                     echo "style='display:none;'";
                                 } ?>>
 								{{number_format($p['product_price'])}} đ
-							</span>
+							    </span>
 
                                 <?php
                                 if ($p['product_status'] == 1) {
