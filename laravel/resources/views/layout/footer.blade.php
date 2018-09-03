@@ -43,7 +43,6 @@
 </div>
 <div style="clear: both;"></div>
 <div class="footer-wrap">
-
     <div style="clear: both;"></div>
     <div class="footer-menu">
         <div class="footer-block">
@@ -92,16 +91,19 @@
 </div>
 
 <div style="clear: both;"></div>
-<div class="footer-info">
-    <h2>CÔNG TY CỔ PHẦN PJM</h2>
-    <span>Trụ sở: Số nhà 20/109/559 Phố Kim Ngưu, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Thành Phố Hà Nội.</span><br>
-    <span>VPGD: P1603, Tầng 16CT2, Tòa nhà CT14 Bắc Hà, Đường Tố Hữu, Phường Trung Văn, Quận Từ Liêm, TP Hà Nội</span><br>
-    <span>Website: http://pjm.vn --- Email: giapvu@pjm.vn --- Điện thoại: 0939.66.10.10</span><br>
-    {{--<img src="{{url('/')}}/template_asset/images/site/fend/dathongbao.png" alt="">--}}
-    {{--<img src="{{url('/')}}/template_asset/images/site/fend/dadangky.png" alt="">--}}
+<div class="footer-info-wrap">
+    <div class="footer-info">
+        <h2>CÔNG TY CỔ PHẦN PJM</h2>
+        <span>Trụ sở: Số nhà 20/109/559 Phố Kim Ngưu, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Thành Phố Hà Nội.</span><br>
+        <span>VPGD: P1603, Tầng 16CT2, Tòa nhà CT14 Bắc Hà, Đường Tố Hữu, Phường Trung Văn, Quận Từ Liêm, TP Hà Nội</span><br>
+        <span>Website: http://pjm.vn --- Email: giapvu@pjm.vn --- Điện thoại: 0939.66.10.10</span><br>
+        {{--<img src="{{url('/')}}/template_asset/images/site/fend/dathongbao.png" alt="">--}}
+        {{--<img src="{{url('/')}}/template_asset/images/site/fend/dadangky.png" alt="">--}}
+    </div>
 </div>
 
-<script type='text/javascript'>
+
+{{--<script type='text/javascript'>
     window._sbzq || function (e) {
         e._sbzq = [];
         var t = e._sbzq;
@@ -114,7 +116,7 @@
         var i = document.getElementsByTagName("script")[0];
         i.parentNode.insertBefore(r, i)
     }(window);
-</script>
+</script>--}}
 <a href="{{url('')}}" class="back-to-top" style="display: none;">
-    <img src="{{url('/')}}/template_asset/images/site/scroll-to-up/scrollbutton4-white.png" alt="">
+    <img src="{{url('')}}/template_asset/images/site/scroll-to-up/scrollbutton4-white.png" alt="">
 </a>

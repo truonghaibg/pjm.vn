@@ -161,6 +161,7 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 
 		Route::get('del/{id}','ProductController@getDel');
 	});
+
 	Route::group(['prefix'=>'news'],function(){
 		//admin/cate/list
 		Route::get('list','NewsController@getList');

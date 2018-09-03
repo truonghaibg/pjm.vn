@@ -2,8 +2,13 @@
 @section('content')
 <div class="news">
   <div class="content_news_page">
-    <h1><?php echo $new->title; ?></h1>
-    <div class="time"><?php echo $new->updated_at; ?></div>
+    <h1>{{$new->title}}</h1>
+
+    <div class="time">
+        <span class="label">Ngày đăng:</span>
+        <span class="value">{{$new->created_at->format('d/m/Y')}}</span>
+    </div>
+
     <div class="content_detail">
       <?php echo $new->content; ?>
     </div>

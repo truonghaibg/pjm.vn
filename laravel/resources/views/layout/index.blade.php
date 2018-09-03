@@ -4,7 +4,7 @@
     <title>PJM.VN - Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 
     <meta name="description" content="Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.">
     <meta property="og:description" content="Chuyên cung cấp vật liệu xây dựng hoàn thiện, Gạch ốp lát, Đá ốp lá, Keo dán, vữa ốp lát, Công cụ, dụng cụ ốp lát, Chống thấm và hóa chất, Nội Thất Vệ sinh và Bếp...">
