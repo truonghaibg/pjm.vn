@@ -33,7 +33,7 @@
                             @if($product->subcate_id == $ct->id)
                                 {{"selected"}}
                             @endif
-                             value="{{$ct->id}}">{{$ct->subcate_name}}</option>
+                             value="{{$ct->id}}"> {{$ct->cate_id}} - {{$ct->subcate_name}}</option>
                         @endforeach
                         </select>
                     </div>
@@ -43,7 +43,7 @@
                           @if($product->nsx_id == 0)
                           <option value="0" selected>KHông thuộc hãng nào</option>
                           @foreach($nsx as $sc)
-                            <option value="{{$sc->id}}">{{$sc->nsx_name}}</option>
+                            <option value="{{$sc->id}}">{{$sc->subcate_id}} - {{$sc->nsx_name}}</option>
                           @endforeach
                           @endif
                           <option value="0">Không thuộc hãng nào</option>

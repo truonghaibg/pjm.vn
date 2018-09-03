@@ -6,6 +6,7 @@ use App\Subcate;
 use App\Nsx;
 use App\Product;
 use App\Image;
+use App\Cate;
 use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
@@ -83,8 +84,8 @@ class ProductController extends Controller
     }
     
     public function getEdit($id){
-        $nsx = Nsx::all();
-        $subcate = Subcate::all();
+        $nsx = Nsx::orderBy('subcate_id')->get();
+        $subcate = Subcate::orderBy('cate_id')->get();
         $product = Product::find($id);
 		$images = $product->images()->orderBy("sort")->get();
         return view('admin.product.edit',['product'=>$product,'subcate'=>$subcate,'nsx'=>$nsx, 'images'=>$images]);
