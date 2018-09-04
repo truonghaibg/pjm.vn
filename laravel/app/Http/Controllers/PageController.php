@@ -108,6 +108,7 @@ class PageController extends Controller
     {
         $newsCategory = NewsCategory::all();
         $new = News::where('titlekd', $titlekd)->first();
+        view()->share('newview', $new);
         $n = News::all();
         return view('pages.newsNoidung', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory]);
     }
