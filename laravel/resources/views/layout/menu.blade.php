@@ -1,6 +1,6 @@
 <div class="menu-wrap">
     <div id="menu">
-        <div class="header3">
+        <div class="header3" style="background: #2e314f;">
             <ul>
                 <li class="danhmuc">
                     <a href="javascript:void(0)" id="main_menu">DANH MỤC SẢN PHẨM</a>

@@ -8,14 +8,17 @@
 
     <meta name="description" content="Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.">
     <meta property="og:description" content="Chuyên cung cấp vật liệu xây dựng hoàn thiện, Gạch ốp lát, Đá ốp lá, Keo dán, vữa ốp lát, Công cụ, dụng cụ ốp lát, Chống thấm và hóa chất, Nội Thất Vệ sinh và Bếp...">
-    <meta property="og:url" itemprop="url" content="http://pjm.vn/">
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="fb:app_id" content="1547540628876392">
 	<?php if(isset($productview) && $productview!=''){   ?>
-	<meta property="og:title" content="<?php echo $productview->product_name ?>">
-    <meta property="og:image" content="{{url('/')}}/upload/product/<?php echo $productview->product_img; ?>">
+	<meta property="og:title" content="<?php echo $productview->product_name ?>"  />
+    <meta property="og:image" content="{{url('/')}}/upload/product/<?php echo $productview->product_img; ?>" />
+    <?php } elseif(isset($newview) && $newview!=''){  ?>
+	<meta property="og:title" content="<?php echo $newview->title ?>" />
+    <meta property="og:image" content="{{url('/')}}/upload/news/<?php echo $newview->img; ?>" />
 	<?php } else { ?>
-	<meta property="og:title" content="PJM.VN - Công ty cổ phần PJM">
-    <meta property="og:image" content="{{url('/')}}/upload/slider/CWCe_slai%207.jpg">
+	<meta property="og:title" content="PJM.VN - Công ty cổ phần PJM" />
+    <meta property="og:image" content="{{url('/')}}/upload/slider/CWCe_slai%207.jpg" />
 	<?php } ?>
     <meta name="author" content="pjm.vn">
     <meta name="copyright" content="pjm.vn">
