@@ -59,8 +59,8 @@ class ProductController extends Controller
             $listFileUpload = $request->file('product_img');
             $i = 1;
             while ($i < 6) {
-                $file = $listFileUpload[$i];
-                if (isset($file)) {
+                if (isset($listFileUpload[$i])) {
+                    $file = $listFileUpload[$i];
                     $name = $file->getClientOriginalName();
                     $product_img = str_random(4) . "_" . $name;
                     while (file_exists("upload/product/" . $product_img)) {
@@ -120,9 +120,8 @@ class ProductController extends Controller
 			$listFileUpload = $request->file('product_img');
 			$i= 1;
 			while($i < 6){
-                $file = $listFileUpload[$i];
-				if(isset($file)){
-
+				if(isset($listFileUpload[$i])){
+                    $file = $listFileUpload[$i];
 					$oldImage = Product::find($id)->images()->orderBy("sort")->get();
 					foreach($oldImage as $removeOldImage){
 						if($removeOldImage->sort == $i){

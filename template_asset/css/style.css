@@ -1044,8 +1044,11 @@ li:hover .pro-img {
 
 .footer-wrap .footer-block {
     float: left;
-    margin: 20px 68px;
-    font-family: Roboto,Helvetica Neue,Helvetica,Arial,Sans-serif;
+     /*margin: 20px 68px; */
+    width: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .footer-wrap .footer-block .header-footer {
