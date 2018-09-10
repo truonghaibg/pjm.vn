@@ -26,105 +26,39 @@
                 <form action="admin/post/add" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                        <label>Danh mục</label>
-                        <select class="form-control" name="cate_id" id="cate_id">
-                        @foreach($cate as $ct)
-                            <option value="{{$ct->id}}">{{$ct->cate_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Chuyên mục</label>
-                        <select class="form-control" name="subcate_id" id="subcate_id">
-                        @foreach($subcate as $sc)
-                            <option value="{{$sc->id}}">{{$sc->subcate_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>Tiêu đề bài viết</label>
-                        <input class="form-control" name="post_title" placeholder="Điền Tiêu đề bài viết" />
+                        <input class="form-control" name="title" />
                     </div>
                     <div class="form-group">
-                        <label>Ảnh bài viết</label>
-                        <input class="form-control" type="file" name="post_img" />
+                        <label>Slug</label>
+                        <input class="form-control" type="text" name="slug" />
                     </div>
                     <div class="form-group">
                         <label>Tóm tắt bài viết</label>
-                        <textarea class="form-control" name="post_sum"></textarea>
+                        <textarea class="form-control" name="description"></textarea>
                     </div>
-                    <!-- <script>tinymce.init({
-                      selector: '#tinymce',
-                      height: 500,
-                      plugins: [
-                            "advlist autolink autosave link image lists charmap print preview hr anchor pagebreak spellchecker",
-                            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                            "table contextmenu directionality emoticons template textcolor paste fullpage textcolor colorpicker textpattern"
-                          ],
-
-                          toolbar1: "newdocument fullpage | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | styleselect formatselect fontselect fontsizeselect",
-                          toolbar2: "cut copy paste | searchreplace | bullist numlist | outdent indent blockquote | undo redo | link unlink anchor image media code | insertdatetime preview | forecolor backcolor",
-                          toolbar3: "table | hr removeformat | subscript superscript | charmap emoticons | print fullscreen | ltr rtl | spellchecker | visualchars visualblocks nonbreaking template pagebreak restoredraft",
-
-                          menubar: false,
-                          toolbar_items_size: 'small',
-
-                          style_formats: [{
-                            title: 'Bold text',
-                            inline: 'b'
-                          }, {
-                            title: 'Red text',
-                            inline: 'span',
-                            styles: {
-                              color: '#ff0000'
-                            }
-                          }, {
-                            title: 'Red header',
-                            block: 'h1',
-                            styles: {
-                              color: '#ff0000'
-                            }
-                          }, {
-                            title: 'Example 1',
-                            inline: 'span',
-                            classes: 'example1'
-                          }, {
-                            title: 'Example 2',
-                            inline: 'span',
-                            classes: 'example2'
-                          }, {
-                            title: 'Table styles'
-                          }, {
-                            title: 'Table row 1',
-                            selector: 'tr',
-                            classes: 'tablerow1'
-                          }],
-
-                          templates: [{
-                            title: 'Test template 1',
-                            content: 'Test 1'
-                          }, {
-                            title: 'Test template 2',
-                            content: 'Test 2'
-                          }],
-                          content_css: [
-                            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
-                            '//www.tinymce.com/css/codepen.min.css'
-                          ]
-                        });
-                    </script> -->
                     <div class="form-group">
                         <label>Nội dung bài viết</label>
-                        <textarea class="form-control summernote" rows="5" name="post_content"></textarea>
+                        <textarea class="form-control summernote" rows="5" name="content_posts"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>Bài viết được chứ ý không?</label>
+                        <label>Trạng thái</label><br>
                         <label class="radio-inline">
-                            <input name="post_high" value="0" checked="" type="radio">Không
+                            <input name="status" value="0"  type="radio">Không
                         </label>
                         <label class="radio-inline">
-                            <input name="post_high" value="1" type="radio">Có
+                            <input name="status" value="1" checked="" type="radio">Có
                         </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" name="meta_description" />
                     </div>
 
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>

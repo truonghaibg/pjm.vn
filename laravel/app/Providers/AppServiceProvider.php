@@ -16,15 +16,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 		view()->composer('layout.footer', function ($view) {
-            $headerData = Partners::all();
+            $headerData = Partners::take(6)->get();
             $view->headerData = $headerData;
         });
 		
-		view()->composer('layout.menu', function ($view) {
+        view()->composer('layout.slider', function ($view) {
             $slider = Slider::all();
             $view->slider = $slider;
-			$video = Video::all()->first();
-			$view->video = $video;
+            $video = Video::all()->first();
+            $view->video = $video;
         });
     }
 	

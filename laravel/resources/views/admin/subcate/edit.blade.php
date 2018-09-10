@@ -30,13 +30,6 @@
                         <input class="form-control" name="subcate_name"  value="{{$subcate->subcate_name}}" />
                     </div>
                     <div class="form-group">
-                        <label>Ảnh chuyên mục</label>
-                        <p>
-                            <img width="200px" src="upload/subcate/{{$subcate->subcate_img}}" alt="">
-                        </p>
-                        <input class="form-control" type="file" name="subcate_img" />
-                    </div>
-                    <div class="form-group">
                         <label>Danh mục</label>
                         <select class="form-control" name="cate_id">
                         @foreach($cate as $tl)
@@ -51,6 +44,16 @@
                     <div class="form-group">
                         <label>Nội dung tóm tắt</label>
                         <textarea class="form-control" rows="3" name="subcate_sum">{{$subcate->subcate_sum}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" value="{{$subcate->meta_keywords}}" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" value="{{$subcate->meta_description}}" name="meta_description" />
                     </div>
 
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>

@@ -19,7 +19,7 @@
                     <tr align="center">
                         <th>ID</th>
                         <th>Tên</th>
-                        <th>Khách hàng</th>
+                        <th>Slug</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@
                     <tr class="odd gradeX" align="center">
                         <td>{{$tl->id}}</td>
                         <td>{{$tl->cate_name}}</td>
-                        <td>{{isset($tl->customer->customer_name)?$tl->customer->customer_name:"Unknown"}}</td>
+                        <td>{{$tl->cate_namekd}}</td>
                         <td class="center">
                             <a href="{{url("admin/cate/edit", $tl->id)}}">
                                 <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>

@@ -23,14 +23,30 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-                <form action="admin/news/news-cate-edit/{{$newsCategory->id}}" method="POST" enctype="multipart/form-data">
+                <form action="admin/news-category/edit/{{$item->id}}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
 
                         <div class="form-group">
                             <label>Tên</label>
-                            <input class="form-control" name="name" placeholder="Điền tên" value="{{$newsCategory->name}}" />
+                            <input class="form-control" name="name" value="{{$item->name}}" />
                         </div>
+
+                        <div class="form-group">
+                            <label>Slug</label>
+                            <input class="form-control" name="slug" value="{{$item->slug}}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meta keywords</label>
+                            <input class="form-control" name="meta_keywords" value="{{$item->meta_keywords}}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meta description</label>
+                            <input class="form-control" name="meta_description" value="{{$item->meta_description}}" />
+                        </div>
+
                         <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                         <button type="submit" class="btn btn-default">Cập nhật</button>
                         <button type="reset" class="btn btn-default">Làm mới</button>

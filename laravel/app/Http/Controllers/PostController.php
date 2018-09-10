@@ -8,109 +8,65 @@ use App\Post;
 
 class PostController extends Controller
 {
-    //
-
     public function getList(){
         $post = Post::orderBy('id','DESC')->get();
-        return view('admin.post.list',['post'=>$post]);
+        return view('admin.post.list',['posts'=>$post]);
     }
+
     public function getAdd(){
-    	$cate = Cate::all();
-    	$subcate = Subcate::all();
-    	return view('admin.post.add',['cate'=>$cate],['subcate'=>$subcate]);
+    	return view('admin.post.add');
     }
     public function postAdd(Request $request){
         $this->validate($request,
             [
-                'subcate_id'=>'required',
-                'post_title'=>'required|min:3|unique:post,post_title',
-                'post_sum'=>'required|min:1|max:3000',
-                'post_content'=>'required|min:10'
+                'title'=>'required',
+                'slug'=>'required|unique:posts',
+                'content_posts'=>'required'
             ],
             [
-                'subcate_id.required'=>'Chuyên mục không được để trống',
-                'post_title.required'=>'Tiêu đề không được để trống',
-                'post_title.min'=>'Tiêu đề phải có ít nhất 3 kí tự',
-                'post_title.unique'=>'Tiêu đề đã tồn tại',
-                'post_sum.required'=>'Tóm tắt không được để trống',
-                'post_sum.min'=>'Tóm tắt phải có ít nhất 1 kí tự',
-                'post_sum.max'=>'Tóm tắt không được vượt quá 3000 kí tự',
-                'post_content.required'=>'Nội dung không được để trống',
-                'post_content.min'=>'Nội dung phải có ít nhất 10 kí tự'
-                /*'post_content.max'=>'Nội dung không được vượt quá 10,000 kí tự'*/
+                'title.required'=>'Tiêu đề không được để trống',
+                'slug.required'=>'Slug không được để trống',
+                'slug.unique'=>'Slug đã tồn tại',
+                'content_posts.required'=>'Tóm tắt không được để trống',
             ]);
         $post = new Post;
-        $post->post_title = $request->post_title;
-        $post->post_titlekd = changeTitle($request->post_title);
-        $post->subcate_id = $request->subcate_id;
-        $post->user_id = 1;
-        $post->post_sum = $request->post_sum;
-        $post->post_view = 0;
-        $post->post_content = $request->post_content;
-        $post->post_high = $request->post_high;
-        if ($request->hasFile('post_img')) {
-            $file = $request->file('post_img');
-            $name = $file->getClientOriginalName();
-            $post_img = str_random(4)."_".$name;
-            while (file_exists("upload/post/".$post_img)) {
-                $post_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/post",$post_img);
-            $post->post_img = $post_img;
-        } else{
-            $post->post_img = "";
-        }
+        $post->title = $request->title;
+        $post->slug = changeTitle($request->slug);
+        $post->description = $request->description;
+        $post->content = $request->content_posts;
+        $post->status = $request->status;
+        $post->meta_keywords = $request->meta_keywords;
+        $post->meta_description = $request->meta_description;
         $post->save();
         return redirect('admin/post/list')->with('thongbao','Thêm tin tức thành công');
     }
     
     public function getEdit($id){
-        $cate = Cate::all();
-        $subcate = Subcate::all();
         $post = Post::find($id);
-        return view('admin.post.edit',['post'=>$post,'subcate'=>$subcate,'cate'=>$cate]);
+        return view('admin.post.edit',['item'=>$post]);
     }
 
     public function postEdit(Request $request,$id){
         $post = Post::find($id);
         $this->validate($request,
             [
-                'subcate_id'=>'required',
-                'post_title'=>'required|min:3|unique:post,post_title,'.$id.'',
-                'post_sum'=>'required|min:1|max:3000',
-                'post_content'=>'required|min:10'
+                'title'=>'required',
+                'slug'=>'required',
+                'content_posts'=>'required'
             ],
             [
-                'subcate_id.required'=>'Chuyên mục không được để trống',
-                'post_title.required'=>'Tiêu đề không được để trống',
-                'post_title.min'=>'Tiêu đề phải có ít nhất 3 kí tự',
-                'post_title.unique'=>'Tiêu đề đã tồn tại',
-                'post_sum.required'=>'Tóm tắt không được để trống',
-                'post_sum.min'=>'Tóm tắt phải có ít nhất 1 kí tự',
-                'post_sum.max'=>'Tóm tắt không được vượt quá 3000 kí tự',
-                'post_content.required'=>'Nội dung không được để trống',
-                'post_content.min'=>'Nội dung phải có ít nhất 10 kí tự'
-                /*'post_content.max'=>'Nội dung không được vượt quá 10,000 kí tự'*/
+                'title.required'=>'Tiêu đề không được để trống',
+                'slug.required'=>'Slug không được để trống',
+                'content_posts.required'=>'Tóm tắt không được để trống',
             ]);
-        $post->post_title = $request->post_title;
-        $post->post_titlekd = changeTitle($request->post_title);
-        $post->subcate_id = $request->subcate_id;
-        $post->user_id = 1;
-        $post->post_sum = $request->post_sum;
-        /*$post->post_view = 0;*/
-        $post->post_content = $request->post_content;
-        $post->post_high = $request->post_high;
-        if ($request->hasFile('post_img')) {
-            $file = $request->file('post_img');
-            $name = $file->getClientOriginalName();
-            $post_img = str_random(4)."_".$name;
-            while (file_exists("upload/post/".$post_img)) {
-                $post_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/post",$post_img);
-            //unlink("upload/post/".$post->post_img);
-            $post->post_img = $post_img;
-        }
+        $post->title = $request->title;
+        $post->slug = changeTitle($request->slug);
+        $post->description = $request->description;
+        $post->content = $request->content_posts;
+        $post->status = $request->status;
+        $post->meta_keywords = $request->meta_keywords;
+        $post->meta_description = $request->meta_description;
+
         $post->save();
         return redirect('admin/post/list')->with('thongbao','Sửa thành công');
     }
@@ -120,5 +76,5 @@ class PostController extends Controller
         $post->delete();
         return redirect('admin/post/list')->with('thongbao','Xóa thành công');
     }
-    //
+
 }

@@ -39,16 +39,31 @@
 	<script src="{{url('/')}}/js/owl.carousel.js"></script>
 	<script src="{{url('/')}}/js/owl.carousel.min.js"></script>
 	<script src="{{url('/')}}/js/jquery-ui.min.js"></script>
+    <script src="{{url('template_asset')}}/js/bootstrap.min.js"></script>
 	
     <script src="{{url('/')}}/template_asset/js/myscript.js"></script>
     <script src="{{url('/')}}/js/numeric/jquery.numeric.min.js"></script>
-    <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset/css')}}/style.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('/')}}/owl.carousel.min.css" type="text/css" />
 	<link rel="stylesheet" href="{{url('/')}}/owl.theme.default.min.css" type="text/css" />
     <link rel="stylesheet" href="{{url('/')}}/newstyle.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/themes/default/default.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/bootstrap.min.css" type="text/css" />
+
+   {{-- <link rel="stylesheet" href="{{url('template_asset')}}/css/test/1.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/2.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/3.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/4.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/5.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/6.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/7.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/8.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/9.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/10.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/11.css" type="text/css" />--}}
+
 
     <!-- Import New -->
 
@@ -59,6 +74,7 @@
 
     @include('layout.header')
     @include('layout.menu')
+    @include('layout.slider')
 
   	@yield('content')
   	@include('layout.footer')

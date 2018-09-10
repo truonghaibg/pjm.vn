@@ -34,7 +34,6 @@
 						<div class="form-group">
                         <label>Danh mục</label>
                         <select  class="form-control" name="category" >
-							<option value="0" <?php if($news->news_category_id == 0){ ?>  selected="selected" <?php } ?>>Danh mục bài viết cố định</option>
                             @foreach($newsCategory as $item)
 							<option value="{{$item->id}}" <?php if($news->news_category_id == $item->id){ ?>  selected="selected" <?php } ?>>{{$item->name}}</option>
 							@endforeach
@@ -47,42 +46,24 @@
                             </p>
                             <input class="form-control" type="file" name="img" />
                         </div>
-                        <div class="form-group">
-                            <label>Tags</label>
-                            <?php
-                            $oldTagString = "";
-                            foreach($tagArray as $oldTag){
-                                $oldTagString = $oldTagString.$oldTag.',';
-                            }
-                            if(strlen ($oldTagString) > 0){
-                                $oldTagString = substr($oldTagString,0, -1);
-                            }
-                            ?>
-                            <input class="form-control" name="tags" id="mySingleField" value=" <?php echo $oldTagString; ?>" readonly="readonly">
-                             <script>
-                                 var country_list = new Array();
-                                 <?php
-                                 foreach($tags as $item){ ?>
-
-                                 country_list.push("<?php echo $item->name; ?>");
-
-                                 <?php
-                                 }
-                                 ?>
-                             </script>
-                            <br/>
-                            <ul class="form-control" id="singleFieldTags"></ul>
-                            <link rel="stylesheet" href="{{url("/")}}/jquery-ui.css">
-                            <link rel="stylesheet" href="{{url("/")}}/jquery.tagit.css" >
-                        </div>
                         <br/>
                         <div class="form-group">
                             <label>Nội dung</label>
-                            <textarea class="form-control summernote" rows="5" name="content">{{$news->content}}</textarea>
+                            <textarea class="form-control summernote" rows="5" name="content_news">{{$news->content}}</textarea>
                         </div>
                         <div class="form-group">
                             <label>Tóm tắt</label>
                             <textarea class="form-control" name="sum">{{$news->sum}}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meta keywords</label>
+                            <input class="form-control" name="meta_keywords" value="{{$news->meta_keywords}}" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Meta description</label>
+                            <input class="form-control" name="meta_description" value="{{$news->meta_description}}" />
                         </div>
 
                         <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>

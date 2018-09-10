@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Bài viết
-                    <small>{{$post->post_title}}</small>
+                    <small>{{$item->title}}</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -23,67 +23,44 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-                <form action="admin/post/edit/{{$post->id}}" method="POST" enctype="multipart/form-data">
+                <form action="admin/post/edit/{{$item->id}}" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
-                        <label>Danh mục</label>
-                        <select class="form-control" name="cate_id" id="cate_id">
-                        @foreach($cate as $ct)
-                            <option
-                            @if($post->subcate->cate->id == $ct->id)
-                                {{"selected"}}
-                            @endif
-                             value="{{$ct->id}}">{{$ct->cate_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Chuyên mục</label>
-                        <select class="form-control" name="subcate_id" id="subcate_id">
-                        @foreach($subcate as $sc)
-                            <option
-                            @if($post->subcate->id == $sc->id)
-                                {{"selected"}}
-                            @endif
-                             value="{{$sc->id}}">{{$sc->subcate_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>Tiêu đề bài viết</label>
-                        <input class="form-control" name="post_title" placeholder="Please Enter Post Title" value="{{$post->post_title}}" />
+                        <input class="form-control" value="{{$item->title}}" name="title" />
                     </div>
                     <div class="form-group">
-                        <label>Ảnh bài viết</label>
-                        <p>
-                            <img width="200px" src="upload/post/{{$post->post_img}}" alt="">
-                        </p>
-                        <input class="form-control" type="file" name="post_img" />
+                        <label>Slug</label>
+                        <input class="form-control" value="{{$item->slug}}" type="text" name="slug" />
                     </div>
                     <div class="form-group">
-                        <label>Tóm tắt</label>
-                        <textarea class="form-control" rows="3" name="post_sum">{{$post->post_sum}}</textarea>
+                        <label>Tóm tắt bài viết</label>
+                        <input type="text" class="form-control" value="{{$item->description}}" name="description" />
                     </div>
                     <div class="form-group">
-                        <label>Nội dung</label>
-                        <textarea class="form-control summernote" rows="5" name="post_content">{{$post->post_content}}</textarea>
+                        <label>Nội dung bài viết</label>
+                        <textarea class="form-control summernote"rows="5" name="content_posts">{{$item->content}}</textarea>
                     </div>
                     <div class="form-group">
-                        <label>Được quan tâm?</label>
+                        <label>Trạng thái</label><br>
                         <label class="radio-inline">
-                            <input name="post_high" value="0" type="radio"
-                                @if($post->post_high == 0)
-                                    {{"checked"}}
-                                @endif
-                            >Không
+                            <input name="status" value="0" <?php if ($item->status==0) echo 'checked' ?> type="radio">Không
                         </label>
                         <label class="radio-inline">
-                            <input name="post_high" value="1" type="radio"
-                            @if($post->post_high == 1)
-                                    {{"checked"}}
-                                @endif>Có
+                            <input name="status" value="1" <?php if ($item->status) echo 'checked' ?> type="radio">Có
                         </label>
                     </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" value="{{$item->meta_keywords}}" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" value="{{$item->meta_description}}" name="meta_description" />
+                    </div>
+
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                     <button type="submit" class="btn btn-default">Cập nhật</button>
                     <button type="reset" class="btn btn-default">Làm mới</button>

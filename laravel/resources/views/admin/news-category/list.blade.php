@@ -20,19 +20,21 @@
                     <tr align="center">
                         <th style="width: 50px;">ID</th>
                         <th>Tên</th>
+                        <th>Slug</th>
                         <th style="width: 100px;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                @foreach($newscate as $p)
+                @foreach($items as $item)
                     <tr class="odd gradeX" align="center">
-                        <td>{{$p->id}}</td>
-                        <td>{{$p->name}}</td>
+                        <td>{{$item->id}}</td>
+                        <td>{{$item->name}}</td>
+                        <td>{{$item->slug}}</td>
                         <td class="center">
-                            <a href="{{url("admin/news/news-cate-edit", $p->id)}}">
+                            <a href="{{url("admin/news-category/edit", $item->id)}}">
                                 <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
                             </a>
-                            <a href="{{url("admin/news/news-cate-del", $p->id)}}" onclick="return checkDelete()">
+                            <a href="{{url("admin/news-category/del", $item->id)}}" onclick="return checkDelete()">
                                 <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
                             </a>
                         </td>
@@ -40,9 +42,6 @@
                 @endforeach
                 </tbody>
             </table>
-			<a href="{{url('/admin/news/news-cate-add')}}" >
-				<button type="button" class="btn btn-outline-warning btn-sm">Thêm</button>
-			</a>
         </div>
         <!-- /.row -->
     </div>

@@ -30,28 +30,20 @@
                         <input class="form-control" name="cate_name" placeholder="Tên Danh mục" value="{{$cate->cate_name}}" />
                     </div>
                     <div class="form-group">
-                        <label>Ảnh Danh mục</label>
-                        <p>
-                            <img width="200px" src="upload/cate/{{$cate->cate_img}}" alt="">
-                        </p>
-                        <input class="form-control" type="file" name="cate_img" />
-                    </div>
-                    <div class="form-group">
-                        <label>Khách hàng</label>
-                        <select class="form-control" name="customer_id">
-                        @foreach($customer as $cus)
-                            <option
-                            @if($cate->customer_id == $cus->id)
-                                {{"selected"}}
-                            @endif
-                             value="{{$cus->id}}">{{$cus->customer_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>Mô tả danh mục</label>
                         <textarea class="form-control" rows="3" name="cate_sum">{{$cate->cate_sum}}</textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" value="{{$cate->meta_keywords}}" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" value="{{$cate->meta_description}}" name="meta_description" />
+                    </div>
+
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                     <button type="submit" class="btn btn-default">Cập nhật</button>
                     <button type="reset" class="btn btn-default">Làm mới</button>

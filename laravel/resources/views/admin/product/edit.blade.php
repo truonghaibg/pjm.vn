@@ -175,6 +175,17 @@
                         <label>Thông tin sản phẩm</label>
                         <textarea class="form-control summernote" rows="5" name="product_info">{{$product->product_info}}</textarea>
                     </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" name="meta_keywords" value="{{$news->meta_keywords}}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" name="meta_description" value="{{$news->meta_description}}" />
+                    </div>
+
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                     <button type="submit" class="btn btn-default">Cập nhật</button>
                     <button type="reset" class="btn btn-default">Làm mới</button>

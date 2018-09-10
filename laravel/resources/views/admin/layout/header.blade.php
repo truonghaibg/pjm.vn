@@ -31,7 +31,7 @@
         </li>
         <!-- /.dropdown -->
     </ul>
-	<input type="hidden" id="baseAdminUrl" value="{{ url('/admin') }}"
+	<input type="hidden" id="baseAdminUrl" value="{{ url('/admin') }}">
     <!-- /.navbar-top-links -->
     @include('admin.layout.menu')
     <!-- /.navbar-static-side -->

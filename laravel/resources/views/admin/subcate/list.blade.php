@@ -19,6 +19,7 @@
                     <tr align="center">
                         <th>ID</th>
                         <th>Tên Chuyên mục</th>
+                        <th>Slug</th>
                         <th>Danh mục</th>
                         <th>Action</th>
                     </tr>
@@ -28,6 +29,7 @@
                     <tr class="odd gradeX" align="center">
                         <td>{{$tl->id}}</td>
                         <td>{{$tl->subcate_name}}</td>
+                        <td>{{$tl->subcate_namekd}}</td>
                         <td>{{isset($tl->cate->cate_name)?$tl->cate->cate_name:""}}</td>
                         <td class="center">
                             <a href="{{url("admin/subcate/edit", $tl->id)}}">

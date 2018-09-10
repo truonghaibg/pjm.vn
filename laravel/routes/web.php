@@ -10,19 +10,18 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/','PageController@trangchu');
-Route::get('trangchu','PageController@trangchu');
+Route::get('/','PageController@getHome');
 
 Route::post('check-out','PaymentController@getCheckout');
 Route::get('get-done/{id}','PaymentController@getDone');
 Route::get('get-cancel','PaymentController@getCancel');
 
 Route::get('success','PageController@success');
-Route::post('tim-kiem','PageController@timkiem');
+Route::post('tim-kiem','PageController@search');
 
 Route::get('tin-tuc','PageController@news');
 Route::get('danh-muc-tin-tuc/{id}','PageController@newsCategory');
-Route::get('tin-tuc/{titlekd}','PageController@newsNoidung');
+Route::get('tin-tuc/{titlekd}','PageController@detailNews');
 Route::get('events','PageController@events');
 Route::get('events/{id}','PageController@eventsNoidung');
 
@@ -37,7 +36,7 @@ Route::post('dat-hang','OrderController@postAdd');
 Route::get('export-order/{id}','OrderController@exportid');
 Route::get('export-order','OrderController@exportorder');
 
-Route::get('item/{product_namekd}','PageController@sanpham');
+Route::get('san-pham/{product_namekd}','PageController@detailProduct');
 Route::get('danh-sach/{cate_namekd}','PageController@chuyenmuc');
 
 Route::get('danh-sach/{cate_namekd}/sapxep/{sort}','PageController@chuyenmucnew');
@@ -51,7 +50,6 @@ Route::get('danh-sach/{cate_namekd}/sapxep/{sort}','PageController@chuyenmucnew'
 
 Route::get('danh-sach/{cate_namekd}/{subcate_namekd}','PageController@loaitin');//list post (subcate $id)
 Route::get('danh-sach/{cate_namekd}/{subcate_namekd}/{nsx_namekd}','PageController@nhasx');
-//Route::get('{cate_namekd}/{subcate_namekd}/{post_titlekd}','PageController@tintuc');//tin tuc
 
 Route::get('admin','UserController@getLoginAdmin');
 Route::get('admin/login','UserController@getLoginAdmin');
@@ -166,20 +164,6 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		//admin/cate/list
 		Route::get('list','NewsController@getList');
 
-        Route::get('list-tin-tuc','NewsController@getListNews');
-
-        Route::get('news-cate-list','NewsController@getListNewsCate');
-
-		Route::get('news-cate-add','NewsController@getAddNewsCate');
-		
-		Route::post('news-cate-add','NewsController@postAddNewsCate');
-		
-		Route::get('news-cate-edit/{id}','NewsController@getEditNewsCate');
-		
-		Route::post('news-cate-edit/{id}','NewsController@postEditNewsCate');
-		
-		Route::get('news-cate-delete/{id}','NewsController@deleteNewsCate');
-		
 		Route::get('edit/{id}','NewsController@getEdit');
 
 		Route::post('edit/{id}','NewsController@postEdit');
@@ -189,9 +173,22 @@ Route::group(['prefix'=>'admin','middleware'=>'adminLogin'],function(){
 		Route::post('add','NewsController@postAdd');
 
 		Route::get('del/{id}','NewsController@getDel');
-		Route::get('news-cate-del/{id}','NewsController@getDelCate');
-		
 	});
+
+    Route::group(['prefix'=>'news-category'],function(){
+        //admin/cate/list
+        Route::get('list','NewsCategoryController@index');
+
+        Route::get('add','NewsCategoryController@create');
+
+        Route::post('add','NewsCategoryController@store');
+
+        Route::get('edit/{id}','NewsCategoryController@show');
+
+        Route::post('edit/{id}','NewsCategoryController@update');
+
+        Route::get('del/{id}','NewsCategoryController@destroy');
+    });
 
 	Route::group(['prefix'=>'order'],function(){
 		//admin/cate/list

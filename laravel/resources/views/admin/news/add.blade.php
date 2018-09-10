@@ -28,51 +28,41 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
                     
-                    <div class="form-group">
-                        <label>Tiêu đề</label>
-                        <input class="form-control" name="title" placeholder="Điền Tiêu đề" />
-                    </div>
-					<div class="form-group">
-                        <label>Danh mục</label>
-                        <select  class="form-control" name="category">
-							<option value="0">Danh mục bài viết cố định</option>
-                            @foreach($newsCategory as $item)
-							<option value="{{$item->id}}">{{$item->name}}</option>
-							@endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Ảnh</label>
-                        <input class="form-control" type="file" name="img" />
-                    </div>
-					 <div class="form-group">
-                        <label>Tags</label>
-						<input class="form-control" name="tags" id="mySingleField" value="" readonly="readonly">
-                         <script>
-                             var country_list = new Array();
-                             <?php
-                             foreach($tags as $item){ ?>
+                        <div class="form-group">
+                            <label>Tiêu đề</label>
+                            <input class="form-control" name="title" placeholder="Điền Tiêu đề" />
+                        </div>
+                        <div class="form-group">
+                            <label>Danh mục</label>
+                            <select  class="form-control" name="category">
+                                <option value="0">Danh mục bài viết cố định</option>
+                                @foreach($newsCategory as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Ảnh</label>
+                            <input class="form-control" type="file" name="img" />
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label>Nội dung</label>
+                            <textarea class="form-control summernote" rows="5" name="content_news"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Tóm tắt</label>
+                            <textarea class="form-control" name="sum"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Meta keywords</label>
+                            <input class="form-control" name="meta_keywords" />
+                        </div>
 
-                             country_list.push("<?php echo $item->name; ?>");
-                                    
-                             <?php
-                                }
-                             ?>
-                         </script>
-						<br/>
-						<ul class="form-control" id="singleFieldTags"></ul>
-						<link rel="stylesheet" href="{{url("/")}}/jquery-ui.css">
-						<link rel="stylesheet" href="{{url("/")}}/jquery.tagit.css" >
-                    </div>
-					<br/>
-                    <div class="form-group">
-                        <label>Nội dung</label>
-                        <textarea class="form-control summernote" rows="5" name="content"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Tóm tắt</label>
-                        <textarea class="form-control" name="sum"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label>Meta description</label>
+                            <input class="form-control" name="meta_description" />
+                        </div>
 
                         <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
                         <button type="submit" class="btn btn-default">Thêm mới</button>

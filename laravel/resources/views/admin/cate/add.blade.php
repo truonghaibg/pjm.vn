@@ -30,20 +30,18 @@
                         <input class="form-control" name="cate_name" placeholder="Tên Danh mục" />
                     </div>
                     <div class="form-group">
-                        <label>Ảnh Danh mục</label>
-                        <input class="form-control" type="file" name="cate_img" />
-                    </div>
-                    <div class="form-group">
-                        <label>Khách hàng</label>
-                        <select class="form-control" name="customer_id">
-                            @foreach($customer as $cus)
-                                <option value="{{$cus->id}}">{{$cus->customer_name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label>Mô tả danh mục</label>
                         <textarea class="form-control" rows="3" name="cate_sum"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" name="meta_description" />
                     </div>
 
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>

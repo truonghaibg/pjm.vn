@@ -37,19 +37,17 @@ class PageController extends Controller
         view()->share('news', $news);
         view()->share('order', $order);
 
-        $nb = Post::where('post_high', '1')->paginate(4);
-        view()->share('nb', $nb);
+
         $news = News::all();
         view()->share('news', $news);
         $events = Events::all();
         view()->share('events', $events);
-        $cate1 = Cate::where('customer_id', '1')->first();
     }
 
-    function trangchu()
+    function getHome()
     {
-        $post = Post::where('subcate_id', '7')->paginate(6);
-        return view('pages.trangchu', ['post' => $post]);
+        $post = Post::where('id', '7')->paginate(6);
+        return view('pages.home', ['post' => $post]);
     }
 
     function export()
@@ -104,13 +102,13 @@ class PageController extends Controller
         return view('pages.news', ['news' => $news, "newsCategory" => $newsCategory]);
     }
 
-    function newsNoidung($titlekd)
+    function detailNews($titlekd)
     {
         $newsCategory = NewsCategory::all();
         $new = News::where('titlekd', $titlekd)->first();
         view()->share('newview', $new);
         $n = News::all();
-        return view('pages.newsNoidung', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory]);
+        return view('pages.news-detail', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory]);
     }
 
     function events()
@@ -183,11 +181,11 @@ class PageController extends Controller
         return view('pages.success');
     }
 
-    function timkiem(Request $request)
+    function search(Request $request)
     {
-        $tukhoa = $request->search;
-        $products = Product::where('product_name', 'like', "%$tukhoa%")->orWhere('product_model', 'like', "%$tukhoa%")->paginate(20);
-        return view('pages.timkiem', ['products' => $products, 'tukhoa' => $tukhoa]);
+        $keySearch = $request->search;
+        $products = Product::where('product_name', 'like', "%$keySearch%")->orWhere('product_model', 'like', "%$keySearch%")->paginate(20);
+        return view('pages.search', ['products' => $products, 'key_search' => $keySearch]);
     }
 
     function chuyenmuc($cate_namekd)
@@ -214,100 +212,54 @@ class PageController extends Controller
         return view('pages.nhasx', ['nsx3' => $nsx, 'product3' => $product]);
     }
 
-    function sanpham($product_namekd)
+    function detailProduct($product_namekd)
     {
         $product = Product::where('product_namekd', $product_namekd)->first();
 		view()->share('productview', $product);
         $images = $product->images()->orderBy("sort")->get();
 		$relatedProduct = Product::where('subcate_id', $product->subcate_id)->where('id', '!=', $product->id)->take(4)->orderBy('id')->get();
-        return view('pages.sanpham', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct]);
-    }
-
-    function tintuc($cate_namekd, $subcate_namekd, $post_titlekd)
-    {
-        $cate = Cate::where('cate_namekd', $cate_namekd)->first();
-        $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();
-        $post = Post::where('post_titlekd', $post_titlekd)->first();
-        $p = Post::where('subcate_id', $subcate->id)->paginate(2);
-        return view('pages.tintuc', ['cate1' => $cate, 'subcate' => $subcate, 'post' => $post, 'p' => $p]);
-    }
-
-    function report()
-    {
-
+        return view('pages.product-detail', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct]);
     }
 
     function chuyenmucnew($cate_namekd, $sort)
     {
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
         $subcate = Subcate::where('cate_id', $cate->id)->get();//array
-        // dd($subcate);
         switch ($sort) {
             case 'sort=new':
                 $pro = array();
                 foreach ($subcate as $s) {
                     $product = Product::where('subcate_id', $s->id)->orderBy('id', 'asc')->get();
-                    // dd($product);
-                    // dd(json_decode($product));
-                    // $object = (object) $product;
                     json_decode($product);
                     $pro = array_merge($pro, json_decode($product));
-                    // array_push($product, json_decode($product));
-
-                    // array_push($product,json_decode($product));
-
                 }
                 usort($pro, function ($a, $b) {
                     if ($a->id == $b->id) return 0;
                     return ($a->id) < ($b->id) ? 1 : -1;
                     return strcmp($a->id, $b->id);
                 });
-                // usort($pro, array($this, "cmp"));
-                // dd($pro);
                 $pro = (object)$pro;
-                // array_push($product,json_decode($product));
-                // json_decode($pro);
-                // dd($pro);
                 break;
             case 'sort=price-asc':
                 $pro = array();
                 foreach ($subcate as $s) {
                     $product = Product::where('subcate_id', $s->id)->orderBy('product_price', 'asc')->get();
-                    // dd($product);
-                    // dd(json_decode($product));
-                    // $object = (object) $product;
                     json_decode($product);
                     $pro = array_merge($pro, json_decode($product));
-                    // array_push($product, json_decode($product));
-
-                    // array_push($product,json_decode($product));
-
                 }
                 usort($pro, function ($a, $b) {
                     if ($a->product_price == $b->product_price) return 0;
                     return ($a->product_price) > ($b->product_price) ? 1 : -1;
                     return strcmp($a->product_price, $b->product_price);
                 });
-                // usort($pro, array($this, "cmp"));
-                // dd($pro);
                 $pro = (object)$pro;
-                // array_push($product,json_decode($product));
-                // json_decode($pro);
-                // dd($pro);
                 break;
             case 'sort=price-desc':
                 $pro = array();
                 foreach ($subcate as $s) {
                     $product = Product::where('subcate_id', $s->id)->orderBy('product_price', 'desc')->get();
-                    // dd($product);
-                    // dd(json_decode($product));
-                    // $object = (object) $product;
                     json_decode($product);
                     $pro = array_merge($pro, json_decode($product));
-                    // array_push($product, json_decode($product));
-
-                    // array_push($product,json_decode($product));
-
                 }
 
                 usort($pro, function ($a, $b) {
@@ -315,41 +267,23 @@ class PageController extends Controller
                     return ($a->product_price) < ($b->product_price) ? 1 : -1;
                     return strcmp($a->product_price, $b->product_price);
                 });
-                // usort($pro, array($this, "cmp"));
-                // dd($pro);
                 $pro = (object)$pro;
-                // array_push($product,json_decode($product));
-                // json_decode($pro);
-                // dd($pro);
                 break;
             case 'sort=name':
                 $pro = array();
                 $pro2 = array();
                 foreach ($subcate as $s) {
                     $product = Product::where('subcate_id', $s->id)->orderBy('product_name')->get();
-                    // dd($product);
-                    // dd(json_decode($product));
-                    // $object = (object) $product;
                     json_decode($product);
                     $pro = array_merge($pro, json_decode($product));
-                    // array_push($product, json_decode($product));
-
-                    // array_push($product,json_decode($product));
-
                 }
 
                 usort($pro, function ($a, $b) {
                     return strcmp($a->product_name, $b->product_name);
                 });
-                // usort($pro, array($this, "cmp"));
-                // dd($pro);
                 $pro = (object)$pro;
-                // array_push($product,json_decode($product));
-                // json_decode($pro);
-                // dd($pro);
                 break;
         }
-        // dd($product);
         return view('pages.chuyenmuc', ['cate2' => $cate, 'subcate3' => $subcate, 'product_sapxep' => $pro]);
     }
 

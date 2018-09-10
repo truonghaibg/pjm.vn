@@ -53,6 +53,8 @@ class ProductController extends Controller
         $product->product_tag = $request->product_tag;
         $product->product_salevalue = $request->product_salevalue;
         $product->product_img = "";
+        $product->meta_keywords = $request->meta_keywords;
+        $product->meta_description = $request->meta_description;
 
         $product->save();
         if ($request->hasFile('product_img')) {
@@ -116,6 +118,8 @@ class ProductController extends Controller
         $product->product_model = $request->product_model;
         $product->product_tag = $request->product_tag;
         $product->product_salevalue = $request->product_salevalue;
+        $product->meta_keywords = $request->meta_keywords;
+        $product->meta_description = $request->meta_description;
 		if ($request->hasFile('product_img')) {
 			$listFileUpload = $request->file('product_img');
 			$i= 1;

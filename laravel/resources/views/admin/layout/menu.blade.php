@@ -61,10 +61,9 @@
                     <a href="admin/nsx/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
         <li>
-            <a href="admin/post/list"><i class="fa fa-edit fa-fw"></i> Bài viết<span class="fa arrow"></span></a>
+            <a href="admin/post/list"><i class="fa fa-edit fa-fw"></i> Bài viết cố định<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
                     <a href="admin/post/list">Danh sách</a>
@@ -73,7 +72,6 @@
                     <a href="admin/post/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
          <li>
             <a href="admin/partners"><i class="fa fa-barcode fa-fw"></i> Đối tác<span class="fa arrow"></span></a>
@@ -100,23 +98,26 @@
             <!-- /.nav-second-level -->
         </li>
         <li>
+            <a href="{{url('')}}/admin/news-category/"><i class="fa fa-edit fa-fw"></i> Danh mục tin tức<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level">
+                <li>
+                    <a href="{{url('')}}/admin/news-category/list">Danh sách</a>
+                </li>
+                <li>
+                    <a href="{{url('')}}/admin/news-category/add">Thêm mới</a>
+                </li>
+            </ul>
+        </li>
+        <li>
             <a href="admin/news/list"><i class="fa fa-edit fa-fw"></i> Tin tức<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
-                
-                <li>
-                    <a href="admin/news/list">Danh sách bài viết cố định</a>
-                </li>
-                <li>
-                    <a href="admin/news/news-cate-list">Danh mục tin tức</a>
-                </li>
 				 <li>
-                    <a href="admin/news/list-tin-tuc">Danh sách tin tức mới</a>
+                    <a href="admin/news/list">Danh sách</a>
                 </li>
                 <li>
                     <a href="admin/news/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
         <li>
             <a href="admin/order/list"><i class="fa fa-book fa-fw"></i> Order</a>

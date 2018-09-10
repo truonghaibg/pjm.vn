@@ -11,8 +11,8 @@ class SubcateController extends Controller
     //
     public function getList()
     {
-        $subcate = Subcate::all();
-        return view('admin.subcate.list', ['subcate' => $subcate]);
+        $subCate = Subcate::all();
+        return view('admin.subcate.list', ['subcate' => $subCate]);
     }
 
     public function getAdd()
@@ -40,18 +40,9 @@ class SubcateController extends Controller
         $subcate->subcate_namekd = changeTitle($request->subcate_name);
         $subcate->subcate_sum = $request->subcate_sum;
         $subcate->cate_id = $request->cate_id;
-        if ($request->hasFile('subcate_img')) {
-            $file = $request->file('subcate_img');
-            $name = $file->getClientOriginalName();
-            $subcate_img = str_random(4) . "_" . $name;
-            while (file_exists("upload/subcate/" . $subcate_img)) {
-                $subcate_img = str_random(4) . "_" . $name;
-            }
-            $file->move("upload/subcate", $subcate_img);
-            $subcate->subcate_img = $subcate_img;
-        } else {
-            $subcate->subcate_img = "";
-        }
+        $subcate->meta_keywords = $request->meta_keywords;
+        $subcate->meta_description = $request->meta_description;
+
         $subcate->save();
         return redirect('admin/subcate/list')->with('thongbao', 'Them thanh cong');
     }
@@ -60,8 +51,8 @@ class SubcateController extends Controller
     public function getEdit($id)
     {
         $cate = Cate::all();
-        $subcate = Subcate::find($id);
-        return view('admin.subcate.edit', ['subcate' => $subcate], ['cate' => $cate]);
+        $subCate = Subcate::find($id);
+        return view('admin.subcate.edit', ['subcate' => $subCate], ['cate' => $cate]);
     }
 
     public function postEdit(Request $request, $id)
@@ -81,25 +72,17 @@ class SubcateController extends Controller
         $subcate->subcate_namekd = changeTitle($request->subcate_name);
         $subcate->subcate_sum = $request->subcate_sum;
         $subcate->cate_id = $request->cate_id;
-        if ($request->hasFile('subcate_img')) {
-            $file = $request->file('subcate_img');
-            $name = $file->getClientOriginalName();
-            $subcate_img = str_random(4) . "_" . $name;
-            while (file_exists("upload/subcate/" . $subcate_img)) {
-                $subcate_img = str_random(4) . "_" . $name;
-            }
-            $file->move("upload/subcate", $subcate_img);
-            //unlink("upload/subcate/".$subcate->subcate_img);
-            $subcate->subcate_img = $subcate_img;
-        }
+        $subcate->meta_keywords = $request->meta_keywords;
+        $subcate->meta_description = $request->meta_description;
+
         $subcate->save();
         return redirect('admin/subcate/list')->with('thongbao', 'Sửa thành công');
     }
 
     public function getDel($id)
     {
-        $subcate = Subcate::find($id);
-        $subcate->delete();
+        $subCate = Subcate::find($id);
+        $subCate->delete();
         return redirect('admin/subcate/list')->with('thongbao', 'Xóa thành công');
     }
     //

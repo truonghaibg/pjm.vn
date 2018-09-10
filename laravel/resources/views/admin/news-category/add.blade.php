@@ -24,13 +24,26 @@
                     {{session('thongbao')}}
                 </div>
             @endif
-                <form action="admin/news/news-cate-add" method="POST" enctype="multipart/form-data">
+                <form action="admin/news-category/add" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
 
                     <div class="form-group">
                         <label>Tên</label>
-                        <input class="form-control" name="name" placeholder="Điền tên danh mục" />
+                        <input class="form-control" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input class="form-control" name="slug" />
+                    </div>
+                    <div class="form-group">
+                        <label>Meta keywords</label>
+                        <input class="form-control" name="meta_keywords" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Meta description</label>
+                        <input class="form-control" name="meta_description" />
                     </div>
                     
 

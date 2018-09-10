@@ -14,8 +14,7 @@ class CateController extends Controller
     }
 
     public function getAdd(){
-        $customer = Customer::all();
-        return view('admin.cate.add',['customer'=>$customer]);
+        return view('admin.cate.add');
     }
 
     public function postAdd(Request $request){
@@ -35,29 +34,16 @@ class CateController extends Controller
         $cate->cate_name = $request->cate_name;
         $cate->cate_namekd = changeTitle($request->cate_name);
         $cate->cate_sum = $request->cate_sum;
-        $cate->customer_id = $request->customer_id;
-        if ($request->hasFile('cate_img')) {
-            $file = $request->file('cate_img');
-            $name = $file->getClientOriginalName();
-            $cate_img = str_random(4)."_".$name;
-            while (file_exists("upload/cate/".$cate_img)) {
-                $cate_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/cate",$cate_img);
-            $cate->cate_img = $cate_img;
-        } else{
-            $cate->cate_img = "";
-        }
-
+        $cate->meta_keywords = $request->meta_keywords;
+        $cate->meta_description = $request->meta_description;
 
         $cate->save();
         return redirect('admin/cate/list')->with('thongbao','Thêm thành công');
     }
     //Thieu $customer
     public function getEdit($id){
-        $customer = Customer::all();
         $cate = Cate::find($id);
-        return view('admin.cate.edit',['cate'=>$cate],['customer'=>$customer]);
+        return view('admin.cate.edit',['cate'=>$cate]);
     }
 
     public function postEdit(Request $request,$id){
@@ -75,19 +61,9 @@ class CateController extends Controller
         $cate->cate_name=$request->cate_name;
         $cate->cate_namekd = changeTitle($request->cate_name);
         $cate->cate_sum = $request->cate_sum;
-        $cate->customer_id=$request->customer_id;
-        if ($request->hasFile('cate_img')) {
-            $file = $request->file('cate_img');
-            $name = $file->getClientOriginalName();
-            //dd($name);
-            $cate_img = str_random(4)."_".$name;
-            while (file_exists("upload/cate/".$cate_img)) {
-                $cate_img = str_random(4)."_".$name;
-            }
-            $file->move("upload/cate",$cate_img);
-            //unlink("upload/cate/".$cate->cate_img);
-            $cate->cate_img = $cate_img;
-        }
+        $cate->meta_keywords = $request->meta_keywords;
+        $cate->meta_description = $request->meta_description;
+
         $cate->save();
         return redirect('admin/cate/list')->with('thongbao','Sửa thành công');
     }
