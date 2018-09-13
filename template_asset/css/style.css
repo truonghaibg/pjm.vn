@@ -48,7 +48,7 @@ a {
 }
 
 .menu-wrap .sub1 {
-    width: auto;
+    width: 100%;
     height: 48px;
     border-bottom: 1px solid #e6e6e6;
 }
@@ -84,23 +84,24 @@ a {
     display: inline-block;
 }
 
-.menu-wrap ul li:hover ul {
+.menu-wrap ul li.sub1:hover .ul2 {
     display: block;
 }
 
 .menu-wrap .ul2 {
     display: none;
-    width: 675px;
-    min-height: 287px;
+    width: 855px;
+    min-height: 336px;
     top: 0px;
-    left: 222px;
+    left: 100%;
     float: left;
-    position: absolute;
+    position: absolute !important;
     border: 1px solid red;
     background: #fff;
     z-index: 88;
     overflow: hidden;
     padding-bottom: 40px;
+	    padding: 15px;
 }
 
 .a3:hover {
@@ -110,8 +111,8 @@ a {
 
 .sub2 {
     float: left;
-    margin: 20px 20px;
-    height: 570px;
+    padding: 15px;
+
     width: 872px;
 }
 
@@ -320,8 +321,7 @@ li:hover .sp-img {
     font-weight: bold;
     height: 40px;
     float: left;
-    border-left: 1px solid #555555;
-    border-right: 1px solid #555555;
+
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////// PROSTYLE */
 .product {
@@ -377,8 +377,12 @@ li:hover .sp-img {
 .sub-title-li {
     float: right;
     padding: 8px 10px 0 0;
+	
+	text-align: right;
 }
-
+.full-width {
+	width: 100%;
+}
 .sub-title-li > a {
     color: #000;
     font: 13px Arial;
@@ -1410,4 +1414,161 @@ ul.b_l li .img-bank {
     margin-top: 0;
     width: 100%;
     z-index: 1000;
+}
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: ##ee1d23;
+    border-color: ##ee1d23;
+}
+
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 2;
+    color: #ee1d23;
+}
+
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    color: #c1a300;
+}
+.pagination > li > a, .pagination > li > span {
+    color: #c1a300;
+}
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.nav-bar-category{
+		position: relative;
+}
+.col3 {
+	width: 33.33%;
+	float:left;
+}
+.border-none {
+	border:none !important;
+}
+.menu-icon-down {
+		display: none;
+}
+.nav-bar-category:hover {
+	
+}
+
+.hide {
+	display: none !important;
+}
+.show {
+	display: block !important;
+}
+
+#slider_product {
+	border: 1px solid #eee;
+}
+.product-more-info-tab {
+    margin-bottom: 50px;
+    overflow-x: scroll;
+    background: #fff;
+}
+.more-info-tab {
+    background: #ccc none repeat scroll 0 0;
+    border-bottom: medium none;
+}
+.more-info-tab > li {
+    float: left;
+    margin-bottom: 0;
+}
+.more-info-tab > li.active > a, .more-info-tab > li.active > a:focus, .more-info-tab > li.active > a:hover {
+    background-color: #ff4f4f;
+    border-color: #ddd #ddd transparent;
+    border: none;
+    color: #fff;
+}
+.more-info-tab li a {
+    border: none;
+    border-right: 1px solid #fff;
+    color: #333;
+    display: block;
+    font-size: 16px;
+    line-height: 54px;
+    font-weight: 400;
+    padding: 0 10px;
+    position: relative;
+    text-transform: uppercase;
+    border-radius: 0;
+    margin-right: 0;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+	.menu-wrap .ul2 {
+		width: 100%;
+		top: 48px;
+		background: #ddd;
+
+	}
+	.menu-dropdown {
+		display: none;
+	}
+	.menu-right .li  {
+		width:25%;
+		float:left;
+	}
+	.menu-right .li:last-child a {
+		border:none;
+	}
+	.toplink a {
+		padding: 0;
+		width: 25%;
+		border: none;
+		text-align: center;
+	}
+	
+	#slider {
+		margin-left: 0;
+	}
+	
+	.menu-wrap .sub1 .a1 {
+		display: inline-block;
+		
+	}
+	.menu-wrap .sub1 {
+		position: relative;
+	}
+	.menu-icon-down {
+		display: block;
+		width: 20px;
+		height: 20px;
+		float: right;
+		margin-top: 10px;
+		margin-right: 15px;
+	}
+	.menu-wrap .ul2 {
+		left: 0;
+	}
+	
+	
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	
+.menu-wrap .ul2{
+		width: 580px;
+	}
+}
+   @media (min-width: 992px) and (max-width: 1200px) {
+	.menu-wrap .ul2{
+		width: 721px;
+	}
+
 }

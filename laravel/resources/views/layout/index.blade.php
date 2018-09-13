@@ -39,6 +39,8 @@
 	<script src="{{url('/')}}/js/owl.carousel.js"></script>
 	<script src="{{url('/')}}/js/owl.carousel.min.js"></script>
 	<script src="{{url('/')}}/js/jquery-ui.min.js"></script>
+	<script src="{{url('/')}}/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="{{url('/')}}/js/waterfall-light.js"></script>
     <script src="{{url('template_asset')}}/js/bootstrap.min.js"></script>
 	
     <script src="{{url('/')}}/template_asset/js/myscript.js"></script>
@@ -51,7 +53,7 @@
     <link rel="stylesheet" href="{{url('template_asset/css/nivo-slider.css')}}" type="text/css" />
     <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset')}}/css/bootstrap.min.css" type="text/css" />
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
    {{-- <link rel="stylesheet" href="{{url('template_asset')}}/css/test/1.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset')}}/css/test/2.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset')}}/css/test/3.css" type="text/css" />
@@ -71,7 +73,14 @@
 
 </head>
 <body>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     @include('layout.header')
     @include('layout.menu')
     @include('layout.slider')

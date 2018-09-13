@@ -191,16 +191,18 @@ class PageController extends Controller
     function chuyenmuc($cate_namekd)
     {
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
-        $subcate = Subcate::where('cate_id', $cate->id)->paginate(100);//array
+        $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();//array
+        $subCategory = Subcate::where('cate_id', $cate->id)->get();//array
+		$products = Product::whereIn('subcate_id', $subcate)->paginate(30);
         // dd($subcate);
-        return view('pages.chuyenmuc', ['cate2' => $cate, 'subcate3' => $subcate]);
+        return view('pages.chuyenmuc', ['cate2' => $cate, 'products' => $products, 'subCategory'=>$subCategory]);
     }
 
-    function loaitin($cate_namekd, $subcate_namekd)
+    function chuyenmuc2($cate_namekd, $subcate_namekd)
     {
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
         $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();//1 item
-        $product = Product::where('subcate_id', $subcate->id)->paginate(100);//array
+        $product = Product::where('subcate_id', $subcate->id)->paginate(30);//array
 		
         return view('pages.loaitin', ['cate1' => $cate, 'subcate2' => $subcate, 'product2' => $product]);
     }
@@ -208,7 +210,7 @@ class PageController extends Controller
     function nhasx($cate_namekd, $subcate_namekd, $nsx_namekd)
     {
         $nsx = Nsx::where('nsx_namekd', $nsx_namekd)->first();
-        $product = Product::where('nsx_id', $nsx->id)->paginate(100);
+        $product = Product::where('nsx_id', $nsx->id)->paginate(40);
         return view('pages.nhasx', ['nsx3' => $nsx, 'product3' => $product]);
     }
 

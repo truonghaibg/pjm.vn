@@ -1,15 +1,5 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+/* CLIENT */
 Route::get('/','PageController@getHome');
 
 Route::post('check-out','PaymentController@getCheckout');
@@ -41,16 +31,16 @@ Route::get('danh-sach/{cate_namekd}','PageController@chuyenmuc');
 
 Route::get('danh-sach/{cate_namekd}/sapxep/{sort}','PageController@chuyenmucnew');
 
-// Route::get('danh-sach/{cate_namekd}/?sort=new','PageController@chuyenmucnew');
-// Route::get('danh-sach/{cate_namekd}/?sort=price-asc','PageController@chuyenmucpriceasc');
-// Route::get('danh-sach/{cate_namekd}/?sort=price-desc','PageController@chuyenmucpricedesc');
-// Route::get('danh-sach/{cate_namekd}/sort=sort=name','PageController@chuyenmucname');
-
-
-
-Route::get('danh-sach/{cate_namekd}/{subcate_namekd}','PageController@loaitin');//list post (subcate $id)
+Route::get('danh-sach/{cate_namekd}/{subcate_namekd}','PageController@chuyenmuc2');//list post (subcate $id)
 Route::get('danh-sach/{cate_namekd}/{subcate_namekd}/{nsx_namekd}','PageController@nhasx');
+Route::get('danh-muc-san-pham/{cate_namekd}', 'CateController@FrontEndCategory');
 
+
+
+
+
+
+/* ADMIN */
 Route::get('admin','UserController@getLoginAdmin');
 Route::get('admin/login','UserController@getLoginAdmin');
 Route::post('admin/login','UserController@postLoginAdmin');

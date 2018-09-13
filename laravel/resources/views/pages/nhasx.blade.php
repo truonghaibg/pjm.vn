@@ -19,6 +19,11 @@
                 </div>
                 <?php } ?>
             </div>
+			<div class="row">
+				<div class="col-md-12" style="text-align: center">
+					{{ $product3->render() }}
+				</div>
+			</div>
         </div>
     </div>
     <div style="clear: both;"></div>

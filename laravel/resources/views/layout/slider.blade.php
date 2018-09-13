@@ -4,7 +4,7 @@
             <div class="col-lg-offset-3 col-md-12 col-lg-9">
                 <div class="row">
                     <?php if (Route::getCurrentRoute()->uri() == '/') { ?>
-                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 ">
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 ">
                         <div class="slider theme-default">
                             <div id="slider" class="nivoSlider" style="height: 332px">
                                 @foreach($slider as $item)
