@@ -9,6 +9,7 @@
                 <div class="time">
                     <span class="label">Ngày đăng:</span>
                     <span class="value">{{$new->created_at->format('d/m/Y')}}</span>
+					<div class="fb-share-button"  data-href="{{url('/')}}/tin-tuc/{{$new->titlekd}}" data-layout="button_count"> </div>
                 </div>
                 <div class="content_detail">
                     <?php echo $new->content; ?>

@@ -48,6 +48,8 @@
 								echo "<span class='tinhtrang' title=''>Liên hệ</span>";
 							}
 							?>
+							<span>|</span>
+							<div class="fb-share-button"  data-href="{{url('/')}}/san-pham/{{$product4->product_namekd}}" data-layout="button_count"> </div>
 						</div>
 						<?php
 						$phantram = ($product4->product_salevalue) / 100;
