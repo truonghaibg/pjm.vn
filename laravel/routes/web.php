@@ -7,7 +7,7 @@ Route::get('get-done/{id}','PaymentController@getDone');
 Route::get('get-cancel','PaymentController@getCancel');
 
 Route::get('success','PageController@success');
-Route::post('tim-kiem','PageController@search');
+Route::get('tim-kiem/{key}','PageController@search');
 
 Route::get('tin-tuc','PageController@news');
 Route::get('danh-muc-tin-tuc/{id}','PageController@newsCategory');

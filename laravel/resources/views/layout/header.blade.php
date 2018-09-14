@@ -36,16 +36,22 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 pull-left" style="margin: auto">
-                <form action="{{url('tim-kiem')}}" method="POST">
+               
                     <div class="input-group center-block">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                        <input type="text" class="form-control border-2 border-danger"  name="search"
-                               placeholder="Nhập tên hoặc mã sản phẩm tìm kiếm...">
+						<input type="hidden" name="current" value="1" />
+                        <input type="text" id="key-search" value="" class="form-control border-2 border-danger"  name="search" placeholder="Nhập tên hoặc mã sản phẩm tìm kiếm...">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-danger" title="Tìm kiếm" name="Tìm kiếm">Tìm kiếm</button>
+                            <button onclick="StartSearch()"  class="btn btn-danger" title="Tìm kiếm" name="Tìm kiếm">Tìm kiếm</button>
                         </div>
+						<script>
+							function StartSearch() {
+								var key =  jQuery("#key-search").val();
+								window.location.replace("<?php echo url('/') ?>/tim-kiem/"+encodeURI(key));
+							}
+						</script>
                     </div>
-                </form>
+                
             </div>
             <div class="col-md-3 d-none d-md-block">
                 <div class="header-right">

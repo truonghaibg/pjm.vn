@@ -181,9 +181,9 @@ class PageController extends Controller
         return view('pages.success');
     }
 
-    function search(Request $request)
+    function search($key, Request $request)
     {
-        $keySearch = $request->search;
+        $keySearch = $key;
         $products = Product::where('product_name', 'like', "%$keySearch%")->orWhere('product_model', 'like', "%$keySearch%")->paginate(20);
         return view('pages.search', ['products' => $products, 'key_search' => $keySearch]);
     }

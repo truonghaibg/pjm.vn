@@ -319,9 +319,9 @@ li:hover .sp-img {
     text-transform: uppercase;
     padding: 0 20px;
     font-weight: bold;
-    height: 40px;
+    height: 60px;
     float: left;
-
+    line-height: 60px;
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////// PROSTYLE */
 .product {
@@ -1508,6 +1508,81 @@ ul.b_l li .img-bank {
     border-radius: 0;
     margin-right: 0;
 }
+.menu-bar .menu-right {
+	display: inline-block;
+	width: 100%;
+	float: left;
+	height: 60px;
+}
+.menu-bar .menu-right > ul {
+	display: inline-block;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+.menu-bar .menu-right > ul > li {
+	display: inline-block;
+    float: left;
+    height: 100%;
+}    
+
+ .menu-bar .menu-right .customdropdow-menu{
+	display: none;
+    width: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    z-index: 99;
+    border: 1px solid #eee;
+ }   
+ .menu-bar .menu-right .customdropdow-menu a {
+	color: #222222;
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: capitalize;
+	white-space: nowrap;
+ }
+.has-child:hover .customdropdow-menu {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1566,9 +1641,9 @@ ul.b_l li .img-bank {
 		width: 580px;
 	}
 }
-   @media (min-width: 992px) and (max-width: 1200px) {
-	.menu-wrap .ul2{
-		width: 721px;
-	}
+@media (min-width: 992px) and (max-width: 1200px) {
+.menu-wrap .ul2{
+	width: 721px;
+}
 
 }

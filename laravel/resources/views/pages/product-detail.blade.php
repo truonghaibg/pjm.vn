@@ -104,10 +104,7 @@
 							<h4><i class="fa fa-phone"></i>&nbsp;Hotline Ms. Vân: 096 434 9191</h4>
 						</div>
 						<div class="boder-line"></div>
-						<div class='p-spec'>
-							<b>Mô tả chi tiết</b>
-							<?php echo $product4->product_info; ?>
-						</div>
+						
 						<div class="boder-line"></div>
 					</div>
 				
@@ -131,6 +128,7 @@
 						<div class="tab-content">
 							<div class="tab-pane active" id="moreinfo">
 								<div class="tab-description">
+									<b>Mô tả chi tiết</b>
 									<?php echo htmlspecialchars_decode(stripslashes($product4->product_info)); ?>
 								</div>
 							</div>

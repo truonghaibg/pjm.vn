@@ -95,10 +95,19 @@
                                 Hoạt động
                             </a>
                         </li>
-                        <li class="toplink">
+                        <li class="toplink has-child" style="position: relative;">
                             <a href="{{url('tin-tuc')}}">
                                 Tin tức
                             </a>
+							<div class="customdropdow-menu">
+								<ul>
+								@foreach($newCategory as $newCate)
+									<li>
+										<a href="{{url('/')}}/danh-muc-tin-tuc/{{$newCate->id}}">{{$newCate->name}}</a>
+									</li>
+									@endforeach
+								</ul>
+							</div>
                         </li>
                         <li class="toplink">
                             <a href="{{url('tin-tuc')}}" class="border-none">

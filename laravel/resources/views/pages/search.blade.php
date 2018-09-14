@@ -20,6 +20,23 @@
                 </div>
                 <?php } ?>
             </div>
+			<div class="row">
+				<div class="col-md-12" style="text-align: center">
+					<div class="relink-pager" style="text-align: center;display: inline-block;">
+						{{ $products->render() }}
+					</div>
+				</div>
+			</div>
+			<script>
+				<?php 
+					if(isset($key_search) && $key_search != ""){ ?>
+						jQuery(document).ready(function() {
+							jQuery("#key-search").val("<?php echo $key_search ?>");
+						})
+					
+					
+				<?php } ?>
+			</script>
         </div>
     </div>
     <div style="clear: both;"></div>

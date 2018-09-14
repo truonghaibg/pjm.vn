@@ -4,6 +4,7 @@ namespace App\Providers;
 use App\Partners;
 use App\Slider;
 use App\Video;
+use App\NewsCategory;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,6 +26,11 @@ class AppServiceProvider extends ServiceProvider
             $view->slider = $slider;
             $video = Video::all()->first();
             $view->video = $video;
+        });
+		
+		view()->composer('layout.menu', function ($view) {
+            $newCategory = NewsCategory::all();
+            $view->newCategory = $newCategory;
         });
     }
 	
