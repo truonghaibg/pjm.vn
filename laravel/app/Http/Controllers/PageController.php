@@ -68,7 +68,7 @@ class PageController extends Controller
 
     function news()
     {
-        $news = News::where('news_category_id', "!=", 0)->orderBy('id', 'DESC')->get();
+        $news = News::where('news_category_id', "!=", 0)->orderBy('id', 'DESC')->paginate(20);
         $newsCategory = NewsCategory::all();
         $i = 0;
         foreach ($news as $item) {
@@ -86,7 +86,7 @@ class PageController extends Controller
 
     function newsCategory($id)
     {
-        $news = News::where('news_category_id', $id)->orderBy('id', 'DESC')->get();
+        $news = News::where('news_category_id', $id)->orderBy('id', 'DESC')->paginate(20);
         $newsCategory = NewsCategory::all();
         $i = 0;
         foreach ($news as $item) {

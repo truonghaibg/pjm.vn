@@ -40,6 +40,13 @@
                         </div>
                     @endforeach
                 </div>
+				<div>
+					<div  style="text-align: center">
+						<div style="    display: inline-block;">
+							{{ $news->render() }}
+						</div>
+					</div>
+				</div>
             </div>
             <div class="col-md-3">
                 <div class="box_left">
