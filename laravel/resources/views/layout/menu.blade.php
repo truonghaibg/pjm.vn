@@ -66,7 +66,6 @@
 							}
 							</style>
 							<script>
-								
 								jQuery(document).ready(function () { 
 									jQuery('h3.module-title').click( function () {
 										if(jQuery(".module-ct .nav").hasClass("show")) {
@@ -78,6 +77,24 @@
 
 								});
 							</script>
+						<?php } else { ?>
+							<script>
+							
+								jQuery(document).ready(function () { 
+									if (jQuery(window).width() < 768 ){
+										
+										jQuery('h3.module-title').click( function () {
+											alert("a");
+											if(jQuery(".module-ct .nav").hasClass("show")) {
+												jQuery(".module-ct .nav").removeClass("show");
+											}  	else {
+												jQuery(".module-ct .nav").addClass("show");
+											}
+										});
+									}
+								});
+							</script>
+							
 						<?php } ?>
                     </div>
                 </div>

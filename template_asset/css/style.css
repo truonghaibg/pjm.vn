@@ -1605,11 +1605,13 @@ ul.b_l li .img-bank {
 	}
 	.toplink a {
 		padding: 0;
-		width: 25%;
+		width: 100%;
 		border: none;
 		text-align: center;
 	}
-	
+	.menu-bar .menu-right > ul > li {
+		width: 25%;
+	}
 	#slider {
 		margin-left: 0;
 	}

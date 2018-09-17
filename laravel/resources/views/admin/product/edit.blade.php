@@ -178,12 +178,12 @@
 
                     <div class="form-group">
                         <label>Meta keywords</label>
-                        <input class="form-control" name="meta_keywords" value="{{$news->meta_keywords}}" />
+                        <input class="form-control" name="meta_keywords" value="{{$product->meta_keywords}}" />
                     </div>
 
                     <div class="form-group">
                         <label>Meta description</label>
-                        <input class="form-control" name="meta_description" value="{{$news->meta_description}}" />
+                        <input class="form-control" name="meta_description" value="{{$product->meta_description}}" />
                     </div>
 
                     <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
