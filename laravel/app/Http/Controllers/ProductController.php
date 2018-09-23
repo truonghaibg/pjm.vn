@@ -160,4 +160,11 @@ class ProductController extends Controller
 
         return redirect('admin/product/list')->with('thongbao','Xóa thành công');
     }
+
+    public function changeNameImage() {
+        $products = Product::all();
+        for ($i = 0 ; $i<$products.size ; $i++) {
+
+        }
+    }
 }

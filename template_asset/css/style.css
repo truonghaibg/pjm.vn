@@ -1270,7 +1270,7 @@ li:hover .pro-img {
 }
 
 .content_box_left.list_cat_news {
-    background: #b6070f none repeat scroll 0 0;
+    background: #ee1d23 none repeat scroll 0 0;
     border: medium none;
 }
 
@@ -1282,8 +1282,7 @@ li:hover .pro-img {
 .content_box_left.list_cat_news ul li a {
     color: white;
     font-weight: bold;
-    line-height: 32px;
-    text-decoration: none;
+    line-height: 35px;
     font-size: 13px;
 }
 .content_news_page h1 {
@@ -1479,6 +1478,7 @@ ul.b_l li .img-bank {
     margin-bottom: 50px;
     overflow-x: scroll;
     background: #fff;
+    margin-top: 10px;
 }
 .more-info-tab {
     background: #ccc none repeat scroll 0 0;
@@ -1499,8 +1499,8 @@ ul.b_l li .img-bank {
     border-right: 1px solid #fff;
     color: #333;
     display: block;
-    font-size: 16px;
-    line-height: 54px;
+    font-size: 15px;
+    line-height: 40px;
     font-weight: 400;
     padding: 0 10px;
     position: relative;

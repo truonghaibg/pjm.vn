@@ -29,6 +29,7 @@ class PageController extends Controller
         $product = Product::all();
         $news = News::all();
         $order = Order::all();
+        $posts = Post::all();
 
         view()->share('cate', $cate);
         view()->share('subcate', $subcate);
@@ -37,6 +38,7 @@ class PageController extends Controller
         view()->share('news', $news);
         view()->share('order', $order);
 
+        view()->share('posts', $posts);
 
         $news = News::all();
         view()->share('news', $news);
@@ -109,6 +111,14 @@ class PageController extends Controller
         view()->share('newview', $new);
         $n = News::all();
         return view('pages.news-detail', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory]);
+    }
+
+    function detailPost($slug)
+    {
+        $posts = Post::all();
+        $post = Post::where('slug', $slug)->first();
+        view()->share('post_view', $post);
+        return view('pages.post-detail', ['post' => $post]);
     }
 
     function events()

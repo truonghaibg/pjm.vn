@@ -103,7 +103,7 @@
                 <div class="menu-right">
                     <ul>
                         <li class="toplink">
-                            <a href="{{url('tin-tuc/khuyen-mai')}}">
+                            <a href="{{url('bai-viet/gioi-thieu')}}">
                                 Giới thiệu
                             </a>
                         </li>

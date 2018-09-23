@@ -73,7 +73,17 @@
 
 </head>
 <body>
+{{--@include('layout.banner')--}}
 <div id="fb-root"></div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125260006-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125260006-1');
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -88,6 +98,5 @@
   	@yield('content')
   	@include('layout.footer')
   	@yield('script')
-
 </body>
 </html>
