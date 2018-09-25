@@ -13,9 +13,13 @@
 	<?php if(isset($productview) && $productview!=''){   ?>
 	<meta property="og:title" content="<?php echo $productview->product_name ?>"  />
     <meta property="og:image" content="{{url('/')}}/upload/product/<?php echo $productview->product_img; ?>" />
+	<meta name="description" content="<?php echo $productview->meta_description ?>">
+	<meta name="keywords" content="<?php echo $productview->meta_keywords ?>">
     <?php } elseif(isset($newview) && $newview!=''){  ?>
 	<meta property="og:title" content="<?php echo $newview->title ?>" />
     <meta property="og:image" content="{{url('/')}}/upload/news/<?php echo $newview->img; ?>" />
+	<meta name="description" content="<?php echo $newview->meta_description ?>">
+	<meta name="keywords" content="<?php echo $newview->meta_keywords ?>">
 	<?php } else { ?>
 	<meta property="og:title" content="PJM.VN - Công ty cổ phần PJM" />
     <meta property="og:image" content="{{url('/')}}/upload/slider/CWCe_slai%207.jpg" />
@@ -73,7 +77,7 @@
 
 </head>
 <body>
-{{--@include('layout.banner')--}}
+@include('layout.banner')
 <div id="fb-root"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125260006-1"></script>
@@ -98,5 +102,10 @@
   	@yield('content')
   	@include('layout.footer')
   	@yield('script')
+	<script>
+		$(document).ready(function() {
+			showBannerDiv();
+		})
+	</script>
 </body>
 </html>

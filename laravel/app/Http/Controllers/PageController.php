@@ -27,6 +27,8 @@ class PageController extends Controller
         $subcate = Subcate::all();
         $nsx = Nsx::all();
         $product = Product::all();
+        $productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+		
         $news = News::all();
         $order = Order::all();
         $posts = Post::all();
@@ -35,6 +37,7 @@ class PageController extends Controller
         view()->share('subcate', $subcate);
         view()->share('nsx', $nsx);
         view()->share('product', $product);
+        view()->share('productSuggests', $productSuggests);
         view()->share('news', $news);
         view()->share('order', $order);
 
@@ -204,8 +207,9 @@ class PageController extends Controller
         $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();//array
         $subCategory = Subcate::where('cate_id', $cate->id)->get();//array
 		$products = Product::whereIn('subcate_id', $subcate)->paginate(30);
+		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
         // dd($subcate);
-        return view('pages.chuyenmuc', ['cate2' => $cate, 'products' => $products, 'subCategory'=>$subCategory]);
+        return view('pages.chuyenmuc', ['cate2' => $cate, 'products' => $products, 'subCategory'=>$subCategory, 'productSuggests' => $productSuggests]);
     }
 
     function chuyenmuc2($cate_namekd, $subcate_namekd)
@@ -213,15 +217,16 @@ class PageController extends Controller
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
         $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();//1 item
         $product = Product::where('subcate_id', $subcate->id)->paginate(30);//array
-		
-        return view('pages.loaitin', ['cate1' => $cate, 'subcate2' => $subcate, 'product2' => $product]);
+		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        return view('pages.loaitin', ['cate1' => $cate, 'subcate2' => $subcate, 'product2' => $product, 'productSuggests' => $productSuggests]);
     }
 
     function nhasx($cate_namekd, $subcate_namekd, $nsx_namekd)
     {
         $nsx = Nsx::where('nsx_namekd', $nsx_namekd)->first();
         $product = Product::where('nsx_id', $nsx->id)->paginate(40);
-        return view('pages.nhasx', ['nsx3' => $nsx, 'product3' => $product]);
+		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        return view('pages.nhasx', ['nsx3' => $nsx, 'product3' => $product, 'productSuggests' => $productSuggests] );
     }
 
     function detailProduct($product_namekd)

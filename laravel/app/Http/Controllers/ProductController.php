@@ -45,7 +45,9 @@ class ProductController extends Controller
         } else {
             $product->nsx_id = "0";
         }
-
+		if(isset($request->issuggest) && $request->issuggest ==1){
+            $product->issuggest =1;
+		} 
         $product->product_price = $request->product_price;
         $product->product_info = $request->product_info;
         $product->product_status = $request->product_status;
@@ -107,7 +109,10 @@ class ProductController extends Controller
         $product->product_name = $request->product_name;
         $product->product_namekd = changeTitle($request->product_name);
         $product->subcate_id = $request->subcate_id;
-        if (isset($request->nsx_id)) {
+        if(isset($request->issuggest) && $request->issuggest ==1){
+            $product->issuggest =1;
+		} 
+		if (isset($request->nsx_id)) {
             $product->nsx_id = $request->nsx_id;
         } else{
             $product->nsx_id ="0";

@@ -9,6 +9,7 @@
     </a>
 </div>
 <script type='text/javascript'>
+	
     function floatTopDiv()
     {
         console.log(document.body.clientWidth);

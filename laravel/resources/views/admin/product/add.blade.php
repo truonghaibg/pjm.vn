@@ -33,6 +33,10 @@
                         @endforeach
                         </select>
                     </div>
+					<div class="form-group">
+                        <label>Đề xuất</label>
+                        <input class="form-check-input" type="checkbox" value="1"  name="issuggest">
+                    </div>
                     <div class="form-group">
                         <label>Hãng</label>
                         <select class="form-control" name="nsx_id" id="nsx_id">

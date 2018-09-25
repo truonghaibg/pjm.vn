@@ -36,7 +36,13 @@
                         @if($p->nsx_id == 0)
                             <td>None</td>
                         @else
-                            <td>{{$p->nsx->nsx_name}}</td>
+                            <td>
+							<?php
+								if(isset($p->nsx->nsx_name)){
+									echo $p->nsx->nsx_name;
+								}
+							?>
+							</td>
                         @endif
                         <td>{{$p->product_price}}</td>
                         <td>

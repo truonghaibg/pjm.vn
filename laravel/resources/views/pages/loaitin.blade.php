@@ -30,6 +30,51 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					<?php
+					function cmp($a, $b)
+					{
+						return strtotime($a['created_at']) < strtotime($b['created_at']) ? 1 : -1;
+					}
+					?>
+					<div class="product-wrap">
+							<div class="row">
+								<div class="col-md-12 col-sm-12 col-xs-12">
+									<div class="pro-title">
+										<div class='title-name'>
+											<a href="{{url('/')}}">Sản phẩm đề xuất</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row text-center">
+								<?php $productArray = []; ?>
+									
+									@foreach($productSuggests as $p)
+										<?php
+										$productArray[] = $p->toArray();
+										?>
+									@endforeach
+								   
+									<?php
+									uasort($productArray, 'cmp');
+									?>
+									<?php
+									$i = 0;
+								foreach($productArray as $p){
+								?>
+								<div class="col-lg-12 col-md-12  text-center">
+									<div class="product-block text-center">
+										@include('pages.product-block')
+									</div>
+								</div>
+								<?php
+								}
+								?>
+							</div>
+
+					</div>
+					<div style="clear: both;"></div>
 					<ul>
 						@foreach($subcate2->nsx as $n)
 							<li class='sub-title-li full-width'>
