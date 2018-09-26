@@ -36,7 +36,7 @@ Route::get('danh-sach/{cate_namekd}/{subcate_namekd}/{nsx_namekd}', 'PageControl
 Route::get('danh-muc-san-pham/{cate_namekd}', 'CateController@FrontEndCategory');
 
 Route::get('bai-viet/{slug}', 'PageController@detailPost');
-
+Route::post('lien-he-san-pham/{product_namekd}', 'PageController@productContact');
 
 /* ADMIN */
 Route::get('admin', 'UserController@getLoginAdmin');
@@ -135,8 +135,12 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 
     });
     Route::group(['prefix' => 'product'], function () {
-
-        Route::get('list', 'ProductController@getList');
+		Route::get('product-contact-list', 'ProductContactController@GetContactList');
+		Route::get('product-contact-details/{id}', 'ProductContactController@GetContactDetails');
+		Route::post('product-contact-details/{id}', 'ProductContactController@PostContactDetails');
+		Route::get('product-contact-details-delete/{id}', 'ProductContactController@RemoveContactDetails');
+        
+		Route::get('list', 'ProductController@getList');
 
         Route::get('edit/{id}', 'ProductController@getEdit');
 

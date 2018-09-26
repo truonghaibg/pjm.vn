@@ -1546,8 +1546,17 @@ ul.b_l li .img-bank {
 .has-child:hover .customdropdow-menu {
 	display: block;
 }
+.product-contact {
+	padding-left:0;
+	margin: 0 0;
+	display: inline-block;
+}
+.card-body {
 
-
+}
+.product-contact .mb-1 {
+	
+}
 
 
 

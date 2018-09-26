@@ -4,22 +4,8 @@
         <div class="container">
             <div class="row">
 				<div class="col-lg-12 col-md-12">
-				<br/>
 					<br/>
-				@if(count($errors)>0)
-					<div class="alert alert-danger">
-						@foreach($errors->all() as $err)
-							{{$err}}<br>
-						@endforeach
-					</div>
-				@endif
-
-				@if(session('thongbao'))
-					<div class="alert alert-success">
-						{{session('thongbao')}}
-					</div>
-				@endif
-					
+					<br/>
 				</div>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 					<div class="owl-carousel owl-theme" id="slider_product">
@@ -70,55 +56,18 @@
 						$tiensale = ($product4->product_price) * $phantram;
 						$price = ($product4->product_price) - $tiensale;
 						?>
-						
+
 						<div class="price_deal_detail_2">
-							
 							Giá sản phẩm:
-							<?php if ($price==0) { ?>
-								<div class="pr-price">
-									Liên hệ
-								</div>
-								<div class="product-contact">
-								<style>
-									.price_deal_detail_2 {
-										width: 100% !important;
-									}
-									
-								</style>
-								<div class="card-body">
-									<form action="{{url('/')}}/lien-he-san-pham/{{$product4->product_namekd}}" method="POST">
-										<input type="hidden" name="_token" value="{{csrf_token()}}" />
-										<input type="hidden" name="id" value="{{$product4->id}}" />
-										<div class="form-group">
-											<label>Số lượng:</label>
-											<div>
-												<input class="form-control" name="number" value="1" type="text">
-											</div>
-										</div>
-										<div>
-											<div class="form-group">
-												<label>Nội dung<sup>*</sup>:</label>
-												<div >
-													<textarea rows="6" class="form-control" name="content" placeholder="Nội dung liên hệ..."></textarea>
-													<small class="col-gray">Vui lòng nhập chi tiết sản phẩm như màu sắc, kích thước, vật liệu... và các yêu cầu cụ thể khác để nhận báo giá chính xác.</small>
-												</div>
-											</div>
-										</div>
-										<div class="text-right mt-3">
-											<button type="submit" class="btn btn-success" style="">
-												Gửi yêu cầu ngay
-											</button>
-										</div>
-									</form>
-								</div>
-								
-								</div>
-							<?php } else { ?>
-								
-								<div class="pr-price">
-									{{ number_format($price).' đ' }}
-								</div>
-							<?php } ?>
+							<div class="pr-price">
+								<?php
+								if ($price==0) {
+									echo 'Liên hệ';
+								} else {
+									echo number_format($price).' đ';
+								}
+								?>
+							</div>
 							<?php if ($price!=0) { ?>
 							<div class="pr-price2">
 								<span>[Giá đã bao gồm VAT] </span></br>
@@ -194,8 +143,18 @@
 									</div>
 								</div>
 							</div>
+
+
 						</div>
 					</div>
+				
+				
+				
+				
+				
+				
+				
+                    
                 </div>
             </div>
            

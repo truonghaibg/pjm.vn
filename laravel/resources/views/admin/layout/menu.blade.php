@@ -97,6 +97,10 @@
             </ul>
             <!-- /.nav-second-level -->
         </li>
+		<li>
+            <a href="admin/product/product-contact-list"><i class="fa fa-barcode fa-fw"></i> Tin nhắn liên hệ<span class="fa arrow"></span></a>
+            <!-- /.nav-second-level -->
+        </li>
         <li>
             <a href="{{url('')}}/admin/news-category/"><i class="fa fa-edit fa-fw"></i> Danh mục tin tức<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">

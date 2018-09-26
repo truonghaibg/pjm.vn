@@ -17,6 +17,7 @@ use App\Order;
 use App\Tags;
 use App\TagsBelong;
 use App\NewsCategory;
+use App\ProductContact;
 
 class PageController extends Controller
 {
@@ -235,7 +236,27 @@ class PageController extends Controller
 		view()->share('productview', $product);
         $images = $product->images()->orderBy("sort")->get();
 		$relatedProduct = Product::where('subcate_id', $product->subcate_id)->where('id', '!=', $product->id)->take(4)->orderBy('id')->get();
-        return view('pages.product-detail', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct]);
+		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+		return view('pages.product-detail', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct, 'productSuggests' => $productSuggests]);
+    }
+	function productContact(Request $request, $product_namekd)
+    {
+		$this->validate($request,
+		[
+			'number' => 'required',
+			'content' => 'required',
+		],
+		[
+			'number' => 'Số lượng không được để trống',
+			'content' => 'Nội dung không được để trống'
+		]);
+		$productContact = new ProductContact;
+		$productContact->product_id = $request->id;
+		$productContact->number = $request->number;
+		$productContact->content = $request->content;
+		$productContact->status = 0;
+		$productContact->save();
+		return redirect('san-pham/'.$product_namekd)->with('thongbao', 'Cảm ơn bạn đã quan tâm đến sản phẩm.Chúng tôi sẽ sớm liên hệ bạn.');
     }
 
     function chuyenmucnew($cate_namekd, $sort)
