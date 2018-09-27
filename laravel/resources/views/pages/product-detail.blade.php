@@ -78,41 +78,7 @@
 								<div class="pr-price">
 									Liên hệ
 								</div>
-								<div class="product-contact">
-								<style>
-									.price_deal_detail_2 {
-										width: 100% !important;
-									}
-									
-								</style>
-								<div class="card-body">
-									<form action="{{url('/')}}/lien-he-san-pham/{{$product4->product_namekd}}" method="POST">
-										<input type="hidden" name="_token" value="{{csrf_token()}}" />
-										<input type="hidden" name="id" value="{{$product4->id}}" />
-										<div class="form-group">
-											<label>Số lượng:</label>
-											<div>
-												<input class="form-control" name="number" value="1" type="text">
-											</div>
-										</div>
-										<div>
-											<div class="form-group">
-												<label>Nội dung<sup>*</sup>:</label>
-												<div >
-													<textarea rows="6" class="form-control" name="content" placeholder="Nội dung liên hệ..."></textarea>
-													<small class="col-gray">Vui lòng nhập chi tiết sản phẩm như màu sắc, kích thước, vật liệu... và các yêu cầu cụ thể khác để nhận báo giá chính xác.</small>
-												</div>
-											</div>
-										</div>
-										<div class="text-right mt-3">
-											<button type="submit" class="btn btn-success" style="">
-												Gửi yêu cầu ngay
-											</button>
-										</div>
-									</form>
-								</div>
 								
-								</div>
 							<?php } else { ?>
 								
 								<div class="pr-price">
@@ -176,6 +142,9 @@
 							<li>
 								<a href="#datasheet" data-toggle="tab">Bình luận</a>
 							</li>
+							<li>
+								<a href="#contact" data-toggle="tab">Liên hệ báo giá</a>
+							</li>
 						</ul>
 
 						<div class="tab-content">
@@ -193,6 +162,64 @@
 										<div class="fb-comments" data-href="{{url("/")}}/san-pham/{{$product4->product_namekd}}" data-width="100%" data-numposts="5"></div>
 									</div>
 								</div>
+							</div>
+							<div class="tab-pane" id="contact">
+								
+								<div class="product-contact" style="width:100%">
+									<style>
+										.price_deal_detail_2 {
+											width: 100% !important;
+										}
+										
+									</style>
+									<div class="card-body" >
+										<form action="{{url('/')}}/lien-he-san-pham/{{$product4->product_namekd}}" method="POST">
+											<input type="hidden" name="_token" value="{{csrf_token()}}" />
+											<input type="hidden" name="id" value="{{$product4->id}}" />
+											<div class="form-group">
+												<label>Số lượng:</label>
+												<div>
+													<input class="form-control" name="number" value="1" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Email:</label>
+												<div>
+													<input class="form-control" name="email" value="" type="text">
+												</div>
+											</div>
+											<div class="form-group">
+												<label>Số điện thoại:</label>
+												<div>
+													<input class="form-control" name="phone" value="" type="text">
+												</div>
+											</div>
+											<div>
+												<div class="form-group">
+													<label>Nội dung<sup>*</sup>:</label>
+													<div >
+														<textarea rows="6" class="form-control" name="content" placeholder="Nội dung liên hệ..."></textarea>
+														<small class="col-gray">Vui lòng nhập chi tiết sản phẩm như màu sắc, kích thước, vật liệu... và các yêu cầu cụ thể khác để nhận báo giá chính xác.</small>
+													</div>
+												</div>
+											</div>
+											<div class="text-right mt-3">
+												<button type="submit" class="btn btn-success" style="">
+													Gửi yêu cầu ngay
+												</button>
+											</div>
+										</form>
+									</div>
+								
+								</div>
+								
+								
+								
+								
+								
+								
+								
+								
 							</div>
 						</div>
 					</div>

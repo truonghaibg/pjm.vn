@@ -21,8 +21,11 @@
                 <li>
                     <a href="admin/manager/add-slider-item">Thêm mới Slider</a>
                 </li>
-				 <li>
+				<li>
                     <a href="admin/manager/video">Video youtube</a>
+                </li>
+				<li>
+                    <a href="admin/manager/banner">Banner trang chủ</a>
                 </li>
             </ul>
             <!-- /.nav-second-level -->

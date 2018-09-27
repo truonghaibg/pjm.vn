@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Slider;
 use App\Video;
+use App\Banner;
 
 class ManagerController extends Controller
 {   
@@ -83,6 +84,54 @@ class ManagerController extends Controller
 		$video->save();
 		return redirect('admin/manager/video')->with('thongbao','Sửa thành công');
 	}
-	
+	public function Banner(Request $request) {
+		if(isset($request->update)){
+			$banner = Banner::where("name", "home")->get()->first();
+			if(isset($request->left_isenable)){
+				$banner->left_isenable = $request->left_isenable;
+			} else {
+				$banner->left_isenable = 0;
+			}
+			if(isset($request->right_isenable)){
+				$banner->right_isenable = $request->right_isenable;
+			} else {
+				$banner->right_isenable = 0;
+			}
+			if($request->hasFile('bannerleft')) {
+				
+                $file = $request->file('bannerleft');
+                $name = $file->getClientOriginalName();
+                $img = str_random(4)."_".$name;
+                while (file_exists("upload/banner/".$img)) {
+                    $img = str_random(4)."_".$name;
+                }
+                $file->move("upload/banner/",$img);
+                $banner->bannerleft = $img;
+            }
+			if($request->hasFile('bannerright')) {
+				
+                $file = $request->file('bannerright');
+                $name = $file->getClientOriginalName();
+                $img = str_random(4)."_".$name;
+                while (file_exists("upload/banner/".$img)) {
+                    $img = str_random(4)."_".$name;
+                }
+                $file->move("upload/banner/",$img);
+                $banner->bannerright = $img;
+            }
+			$banner->lefturl = $request->lefturl;
+			$banner->righturl  = $request->righturl;
+			$banner->save();
+			$banner = Banner::where('name', 'home')->get()->first();
+			$success = "success";
+			return view('admin.manager.banner', ["banner" => $banner, "success"=>$success ]);
+			
+		} else {
+			$banner = Banner::where('name', 'home')->get()->first();
+			return view('admin.manager.banner', ["banner" => $banner ]);
+		}
+		
+		
+	}
 	
 }

@@ -30,6 +30,13 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					<ul style="display: inline-block;width: 100%;">
+						@foreach($subcate2->nsx as $n)
+							<li class='sub-title-li full-width'>
+								<a href="{{url('danh-sach/'.$cate1->cate_namekd.'/'.$subcate2->subcate_namekd.'/'.$n->nsx_namekd)}}">{{$n->nsx_name}}</a>
+							</li>
+						@endforeach
+					</ul>
 					<?php
 					function cmp($a, $b)
 					{
@@ -75,13 +82,7 @@
 
 					</div>
 					<div style="clear: both;"></div>
-					<ul>
-						@foreach($subcate2->nsx as $n)
-							<li class='sub-title-li full-width'>
-								<a href="{{url('danh-sach/'.$cate1->cate_namekd.'/'.$subcate2->subcate_namekd.'/'.$n->nsx_namekd)}}">{{$n->nsx_name}}</a>
-							</li>
-						@endforeach
-					<ul>
+					
 				</div>
 				
                

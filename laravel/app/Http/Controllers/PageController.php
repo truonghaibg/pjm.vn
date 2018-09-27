@@ -15,6 +15,7 @@ use Cart;
 use Excel;
 use App\Order;
 use App\Tags;
+use App\Banner;
 use App\TagsBelong;
 use App\NewsCategory;
 use App\ProductContact;
@@ -33,7 +34,9 @@ class PageController extends Controller
         $news = News::all();
         $order = Order::all();
         $posts = Post::all();
+        $banner = Banner::where('name', 'home')->get()->first();
 
+        view()->share('banner', $banner);
         view()->share('cate', $cate);
         view()->share('subcate', $subcate);
         view()->share('nsx', $nsx);
@@ -254,6 +257,8 @@ class PageController extends Controller
 		$productContact->product_id = $request->id;
 		$productContact->number = $request->number;
 		$productContact->content = $request->content;
+		$productContact->phone = $request->phone;
+		$productContact->email = $request->email;;
 		$productContact->status = 0;
 		$productContact->save();
 		return redirect('san-pham/'.$product_namekd)->with('thongbao', 'Cảm ơn bạn đã quan tâm đến sản phẩm.Chúng tôi sẽ sớm liên hệ bạn.');

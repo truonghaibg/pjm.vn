@@ -1,13 +1,17 @@
+@if(isset($banner) && $banner->right_isenable == 1)
 <div id="divQCRight" class="d-none d-lg-block" style="display: none; position: absolute; top: 0px">
-    <a href="http://www.chiase69.com">
-        <img src="http://3.bp.blogspot.com/-DFWCRf2oANg/UmDs8ZxWtiI/AAAAAAAAFC0/0Ecu36I5MgI/s1600/fptarena1.png" width="100" />
+    <a href="{{$banner->righturl}}">
+        <img src="{{url('/')}}/upload/banner/{{$banner->bannerright}}" width="100" />
     </a>
 </div>
+@endif
+@if(isset($banner) && $banner->left_isenable == 1)
 <div id="divQCLeft" class="d-none d-lg-block" style="display: none; position: absolute; top: 0px">
-    <a href="www.chiase69.com">
-        <img src="http://3.bp.blogspot.com/-DFWCRf2oANg/UmDs8ZxWtiI/AAAAAAAAFC0/0Ecu36I5MgI/s1600/fptarena1.png" width="100" />
+    <a href="{{$banner->lefturl}}">
+        <img src="{{url('/')}}/upload/banner/{{$banner->bannerleft}}" width="100" />
     </a>
 </div>
+@endif
 <script type='text/javascript'>
 	
     function floatTopDiv()

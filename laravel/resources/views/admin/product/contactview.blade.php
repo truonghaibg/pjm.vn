@@ -32,7 +32,14 @@
 					<div class="form-group">
                         <label>Số lượng : {{$productContact->number}}</label>
                     </div>
-
+					<div class="form-group">
+                        <label>Số điện thoại liên hệ :</label>
+						<input class="form-control" name="phone" value="{{$productContact->phone}}" type="text">
+                    </div>
+					<div class="form-group">
+                        <label>Email:</label>
+						<input class="form-control" name="email" value="{{$productContact->email}}" type="text">
+                    </div>
                     <div class="form-group">
                         <label>Nội dung yêu cầu báo giá</label>
                         <div style="width:100%; border:1px solid  #ccc; padding: 15px;">

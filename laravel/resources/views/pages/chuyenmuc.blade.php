@@ -31,6 +31,13 @@
 				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					<ul style="display: inline-block;width: 100%;">
+						@foreach($subCategory as $sub)
+						<li class='sub-title-li full-width'>
+							<a href="{{url('/')}}/danh-sach/{{$cate2->cate_namekd}}/{{$sub->subcate_namekd}}">{{$sub->subcate_name}}</a>
+						</li>
+						@endforeach
+					</ul>
 					<?php
 					function cmp($a, $b)
 					{
@@ -76,13 +83,7 @@
 
 					</div>
 					<div style="clear: both;"></div>
-					<ul>
-						@foreach($subCategory as $sub)
-						<li class='sub-title-li full-width'>
-							<a href="{{url('/')}}/danh-sach/{{$cate2->cate_namekd}}/{{$sub->subcate_namekd}}">{{$sub->subcate_name}}</a>
-						</li>
-						@endforeach
-					</ul>
+					
 					
 					
 					

@@ -131,8 +131,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 
         Route::get('video', 'ManagerController@getVideo');
         Route::post('video', 'ManagerController@postVideo');
-
-
+		Route::get('banner', 'ManagerController@Banner');
+        Route::post('banner', 'ManagerController@Banner');
+		
     });
     Route::group(['prefix' => 'product'], function () {
 		Route::get('product-contact-list', 'ProductContactController@GetContactList');
