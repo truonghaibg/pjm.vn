@@ -111,7 +111,9 @@ class ProductController extends Controller
         $product->subcate_id = $request->subcate_id;
         if(isset($request->issuggest) && $request->issuggest ==1){
             $product->issuggest =1;
-		} 
+		} else {
+			  $product->issuggest = 0;
+		}
 		if (isset($request->nsx_id)) {
             $product->nsx_id = $request->nsx_id;
         } else{
