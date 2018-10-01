@@ -809,7 +809,6 @@ li:hover .pro-img {
 }
 
 .p-pro {
-    height: 26px;
     width: 100%;
     border-bottom: 1px solid #b7b7b7;
 }
@@ -1643,7 +1642,10 @@ ul.b_l li .img-bank {
 	.menu-wrap .ul2 {
 		left: 0;
 	}
-	
+	.p-pro {
+		
+		padding-bottom: 10px;
+	}
 	
 }
 @media (min-width: 768px) and (max-width: 991px) {
