@@ -117,7 +117,8 @@ class PageController extends Controller
         $new = News::where('titlekd', $titlekd)->first();
         view()->share('newview', $new);
         $n = News::all();
-        return view('pages.news-detail', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory]);
+		$relatedNews = News::where("news_category_id", $new->news_category_id)->take(5)->orderBy('created_at', 'desc')->get();
+        return view('pages.news-detail', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory, "relatedNews" => $relatedNews]);
     }
 
     function detailPost($slug)

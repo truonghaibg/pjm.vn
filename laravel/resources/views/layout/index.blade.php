@@ -2,7 +2,11 @@
 <html lang="vi">
 <head>
     <title>PJM.VN - Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 
@@ -13,11 +17,12 @@
 	<?php if(isset($productview) && $productview!=''){   ?>
 	<meta property="og:title" content="<?php echo $productview->product_name ?>"  />
     <meta property="og:image" content="{{url('/')}}/upload/product/<?php echo $productview->product_img; ?>" />
-	<meta name="description" content="<?php echo $productview->meta_description ?>">
+	<meta name="og:description" content="<?php echo $productview->meta_description ?>">
 	<meta name="keywords" content="<?php echo $productview->meta_keywords ?>">
     <?php } elseif(isset($newview) && $newview!=''){  ?>
 	<meta property="og:title" content="<?php echo $newview->title ?>" />
     <meta property="og:image" content="{{url('/')}}/upload/news/<?php echo $newview->img; ?>" />
+	<meta name="og:description" content="<?php echo $newview->meta_description ?>">
 	<meta name="description" content="<?php echo $newview->meta_description ?>">
 	<meta name="keywords" content="<?php echo $newview->meta_keywords ?>">
 	<?php } else { ?>
@@ -107,5 +112,8 @@
 			showBannerDiv();
 		})
 	</script>
+	<script src="https://www.cssscript.com/demo/animate-page-title-browser-tab/title-scroll.js" data-start="1000" data-speed="350"></script>
+	
+
 </body>
 </html>
