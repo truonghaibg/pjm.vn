@@ -102,8 +102,8 @@
 								} ?>">Tiết kiệm: <?php echo number_format($tiensale); ?> đ</span>
 							</div>
 							<?php } ?>
-						</div>
-						<?php if ($price!=0) { ?>
+						</div>button
+                    <?php if ($price!=0) { ?>
 						<div class="button_buy">
 							<a class="btn-red" href="{{url('gh/'.$product4->id)}}">Mua ngay</a>
 							<a class="btn-blue" onclick="return kiemtra();" href="{{url('cart/'.$product4->id)}}">Cho vào
@@ -119,8 +119,8 @@
 						</script>
 						<div class="boder-line"></div>
 						<div class="hotline">
-							<h4><i class="fa fa-phone"></i>&nbsp;Hotline Mr. Vũ: 0939 66 1010</h4>
-							<h4><i class="fa fa-phone"></i>&nbsp;Hotline Ms. Vân: 096 434 9191</h4>
+							<h5><i class="fa fa-phone"></i>&nbsp;Hotline Mr. Vũ: 0939 66 1010</h5>
+							<h5><i class="fa fa-phone"></i>&nbsp;Hotline Ms. Vân: 096 434 9191</h5>
 						</div>
 						<div class="boder-line"></div>
 						
@@ -210,16 +210,7 @@
 											</div>
 										</form>
 									</div>
-								
 								</div>
-								
-								
-								
-								
-								
-								
-								
-								
 							</div>
 						</div>
 					</div>
