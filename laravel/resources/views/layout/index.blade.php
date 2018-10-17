@@ -10,8 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 
-    <meta name="description" content="Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.">
-    <meta property="og:description" content="Chuyên cung cấp vật liệu xây dựng hoàn thiện, Gạch ốp lát, Đá ốp lá, Keo dán, vữa ốp lát, Công cụ, dụng cụ ốp lát, Chống thấm và hóa chất, Nội Thất Vệ sinh và Bếp...">
+    
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="fb:app_id" content="1547540628876392">
 	<?php if(isset($productview) && $productview!=''){   ?>
@@ -28,6 +27,8 @@
 	<?php } else { ?>
 	<meta property="og:title" content="PJM.VN - Công ty cổ phần PJM" />
     <meta property="og:image" content="{{url('/')}}/upload/slider/CWCe_slai%207.jpg" />
+	<meta name="description" content="Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.">
+    <meta property="og:description" content="Chuyên cung cấp vật liệu xây dựng hoàn thiện, Gạch ốp lát, Đá ốp lá, Keo dán, vữa ốp lát, Công cụ, dụng cụ ốp lát, Chống thấm và hóa chất, Nội Thất Vệ sinh và Bếp...">
 	<?php } ?>
     <meta name="author" content="pjm.vn">
     <meta name="copyright" content="pjm.vn">
