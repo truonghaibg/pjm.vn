@@ -31,6 +31,9 @@
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+	
 </head>
 
 <body>
@@ -93,6 +96,40 @@
 
 	<script src="{{url("/")}}/js/jquery-ui.min.js"></script>
 						<script src="{{url("/")}}/js/tag-it.min.js"></script>
+	<script>
+		$(document).ready(function() {
+            $('.summernote').summernote({
+                height: 300,
+                callbacks: {
+                    onImageUpload: function(image) {
+                        uploadImage(image[0]);
+                    }
+                }
+            });
+
+            function uploadImage(image) {
+                var data = new FormData();
+                data.append("image", image);
+                data.append("_token", "{{csrf_token()}}");
+                $.ajax({
+                    url: '<?php echo url('admin/ajax/ajax-upload-image') ?>',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: data,
+                    type: "POST",
+                    success: function(imagename) {
+                        var image = $('<img>').attr('src', '<?php echo str_replace("admin/","",url('upload/images')) ?>' + imagename);
+                        $('.summernote').summernote("insertNode", image[0]);
+                    },
+                    error: function(data) {
+                        console.log(data);
+                    }
+                });
+            }
+        });
+	
+	</script>
     @yield('script')
 	
 </body>

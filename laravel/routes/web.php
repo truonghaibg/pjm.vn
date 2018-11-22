@@ -202,6 +202,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::get('subcate/{cate_id}', 'AjaxController@getSubcate');
         Route::get('nsx/{subcate_id}', 'AjaxController@getNsx');
         Route::get('remove-product-image/{id}', 'AjaxController@removeImage');
+		Route::post('ajax-upload-image', 'AjaxController@ajaxUploadImage');
     });
 
 
