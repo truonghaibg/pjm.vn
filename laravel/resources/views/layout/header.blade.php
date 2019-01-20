@@ -31,8 +31,10 @@
             <div class="col-md-3 col-sm-12 text-center">
                 <div class="main-logo">
                     <a href="{{url('')}}">
-                        <img src="{{url('')}}/template_asset/images/logo/logo.png" title="Công ty cổ phầm PJM" alt="Công ty cổ phầm PJM">
+                        <img src="{{url('upload/site', $siteConfig->logo)}}" title="{{$siteConfig->title}}"
+                             alt="{{$siteConfig->title}}">
                     </a>
+
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 pull-left" style="margin: auto">

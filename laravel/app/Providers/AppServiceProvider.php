@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use App\Partners;
+use App\SiteConfig;
 use App\Slider;
 use App\Video;
 use App\NewsCategory;
@@ -32,6 +33,10 @@ class AppServiceProvider extends ServiceProvider
             $newCategory = NewsCategory::all();
             $view->newCategory = $newCategory;
         });
+
+        $siteConfig = SiteConfig::first();
+
+        view()->share('siteConfig', $siteConfig);
     }
 	
     /**

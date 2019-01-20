@@ -127,7 +127,7 @@
 							</div>
                         </li>
                         <li class="toplink">
-                            <a href="{{url('tin-tuc')}}" class="border-none">
+                            <a href="{{url('lien-he')}}" class="border-none">
                                 Liên hệ
                             </a>
                         </li>

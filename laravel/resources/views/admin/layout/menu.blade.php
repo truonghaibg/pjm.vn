@@ -10,25 +10,18 @@
                     </button>
                 </span>
             </div>
-            <!-- /input-group -->
         </li>
-		<li>
-            <a href="admin/siteoption"><i class="fa fa-archive fa-fw"></i> Quản lý trang web<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-                <li>
-                    <a href="admin/manager/slider">Slide home page</a>
-                </li>
-                <li>
-                    <a href="admin/manager/add-slider-item">Thêm mới Slider</a>
-                </li>
-				<li>
-                    <a href="admin/manager/video">Video youtube</a>
-                </li>
-				<li>
-                    <a href="admin/manager/banner">Banner trang chủ</a>
-                </li>
-            </ul>
-            <!-- /.nav-second-level -->
+        <li>
+            <a href="{{url("admin/site-config/edit")}}"><i class="fa fa-archive fa-fw"></i> Cấu hình site</a>
+        </li>
+        <li>
+            <a href="{{url("admin/slider")}}"><i class="fa fa-archive fa-fw"></i> Slider</a>
+        </li>
+        <li>
+            <a href="{{url("admin/video")}}"><i class="fa fa-archive fa-fw"></i> Video</a>
+        </li>
+        <li>
+            <a href="{{url("admin/banner")}}"><i class="fa fa-archive fa-fw"></i> Banner</a>
         </li>
         <li>
             <a href="admin/cate/list"><i class="fa fa-archive fa-fw"></i> Danh mục<span class="fa arrow"></span></a>
@@ -40,7 +33,6 @@
                     <a href="admin/cate/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
         <li>
             <a href="admin/subcate/list"><i class="fa fa-folder fa-fw"></i> Chuyên mục<span class="fa arrow"></span></a>
@@ -52,7 +44,6 @@
                     <a href="admin/subcate/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
         <li>
             <a href="admin/nsx/list"><i class="fa fa-th-list fa-fw"></i> Hãng<span class="fa arrow"></span></a>
@@ -92,39 +83,31 @@
             <a href="admin/product/list"><i class="fa fa-barcode fa-fw"></i> Sản phẩm<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="admin/product/list">Danh sách</a>
+                    <a href="{{url('admin/product/list')}}">Danh sách</a>
                 </li>
                 <li>
-                    <a href="admin/product/add">Thêm mới</a>
+                    <a href="{{url('admin/product/add')}}">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
 		<li>
-            <a href="admin/product/product-contact-list"><i class="fa fa-barcode fa-fw"></i> Tin nhắn liên hệ<span class="fa arrow"></span></a>
-            <!-- /.nav-second-level -->
+            <a href="{{url('admin/product/product-contact-list')}}"><i class="fa fa-barcode fa-fw"></i> Yêu cầu báo giá</a>
         </li>
         <li>
-            <a href="{{url('')}}/admin/news-category/"><i class="fa fa-edit fa-fw"></i> Danh mục tin tức<span class="fa arrow"></span></a>
+            <a href="{{url('admin/news-category')}}"><i class="fa fa-edit fa-fw"></i> Danh mục tin tức<span class="fa arrow"></span></a>
             <ul class="nav nav-second-level">
                 <li>
-                    <a href="{{url('')}}/admin/news-category/list">Danh sách</a>
+                    <a href="{{url('admin/news-category/list')}}">Danh sách</a>
                 </li>
                 <li>
-                    <a href="{{url('')}}/admin/news-category/add">Thêm mới</a>
+                    <a href="{{url('admin/news-category/add')}}">Thêm mới</a>
                 </li>
             </ul>
         </li>
         <li>
-            <a href="admin/news/list"><i class="fa fa-edit fa-fw"></i> Tin tức<span class="fa arrow"></span></a>
-            <ul class="nav nav-second-level">
-				 <li>
-                    <a href="admin/news/list">Danh sách</a>
-                </li>
-                <li>
-                    <a href="admin/news/add">Thêm mới</a>
-                </li>
-            </ul>
+            <a href="{{url('admin/news')}}" >
+                <i class="fa fa-archive fa-fw"></i>Tin tức
+            </a>
         </li>
         <li>
             <a href="admin/order/list"><i class="fa fa-book fa-fw"></i> Order</a>
@@ -142,9 +125,7 @@
                     <a href="admin/user/add">Thêm mới</a>
                 </li>
             </ul>
-            <!-- /.nav-second-level -->
         </li>
     </ul>
 </div>
-<!-- /.sidebar-collapse -->
 </div>
