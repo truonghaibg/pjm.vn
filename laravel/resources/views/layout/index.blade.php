@@ -3,9 +3,6 @@
 <head>
     <title>PJM.VN - Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
     
-
-	
-
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
@@ -64,20 +61,6 @@
     <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset')}}/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-   {{-- <link rel="stylesheet" href="{{url('template_asset')}}/css/test/1.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/2.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/3.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/4.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/5.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/6.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/7.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/8.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/9.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/10.css" type="text/css" />
-    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/11.css" type="text/css" />--}}
-
-
-    <!-- Import New -->
 
 	@yield('css')
 
@@ -107,7 +90,7 @@
 
   	@yield('content')
   	@include('layout.footer')
-  	@yield('script')
+  	('script')
 	<script>
 		$(document).ready(function() {
 			showBannerDiv();

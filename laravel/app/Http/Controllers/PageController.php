@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Partners;
+use App\Slider;
+use App\Video;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Cate;
@@ -13,50 +16,22 @@ use App\News;
 use App\Events;
 use Cart;
 use Excel;
-use App\Order;
 use App\Tags;
-use App\Banner;
 use App\TagsBelong;
 use App\NewsCategory;
 use App\ProductContact;
 
 class PageController extends Controller
 {
-    //
-    function __construct()
-    {
-        $cate = Cate::all();
-        $subcate = Subcate::all();
-        $nsx = Nsx::all();
-        $product = Product::all();
-        $productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-		
-        $news = News::all();
-        $order = Order::all();
-        $posts = Post::all();
-        $banner = Banner::where('name', 'home')->get()->first();
-
-        view()->share('banner', $banner);
-        view()->share('cate', $cate);
-        view()->share('subcate', $subcate);
-        view()->share('nsx', $nsx);
-        view()->share('product', $product);
-        view()->share('productSuggests', $productSuggests);
-        view()->share('news', $news);
-        view()->share('order', $order);
-
-        view()->share('posts', $posts);
-
-        $news = News::all();
-        view()->share('news', $news);
-        $events = Events::all();
-        view()->share('events', $events);
-    }
-
     function getHome()
     {
-        $post = Post::where('id', '7')->paginate(6);
-        return view('pages.home', ['post' => $post]);
+        $headerData = Partners::take(6)->get();
+        $productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        $slider = Slider::all();
+        $video = Video::all()->first();
+        return view('pages.home', ['slider'=>$slider,
+            'video'=>$video, 'productSuggests'=>$productSuggests,
+            'headerData'=>$headerData]);
     }
 
     function export()
@@ -113,32 +88,19 @@ class PageController extends Controller
 
     function detailNews($titlekd)
     {
-        $newsCategory = NewsCategory::all();
         $new = News::where('titlekd', $titlekd)->first();
         view()->share('newview', $new);
         $n = News::all();
 		$relatedNews = News::where("news_category_id", $new->news_category_id)->take(5)->orderBy('created_at', 'desc')->get();
-        return view('pages.news-detail', ['new' => $new, 'n' => $n, "newsCategory" => $newsCategory, "relatedNews" => $relatedNews]);
+        return view('pages.news-detail', ['new' => $new, 'n' => $n, "relatedNews" => $relatedNews]);
     }
 
     function detailPost($slug)
     {
-        $posts = Post::all();
         $post = Post::where('slug', $slug)->first();
+        $posts = Post::where('status', 1)->get();
         view()->share('post_view', $post);
-        return view('pages.post-detail', ['post' => $post]);
-    }
-
-    function events()
-    {
-        return view('pages.events');
-    }
-
-    function eventsNoidung($id)
-    {
-        $ea = Events::all();
-        $events = Events::find($id);
-        return view('pages.eventsNoidung', ['events' => $events, 'ea' => $ea]);
+        return view('pages.post-detail', ['post' => $post, 'posts'=>$posts]);
     }
 
     function themvaogio($id)
@@ -209,29 +171,47 @@ class PageController extends Controller
     function chuyenmuc($cate_namekd)
     {
         $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
-        $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();//array
+        $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();
         $subCategory = Subcate::where('cate_id', $cate->id)->get();//array
-		$products = Product::whereIn('subcate_id', $subcate)->paginate(30);
-		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-        // dd($subcate);
-        return view('pages.chuyenmuc', ['cate2' => $cate, 'products' => $products, 'subCategory'=>$subCategory, 'productSuggests' => $productSuggests]);
+		$products = Product::whereIn('subcate_id', $subcate)->paginate(27);
+		$productSuggests = Product::where('issuggest', 1)
+            ->take(8)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('pages.chuyenmuc',
+            [
+                'item' => $cate,
+                'products' => $products,
+                'subCategory'=>$subCategory,
+                'productSuggests' => $productSuggests
+            ]);
     }
 
     function chuyenmuc2($cate_namekd, $subcate_namekd)
     {
-        $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
-        $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();//1 item
-        $product = Product::where('subcate_id', $subcate->id)->paginate(30);//array
+        $cate = Cate::where('cate_namekd', $cate_namekd)->first();
+        $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();
+        $product = Product::where('subcate_id', $subcate->id)->paginate(27);
 		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-        return view('pages.loaitin', ['cate1' => $cate, 'subcate2' => $subcate, 'product2' => $product, 'productSuggests' => $productSuggests]);
+        return view('pages.loaitin',
+            [
+                'cate1' => $cate,
+                'subcate2' => $subcate,
+                'product2' => $product,
+                'productSuggests' => $productSuggests
+            ]);
     }
 
     function nhasx($cate_namekd, $subcate_namekd, $nsx_namekd)
     {
         $nsx = Nsx::where('nsx_namekd', $nsx_namekd)->first();
-        $product = Product::where('nsx_id', $nsx->id)->paginate(40);
+        $product = Product::where('nsx_id', $nsx->id)->paginate(20);
 		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-        return view('pages.nhasx', ['nsx3' => $nsx, 'product3' => $product, 'productSuggests' => $productSuggests] );
+        return view('pages.nhasx', [
+            'nsx3' => $nsx,
+            'product3' => $product,
+            'productSuggests' => $productSuggests
+        ]);
     }
 
     function detailProduct($product_namekd)
@@ -241,7 +221,12 @@ class PageController extends Controller
         $images = $product->images()->orderBy("sort")->get();
 		$relatedProduct = Product::where('subcate_id', $product->subcate_id)->where('id', '!=', $product->id)->take(4)->orderBy('id')->get();
 		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-		return view('pages.product-detail', ['product4' => $product, 'images' => $images, 'relatedProduct'=>$relatedProduct, 'productSuggests' => $productSuggests]);
+		return view('pages.product-detail', [
+		    'product4' => $product,
+            'images' => $images,
+            'relatedProduct'=>$relatedProduct,
+            'productSuggests' => $productSuggests
+        ]);
     }
 	function productContact(Request $request, $product_namekd)
     {
@@ -263,72 +248,6 @@ class PageController extends Controller
 		$productContact->status = 0;
 		$productContact->save();
 		return redirect('san-pham/'.$product_namekd)->with('thongbao', 'Cảm ơn bạn đã quan tâm đến sản phẩm.Chúng tôi sẽ sớm liên hệ bạn.');
-    }
-
-    function chuyenmucnew($cate_namekd, $sort)
-    {
-        $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
-        $subcate = Subcate::where('cate_id', $cate->id)->get();//array
-        switch ($sort) {
-            case 'sort=new':
-                $pro = array();
-                foreach ($subcate as $s) {
-                    $product = Product::where('subcate_id', $s->id)->orderBy('id', 'asc')->get();
-                    json_decode($product);
-                    $pro = array_merge($pro, json_decode($product));
-                }
-                usort($pro, function ($a, $b) {
-                    if ($a->id == $b->id) return 0;
-                    return ($a->id) < ($b->id) ? 1 : -1;
-                    return strcmp($a->id, $b->id);
-                });
-                $pro = (object)$pro;
-                break;
-            case 'sort=price-asc':
-                $pro = array();
-                foreach ($subcate as $s) {
-                    $product = Product::where('subcate_id', $s->id)->orderBy('product_price', 'asc')->get();
-                    json_decode($product);
-                    $pro = array_merge($pro, json_decode($product));
-                }
-                usort($pro, function ($a, $b) {
-                    if ($a->product_price == $b->product_price) return 0;
-                    return ($a->product_price) > ($b->product_price) ? 1 : -1;
-                    return strcmp($a->product_price, $b->product_price);
-                });
-                $pro = (object)$pro;
-                break;
-            case 'sort=price-desc':
-                $pro = array();
-                foreach ($subcate as $s) {
-                    $product = Product::where('subcate_id', $s->id)->orderBy('product_price', 'desc')->get();
-                    json_decode($product);
-                    $pro = array_merge($pro, json_decode($product));
-                }
-
-                usort($pro, function ($a, $b) {
-                    if ($a->product_price == $b->product_price) return 0;
-                    return ($a->product_price) < ($b->product_price) ? 1 : -1;
-                    return strcmp($a->product_price, $b->product_price);
-                });
-                $pro = (object)$pro;
-                break;
-            case 'sort=name':
-                $pro = array();
-                $pro2 = array();
-                foreach ($subcate as $s) {
-                    $product = Product::where('subcate_id', $s->id)->orderBy('product_name')->get();
-                    json_decode($product);
-                    $pro = array_merge($pro, json_decode($product));
-                }
-
-                usort($pro, function ($a, $b) {
-                    return strcmp($a->product_name, $b->product_name);
-                });
-                $pro = (object)$pro;
-                break;
-        }
-        return view('pages.chuyenmuc', ['cate2' => $cate, 'subcate3' => $subcate, 'product_sapxep' => $pro]);
     }
 
 }

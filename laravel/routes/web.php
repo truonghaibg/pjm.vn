@@ -29,8 +29,6 @@ Route::get('export-order', 'OrderController@exportorder');
 Route::get('san-pham/{product_namekd}', 'PageController@detailProduct');
 Route::get('danh-sach/{cate_namekd}', 'PageController@chuyenmuc');
 
-Route::get('danh-sach/{cate_namekd}/sapxep/{sort}', 'PageController@chuyenmucnew');
-
 Route::get('danh-sach/{cate_namekd}/{subcate_namekd}', 'PageController@chuyenmuc2');
 Route::get('danh-sach/{cate_namekd}/{subcate_namekd}/{nsx_namekd}', 'PageController@nhasx');
 Route::get('danh-muc-san-pham/{cate_namekd}', 'CateController@FrontEndCategory');

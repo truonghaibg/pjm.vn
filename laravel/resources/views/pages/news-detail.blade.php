@@ -70,7 +70,7 @@
                     <div class="title_box_left">Danh mục tin tức</div>
                     <div class="content_box_left list_cat_news">
                         <ul class="ul">
-                            @foreach($newsCategory as $item)
+                            @foreach($newCategory as $item)
                                 <li><a href="{{url('danh-muc-tin-tuc/'.$item->id)}}">{{$item->name}}</a></li>
                             @endforeach
                         </ul>

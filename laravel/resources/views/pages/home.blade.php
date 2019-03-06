@@ -2,5 +2,6 @@
 
 @section('content')
 @include('layout.product')
+@include('includes.partner')
 
 @endsection

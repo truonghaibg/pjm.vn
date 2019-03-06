@@ -6,10 +6,9 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class="title-name">
-                            <a href="#">{{$cate2->cate_name}}</a>
+                            <a href="#">{{$item->cate_name}}</a>
                         </div>
                     </div>
-                   
                 </div>
             </div>
 			<div class="row">
@@ -31,13 +30,22 @@
 				</div>
 				
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-					<ul style="display: inline-block;width: 100%;">
-						@foreach($subCategory as $sub)
-						<li class='sub-title-li full-width'>
-							<a href="{{url('/')}}/danh-sach/{{$cate2->cate_namekd}}/{{$sub->subcate_namekd}}">{{$sub->subcate_name}}</a>
-						</li>
-						@endforeach
-					</ul>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="pro-title">
+								<div class='title-name'>
+									<a href="#">Danh mục con</a>
+								</div>
+							</div>
+							<ul style="display: inline-block;width: 100%;">
+								@foreach($subCategory as $sub)
+									<li class='sub-title-li full-width' style="text-align: left; padding-left:10px ">
+										<a href="{{url('danh-sach')}}/{{$item->cate_namekd}}/{{$sub->subcate_namekd}}">{{$sub->subcate_name}}</a>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
 					<?php
 					function cmp($a, $b)
 					{
@@ -80,21 +88,10 @@
 								}
 								?>
 							</div>
-
 					</div>
 					<div style="clear: both;"></div>
-					
-					
-					
-					
-					
-					
-					
-					
-					
 				</div>
 			</div>
-            
         </div>
     </div>
     <div style="clear: both;"></div>

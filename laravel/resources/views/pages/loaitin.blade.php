@@ -30,13 +30,22 @@
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-					<ul style="display: inline-block;width: 100%;">
-						@foreach($subcate2->nsx as $n)
-							<li class='sub-title-li full-width'>
-								<a href="{{url('danh-sach/'.$cate1->cate_namekd.'/'.$subcate2->subcate_namekd.'/'.$n->nsx_namekd)}}">{{$n->nsx_name}}</a>
-							</li>
-						@endforeach
-					</ul>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="pro-title">
+								<div class='title-name'>
+									<a href="#">Danh mục con</a>
+								</div>
+							</div>
+							<ul style="display: inline-block;width: 100%;">
+								@foreach($subcate2->nsx as $n)
+									<li class='sub-title-li full-width' style="text-align: left; padding-left:10px ">
+										<a href="{{url('danh-sach/'.$cate1->cate_namekd.'/'.$subcate2->subcate_namekd.'/'.$n->nsx_namekd)}}">{{$n->nsx_name}}</a>
+									</li>
+								@endforeach
+							</ul>
+						</div>
+					</div>
 					<?php
 					function cmp($a, $b)
 					{

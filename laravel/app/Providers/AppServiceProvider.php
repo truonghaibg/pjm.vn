@@ -1,8 +1,15 @@
 <?php
 
 namespace App\Providers;
+use App\Banner;
+use App\Cate;
+use App\Nsx;
+use App\Order;
 use App\Partners;
+use App\Post;
+use App\Product;
 use App\Slider;
+use App\Subcate;
 use App\Video;
 use App\NewsCategory;
 use Illuminate\Support\ServiceProvider;
@@ -16,22 +23,23 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-		view()->composer('layout.footer', function ($view) {
-            $headerData = Partners::take(6)->get();
-            $view->headerData = $headerData;
-        });
-		
-        view()->composer('layout.slider', function ($view) {
-            $slider = Slider::all();
-            $view->slider = $slider;
-            $video = Video::all()->first();
-            $view->video = $video;
-        });
-		
-		view()->composer('layout.menu', function ($view) {
-            $newCategory = NewsCategory::all();
-            $view->newCategory = $newCategory;
-        });
+
+        $cate = Cate::all();
+        $subcate = Subcate::all();
+        $nsx = Nsx::all();
+
+        $order = Order::all();
+        view()->share('cate', $cate);
+        view()->share('subcate', $subcate);
+        view()->share('nsx', $nsx);
+
+        view()->share('order', $order);
+        $banner = Banner::where('name', 'home')->get()->first();
+        view()->share('banner', $banner);
+
+        $newCategory = NewsCategory::all();
+		view()->share('newCategory', $newCategory);
+
     }
 	
     /**

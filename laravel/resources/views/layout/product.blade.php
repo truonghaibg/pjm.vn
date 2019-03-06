@@ -18,48 +18,43 @@ function cmp($a, $b)
 
 		<div class="row text-center">
 			<?php $productArray = []; ?>
-                
 				@foreach($productSuggests as $p)
 					<?php
 					$productArray[] = $p->toArray();
 					?>
 				@endforeach
-               
-                <?php
+
+            <?php
                 uasort($productArray, 'cmp');
-                ?>
-                <?php
                 $i = 0;
-			foreach($productArray as $p){
-			?>
-			<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center">
-				<div class="product-block text-center">
-					@include('pages.product-block')
-				</div>
-			</div>
-			<?php
-			}
-			?>
+            ?>
+            @foreach($productArray as $p)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 text-center">
+                    <div class="product-block text-center">
+                        @include('pages.product-block')
+                    </div>
+                </div>
+            @endforeach
 		</div>
 	</div>
 </div>
 <div style="clear: both;"></div>
-@foreach ($cate as $c)
+@foreach ($cate as $cateParent)
     <div class="product-wrap">
         <div class="container">
             <div class="pro-title">
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-xs-12">
                         <div class='title-name'>
-                            <a href="{{url('danh-sach/'.$c->cate_namekd)}}">{{$c->cate_name}}</a>
+                            <a href="{{url('danh-sach/'.$cateParent->cate_namekd)}}">{{$cateParent->cate_name}}</a>
                         </div>
                     </div>
                     <div class="col-md-9 d-none d-md-block">
                         <div class='sub-title'>
                             <div class='sub-title-ul'>
-                                @foreach($c->subcate as $sc)
+                                @foreach($cateParent->subcate as $subCate)
                                     <div class='sub-title-li'>
-                                        <a href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd)}}">{{$sc->subcate_name}}
+                                        <a href="{{url('danh-sach/'.$cateParent->cate_namekd.'/'.$subCate->subcate_namekd)}}">{{$subCate->subcate_name}}
                                             | </a>
                                     </div>
                                 @endforeach
@@ -71,7 +66,7 @@ function cmp($a, $b)
 
             <div class="row text-center">
                 <?php $productArray = []; ?>
-                @foreach($c->subcate as $s)
+                @foreach($cateParent->subcate as $s)
                     @foreach($s->product as $p)
                         <?php
                         $productArray[] = $p->toArray();
