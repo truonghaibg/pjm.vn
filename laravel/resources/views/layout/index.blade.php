@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>{{$siteConfig->title}} | Trang chủ</title>
+    <title>PJM.VN - Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.</title>
+    
+
+	
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
 
     
-    <meta property="og:url" content="{{$siteConfig->link}}">
-    <meta property="og:title" content="{{$siteConfig->title}}"/>
+    <meta property="og:url" content="{{ url()->current() }}">
     <meta property="fb:app_id" content="1547540628876392">
 	<?php if(isset($productview) && $productview!=''){   ?>
 	<meta property="og:title" content="<?php echo $productview->product_name ?>"  />
@@ -27,16 +30,16 @@
 	<meta name="description" content="Công ty cổ phần PJM | Vật liệu xây dựng hoàn thiện | Gạch ốp lát | Đá ốp lát | Thế giới Mosaic | Keo dán, vữa ốp lát | Công cụ, dụng cụ ốp lát | Chống thấm và hóa chất | Nội Thất Vệ sinh và Bếp.">
     <meta property="og:description" content="Chuyên cung cấp vật liệu xây dựng hoàn thiện, Gạch ốp lát, Đá ốp lá, Keo dán, vữa ốp lát, Công cụ, dụng cụ ốp lát, Chống thấm và hóa chất, Nội Thất Vệ sinh và Bếp...">
 	<?php } ?>
+    <meta name="author" content="pjm.vn">
+    <meta name="copyright" content="pjm.vn">
+    <meta property="og:type" content="website">
+
     <!-- Mobile Specific Metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="{{$siteConfig->link}}">
-    <meta name="copyright" content="{{$siteConfig->link}}">
-    <meta property="og:type" content="website">
-
-    <link rel="shortcut icon" type="image/x-icon" href="{{url('upload/site', $siteConfig->favicon)}}" />
-
+    <!-- Import New -->
+    <link rel="shortcut icon" href="{{url('template_asset/images/icon/favicon.ico')}}" />
     <script src="{{url('/')}}/template_asset/js/jquery.min.js"></script>
     <script src="{{url('/')}}/template_asset/js/jquery.nivo.slider.pack.js"></script>
     <script src="{{url('/')}}/template_asset/js/jquery.elevatezoom.js"></script>
@@ -61,6 +64,19 @@
     <link rel="stylesheet" href="{{url('/')}}/jquery-ui.min.css" type="text/css" />
     <link rel="stylesheet" href="{{url('template_asset')}}/css/bootstrap.min.css" type="text/css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   {{-- <link rel="stylesheet" href="{{url('template_asset')}}/css/test/1.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/2.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/3.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/4.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/5.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/6.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/7.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/8.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/9.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/10.css" type="text/css" />
+    <link rel="stylesheet" href="{{url('template_asset')}}/css/test/11.css" type="text/css" />--}}
+
+
     <!-- Import New -->
 
 	@yield('css')
@@ -70,8 +86,14 @@
 @include('layout.banner')
 <div id="fb-root"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<?php echo $siteConfig->google_seo; ?>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125260006-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'UA-125260006-1');
+</script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -92,5 +114,7 @@
 		})
 	</script>
 	<script src="https://www.cssscript.com/demo/animate-page-title-browser-tab/title-scroll.js" data-start="1000" data-speed="350"></script>
+	
+
 </body>
 </html>

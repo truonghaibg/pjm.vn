@@ -76,60 +76,6 @@ function stripUnicode($str){
 	}
 	return $str;
 }
-function getSlug($str,$strSymbol='-',$case=MB_CASE_LOWER){// MB_CASE_UPPER / MB_CASE_TITLE / MB_CASE_LOWER
-    $str=trim($str);
-    if ($str=="") return "";
-    $str =str_replace('"','',$str);
-    $str =str_replace("'",'',$str);
-    $str = stripUnicode($str);
-    $str = mb_convert_case($str,$case,'utf-8');
-    $str = preg_replace('/[\W|_]+/',$strSymbol,$str);
-    return $str;
-}
-
-function handlerFileCreate($request, $path, $name, $rename){
-    if ($request->hasFile($name)) {
-        $file = $request->file($name);
-        $extension = $file->getClientOriginalExtension();
-        $image = $rename.".".$extension;
-        while (file_exists($path.$image)) {
-            $image = str_random(4)."-".$image;
-        }
-        $file->move($path, $image);
-        return $image;
-    }
-    return null;
-}
-
-function handlerFileUpdate($request, $path, $name, $rename, $imageOld){
-    if ($request->hasFile($name)) {
-        $file = $request->file($name);
-        $extension = $file->getClientOriginalExtension();
-        $image = $rename.".".$extension;
-        while (file_exists($path.$image)) {
-            $image = str_random(4)."-".$image;
-        }
-        $file->move($path, $image);
-        deleteImage($path, $imageOld);
-        return $image;
-    }
-    return null;
-}
-
-function deleteImage($filePath, $fileName)
-{
-    $image = $filePath.$fileName;
-    if (file_exists($image)) {
-        @unlink($image);
-    }
-}
-
-function deleteImageWithPath($file)
-{
-    if (file_exists($file)) {
-        @unlink($file);
-    }
-}
 
 
 ?>

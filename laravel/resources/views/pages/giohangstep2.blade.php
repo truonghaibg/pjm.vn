@@ -78,7 +78,7 @@
       });
     });
 </script>
-<div class="container cart-info"<?php
+<div class="cart-info"<?php
  if (Cart::total() == 0){
    echo 'style="display:none"';
  }

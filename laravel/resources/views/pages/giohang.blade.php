@@ -1,6 +1,6 @@
 @extends('layout.index')
 @section('content')
-    <div class="container ghang">
+    <div class="ghang">
         <div id="guide_cart">
             <img src="template_asset/images/site/cart/cart.png" alt="" style="float:left">
             <h1>Chi tiết giỏ hàng</h1>

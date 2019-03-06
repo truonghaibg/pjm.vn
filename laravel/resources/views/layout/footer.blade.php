@@ -38,6 +38,7 @@
                         <li><a href="{{url('bai-viet/chinh-sach-bao-hanh')}}">Chính sách bảo hành</a>
                         </li>
                         <li><a href="{{url('bai-viet/chinh-sach-doi-tra')}}">Chính sách đổi trả</a></li>
+                        <li><a href="{{url('bai-viet/chinh-sach-bao-ve-thong-tin-ca-nhan-cua-nguoi-tieu-dung')}}">Chính sách bảo vệ thông tin cá nhân của người tiêu dùng</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,11 +67,17 @@
         </div>
         <hr>
         <div class="row no-gutters">
-            <div class="col">
+            <div class="col-md-3">
+                <a target="_blank" href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=52388" rel="noopener">
+                    <img src="http://online.gov.vn/PublicImages/2015/08/27/11/20150827110756-dathongbao.png" style="border-width:0px;height:100px;width:250px;border-width:0px;" />
+                </a>
+            </div>
+            <div class="col-md-8">
                 <h4>CÔNG TY CỔ PHẦN PJM</h4>
                 <span>Trụ sở: Số nhà 20/109/559 Phố Kim Ngưu, Phường Vĩnh Tuy, Quận Hai Bà Trưng, Thành Phố Hà Nội.</span><br>
-                <span>VPGD: P1603, Tầng 16CT2, Tòa nhà CT14 Bắc Hà, Đường Tố Hữu, Phường Trung Văn, Quận Từ Liêm, TP Hà Nội</span><br>
+                <span>VPGD: Số 13, đường Trung Yên 6, kđt Trung Yên, Quận Cầu Giấy, TP Hà Nội</span><br>
                 <span>Website: http://pjm.vn --- Email: giapvu@pjm.vn --- Điện thoại: 0939.66.10.10</span><br>
+                <span>Mã số thuế: 0108383502 --- Ngày cấp giấy phép: 01/08/2018</span>
             </div>
         </div>
     </div>

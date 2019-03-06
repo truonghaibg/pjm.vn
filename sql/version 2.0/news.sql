@@ -1,5 +1,0 @@
-ALTER TABLE `news` ADD `status` TINYINT NULL DEFAULT '1' AFTER `sum`;
-
-ALTER TABLE `news` CHANGE `titlekd` `slug` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL;
-
-ALTER TABLE `news` ADD UNIQUE(`slug`);

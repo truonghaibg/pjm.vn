@@ -32,7 +32,8 @@ class AjaxController extends Controller
 		$imagesRemove->delete();
 		echo "ok";
 	}
-    public function ajaxUploadImage(Request $request) {
+	
+	public function ajaxUploadImage(Request $request) {
 		if ($_FILES['image']['name']) {
             if (!$_FILES['image']['error']) {
                 $name = md5(rand(100, 200));
@@ -49,4 +50,5 @@ class AjaxController extends Controller
             }
         }
 	}
+    
 }

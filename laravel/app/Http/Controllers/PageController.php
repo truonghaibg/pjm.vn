@@ -70,6 +70,11 @@ class PageController extends Controller
         })->export('xls');
     }
 
+    function contact()
+    {
+        return view('pages.contact');
+    }
+
     function news()
     {
         $news = News::where('news_category_id', "!=", 0)->orderBy('id', 'DESC')->paginate(20);
@@ -145,7 +150,7 @@ class PageController extends Controller
         Cart::add(['id' => $product->id, 'name' => $product->product_name, 'options' => array('img' => $product->product_img,
             'namekd' => $product->product_namekd, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
             'qty' => 1, 'price' => $price]);
-        return redirect('san-pham/' . $product->product_namekd);
+        return redirect('item/' . $product->product_namekd);
     }
 
     function themmuangay($id)
@@ -324,35 +329,6 @@ class PageController extends Controller
                 break;
         }
         return view('pages.chuyenmuc', ['cate2' => $cate, 'subcate3' => $subcate, 'product_sapxep' => $pro]);
-    }
-
-    function contact()
-    {
-        return view('pages.contact');
-    }
-
-    function postContact(Request $request){
-
-        $rules = [
-            'name' => 'required',
-            'email' => 'required',
-            'title' => 'required',
-            'description' => 'required'
-        ];
-        $validator = Validator::make($request->all(), $rules);
-
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        } else {
-            $contact = new Contact();
-            $contact->name = $request->name;
-            $contact->email = $request->email;
-            $contact->title = $request->title;
-            $contact->mobile = $request->mobile;
-            $contact->description = $request->description;
-            $contact->save();
-        }
-        return redirect('lien-he')->with('thongbao','Thêm thành công');
     }
 
 }
