@@ -11,7 +11,7 @@ function cmp($a, $b)
                 <div class='row'>
                 <div class="col-4">
                     <div class='title-name'>
-                        <a href="{{url('danh-sach/'.$c->cate_namekd)}}">{{$c->cate_name}}</a>
+                        <a href="{{url('danh-sach/'.$c->slug)}}">{{$c->title}}</a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 hidden-xs hidden-sm">
@@ -19,7 +19,7 @@ function cmp($a, $b)
                         <div class='sub-title-ul'>
                             @foreach($c->subcate as $sc)
                                 <div class='sub-title-li'>
-                                    <a href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd)}}">{{$sc->subcate_name}}
+                                    <a href="{{url('danh-sach/'.$c->slug.'/'.$sc->slug)}}">{{$sc->title}}
                                         | </a>
                                 </div>
                             @endforeach
@@ -47,9 +47,9 @@ function cmp($a, $b)
                         foreach($productArray as $p){
                         ?>
                         <li class='pro-li'>
-                            <a class='pro-a' href="{{url('item/'.$p['product_namekd'])}}"
-                               title="{{$p['product_namekd']}}">
-                                <img class="pro-img" src="{{url('/')}}/upload/product/{{$p['product_img']}}">
+                            <a class='pro-a' href="{{url('item/'.$p['slug'])}}"
+                               title="{{$p['slug']}}">
+                                <img class="pro-img" src="{{url($p['image'])}}">
                                 <img class="sale-value-img" <?php if ($p['product_salevalue'] == 0) {
                                     echo "style='display:none;'";
                                 } ?>src='{{url('>
@@ -60,10 +60,10 @@ function cmp($a, $b)
                                 >{{$p['product_salevalue']}}%</span>
                                 <?php
                                 $phantram = ($p['product_salevalue']) / 100;
-                                $tiensale = ($p['product_price']) * $phantram;
-                                $price = ($p['product_price']) - $tiensale;
+                                $tiensale = ($p['price']) * $phantram;
+                                $price = ($p['price']) - $tiensale;
                                 ?>
-                                <span class='pro-name' title=''>{{$p['product_name']}}</span>
+                                <span class='pro-name' title=''>{{$p['title']}}</span>
                                 <div id="pro-price3">
                                     <?php
                                     if ($price == 0) {
@@ -77,15 +77,15 @@ function cmp($a, $b)
                                 <span class='pro-price2' <?php if ($p['product_salevalue'] == 0) {
                                     echo "style='display:none;'";
                                 } ?>>
-								{{number_format($p['product_price'])}} đ
+								{{number_format($p['price'])}} đ
 							    </span>
 
                                 <?php
-                                if ($p['product_status'] == 1) {
+                                if ($p['status'] == 1) {
                                     echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='" . url('') . "/template_asset/images/site/pro/cart.png'>  Hàng mới về</span>";
-                                } elseif ($p['product_status'] == 2) {
+                                } elseif ($p['status'] == 2) {
                                     echo "<span class='pro-sale-info' title='' style='color:#68EE60'><img src='" . url('') . "/template_asset/images/site/pro/cart.png'>  Còn hàng</span>";
-                                } elseif ($p['product_status'] == 3) {
+                                } elseif ($p['status'] == 3) {
                                     echo "<span class='pro-sale-info' title=''><img src='" . url('') . "/template_asset/images/site/pro/telephone.png'>  Liên hệ</span>";
                                 }
                                 ?>

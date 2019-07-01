@@ -1,75 +1,67 @@
 @extends('admin.layout.index')
 @section('content')
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Sản phẩm
-                    <small>Danh sách</small>
-                </h1>
-            </div>
-            <!-- /.col-lg-12 -->
-            @if(session('thongbao'))
-                <div class="alert alert-success">
-                    {{session('thongbao')}}
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">{{$title}}</h1>
                 </div>
-            @endif
-            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                <thead>
-                    <tr align="center">
-                        <th>ID</th>
-                        <th>Tên</th>
-                        <th>Model</th>
-                        <th>Hãng</th>
-                        <th>Giá</th>
-                        <th>Trạng thái</th>
-                        <th>Giảm giá %</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                @foreach($product as $p)
-                    <tr class="odd gradeX" align="center">
-                        <td>{{$p->id}}</td>
-                        <td>{{$p->product_name}}</td>
-                        <td>{{$p->product_model}}</td>
-                        @if($p->nsx_id == 0)
-                            <td>None</td>
-                        @else
-                            <td>
-							<?php
-								if(isset($p->nsx->nsx_name)){
-									echo $p->nsx->nsx_name;
-								}
-							?>
-							</td>
-                        @endif
-                        <td>{{$p->product_price}}</td>
-                        <td>
-                            @if ($p->product_status == "1")
-                                Hàng mới về
-                            @elseif ($p->product_status == "2")
-                                Còn hàng
-                            @elseif ($p->product_status == "3")
-                                Liên hệ
-                            @endif
-                        </td>
-                        <td>{{$p->product_salevalue}}</td>
-                        <td class="center">
-                            <a href="{{url("admin/product/edit", $p->id)}}">
-                                <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
-                            </a>
-                            <a href="{{url("admin/product/del", $p->id)}}" onclick="return checkDelete()">
-                                <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
-                            </a>
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+                <div class="col-lg-12">
+                    <a class="btn btn-success" href="{{url($create_route)}}" >Thêm mới</a>
+                    <p></p>
+                </div>
+                <div class="col-lg-12">
+                    @if(session('info'))
+                        <div class="alert alert-info">
+                            {{session('info')}}
+                        </div>
+                    @endif
+                    @if(count($errors))
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $err)
+                                {{$err}}<br>
+                            @endforeach
+                        </div>
+                    @endif
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <thead>
+                        <tr align="center">
+                            <th>ID</th>
+                            <th>Danh mục cha</th>
+                            <th>Hình ảnh</th>
+                            <th>Tiêu đề</th>
+                            <th>Slug</th>
+                            <th>Trạng thái</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($items as $item)
+                            <tr class="odd gradeX" align="center">
+                                <td>{{$item->id}}</td>
+                                <td>{{is_null($item->parent)? '' : $item->parent->title}}</td>
+                                <td>
+                                    @if(!empty($item->image))
+                                        <img style="width: 100px;" src="{{url($item->image)}}" />
+                                    @endif
+                                </td>
+                                <td>{{$item->title}}</td>
+                                <td>{{$item->slug}}</td>
+                                <td>{{$item->status}}</td>
+                                <td class="center">
+                                    <a href="{{url($edit_route, $item->id)}}">
+                                        <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>
+                                    </a>
+                                    <a href="{{url($delete_route, $item->id)}}" onclick="return checkDelete()">
+                                        <button type="button" class="btn btn-outline-danger btn-sm">Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container-fluid -->
-</div>
 @endsection

@@ -77,7 +77,7 @@ class OrderController extends Controller
           $pr= Product::where('product_model',$sp[$i])->get();
           $i++;
           foreach ($pr as $key) {
-            $namep[]=$key->product_name;
+            $namep[]=$key->title;
           }
           $name=implode("-/-",$namep);
         }

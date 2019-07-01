@@ -13,8 +13,8 @@
 									@foreach ($cate as $c)
 										<li class="sub1">
 											<span class=''>
-												<a class='a1' href="{{url('danh-sach/'.$c->cate_namekd)}}" style="padding: 13px 5px">
-													{{$c->cate_name}}
+												<a class='a1' href="{{url('danh-sach/'.$c->slug)}}" style="padding: 13px 5px">
+													{{$c->title}}
 												</a>
 												<span class="menu-icon-down"><img src="{{url('/')}}/template_asset/images/site/scroll-to-up/scrollbutton4-white2.png" /></span>
 											</span>
@@ -23,15 +23,15 @@
 												<div class="row">
 														@foreach($c->subcate as $sc)
 															<div class="sub2 col-lg-4 col-md-4" >
-																<a class='a2' href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd)}}">
-																	<span>{{$sc->subcate_name}}</span>
+																<a class='a2' href="{{url('danh-sach/'.$c->slug.'/'.$sc->slug)}}">
+																	<span>{{$sc->title}}</span>
 																</a>
 																<ul class='ul3'>
 																	@foreach($sc->nsx as $nsx)
 																		<li class='sub3'>
-																			<a class='a3' href="{{url('danh-sach/'.$c->cate_namekd.'/'.$sc->subcate_namekd.'/'.$nsx->nsx_namekd)}}">
+																			<a class='a3' href="{{url('danh-sach/'.$c->slug.'/'.$sc->slug.'/'.$nsx->slug)}}">
 																				<span>
-																				{{$nsx->nsx_name}}
+																				{{$nsx->title}}
 																				</span>
 																			</a>
 																		</li>
@@ -74,17 +74,13 @@
 											jQuery(".module-ct .nav").addClass("show");
 										}
 									});
-
 								});
 							</script>
 						<?php } else { ?>
 							<script>
-							
 								jQuery(document).ready(function () { 
 									if (jQuery(window).width() < 768 ){
-										
 										jQuery('h3.module-title').click( function () {
-											alert("a");
 											if(jQuery(".module-ct .nav").hasClass("show")) {
 												jQuery(".module-ct .nav").removeClass("show");
 											}  	else {
@@ -94,7 +90,6 @@
 									}
 								});
 							</script>
-							
 						<?php } ?>
                     </div>
                 </div>
@@ -118,9 +113,9 @@
                             </a>
 							<div class="customdropdow-menu">
 								<ul>
-								@foreach($newCategory as $newCate)
+								@foreach($newsCategory as $newCate)
 									<li>
-										<a href="{{url('/')}}/danh-muc-tin-tuc/{{$newCate->id}}">{{$newCate->name}}</a>
+										<a href="{{url('danh-muc-tin-tuc', $newCate->id)}}" title="{{$newCate->title}}">{{$newCate->title}}</a>
 									</li>
 									@endforeach
 								</ul>
@@ -135,7 +130,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 <div style="clear: both;"></div>

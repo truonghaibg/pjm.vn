@@ -5,13 +5,13 @@ use App\Banner;
 use App\Cate;
 use App\Nsx;
 use App\Order;
-use App\Partners;
-use App\Post;
-use App\Product;
-use App\Slider;
+use App\ProCate;
+use App\ProMaker;
+use App\ProSubcate;
+use App\SiteConfig;
 use App\Subcate;
-use App\Video;
 use App\NewsCategory;
+use App\Partners;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,30 +23,32 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $siteConfig = SiteConfig::first();
+        view()->share('siteConfig', $siteConfig);
 
-        $cate = Cate::all();
-        $subcate = Subcate::all();
-        $nsx = Nsx::all();
+        $partners = Partners::where('status', 1)->take(6)->get();
+        view()->share('partners', $partners);
 
-        $order = Order::all();
+        $cate = ProCate::all();
+        $subcate = ProSubcate::all();
+        $nsx = ProMaker::all();
+
         view()->share('cate', $cate);
         view()->share('subcate', $subcate);
         view()->share('nsx', $nsx);
 
-        view()->share('order', $order);
-        $banner = Banner::where('name', 'home')->get()->first();
-        view()->share('banner', $banner);
+        $bannerList = Banner::where('status', 1)->get();
+        $banner = [];
+        foreach($bannerList as $item){
+            $banner[$item->location] = $item;
+        }
+        view()->share('banners', $banner);
 
-        $newCategory = NewsCategory::all();
-		view()->share('newCategory', $newCategory);
+        $newCategory = NewsCategory::where('status', 1)->get();
+		view()->share('newsCategory', $newCategory);
 
     }
-	
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
+
     public function register()
     {
         //

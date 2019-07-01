@@ -3,93 +3,137 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Partners;
+use Illuminate\Support\Facades\Auth;
+use Validator;
 
 
 class PartnersController extends Controller
 {
+    const TITLE = 'Đối tác';
+    const PREFIX = "partner";
+    const IMAGE_PATH = "upload/".self::PREFIX."/";
 
-    public function getList(){
-        $partners = Partners::all();
-        return view('admin.partners.list',['partners'=>$partners]);
+    const HOME_LINK = "admin/".self::PREFIX;
+    const EDIT_LINK = "admin/".self::PREFIX."/edit";
+    const UPDATE_LINK = "admin/".self::PREFIX."/update";
+    const CREATE_LINK = "admin/".self::PREFIX."/create";
+    const STORE_LINK = "admin/".self::PREFIX."/store";
+    const DELETE_LINK = "admin/".self::PREFIX."/delete";
+
+    const LIST_VIEW = "admin.".self::PREFIX.".list";
+    const CREATE_VIEW = "admin.".self::PREFIX.".create";
+    const EDIT_VIEW = "admin.".self::PREFIX.".edit";
+
+    public function index()
+    {
+        $items = Partners::all();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
     }
 
-    public function getAdd(){
-    	return view('admin.partners.add');
+    public function create()
+    {
+        return view(self::CREATE_VIEW, [
+            'title' => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "store_route" => self::STORE_LINK
+        ]);
     }
-    public function postAdd(Request $request){
-        $this->validate($request,
-            [
-                'name'=>'required|min:3',
-            ],
-            [
-                'name.required'=>'Tên đối tác không được để trống',
-                'name.min'=>'Tên đối tác phải có ít nhất 3 kí tự'
-            ]);
 
-        $partners = new Partners;
-        $partners->name = $request->name;
-        $partners->description = $request->description;
-        $partners->link = $request->link;
-        $partners->address = $request->address;
-        $partners->mobile_phone = $request->mobile_phone;
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'required|max:100',
+            'link' => 'required|max:100',
+            'image' => 'required|max:100',
+            'status' => 'integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
 
-        if ($request->hasFile('logo')) {
-            $file = $request->file('logo');
-            $name = $file->getClientOriginalName();
-            $img = str_random(4)."_".$name;
-            while (file_exists("upload/partners/".$img)) {
-                $img = str_random(4)."_".$name;
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $item = new Partners();
+            $item->title = $request->title;
+            $slug = getSlug($request->title);
+            $item->link = $request->link;
+            $item->description = $request->description;
+            $item->address = $request->address;
+            $item->mobile = $request->mobile;
+            $item->status = $request->status;
+            $currentDate = \Carbon\Carbon::now();
+            $item->created_at = $currentDate;
+            $item->updated_at = $currentDate;
+            $item->created_by = Auth::user()->email;
+            $item->updated_by = Auth::user()->email;
+            $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
+            if ($image != null) {
+                $item->image = $image;
             }
-            $file->move("upload/partners",$img);
-            $partners->logo = $img;
-        } else{
-            $partners->logo = "";
+            $item->save();
+            return redirect(self::HOME_LINK)->with("info", "Tạo thành công!");
         }
-        $partners->save();
-
-
-        return redirect('admin/partners/list')->with('thongbao','Thêm đối tác thành công');
     }
 
-    public function getEdit($id){
-        $partners = Partners::find($id);
-        return view('admin.partners.edit',['partners'=>$partners]);
+    public function edit($id)
+    {
+        $item = Partners::find($id);
+        if (is_null($item)) {
+            return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
+        }
+        return view(self::EDIT_VIEW, [
+            "item" => $item,
+            "title" => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "update_route" => self::UPDATE_LINK
+        ]);
     }
 
-    public function postEdit(Request $request,$id){
-        $partners = Partners::find($id);
-        $this->validate($request,
-            [
-                'name'=>'required|min:3',
-            ],
-            [
-                'name.required'=>'Tên đối tác không được để trống',
-                'name.min'=>'Tên đối tác phải có ít nhất 3 kí tự'
-            ]);
+    public function update(Request $request, $id)
+    {
+        $rules = [
+            'title' => 'required|max:100',
+            'link' => 'required|max:100',
+            'image' => 'max:100',
+            'status' => 'integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
 
-        $partners->name = $request->name;
-        $partners->description = $request->description;
-        $partners->link = $request->link;
-        $partners->address = $request->address;
-        $partners->mobile_phone = $request->mobile_phone;
-
-        if ($request->hasFile('logo')) {
-            $file = $request->file('logo');
-            $name = $file->getClientOriginalName();
-            $img = str_random(4)."_".$name;
-            while (file_exists("upload/partners/".$img)) {
-                $img = str_random(4)."_".$name;
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $partner = Partners::find($id);
+            $partner->title = $request->title;
+            $slug = getSlug($request->title);
+            $partner->link = $request->link;
+            $partner->description = $request->description;
+            $partner->address = $request->address;
+            $partner->mobile = $request->mobile;
+            $partner->status = $request->status;
+            $currentDate = \Carbon\Carbon::now();
+            $partner->updated_at = $currentDate;
+            $partner->updated_by = Auth::user()->email;
+            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $partner->image);
+            if ($image != null) {
+                $partner->image = $image;
             }
-            $file->move("upload/partners",$img);
-            $partners->logo = $img;
+            $partner->save();
+            return redirect(self::HOME_LINK)->with("info", "Cập nhật thành công!");
         }
-        $partners->save();
-        return redirect('admin/partners/list')->with('thongbao','Sửa thành công');
     }
 
-    public function getDelete($id){
-        $partners = Partners::find($id);
-        $partners->delete();
-        return redirect('admin/partners/list')->with('thongbao','Xóa thành công');
+    public function destroy($id)
+    {
+        $item = Partners::find($id);
+        $image = $item->image;
+        if ($item->delete()) {
+            deleteImageWithPath($image);
+        }
+        return redirect(self::HOME_LINK)->with("info", "Xóa thành công!");
     }
 }

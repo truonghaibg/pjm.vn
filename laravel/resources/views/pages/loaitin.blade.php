@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.master')
 @section('content')
     <div class="product-wrap">
         <div class="container">
@@ -6,19 +6,18 @@
                 <div class="row ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="title-name">
-                            <a href="#">{{$subcate2->subcate_name}}</a>
+                            <a href="#">{{$subcate2->title}}</a>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="row">
 				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 					<div class="row">
-						<?php foreach($product2 as $p){ ?>
+						<?php foreach($product2 as $item){ ?>
 						<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 							<div class="product-block text-center">
-								@include('pages.product-block')
+								@include('includes.product-block')
 							</div>
 						</div>
 						<?php } ?>
@@ -40,18 +39,12 @@
 							<ul style="display: inline-block;width: 100%;">
 								@foreach($subcate2->nsx as $n)
 									<li class='sub-title-li full-width' style="text-align: left; padding-left:10px ">
-										<a href="{{url('danh-sach/'.$cate1->cate_namekd.'/'.$subcate2->subcate_namekd.'/'.$n->nsx_namekd)}}">{{$n->nsx_name}}</a>
+										<a href="{{url('danh-sach/'.$cate1->slug.'/'.$subcate2->slug.'/'.$n->slug)}}">{{$n->title}}</a>
 									</li>
 								@endforeach
 							</ul>
 						</div>
 					</div>
-					<?php
-					function cmp($a, $b)
-					{
-						return strtotime($a['created_at']) < strtotime($b['created_at']) ? 1 : -1;
-					}
-					?>
 					<div class="product-wrap">
 							<div class="row">
 								<div class="col-md-12 col-sm-12 col-xs-12">
@@ -64,37 +57,21 @@
 							</div>
 
 							<div class="row text-center">
-								<?php $productArray = []; ?>
-									
-									@foreach($productSuggests as $p)
-										<?php
-										$productArray[] = $p->toArray();
-										?>
-									@endforeach
-								   
-									<?php
-									uasort($productArray, 'cmp');
-									?>
-									<?php
-									$i = 0;
-								foreach($productArray as $p){
+								<?php
+								foreach($productSuggests as $item){
 								?>
 								<div class="col-lg-12 col-md-12  text-center">
 									<div class="product-block text-center">
-										@include('pages.product-block')
+										@include('includes.product-block')
 									</div>
 								</div>
 								<?php
 								}
 								?>
 							</div>
-
 					</div>
 					<div style="clear: both;"></div>
-					
 				</div>
-				
-               
             </div>
         </div>
     </div>

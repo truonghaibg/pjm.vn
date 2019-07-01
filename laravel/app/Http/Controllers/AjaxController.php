@@ -16,7 +16,7 @@ class AjaxController extends Controller
 	public function getSubcate($cate_id){
 		$subcate = Subcate::where('cate_id',$cate_id)->get();
 		foreach ($subcate as $sc) {
-			echo "<option value='".$sc->id."'>".$sc->subcate_name."</option>";
+			echo "<option value='".$sc->id."'>".$sc->title."</option>";
 		}
 	}
 
@@ -30,7 +30,7 @@ class AjaxController extends Controller
 	public function removeImage($id){
 		$imagesRemove = Image::find($id);
 		$imagesRemove->delete();
-		echo "ok";
+		echo "OK";
 	}
 	
 	public function ajaxUploadImage(Request $request) {

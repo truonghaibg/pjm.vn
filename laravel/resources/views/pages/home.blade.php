@@ -1,7 +1,27 @@
-@extends('layout.index')
+@extends('layouts.master')
+
+@section('head')
+    <title>{{$siteConfig->title}} - {{$siteConfig->description}}</title>
+    <meta property="og:url" content="{{$siteConfig->link}}">
+    <meta property="og:title" content="{{$siteConfig->title}}"/>
+    {{--    <meta property="og:image" content="{{url($siteConfig->default_image)}}"/>--}}
+    <meta name="description" content="{{$siteConfig->meta_description}}">
+    <meta property="og:description" content="{{$siteConfig->meta_description}}">
+    <meta name="keywords" content="{{$siteConfig->meta_keywords }}"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+@endsection
 
 @section('content')
-@include('layout.product')
-@include('includes.partner')
+    <!-- Slider -->
+    @include('includes.slider')
+    <!-- end Slider -->
+    @include('includes.product-suggest')
+
+    @include('includes.product-latest')
+
+    @include('includes.product-seller')
+    {{--@include('includes.product')--}}
 
 @endsection

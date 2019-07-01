@@ -2,77 +2,138 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Customer;
 use App\Cate;
+use Validator;
 
 
 class CateController extends Controller
 {
-    public function getList(){
-        $cate = Cate::orderBy('updated_at','DESC')->get();
-        return view('admin.cate.list',['cate'=>$cate]);
+    const TITLE = 'Danh mục sản phẩm';
+    const PREFIX = "product-category";
+    const IMAGE_PATH = "upload/".self::PREFIX."/";
+
+    const HOME_LINK = "admin/".self::PREFIX;
+    const EDIT_LINK = "admin/".self::PREFIX."/edit";
+    const UPDATE_LINK = "admin/".self::PREFIX."/update";
+    const CREATE_LINK = "admin/".self::PREFIX."/create";
+    const STORE_LINK = "admin/".self::PREFIX."/store";
+    const DELETE_LINK = "admin/".self::PREFIX."/delete";
+
+    const LIST_VIEW = "admin.".self::PREFIX.".list";
+    const CREATE_VIEW = "admin.".self::PREFIX.".create";
+    const EDIT_VIEW = "admin.".self::PREFIX.".edit";
+
+    public function index()
+    {
+        $items = Cate::all();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
     }
 
-    public function getAdd(){
-        return view('admin.cate.add');
+    public function create()
+    {
+        return view(self::CREATE_VIEW, [
+            'title' => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "store_route" => self::STORE_LINK
+        ]);
     }
 
-    public function postAdd(Request $request){
-        $this->validate($request,
-            [
-                'cate_name' => 'required|unique:cate,cate_name|min:3|max:50'
-            ]
-            ,
-            [
-                'cate_name.required' =>'Tên chuyên mục không được để trống',
-                'cate_name.unique' => 'Tên chuyên mục đã tồn tại',
-                'cate_name.min' =>'Tên chuyên mục phải từ 3-50 kí tự',
-                'cate_name.max' =>'Tên chuyên mục phải từ 3-50 kí tự',
-            ]);
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'required|max:100'
+        ];
+        $validator = Validator::make($request->all(), $rules);
 
-        $cate=new Cate;
-        $cate->cate_name = $request->cate_name;
-        $cate->cate_namekd = changeTitle($request->cate_name);
-        $cate->cate_sum = $request->cate_sum;
-        $cate->meta_keywords = $request->meta_keywords;
-        $cate->meta_description = $request->meta_description;
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $item = new Cate();
+            $item->title = $request->title;
+            if (empty($request->slug)) {
+                $slug = getSlug($request->title);
+                $item->slug = $slug;
+            } else {
+                $slug = $request->slug;
+                $item->slug = $slug;
+            }
+            $item->desc = $request->desc;
+            $item->status = $request->status;
+            $item->meta_keywords = $request->meta_keywords;
+            $item->meta_description = $request->meta_description;
+            $currentDate = \Carbon\Carbon::now();
+            $item->created_at = $currentDate;
+            $item->updated_at = $currentDate;
 
-        $cate->save();
-        return redirect('admin/cate/list')->with('thongbao','Thêm thành công');
-    }
-    //Thieu $customer
-    public function getEdit($id){
-        $cate = Cate::find($id);
-        return view('admin.cate.edit',['cate'=>$cate]);
-    }
+            $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
+            if ($image != null) {
+                $item->image = $image;
+            }
 
-    public function postEdit(Request $request,$id){
-        $cate= Cate::find($id);
-        $this->validate($request,
-            [
-                'cate_name' =>'required|unique:cate,cate_name,'.$id.'|min:3|max:50'
-            ],
-            [
-                'cate_name.required' =>'Tên chuyên mục không được để trống',
-                'cate_name.unique' => 'Tên chuyên mục đã tồn tại',
-                'cate_name.min' =>'Tên chuyên mục phải từ 3-50 kí tự',
-                'cate_name.max' =>'Tên chuyên mục phải từ 3-50 kí tự',
-            ]);
-        $cate->cate_name=$request->cate_name;
-        $cate->cate_namekd = changeTitle($request->cate_name);
-        $cate->cate_sum = $request->cate_sum;
-        $cate->meta_keywords = $request->meta_keywords;
-        $cate->meta_description = $request->meta_description;
-
-        $cate->save();
-        return redirect('admin/cate/list')->with('thongbao','Sửa thành công');
+            $item->save();
+            return redirect(self::HOME_LINK)->with("info", "Tạo thành công!");
+        }
     }
 
-    public function getDel($id){
-        $cate= Cate::find($id);
-        $cate->delete();
-        return redirect('admin/cate/list')->with('thongbao','Xóa thành công');
+    public function edit($id)
+    {
+        $item = Cate::find($id);
+        if (is_null($item)) {
+            return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
+        }
+        return view(self::EDIT_VIEW, [
+            "item" => $item,
+            "title" => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "update_route" => self::UPDATE_LINK
+        ]);
     }
-    //
+
+    public function update(Request $request, $id)
+    {
+        $rules = [
+            'title' => 'required|max:100'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $item = Cate::find($id);
+            $item->title = $request->title;
+            $slug = getSlug($request->title);
+            $item->slug = $slug;
+            $item->desc = $request->desc;
+            $item->meta_keywords = $request->meta_keywords;
+            $item->meta_description = $request->meta_description;
+            $currentDate = \Carbon\Carbon::now();
+            $item->updated_at = $currentDate;
+
+            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $item->image);
+            if ($image != null) {
+                $item->image = $image;
+            }
+
+            $item->save();
+            return redirect(self::HOME_LINK)->with("info", "Cập nhật thành công!");
+        }
+    }
+
+    public function destroy($id)
+    {
+        $item = Cate::find($id);
+        $image = $item->image;
+        if ($item->delete()) {
+            deleteImageWithPath($image);
+        }
+        return redirect(self::HOME_LINK)->with("info", "Xóa thành công!");
+    }
+
 }
 

@@ -2,6 +2,9 @@
 /* FRONT-END */
 Route::get('/', 'PageController@getHome');
 
+Route::get('lien-he', 'PageController@getContact');
+Route::post('lien-he', 'PageController@postContact');
+
 Route::post('check-out', 'PaymentController@getCheckout');
 Route::get('get-done/{id}', 'PaymentController@getDone');
 Route::get('get-cancel', 'PaymentController@getCancel');
@@ -11,7 +14,7 @@ Route::get('tim-kiem/{key}', 'PageController@search');
 
 Route::get('tin-tuc', 'PageController@news');
 Route::get('danh-muc-tin-tuc/{id}', 'PageController@newsCategory');
-Route::get('tin-tuc/{titlekd}', 'PageController@detailNews');
+Route::get('tin-tuc/{title}', 'PageController@detailNews');
 Route::get('events', 'PageController@events');
 Route::get('events/{id}', 'PageController@eventsNoidung');
 
@@ -26,88 +29,79 @@ Route::post('dat-hang', 'OrderController@postAdd');
 Route::get('export-order/{id}', 'OrderController@exportid');
 Route::get('export-order', 'OrderController@exportorder');
 
-Route::get('san-pham/{product_namekd}', 'PageController@detailProduct');
-Route::get('danh-sach/{cate_namekd}', 'PageController@chuyenmuc');
+Route::get('san-pham/{slug}', 'PageController@detailProduct');
+Route::get('danh-sach/{slug}', 'PageController@chuyenmuc');
 
-Route::get('danh-sach/{cate_namekd}/{subcate_namekd}', 'PageController@chuyenmuc2');
-Route::get('danh-sach/{cate_namekd}/{subcate_namekd}/{nsx_namekd}', 'PageController@nhasx');
-Route::get('danh-muc-san-pham/{cate_namekd}', 'CateController@FrontEndCategory');
+Route::get('danh-sach/{cate_slug}/{subcate_slug}', 'PageController@chuyenmuc2');
+Route::get('danh-sach/{cate_slug}/{subcate_slug}/{nsx_slug}', 'PageController@nhasx');
+Route::get('danh-muc-san-pham/{slug}', 'CateController@FrontEndCategory');
 
 Route::get('bai-viet/{slug}', 'PageController@detailPost');
-Route::post('lien-he-san-pham/{product_namekd}', 'PageController@productContact');
+Route::post('lien-he-san-pham/{slug}', 'PageController@productContact');
 
 /* ADMIN */
 Route::get('admin', 'UserController@getLoginAdmin');
 Route::get('admin/login', 'UserController@getLoginAdmin');
 Route::post('admin/login', 'UserController@postLoginAdmin');
 Route::get('admin/logout', 'UserController@getLogout');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
-    Route::get('/', 'CateController@getList');
 
-    Route::group(['prefix' => 'cate'], function () {
-        Route::get('/', 'CateController@getList');
-        Route::get('list', 'CateController@getList');
-        Route::get('edit/{id}', 'CateController@getEdit');
-        Route::post('edit/{id}', 'CateController@postEdit');
-        Route::get('add', 'CateController@getAdd');
-        Route::post('add', 'CateController@postAdd');
-        Route::get('del/{id}', 'CateController@getDel');
+    Route::get('/clear-all', function() {
+        Artisan::call('cache:clear');
+        Artisan::call('view:clear');
+        Artisan::call('route:clear');
+        Artisan::call('config:clear');
+        return "Cache is cleared";
     });
 
-    Route::group(['prefix' => 'subcate'], function () {
-        Route::get('/', 'SubcateController@getList');
-        Route::get('list', 'SubcateController@getList');
-        Route::get('edit/{id}', 'SubcateController@getEdit');
-        Route::post('edit/{id}', 'SubcateController@postEdit');
-        Route::get('add', 'SubcateController@getAdd');
-        Route::post('add', 'SubcateController@postAdd');
-        Route::get('del/{id}', 'SubcateController@getDel');
-    });
-    Route::group(['prefix' => 'nsx'], function () {
-        Route::get('list', 'NsxController@getList');
-        Route::get('edit/{id}', 'NsxController@getEdit');
-        Route::post('edit/{id}', 'NsxController@postEdit');
-        Route::get('add', 'NsxController@getAdd');
-        Route::post('add', 'NsxController@postAdd');
-        Route::get('del/{id}', 'NsxController@getDel');
+    Route::get('', 'HomeController@getDashboard');
+    Route::group(['prefix'=>'home'], function () {
+        Route::get('', 'HomeController@getDashboard');
     });
 
-    Route::group(['prefix' => 'post'], function () {
-        Route::get('/', 'PostController@getList');
-        Route::get('list', 'PostController@getList');
-        Route::get('edit/{id}', 'PostController@getEdit');
-        Route::post('edit/{id}', 'PostController@postEdit');
-        Route::get('add', 'PostController@getAdd');
-        Route::post('add', 'PostController@postAdd');
-        Route::get('del/{id}', 'PostController@getDel');
+    Route::group(['prefix'=>'dashboard'], function () {
+        Route::get('', 'HomeController@getDashboard');
     });
 
-    Route::group(['prefix' => 'partners'], function () {
-        Route::get('/', 'PartnersController@getList');
-        Route::get('list', 'PartnersController@getList');
-        Route::get('add', 'PartnersController@getAdd');
-        Route::post('add', 'PartnersController@postAdd');
-        Route::get('edit/{id}', 'PartnersController@getEdit');
-        Route::post('edit/{id}', 'PartnersController@postEdit');
-        Route::get('delete/{id}', 'PartnersController@getDelete');
+    Route::group(['prefix'=>'post'], function () {
+        Route::get('create', 'PostController@create');
+        Route::post('store', 'PostController@store');
+        Route::get('', 'PostController@index');
+        Route::get('index', 'PostController@index');
+        Route::get('edit/{id}', 'PostController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'PostController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'PostController@destroy')->where(['id'=>'[0-9]+']);
     });
+
     Route::group(['prefix' => 'manager'], function () {
-        Route::get('slider', 'ManagerController@slider');
-        Route::get('add-slider-item', 'ManagerController@getSliderAdd');
-        Route::post('add-slider-item', 'ManagerController@postSliderAdd');
-        Route::get('edit-slider-item/{id}', 'ManagerController@getSliderEdit');
-        Route::post('edit-slider-item/{id}', 'ManagerController@postSliderEdit');
-
-        Route::get('delete-slider-item/{id}', 'ManagerController@sliderDelete');
         Route::get('videonew', 'ManagerController@video');
         Route::post('videonew', 'ManagerController@video');
-
         Route::get('video', 'ManagerController@getVideo');
         Route::post('video', 'ManagerController@postVideo');
-		Route::get('banner', 'ManagerController@Banner');
-        Route::post('banner', 'ManagerController@Banner');
 		
     });
+
+    Route::group(['prefix'=>'banner'], function () {
+        Route::get('create', 'BannerController@create');
+        Route::post('store', 'BannerController@store');
+        Route::get('', 'BannerController@index');
+        Route::get('index', 'BannerController@index');
+        Route::get('edit/{id}', 'BannerController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'BannerController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'BannerController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'slider'], function () {
+        Route::get('create', 'SliderController@create');
+        Route::post('store', 'SliderController@store');
+        Route::get('', 'SliderController@index');
+        Route::get('index', 'SliderController@index');
+        Route::get('edit/{id}', 'SliderController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'SliderController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'SliderController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
     Route::group(['prefix' => 'product'], function () {
 		Route::get('product-contact-list', 'ProductContactController@GetContactList');
 		Route::get('product-contact-details/{id}', 'ProductContactController@GetContactDetails');
@@ -119,24 +113,35 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::get('add', 'ProductController@getAdd');
         Route::post('add', 'ProductController@postAdd');
         Route::get('del/{id}', 'ProductController@getDel');
+
+
+        Route::get('create', 'ProductController@create');
+        Route::post('store', 'ProductController@store');
+        Route::get('', 'ProductController@index');
+        Route::get('index', 'ProductController@index');
+        Route::get('edit/{id}', 'ProductController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ProductController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ProductController@destroy')->where(['id'=>'[0-9]+']);
     });
 
     Route::group(['prefix' => 'news'], function () {
-        Route::get('list', 'NewsController@getList');
-        Route::get('edit/{id}', 'NewsController@getEdit');
-        Route::post('edit/{id}', 'NewsController@postEdit');
-        Route::get('add', 'NewsController@getAdd');
-        Route::post('add', 'NewsController@postAdd');
-        Route::get('del/{id}', 'NewsController@getDel');
+        Route::get('create', 'NewsController@create');
+        Route::post('store', 'NewsController@store');
+        Route::get('', 'NewsController@index');
+        Route::get('index', 'NewsController@index');
+        Route::get('edit/{id}', 'NewsController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'NewsController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'NewsController@destroy')->where(['id'=>'[0-9]+']);
     });
 
-    Route::group(['prefix' => 'news-category'], function () {
-        Route::get('list', 'NewsCategoryController@index');
-        Route::get('add', 'NewsCategoryController@create');
-        Route::post('add', 'NewsCategoryController@store');
-        Route::get('edit/{id}', 'NewsCategoryController@show');
-        Route::post('edit/{id}', 'NewsCategoryController@update');
-        Route::get('del/{id}', 'NewsCategoryController@destroy');
+    Route::group(['prefix'=>'news-category'], function () {
+        Route::get('create', 'NewsCategoryController@create');
+        Route::post('store', 'NewsCategoryController@store');
+        Route::get('', 'NewsCategoryController@index');
+        Route::get('index', 'NewsCategoryController@index');
+        Route::get('edit/{id}', 'NewsCategoryController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'NewsCategoryController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'NewsCategoryController@destroy')->where(['id'=>'[0-9]+']);
     });
 
     Route::group(['prefix' => 'order'], function () {
@@ -179,5 +184,87 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
         Route::get('list', 'CustomerController@getList');
         Route::get('edit', 'CustomerController@getEdit');
         Route::get('add', 'CustomerController@getAdd');
+    });
+
+    Route::group(['prefix'=>'contact'], function () {
+        //Route::get('create', 'ContactController@create');
+        //Route::post('store', 'ContactController@store');
+        Route::get('', 'ContactController@index');
+        Route::get('index', 'ContactController@index');
+        Route::get('edit/{id}', 'ContactController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ContactController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ContactController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'site-config'], function () {
+        Route::get('edit/{id}', 'SiteConfigController@edit')->where(['id'=>'[0-9]+']);
+        Route::get('edit', 'SiteConfigController@getEdit');
+        Route::get('', 'SiteConfigController@index');
+        Route::post('update/{id}', 'SiteConfigController@update')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'banner'], function () {
+        Route::get('create', 'BannerController@create');
+        Route::post('store', 'BannerController@store');
+        Route::get('', 'BannerController@index');
+        Route::get('index', 'BannerController@index');
+        Route::get('edit/{id}', 'BannerController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'BannerController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'BannerController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'partner'], function () {
+        Route::get('create', 'PartnersController@create');
+        Route::post('store', 'PartnersController@store');
+        Route::get('', 'PartnersController@index');
+        Route::get('index', 'PartnersController@index');
+        Route::get('edit/{id}', 'PartnersController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'PartnersController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'PartnersController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'pro-cate'], function () {
+        Route::get('create', 'ProCateController@create');
+        Route::post('store', 'ProCateController@store');
+        Route::get('', 'ProCateController@index');
+        Route::get('index', 'ProCateController@index');
+        Route::get('edit/{id}', 'ProCateController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ProCateController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ProCateController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'pro-subcate'], function () {
+        Route::get('create', 'ProSubcateController@create');
+        Route::post('store', 'ProSubcateController@store');
+        Route::get('', 'ProSubcateController@index');
+        Route::get('index', 'ProSubcateController@index');
+        Route::get('edit/{id}', 'ProSubcateController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ProSubcateController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ProSubcateController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'pro-maker'], function () {
+        Route::get('create', 'ProMakerController@create');
+        Route::post('store', 'ProMakerController@store');
+        Route::get('', 'ProMakerController@index');
+        Route::get('index', 'ProMakerController@index');
+        Route::get('edit/{id}', 'ProMakerController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ProMakerController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ProMakerController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'pro-contact'], function () {
+        Route::get('create', 'ProContactController@create');
+        Route::post('store', 'ProContactController@store');
+        Route::get('', 'ProContactController@index');
+        Route::get('index', 'ProContactController@index');
+        Route::get('edit/{id}', 'ProContactController@edit')->where(['id'=>'[0-9]+']);
+        Route::post('update/{id}', 'ProContactController@update')->where(['id'=>'[0-9]+']);
+        Route::get('delete/{id}', 'ProContactController@destroy')->where(['id'=>'[0-9]+']);
+    });
+
+    Route::group(['prefix'=>'migrate'], function () {
+        Route::get('product_image', 'MigrateController@migrateProduct');
+        Route::get('path_image', 'MigrateController@pathImage');
     });
 });

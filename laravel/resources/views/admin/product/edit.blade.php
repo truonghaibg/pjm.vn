@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Sản phẩm
-                    <small>{{$product->product_name}}</small>
+                    <small>{{$product->title}}</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
@@ -33,13 +33,13 @@
                             @if($product->subcate_id == $ct->id)
                                 {{"selected"}}
                             @endif
-                             value="{{$ct->id}}"> {{$ct->cate_id}} - {{$ct->subcate_name}}</option>
+                             value="{{$ct->id}}"> {{$ct->cate_id}} - {{$ct->title}}</option>
                         @endforeach
                         </select>
                     </div>
 					<div class="form-group">
                         <label>Đề xuất</label>
-                        <input class="form-check-input" type="checkbox" value="1"  name="issuggest" <?php if($product->issuggest == 1){ ?>checked<?php } ?>>
+                        <input class="form-check-input" type="checkbox" value="1"  name="is_suggest" <?php if($product->is_suggest == 1){ ?>checked<?php } ?>>
                     </div>
                     <div class="form-group">
                         <label>Hãng</label>
@@ -69,7 +69,7 @@
 
                     <div class="form-group">
                         <label>Tên sản phẩm</label>
-                        <input class="form-control" name="product_name" value="{{$product->product_name}}" />
+                        <input class="form-control" name="title" value="{{$product->title}}" />
                     </div>
 
                     <div class="form-group">
@@ -80,28 +80,28 @@
                     <div class="form-group">
                         <label>Trạng thái</label>
                         <label class="radio-inline">
-                            <input name="product_status" value="1" type="radio"
-                            @if($product->product_status == 1)
+                            <input name="status" value="1" type="radio"
+                            @if($product->status == 1)
                                     {{"checked"}}
                                 @endif
                             >Hàng mới về
                         </label>
                         <label class="radio-inline">
-                            <input name="product_status" value="2" type="radio"
-                            @if($product->product_status == 2)
+                            <input name="status" value="2" type="radio"
+                            @if($product->status == 2)
                                     {{"checked"}}
                                 @endif>Còn hàng
                         </label>
                         <label class="radio-inline">
-                            <input name="product_status" value="3" type="radio"
-                            @if($product->product_status == 3)
+                            <input name="status" value="3" type="radio"
+                            @if($product->status == 3)
                                     {{"checked"}}
                                 @endif>Liên hệ
                         </label>
                     </div>
                     <div class="form-group">
                         <label>Giá</label>
-                        <input class="form-control" name="product_price" value="{{$product->product_price}}" />
+                        <input class="form-control" name="price" value="{{$product->price}}" />
                     </div>
                     <div class="form-group">
                         <label>Phần trăm giảm giá</label>

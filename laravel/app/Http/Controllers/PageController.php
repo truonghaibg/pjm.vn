@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Partners;
+use App\Contact;
 use App\Slider;
-use App\Video;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Cate;
@@ -16,22 +15,23 @@ use App\News;
 use App\Events;
 use Cart;
 use Excel;
-use App\Tags;
-use App\TagsBelong;
-use App\NewsCategory;
 use App\ProductContact;
+use Validator;
 
 class PageController extends Controller
 {
     function getHome()
     {
-        $headerData = Partners::take(6)->get();
-        $productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
-        $slider = Slider::all();
-        $video = Video::all()->first();
-        return view('pages.home', ['slider'=>$slider,
-            'video'=>$video, 'productSuggests'=>$productSuggests,
-            'headerData'=>$headerData]);
+        $productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        $productLatest = Product::where('is_new', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        $productSale = Product::where('is_sale', 1)->take(8)->orderBy('created_at', 'desc')->get();
+        $slider = Slider::take(4)->get();
+        return view('pages.home', [
+            'sliders'=>$slider,
+            'productSuggests'=>$productSuggests,
+            'productLatest' => $productLatest,
+            'productSale' => $productSale
+        ]);
     }
 
     function export()
@@ -52,47 +52,21 @@ class PageController extends Controller
 
     function news()
     {
-        $news = News::where('news_category_id', "!=", 0)->orderBy('id', 'DESC')->paginate(20);
-        $newsCategory = NewsCategory::all();
-        $i = 0;
-        foreach ($news as $item) {
-            $tagsNameArray = [];
-            $tagsList = TagsBelong::where("news_id", $item->id)->get();
-            foreach ($tagsList as $tagId) {
-                $singleTag = Tags::where("id", $tagId->tags_id)->get()->first();
-                $tagsNameArray[] = $singleTag;
-            }
-            $news[$i]->tags = $tagsNameArray;
-            $i++;
-        }
-        return view('pages.news', ['news' => $news, "newsCategory" => $newsCategory]);
+        $news = News::where('category_id', "!=", 0)->orderBy('id', 'DESC')->paginate(12);
+        return view('pages.news', ['news' => $news]);
     }
 
     function newsCategory($id)
     {
-        $news = News::where('news_category_id', $id)->orderBy('id', 'DESC')->paginate(20);
-        $newsCategory = NewsCategory::all();
-        $i = 0;
-        foreach ($news as $item) {
-            $tagsNameArray = [];
-            $tagsList = TagsBelong::where("news_id", $item->id)->get();
-            foreach ($tagsList as $tagId) {
-                $singleTag = Tags::where("id", $tagId->tags_id)->get()->first();
-                $tagsNameArray[] = $singleTag;
-            }
-            $news[$i]->tags = $tagsNameArray;
-            $i++;
-        }
-        return view('pages.news', ['news' => $news, "newsCategory" => $newsCategory]);
+        $news = News::where('category_id', $id)->orderBy('id', 'DESC')->paginate(12);
+        return view('pages.news', ['news' => $news]);
     }
 
-    function detailNews($titlekd)
+    function detailNews($slug)
     {
-        $new = News::where('titlekd', $titlekd)->first();
-        view()->share('newview', $new);
-        $n = News::all();
-		$relatedNews = News::where("news_category_id", $new->news_category_id)->take(5)->orderBy('created_at', 'desc')->get();
-        return view('pages.news-detail', ['new' => $new, 'n' => $n, "relatedNews" => $relatedNews]);
+        $new = News::where('slug', $slug)->first();
+		$relatedNews = News::where("category_id", $new->category_id)->take(3)->orderBy('created_at', 'desc')->get();
+        return view('pages.news-detail', ['new' => $new, 'relatedNews' => $relatedNews]);
     }
 
     function detailPost($slug)
@@ -107,22 +81,22 @@ class PageController extends Controller
     {
         $product = Product::find($id);
         $phantram = ($product->product_salevalue) / 100;
-        $tiensale = ($product->product_price) * $phantram;
-        $price = ($product->product_price) - $tiensale;
-        Cart::add(['id' => $product->id, 'name' => $product->product_name, 'options' => array('img' => $product->product_img,
-            'namekd' => $product->product_namekd, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
+        $tiensale = ($product->price) * $phantram;
+        $price = ($product->price) - $tiensale;
+        Cart::add(['id' => $product->id, 'name' => $product->title, 'options' => array('img' => $product->image,
+            'slug' => $product->slug, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
             'qty' => 1, 'price' => $price]);
-        return redirect('item/' . $product->product_namekd);
+        return redirect('item/' . $product->slug);
     }
 
     function themmuangay($id)
     {
         $product = Product::find($id);
         $phantram = ($product->product_salevalue) / 100;
-        $tiensale = ($product->product_price) * $phantram;
-        $price = ($product->product_price) - $tiensale;
-        Cart::add(['id' => $product->id, 'name' => $product->product_name, 'options' => array('img' => $product->product_img,
-            'namekd' => $product->product_namekd, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
+        $tiensale = ($product->price) * $phantram;
+        $price = ($product->price) - $tiensale;
+        Cart::add(['id' => $product->id, 'name' => $product->title, 'options' => array('img' => $product->image,
+            'slug' => $product->slug, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
             'qty' => 1, 'price' => $price]);
         return redirect('gio-hang');
     }
@@ -164,17 +138,17 @@ class PageController extends Controller
     function search($key, Request $request)
     {
         $keySearch = $key;
-        $products = Product::where('product_name', 'like', "%$keySearch%")->orWhere('product_model', 'like', "%$keySearch%")->paginate(20);
+        $products = Product::where('title', 'like', "%$keySearch%")->orWhere('product_model', 'like', "%$keySearch%")->paginate(20);
         return view('pages.search', ['products' => $products, 'key_search' => $keySearch]);
     }
 
-    function chuyenmuc($cate_namekd)
+    function chuyenmuc($slug)
     {
-        $cate = Cate::where('cate_namekd', $cate_namekd)->first();//1 item
+        $cate = Cate::where('slug', $slug)->first();//1 item
         $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();
         $subCategory = Subcate::where('cate_id', $cate->id)->get();//array
 		$products = Product::whereIn('subcate_id', $subcate)->paginate(27);
-		$productSuggests = Product::where('issuggest', 1)
+		$productSuggests = Product::where('is_suggest', 1)
             ->take(8)
             ->orderBy('created_at', 'desc')
             ->get();
@@ -187,12 +161,12 @@ class PageController extends Controller
             ]);
     }
 
-    function chuyenmuc2($cate_namekd, $subcate_namekd)
+    function chuyenmuc2($cate_slug, $subcate_slug)
     {
-        $cate = Cate::where('cate_namekd', $cate_namekd)->first();
-        $subcate = Subcate::where('subcate_namekd', $subcate_namekd)->first();
+        $cate = Cate::where('slug', $cate_slug)->first();
+        $subcate = Subcate::where('slug', $subcate_slug)->first();
         $product = Product::where('subcate_id', $subcate->id)->paginate(27);
-		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+		$productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
         return view('pages.loaitin',
             [
                 'cate1' => $cate,
@@ -202,11 +176,11 @@ class PageController extends Controller
             ]);
     }
 
-    function nhasx($cate_namekd, $subcate_namekd, $nsx_namekd)
+    function nhasx($cate_slug, $subcate_slug, $nsx_slug)
     {
-        $nsx = Nsx::where('nsx_namekd', $nsx_namekd)->first();
+        $nsx = Nsx::where('slug', $nsx_slug)->first();
         $product = Product::where('nsx_id', $nsx->id)->paginate(20);
-		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+		$productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
         return view('pages.nhasx', [
             'nsx3' => $nsx,
             'product3' => $product,
@@ -214,21 +188,19 @@ class PageController extends Controller
         ]);
     }
 
-    function detailProduct($product_namekd)
+    function detailProduct($slug)
     {
-        $product = Product::where('product_namekd', $product_namekd)->first();
+        $product = Product::where('slug', $slug)->first();
 		view()->share('productview', $product);
-        $images = $product->images()->orderBy("sort")->get();
 		$relatedProduct = Product::where('subcate_id', $product->subcate_id)->where('id', '!=', $product->id)->take(4)->orderBy('id')->get();
-		$productSuggests = Product::where('issuggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
+		$productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
 		return view('pages.product-detail', [
-		    'product4' => $product,
-            'images' => $images,
+		    'product' => $product,
             'relatedProduct'=>$relatedProduct,
             'productSuggests' => $productSuggests
         ]);
     }
-	function productContact(Request $request, $product_namekd)
+	function productContact(Request $request, $slug)
     {
 		$this->validate($request,
 		[
@@ -247,7 +219,43 @@ class PageController extends Controller
 		$productContact->email = $request->email;;
 		$productContact->status = 0;
 		$productContact->save();
-		return redirect('san-pham/'.$product_namekd)->with('thongbao', 'Cảm ơn bạn đã quan tâm đến sản phẩm.Chúng tôi sẽ sớm liên hệ bạn.');
+		return redirect('san-pham/'.$slug)->with('thongbao', 'Cảm ơn bạn đã quan tâm đến sản phẩm.Chúng tôi sẽ sớm liên hệ bạn.');
+    }
+
+    function getContact()
+    {
+        $posts = Post::where('status', 1)->get();
+        return view('pages.contact_us', [
+            "posts" => $posts
+        ]);
+    }
+
+    function postContact(Request $request){
+
+        $rules = [
+            'name' => 'required',
+            'email' => 'required',
+            'title' => 'required',
+            'mobile' => 'required',
+            'description' => 'required'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $contact = new Contact();
+            $contact->name = $request->name;
+            $contact->email = $request->email;
+            $contact->title = $request->title;
+            $contact->mobile = $request->mobile;
+            $contact->description = $request->comment;
+            $currentDate = \Carbon\Carbon::now();
+            $contact->created_at = $currentDate;
+            $contact->updated_at = $currentDate;
+            $contact->save();
+        }
+        return redirect()->back()->with('info','Cảm ơn bạn đã gửi thông tin!. Chúng tôi sẽ sớm liên hệ với bạn !');
     }
 
 }

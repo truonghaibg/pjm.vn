@@ -2,7 +2,7 @@
 <div class="footer-info-wrap">
     <div class="container footer-info">
         <div class="row">
-            <div class="col-md">
+            <div class="col-sm-12 col-md-3">
                 <div class="footer-block">
                     <h5 class="header-footer">Thông tin PJM</h5>
                     <ul class="list-footer">
@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-sm-12 col-md-3">
                 <div class="footer-block">
                     <h5 class="header-footer">Chính sách chung</h5>
                     <ul class="list-footer">
@@ -28,7 +28,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-sm-12 col-md-3">
                 <div class="footer-block">
                     <h5 class="header-footer">Hỗ trợ khách hàng</h5>
                     <ul class="list-footer">
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-sm-12 col-md-3">
                 <div class="footer-facebook">
                     <div class="fb-page" data-href="https://www.facebook.com/pjmcompany/" data-tabs="timeline" data-width="300" data-height="200" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="true">
                         <blockquote cite="https://www.facebook.com/pjmcompany/" class="fb-xfbml-parse-ignore">
@@ -59,3 +59,20 @@
 <a href="{{url('')}}" class="back-to-top" style="display: none;">
     <img src="{{url('')}}/template_asset/images/site/scroll-to-up/scrollbutton3.png" title="Back to top" alt="Back to top">
 </a>
+<div class="call-us-fixed">
+    <div class="hotlinetext">
+        <a href="tel:{{$siteConfig->mobile}}">
+            <button type="button" class="btn btn-outline-danger"><img src="{{url('images/call-now.png')}}"> 0939.66.1010</button>
+        </a>
+    </div>
+</div>
+<style>
+    .call-us-fixed {
+        position: fixed;
+        left: 20px;
+        bottom: 10px;
+    }
+    .call-us-fixed button {
+        background: #e4e4e4;
+    }
+</style>

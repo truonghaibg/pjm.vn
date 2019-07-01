@@ -85,7 +85,7 @@
                               $md=$model[$i];
                               $product = App\Product::where('product_model',$model[$i])->get();
                               foreach ($product as $row) {
-                                echo "<a href='item/".$row->product_namekd."' target='_blank'>".$row->product_name."</a>";
+                                echo "<a href='item/".$row->slug."' target='_blank'>".$row->title."</a>";
 
 
                               }

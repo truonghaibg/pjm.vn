@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.master')
 @section('content')
 <script>
     function check_field() {
@@ -248,7 +248,7 @@
                 <tr>
                   <td><?php
                   echo $i; ?></td>
-                  <td>  <a href="{{url('item/'.$row->options->namekd)}}"><b><?php echo $row->name; ?></b></a>  </td>
+                  <td>  <a href="{{url('item/'.$row->options->title)}}"><b><?php echo $row->name; ?></b></a>  </td>
                   <td><strong class="red"><?php echo number_format($row->price); ?> <u>đ</u></strong></td>
                   <td><input name="quantity_pro_35322" value="<?php echo $row->qty; ?>" type="hidden"><?php echo $row->qty; ?></td>
                 </tr>

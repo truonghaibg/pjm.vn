@@ -4,103 +4,152 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\NewsCategory;
+use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
-    public function getList(){
-        $news = News::where('news_category_id', "!=" , 0)->orderBy('id','DESC')->get();
-		$i = 0;
-		foreach($news as $item){
-			$newscate = NewsCategory::find($item->news_category_id)->get()->first();
-			$news[$i]->cate_name = $newscate->name;
-			$i++;
-		}
-		
-        return view('admin.news.list',['news'=>$news]);
+    const TITLE = 'Tin tức';
+    const PREFIX = "news";
+    const IMAGE_PATH = "upload/".self::PREFIX."/";
+
+    const HOME_LINK = "admin/".self::PREFIX;
+    const EDIT_LINK = "admin/".self::PREFIX."/edit";
+    const UPDATE_LINK = "admin/".self::PREFIX."/update";
+    const CREATE_LINK = "admin/".self::PREFIX."/create";
+    const STORE_LINK = "admin/".self::PREFIX."/store";
+    const DELETE_LINK = "admin/".self::PREFIX."/delete";
+
+    const LIST_VIEW = "admin.".self::PREFIX.".list";
+    const CREATE_VIEW = "admin.".self::PREFIX.".create";
+    const EDIT_VIEW = "admin.".self::PREFIX.".edit";
+
+    public function index()
+    {
+        $items = News::all();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
     }
 
-    public function getAdd(){
-    	$news = News::all();
-		$newsCategory = NewsCategory::all();
-    	return view('admin.news.add',['news'=>$news, "newsCategory" => $newsCategory]);
+    public function create()
+    {
+        $newsCategories = NewsCategory::all();
+        return view(self::CREATE_VIEW, [
+            'items' => $newsCategories,
+            'title' => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "store_route" => self::STORE_LINK
+        ]);
     }
 
-    public function postAdd(Request $request){
-        $this->validate($request,
-            [
-                'title'=>'required|min:3',
-            ],
-            [
-                'title.required'=>'Tên news không được để trống',
-                'title.min'=>'Tên news phải có ít nhất 3 kí tự'
-            ]);
+    public function store(Request $request)
+    {
+        $rules = [
+            'title' => 'required',
+            'status' => 'required|integer',
+            'category_id' => 'required|integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
 
-        $news = new News;
-        $news->news_category_id = $request->category;
-        $news->title = $request->title;
-        $news->titlekd = changeTitle($request->title);
-        $news->content = $request->content_news;
-        $news->sum = $request->sum;
-        $news->meta_keywords = $request->meta_keywords;
-        $news->meta_description = $request->meta_description;
-        if ($request->hasFile('img')) {
-            $file = $request->file('img');
-            $name = $file->getClientOriginalName();
-            $img = str_random(4)."_".$name;
-            while (file_exists("upload/news/".$img)) {
-                $img = str_random(4)."_".$name;
-            }
-            $file->move("upload/news/",$img);
-            $news->img = $img;
-        } else{
-            $news->img = "";
-        }
-        $news->save();
-
-        return redirect('admin/news/list')->with('thongbao','Thêm news thành công');
-    }
-
-    public function getEdit($id){
-        $news = News::find($id);
-		$newsCategory = NewsCategory::all();
-        return view('admin.news.edit',['news'=>$news, "newsCategory"=>$newsCategory]);
-    }
-
-    public function postEdit(Request $request,$id){
-        $news = News::find($id);
-        $this->validate($request,
-            [
-                'title'=>'required|min:3',
-            ],
-            [
-                'title.required'=>'Tên news không được để trống',
-                'title.min'=>'Tên news phải có ít nhất 3 kí tự'
-            ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $news = new News();
             $news->title = $request->title;
-            $news->titlekd = changeTitle($request->title);
-            $news->content = $request->content_news;
-            $news->sum = $request->sum;
+            $slug = getSlug($request->title);
+            if (is_null($request->slug)) {
+                $news->slug = $slug;
+            } else {
+                $news->slug = $request->slug;
+            }
+            $news->desc_short = $request->description;
+            $news->category_id = $request->category_id;
+            $news->desc_long = $request->content_text;
+            $news->status = $request->status;
             $news->meta_keywords = $request->meta_keywords;
             $news->meta_description = $request->meta_description;
-			$news->news_category_id = $request->category;
-            if ($request->hasFile('img')) {
-                $file = $request->file('img');
-                $name = $file->getClientOriginalName();
-                $img = str_random(4)."_".$name;
-                while (file_exists("upload/news/".$img)) {
-                    $img = str_random(4)."_".$name;
-                }
-                $file->move("upload/news/",$img);
-                $news->img = $img;
+            $currentDate = \Carbon\Carbon::now();
+            $news->created_at = $currentDate;
+            $news->updated_at = $currentDate;
+            $news->created_by = Auth::user()->email;
+            $news->updated_by = Auth::user()->email;
+            $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
+            if ($image != null) {
+                $news->image = $image;
             }
-        $news->save();
-        return redirect('admin/news/list')->with('thongbao','Sửa thành công');
+            $news->save();
+            return redirect(self::HOME_LINK)->with("info", "Tạo thành công!");
+        }
     }
-	
-    public function getDel($id){
-        $news = News::find($id);
-        $news->delete();
-        return redirect('admin/news/list')->with('thongbao','Xóa thành công');
+
+    public function edit($id)
+    {
+        $item = News::find($id);
+        if (is_null($item)) {
+            return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
+        }
+        $newsCategories = NewsCategory::all();
+        return view(self::EDIT_VIEW, [
+            'items' => $newsCategories,
+            "item" => $item,
+            "title" => self::TITLE,
+            "back_route" => self::HOME_LINK,
+            "update_route" => self::UPDATE_LINK
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $rules = [
+            'title' => 'required',
+            'status' => 'required|integer',
+            'category_id' => 'required|integer'
+        ];
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $news = News::find($id);
+            $news->title = $request->title;
+            $slug = getSlug($request->title);
+            if (is_null($request->slug)) {
+                $news->slug = $slug;
+            } else {
+                $news->slug = $request->slug;
+            }
+            $news->desc_short = $request->description;
+            $news->category_id = $request->category_id;
+            $news->desc_long = $request->content_text;
+            $news->status = $request->status;
+            $news->meta_keywords = $request->meta_keywords;
+            $news->meta_description = $request->meta_description;
+            $currentDate = \Carbon\Carbon::now();
+            $news->updated_at = $currentDate;
+            $news->updated_by = Auth::user()->email;
+
+            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $news->logo);
+            if ($image != null) {
+                $news->image = $image;
+            }
+            $news->save();
+            return redirect(self::HOME_LINK)->with("info", "Cập nhật thành công!");
+        }
+    }
+
+    public function destroy($id)
+    {
+        $item = News::find($id);
+        $image = $item->image;
+        if ($item->delete()) {
+            deleteImageWithPath($image);
+        }
+        return redirect(self::HOME_LINK)->with("info", "Xóa thành công!");
     }
 
 }

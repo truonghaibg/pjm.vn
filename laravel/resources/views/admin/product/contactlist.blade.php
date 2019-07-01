@@ -29,7 +29,7 @@
                     <tr class="odd gradeX" align="center">
                         <td>{{$p->id}}</td>
                         <td>{{$p->created_at}}</td>
-                        <td><?php if(isset($p->product->product_name)) echo($p->product->product_name) ?></td>
+                        <td><?php if(isset($p->product->title)) echo($p->product->title) ?></td>
                         <td>{{$p->number}}</td>
                         <td>
 						

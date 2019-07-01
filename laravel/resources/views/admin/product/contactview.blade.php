@@ -25,7 +25,7 @@
                 <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 					<div class="form-group">
                         <label>Sản phẩm</label>
-                        <p><a href="{{url('/')}}/san-pham/{{$productContact->product->product_namekd}}" ><?php echo $productContact->product->product_name; ?></a></p>
+                        <p><a href="{{url('/')}}/san-pham/{{$productContact->product->slug}}" ><?php echo $productContact->product->title; ?></a></p>
 						<p><img src="{{url('/')}}/upload/product/{{$productContact->product->images[0]->name}}" style="width: 100px"  /></p>
 						
 					</div>

@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.master')
 @section('content')
     <div class="ghang">
         <div id="guide_cart">
@@ -40,10 +40,10 @@
                         <td><?php
                             echo $i; ?></td>
                         <td>
-                            <img src="upload/product/{{$row->options->img}}"
+                            <img src="{{url($row->options->image)}}"
                                  style="vertical-align: middle; margin-right: 10px; float:left; width:100px;">
                             <div style="margin-left:120px;">
-                                <a href="{{url('item/'.$row->options->namekd)}}">
+                                <a href="{{url('item/'.$row->options->title)}}">
                                     <p><strong><?php echo $row->name; ?></strong></p>
                                 </a>
                                 <p style="padding-top: 3px; color:red;font-weight: normal;text-transform: none;"

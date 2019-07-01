@@ -25,20 +25,20 @@ class SubcateController extends Controller
     {
         $this->validate($request,
             [
-                'subcate_name' => 'required|unique:subcate,subcate_name|min:3|max:50'
+                'title' => 'required|unique:subcate,title|min:3|max:50'
             ]
             ,
             [
-                'subcate_name.required' => 'Tên chuyên mục không được để trống',
-                'subcate_name.unique' => 'Tên chuyên mục đã tồn tại',
-                'subcate_name.min' => 'Tên chuyên mục phải từ 3-50 kí tự',
-                'subcate_name.max' => 'Tên chuyên mục phải từ 3-50 kí tự',
+                'title.required' => 'Tên chuyên mục không được để trống',
+                'title.unique' => 'Tên chuyên mục đã tồn tại',
+                'title.min' => 'Tên chuyên mục phải từ 3-50 kí tự',
+                'title.max' => 'Tên chuyên mục phải từ 3-50 kí tự',
             ]);
 
         $subcate = new Subcate;
-        $subcate->subcate_name = $request->subcate_name;
-        $subcate->subcate_namekd = changeTitle($request->subcate_name);
-        $subcate->subcate_sum = $request->subcate_sum;
+        $subcate->title = $request->title;
+        $subcate->slug = changeTitle($request->slug);
+        $subcate->desc = $request->desc;
         $subcate->cate_id = $request->cate_id;
         $subcate->meta_keywords = $request->meta_keywords;
         $subcate->meta_description = $request->meta_description;
@@ -60,17 +60,17 @@ class SubcateController extends Controller
         $subcate = Subcate::find($id);
         $this->validate($request,
             [
-                'subcate_name' => 'required|unique:subcate,subcate_name,' . $id . '|min:3|max:50'
+                'title' => 'required|unique:subcate,title,' . $id . '|min:3|max:50'
             ],
             [
-                'subcate_name.required' => 'Tên danh mục không được để trống',
-                'subcate_name.unique' => 'Tên danh mục đã tồn tại',
-                'subcate_name.min' => 'Tên danh mục phải từ 3-50 kí tự',
-                'subcate_name.max' => 'Tên danh mục phải từ 3-50 kí tự',
+                'title.required' => 'Tên danh mục không được để trống',
+                'title.unique' => 'Tên danh mục đã tồn tại',
+                'title.min' => 'Tên danh mục phải từ 3-50 kí tự',
+                'title.max' => 'Tên danh mục phải từ 3-50 kí tự',
             ]);
-        $subcate->subcate_name = $request->subcate_name;
-        $subcate->subcate_namekd = changeTitle($request->subcate_name);
-        $subcate->subcate_sum = $request->subcate_sum;
+        $subcate->title = $request->title;
+        $subcate->slug = changeTitle($request->slug);
+        $subcate->desc = $request->desc;
         $subcate->cate_id = $request->cate_id;
         $subcate->meta_keywords = $request->meta_keywords;
         $subcate->meta_description = $request->meta_description;

@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.master')
 @section('content')
 <div class="post-wrap">
     <div class="container post">

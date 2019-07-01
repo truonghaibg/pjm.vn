@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.master')
 @section('content')
     <div class="product-wrap">
         <div class="container">
@@ -15,7 +15,7 @@
                 <?php foreach($products as $p){?>
                 <div class="col-lg-3 col-sm-4 col-sm-6 col-xs-12">
                     <div class="product-block text-center">
-                        @include('pages.product-block')
+                        @include('includes.product-block')
                     </div>
                 </div>
                 <?php } ?>

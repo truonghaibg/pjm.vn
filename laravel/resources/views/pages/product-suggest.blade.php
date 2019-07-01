@@ -9,10 +9,10 @@
         </div>
     </div>
     <div class="row related_product">
-        <?php foreach($productSuggests as $p){ ?>
+        <?php foreach($productSuggests as $item){ ?>
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
             <div class="product-block text-center">
-                @include('pages.product-block')
+                @include('includes.product-block')
             </div>
         </div>
         <?php } ?>

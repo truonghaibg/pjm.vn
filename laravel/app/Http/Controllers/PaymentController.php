@@ -5,12 +5,6 @@ use App\Http\Requests;
 use Paypal;
 use Cart;
 use Excel;
-use App\Cate;
-use App\Subcate;
-use App\Nsx;
-use App\Post;
-use App\Product;
-use App\News;
 use App\Events;
 use App\Order;
   class PaymentController extends Controller

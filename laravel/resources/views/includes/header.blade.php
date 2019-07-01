@@ -40,7 +40,7 @@
             <div class="col-md-3 col-sm-12 text-center">
                 <div class="main-logo">
                     <a href="{{url('')}}">
-                        <img src="{{url($siteConfig->logo)}}" title="{{$siteConfig->description_short}}" alt="{{$siteConfig->description_short}}">
+                        <img src="{{url($siteConfig->logo)}}" title="{{$siteConfig->desc_short}}" alt="{{$siteConfig->desc_short}}">
                     </a>
                 </div>
             </div>

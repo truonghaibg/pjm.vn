@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Nsx;
 use App\Subcate;
+use Validator;
 
 
 class NsxController extends Controller
@@ -33,8 +34,8 @@ class NsxController extends Controller
             ]);
 
         $nsx = new Nsx;
-        $nsx->nsx_name = $request->nsx_name;
-        $nsx->nsx_namekd = changeTitle($request->nsx_name);
+        $nsx->title = $request->title;
+        $nsx->slug = getSlug($request->title);
 
         $nsx->subcate_id = $request->subcate_id;
 
@@ -59,8 +60,8 @@ class NsxController extends Controller
                 'nsx_name.min' =>'Tên danh mục phải từ 3-50 kí tự',
                 'nsx_name.max' =>'Tên danh mục phải từ 3-50 kí tự',
             ]);
-        $nsx->nsx_name=$request->nsx_name;
-        $nsx->nsx_namekd = changeTitle($request->nsx_name);
+        $nsx->title=$request->title;
+        $nsx->slug = getSlug($request->title);
         $nsx->subcate_id = $request->subcate_id;
         $nsx->save();
         return redirect('admin/nsx/list')->with('thongbao','Sửa thành công');
