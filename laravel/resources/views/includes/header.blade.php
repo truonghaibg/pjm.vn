@@ -1,12 +1,19 @@
 <div id="fb-root"></div>
 <?php echo $siteConfig->google_seo ?>
-<script>(function(d, s, id) {
+<script>
+    (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
         fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NS62JKR" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="top-nav-wrap">
     <div class="container top-nav">
         <div class="row no-gutters">
@@ -64,7 +71,7 @@
             </div>
             <div class="col-md-3 d-none d-md-block">
                 <div class="header-right">
-                    <img width="85%" src="{{url('')}}/template_asset/images/logo/hotline.png" title="" alt="">
+                    <img width="85%" src="{{url('template_asset/images/logo/hotline.png')}}" title="" alt="">
                 </div>
             </div>
         </div>

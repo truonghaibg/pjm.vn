@@ -57,7 +57,7 @@
 </div>
 
 <a href="{{url('')}}" class="back-to-top" style="display: none;">
-    <img src="{{url('')}}/template_asset/images/site/scroll-to-up/scrollbutton3.png" title="Back to top" alt="Back to top">
+    <img src="{{url('template_asset/images/site/scroll-to-up/scrollbutton3.png')}}" title="Back to top" alt="Back to top">
 </a>
 <div class="call-us-fixed">
     <div class="hotlinetext">

@@ -5,30 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PJM.VN">
-    <meta name="author" content="">
+    <meta name="author" content="website">
     <title>PJM COMPANY</title>
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="{{url('favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
     <base href="{{asset('')}}">
-    <!-- Bootstrap Core CSS -->
-    <link href="{{url("admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css")}}" rel="stylesheet">
-    <!-- MetisMenu CSS -->
-    <link href="{{url("admin_asset/bower_components/metisMenu/dist/metisMenu.min.css")}}" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{{url("admin_asset/dist/css/sb-admin-2.css")}}" rel="stylesheet">
-    <!-- Custom Fonts -->
-    <link href="{{url('admin_asset/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <!-- DataTables CSS -->
-    <link href="{{url('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css')}}" rel="stylesheet">
-    <!-- DataTables Responsive CSS -->
-    <link href="{{url('admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css')}}" rel="stylesheet">
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+    {{--CSS--}}
+    <link rel="stylesheet" type="text/css" href="{{url("admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css")}}" >
+    <link rel="stylesheet" type="text/css" href="{{url("admin_asset/bower_components/metisMenu/dist/metisMenu.min.css")}}" >
+    <link rel="stylesheet" type="text/css" href="{{url("admin_asset/dist/css/sb-admin-2.css")}}" >
+    <link rel="stylesheet" type="text/css" href="{{url('admin_asset/bower_components/font-awesome/css/font-awesome.min.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{url('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css')}}" >
+    <link rel="stylesheet" type="text/css" href="{{url('admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css')}}" >
+    <link rel="stylesheet" type="text/css" href="https://www.amcharts.com/lib/3/plugins/export/export.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" >
+
+    {{--JS--}}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="{{url('admin_asset/bower_components/metisMenu/dist/metisMenu.min.js')}}"></script>
+    <script src="{{url('admin_asset/dist/js/sb-admin-2.js')}}"></script>
+    <script src="{{url('admin_asset/bower_components/datatables/media/js/jquery.datatables.min.js')}}"></script>
+    <script src="{{url('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.9/tinymce.min.js"></script>
+    <script src="{{url('admin_asset/tinymce/jquery.tinymce.min.js')}}"></script>
+
 </head>
 
 <body>
@@ -37,24 +39,7 @@
         @include('admin.layout.header')
         @yield('content')
     </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script src="{{url('admin_asset/bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{url('admin_asset/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="{{url('admin_asset/bower_components/metisMenu/dist/metisMenu.min.js')}}"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="{{url('admin_asset/dist/js/sb-admin-2.js')}}"></script>
-    <!-- DataTables JavaScript -->
-    <script src="{{url('admin_asset/bower_components/datatables/media/js/jquery.datatables.min.js')}}"></script>
-    <script src="{{url('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}}"></script>
-    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-    <!-- <script src="admin_asset/ckeditor/ckeditor.js" ></script> -->
-    <script src="{{url('admin_asset/tinymce/tinymce.min.js')}}"></script>
-    <script src="{{url('admin_asset/tinymce/jquery.tinymce.min.js')}}"></script>
-    <script src="{{url('admin_asset/summernote-master/dist/summernote.js')}}"></script>
-    <link href="{{url('admin_asset/summernote-master/dist/summernote.css')}}" rel="stylesheet">
+
     <script>
         function checkDelete () {
             if (!window.confirm("DỮ LIỆU SẼ BỊ XÓA VĨNH VIỄN. BẠN CÓ MUỐN TIẾP TỤC?")) {

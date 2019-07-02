@@ -2,14 +2,10 @@
 
 namespace App\Providers;
 use App\Banner;
-use App\Cate;
-use App\Nsx;
-use App\Order;
 use App\ProCate;
 use App\ProMaker;
 use App\ProSubcate;
 use App\SiteConfig;
-use App\Subcate;
 use App\NewsCategory;
 use App\Partners;
 use Illuminate\Support\ServiceProvider;
@@ -29,13 +25,13 @@ class AppServiceProvider extends ServiceProvider
         $partners = Partners::where('status', 1)->take(6)->get();
         view()->share('partners', $partners);
 
-        $cate = ProCate::all();
+        $proCate = ProCate::all();
         $subcate = ProSubcate::all();
-        $nsx = ProMaker::all();
+        $proMaker = ProMaker::all();
 
-        view()->share('cate', $cate);
-        view()->share('subcate', $subcate);
-        view()->share('nsx', $nsx);
+        view()->share('proCate', $proCate);
+        view()->share('proSubcate', $subcate);
+        view()->share('proMaker', $proMaker);
 
         $bannerList = Banner::where('status', 1)->get();
         $banner = [];

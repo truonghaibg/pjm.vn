@@ -2,7 +2,7 @@
 @section('head')
 	<title> {{$product->title}} | {{$siteConfig->title}}</title>
 	<meta property="og:title" content="{{$product->title}}"/>
-	@if(!empty($product->image))
+	@if(!isset($product->image))
 		<meta property="og:image" content="{{url($product->image)}}"/>
 	@endif
 	<meta name="description" content="{{$product->meta_description}}">

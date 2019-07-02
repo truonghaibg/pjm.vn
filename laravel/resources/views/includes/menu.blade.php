@@ -10,7 +10,7 @@
 						<div class="menu-dropdown">
 							<div class="module-ct">
 								<ul class="nav nav-pills nav-stacked hide" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display : block !important;position: relative !important <?php } else { ?>position: absolute !important; z-index:999; width: 100%;border: 1px solid #ebebeb;background: #fff; <?php } ?>">
-									@foreach ($cate as $c)
+									@foreach ($proCate as $c)
 										<li class="sub1">
 											<span class=''>
 												<a class='a1' href="{{url('danh-sach/'.$c->slug)}}" style="padding: 13px 5px">

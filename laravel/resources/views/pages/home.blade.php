@@ -1,15 +1,14 @@
 @extends('layouts.master')
 
 @section('head')
-    <title>{{$siteConfig->title}} - {{$siteConfig->description}}</title>
-    <meta property="og:url" content="{{$siteConfig->link}}">
+    <title>{{$siteConfig->title}} - {{$siteConfig->meta_description}}</title>
     <meta property="og:title" content="{{$siteConfig->title}}"/>
-    {{--    <meta property="og:image" content="{{url($siteConfig->default_image)}}"/>--}}
-    <meta name="description" content="{{$siteConfig->meta_description}}">
+    @if(!isset($siteConfig->image_default))
+        <meta property="og:image" content="{{url($siteConfig->image_default)}}"/>
+    @endif
     <meta property="og:description" content="{{$siteConfig->meta_description}}">
-    <meta name="keywords" content="{{$siteConfig->meta_keywords }}"/>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{$siteConfig->meta_description}}">
+    <meta name="keywords" content="{{$siteConfig->meta_keywords}}"/>
 
 @endsection
 

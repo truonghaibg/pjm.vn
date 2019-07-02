@@ -8,10 +8,8 @@
         </button>
         <a class="navbar-brand" href="" target="_blank">PJM COMPANY</a>
     </div>
-    <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
-        <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -20,19 +18,16 @@
             @if(Auth::user())
                 <li><a href=""><i class="fa fa-user fa-fw"></i> {{Auth::user()->name}}</a>
                 </li>
-                <li><a href="admin/user/edit/{{Auth::user()->id}}"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
+                <li><a href="{{url('admin/user/edit', Auth::user()->id)}}"><i class="fa fa-gear fa-fw"></i> Cài đặt</a>
                 </li>
                 <li class="divider"></li>
-                <li><a href="admin/logout"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
+                <li><a href="{{url('admin/logout')}}"><i class="fa fa-sign-out fa-fw"></i> Đăng xuất</a>
                 </li>
             @endif
             </ul>
-            <!-- /.dropdown-user -->
         </li>
-        <!-- /.dropdown -->
     </ul>
-	<input type="hidden" id="baseAdminUrl" value="{{ url('/admin') }}">
-    <!-- /.navbar-top-links -->
+	<input type="hidden" id="baseAdminUrl" value="{{url('admin')}}">
+
     @include('admin.layout.menu')
-    <!-- /.navbar-static-side -->
 </nav>

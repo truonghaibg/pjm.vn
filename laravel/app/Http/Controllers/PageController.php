@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\ProCate;
+use App\ProMaker;
+use App\ProSubcate;
 use App\Slider;
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Cate;
-use App\Subcate;
-use App\Nsx;
 use App\Post;
 use App\Product;
 use App\News;
@@ -144,9 +144,9 @@ class PageController extends Controller
 
     function chuyenmuc($slug)
     {
-        $cate = Cate::where('slug', $slug)->first();//1 item
-        $subcate = Subcate::where('cate_id', $cate->id)->pluck('id')->toArray();
-        $subCategory = Subcate::where('cate_id', $cate->id)->get();//array
+        $proCate = ProCate::where('slug', $slug)->first();//1 item
+        $subcate = ProSubcate::where('cate_id', $proCate->id)->pluck('id')->toArray();
+        $subCategory = ProSubcate::where('cate_id', $proCate->id)->get();//array
 		$products = Product::whereIn('subcate_id', $subcate)->paginate(27);
 		$productSuggests = Product::where('is_suggest', 1)
             ->take(8)
@@ -154,7 +154,7 @@ class PageController extends Controller
             ->get();
         return view('pages.chuyenmuc',
             [
-                'item' => $cate,
+                'item' => $proCate,
                 'products' => $products,
                 'subCategory'=>$subCategory,
                 'productSuggests' => $productSuggests
@@ -163,13 +163,13 @@ class PageController extends Controller
 
     function chuyenmuc2($cate_slug, $subcate_slug)
     {
-        $cate = Cate::where('slug', $cate_slug)->first();
-        $subcate = Subcate::where('slug', $subcate_slug)->first();
+        $proCate = ProCate::where('slug', $cate_slug)->first();
+        $subcate = ProSubcate::where('slug', $subcate_slug)->first();
         $product = Product::where('subcate_id', $subcate->id)->paginate(27);
 		$productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
         return view('pages.loaitin',
             [
-                'cate1' => $cate,
+                'cate1' => $proCate,
                 'subcate2' => $subcate,
                 'product2' => $product,
                 'productSuggests' => $productSuggests
@@ -178,7 +178,7 @@ class PageController extends Controller
 
     function nhasx($cate_slug, $subcate_slug, $nsx_slug)
     {
-        $nsx = Nsx::where('slug', $nsx_slug)->first();
+        $nsx = ProMaker::where('slug', $nsx_slug)->first();
         $product = Product::where('nsx_id', $nsx->id)->paginate(20);
 		$productSuggests = Product::where('is_suggest', 1)->take(8)->orderBy('created_at', 'desc')->get();
         return view('pages.nhasx', [
