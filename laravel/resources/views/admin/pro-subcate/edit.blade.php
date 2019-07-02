@@ -92,23 +92,10 @@
                         <div class="col">
                             <div class="form-group">
                                 <label class="control-label">Mô tả</label>
-                                <input type="text" class="form-control" name="description" value="{{$item->description}}">
+                                <input type="text" class="form-control" name="desc" value="{{$item->desc}}">
                                 <div class="text-block">
-                                    @if($errors->has('description'))
-                                        <p style="color:red">{{$errors->first('description')}}</p>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label class="control-label">Nội dung</label>
-                                <textarea class="form-control summernote" name="content_text">{{$item->content}}</textarea>
-                                <div class="text-block">
-                                    @if($errors->has('content_text'))
-                                        <p style="color:red">{{$errors->first('content_text')}}</p>
+                                    @if($errors->has('desc'))
+                                        <p style="color:red">{{$errors->first('desc')}}</p>
                                     @endif
                                 </div>
                             </div>

@@ -16,7 +16,7 @@
 												<a class='a1' href="{{url('danh-sach/'.$c->slug)}}" style="padding: 13px 5px">
 													{{$c->title}}
 												</a>
-												<span class="menu-icon-down"><img src="{{url('/')}}/template_asset/images/site/scroll-to-up/scrollbutton4-white2.png" /></span>
+												<span class="menu-icon-down"><img src="{{url('template_asset/images/site/scroll-to-up/scrollbutton4-white2.png')}}" /></span>
 											</span>
 											<div>
 												<div class="ul2" id="box">
@@ -66,7 +66,7 @@
 							}
 							</style>
 							<script>
-								jQuery(document).ready(function () { 
+								jQuery(document).ready(function () {
 									jQuery('h3.module-title').click( function () {
 										if(jQuery(".module-ct .nav").hasClass("show")) {
 											jQuery(".module-ct .nav").removeClass("show");
@@ -78,7 +78,7 @@
 							</script>
 						<?php } else { ?>
 							<script>
-								jQuery(document).ready(function () { 
+								jQuery(document).ready(function () {
 									if (jQuery(window).width() < 768 ){
 										jQuery('h3.module-title').click( function () {
 											if(jQuery(".module-ct .nav").hasClass("show")) {

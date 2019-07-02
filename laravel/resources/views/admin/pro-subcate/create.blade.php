@@ -22,15 +22,15 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label class="control-label">Danh mục cha</label>
-                                    <select name="parent_id" class="form-control">
+                                    <select name="cate_id" class="form-control">
                                         <option value="">--Not Defined--</option>
                                         @foreach($items as $category01)
                                             <option value="{{ $category01->id }}" > {{ $category01->title }} </option>
                                         @endforeach
                                     </select>
                                     <div class="text-block">
-                                        @if($errors->has('parent_id'))
-                                            <p style="color:red">{{$errors->first('parent_id')}}</p>
+                                        @if($errors->has('cate_id'))
+                                            <p style="color:red">{{$errors->first('cate_id')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -65,24 +65,11 @@
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="control-label">Slug</label>
-                                    <input type="text" class="form-control" name="slug">
-                                    <div class="text-block">
-                                        @if($errors->has('slug'))
-                                            <p style="color:red">{{$errors->first('slug')}}</p>
-                                        @endif
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
                                     <label class="control-label">Mô tả</label>
-                                    <input type="text" class="form-control" name="description">
+                                    <input type="text" class="form-control" name="desc">
                                     <div class="text-block">
-                                        @if($errors->has('description'))
-                                            <p style="color:red">{{$errors->first('description')}}</p>
+                                        @if($errors->has('desc'))
+                                            <p style="color:red">{{$errors->first('desc')}}</p>
                                         @endif
                                     </div>
                                 </div>

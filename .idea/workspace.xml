@@ -2,140 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9471126a-72da-4bd4-bb81-55cd142f73e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error_log" beforeDir="false" afterPath="$PROJECT_DIR$/error_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Banner.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Banner.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/AjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/AjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/CateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/CateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NsxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NsxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/PageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/PageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/PartnersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/PartnersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductContactController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProSubcateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProSubcateController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/SlideController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/SubcateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/SubcateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/ProCate.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/ProCate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/ProSubcate.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/ProSubcate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/ProductContact.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Slider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Slider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/function/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/function/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/cate/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/cate/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/cate/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/layout/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/layout/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news-category/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news-category/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news-category/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/news/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/nsx/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/nsx/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/nsx/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/order/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/order/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/order/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/order/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/partners/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/partners/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/partners/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/post/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/post/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/post/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/contactlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/contactlist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/contactview.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/contactview.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/slide/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/slide/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/slide/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/subcate/add.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/subcate/edit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/subcate/list.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/transaction/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/transaction/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Subcate.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Subcate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/layout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/layout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/create.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/partner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/partner.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/includes/slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/slider.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/banner.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/menu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/product.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/layout/slider.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/chuyenmuc.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/chuyenmuc.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/contact.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/giohang.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/giohang.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/giohangstep2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/giohangstep2.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/loaitin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/loaitin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/news-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/news-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/nhasx.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/nhasx.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/post-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/post-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-block.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/includes/product-block.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/product-contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/product-detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-line.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/product-line.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-related.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/product-related.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/product-suggest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/product-suggest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/resources/views/pages/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/resources/views/pages/success.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template_asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/template_asset/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/banner/banner_left.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/2cwF_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/3lXb_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/5_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/7jOK_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/DldT_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/EiDg_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/F83E_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/QsCd_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/RBiX_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/bX2b_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/cPL5_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/fZUP_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/hjzZ_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/jeid_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/l19G_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/nT7w_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/nUjE_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/oxx3_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/qt4G_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/sjpy_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/tpTO_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/ugcG_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/ugvA_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/uwNU_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/cate/yX4y_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/slider/1_hungha_toprightbanner_GOUP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/upload/slider/1_hungha_toprightbanner_GOUP.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/slider/2_hungha_toprightbanner_GOUP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/upload/slider/2_hungha_toprightbanner_GOUP.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/slider/3_hungha_toprightbanner_GOUP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/upload/slider/3_hungha_toprightbanner_GOUP.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/slider/4_hungha_toprightbanner_GOUP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/upload/slider/4_hungha_toprightbanner_GOUP.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/subcate/1Lm7_46.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/subcate/B3UE_Padding gach op lat chuan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/subcate/vh6H_Padding gach op lat chuan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/20190612_duongvuv_db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/duongvuv_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/duongvuv_db.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +37,7 @@
     <session id="-979978553">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="41" />
+          <entry key="project.closed" value="42" />
           <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.16" value="6" />
           <entry key="project.open.time.17" value="4" />
@@ -158,9 +45,9 @@
           <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.20" value="3" />
-          <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.21" value="2" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.23" value="2" />
+          <entry key="project.open.time.23" value="3" />
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
@@ -171,7 +58,7 @@
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.46" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="42" />
+          <entry key="project.opened" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -181,17 +68,17 @@
           <entry key="env" value="6" />
           <entry key="html" value="55" />
           <entry key="js" value="4" />
-          <entry key="php" value="17608" />
+          <entry key="php" value="18603" />
           <entry key="sql" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="11116" />
+          <entry key="Blade" value="11561" />
           <entry key="CSS" value="1309" />
           <entry key="HTML" value="56" />
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="6491" />
+          <entry key="PHP" value="7041" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="SQL" value="16" />
         </counts>
@@ -204,18 +91,18 @@
           <entry key="html" value="10" />
           <entry key="js" value="7" />
           <entry key="log" value="1" />
-          <entry key="php" value="721" />
+          <entry key="php" value="761" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="450" />
+          <entry key="Blade" value="473" />
           <entry key="CSS" value="36" />
           <entry key="HTML" value="10" />
           <entry key="JavaScript" value="7" />
-          <entry key="PHP" value="272" />
+          <entry key="PHP" value="289" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
           <entry key="SQL" value="10" />
@@ -225,23 +112,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel/app/ProMaker.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/laravel/app/ProSubcate.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+            <state relative-caret-position="100">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="e#23#62#0#PHP" expanded="true" />
               </folding>
@@ -250,40 +125,82 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/create.blade.php">
+        <entry file="file://$PROJECT_DIR$/laravel/app/Product.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            <state relative-caret-position="220">
+              <caret line="11" column="51" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/edit.blade.php">
+        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="21" column="101" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="101" />
-              <folding>
-                <element signature="e#2439#2456#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="1040">
+              <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/edit.blade.php">
+        <entry file="file://$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1640">
-              <caret line="82" selection-start-line="82" selection-end-line="82" />
+            <state relative-caret-position="440">
+              <caret line="33" column="12" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/resources/views/includes/menu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-520">
-              <caret line="25" column="81" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+            <state relative-caret-position="460">
+              <caret line="23" column="67" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/app/ProCate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="19" column="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/app/Cate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="21" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/app/Subcate.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" column="43" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/partner/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/create.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2420">
+              <caret line="121" column="30" selection-start-line="98" selection-start-column="24" selection-end-line="121" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -292,13 +209,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Image</find>
-      <find>getHome</find>
-      <find>Excel</find>
-      <find>export</find>
-      <find>tin-tuc</find>
-      <find>htmlspecialchars</find>
-      <find>newsCategory</find>
       <find>newCategory</find>
       <find>danh-muc-tin-tuc</find>
       <find>detailNews</find>
@@ -322,15 +232,22 @@
       <find>description</find>
       <find>NewsCategory</find>
       <find>NewsC</find>
+      <find>admin_asset/dist/js/sb-admin-2.js</find>
+      <find>item</find>
+      <find>subcate_id</find>
+      <find>is_null</find>
+      <find>nxs</find>
+      <find>&quot;nsx</find>
+      <find>foreach</find>
     </findStrings>
     <replaceStrings>
       <replace />
       <replace>$product</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>F:\xampp\htdocs\pjm.vn</dir>
       <dir>F:\xampp\htdocs\pjm.vn\laravel\app</dir>
       <dir>F:\xampp\htdocs\pjm.vn\</dir>
+      <dir>F:\xampp\htdocs\pjm.vn</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -339,13 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/laravel/resources/views/includes/product-suggest.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/includes/product-seller.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/includes/product-block.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/pages/nhasx.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/pages/home.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/pages/chuyenmuc.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/includes/header.blade.php" />
         <option value="$PROJECT_DIR$/template_asset/css/style.css" />
         <option value="$PROJECT_DIR$/laravel/resources/views/pages/contact_us.blade.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/pages/loaitin.blade.php" />
@@ -365,31 +275,38 @@
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/PostController.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductContactController.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ReportController.php" />
-        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/product-category/edit.blade.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/product-category/create.blade.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/CateController.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/product-category/list.blade.php" />
         <option value="$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/laravel/app/ProCate.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductCategoryController.php" />
-        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php" />
         <option value="$PROJECT_DIR$/laravel/app/ProContact.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/layout/menu.blade.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProCateController.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/edit.blade.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/create.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/app/ProMaker.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/edit.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/layout/index.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/list.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/list.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/list.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php" />
         <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProSubcateController.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/create.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/routes/web.php" />
-        <option value="$PROJECT_DIR$/laravel/app/ProSubcate.php" />
-        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/list.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/app/ProMaker.php" />
         <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/create.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/edit.blade.php" />
-        <option value="$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php" />
+        <option value="$PROJECT_DIR$/laravel/routes/web.php" />
+        <option value="$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/app/Product.php" />
+        <option value="$PROJECT_DIR$/laravel/app/Subcate.php" />
+        <option value="$PROJECT_DIR$/laravel/resources/views/includes/menu.blade.php" />
+        <option value="$PROJECT_DIR$/laravel/app/ProCate.php" />
+        <option value="$PROJECT_DIR$/laravel/app/ProSubcate.php" />
       </list>
     </option>
   </component>
@@ -502,6 +419,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -524,28 +442,6 @@
               <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
               <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -561,7 +457,7 @@
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
@@ -569,26 +465,7 @@
               <item name="laravel" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="pro-cate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="pro-maker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pjm.vn" type="462c0819:PsiDirectoryNode" />
-              <item name="laravel" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="pro-subcate" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pjm.vn" type="b2602c69:ProjectViewProjectNode" />
@@ -600,7 +477,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -610,17 +486,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\includes" />
-      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\pages" />
-      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\news-category" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\pro-subcate" />
       <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\pro-maker" />
+      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\pro-subcate" />
       <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\pro-cate" />
       <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin" />
       <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\product-category" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\pro-subcate" />
+      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\includes" />
+      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\pages" />
+      <recent name="F:\xampp\htdocs\pjm.vn\laravel\resources\views\admin\news-category" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -687,16 +564,19 @@
       <workItem from="1561725368870" duration="27760000" />
       <workItem from="1561757308508" duration="242000" />
       <workItem from="1561912138842" duration="9571000" />
+      <workItem from="1561985345183" duration="10997000" />
+      <workItem from="1562077544993" duration="345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267937000" />
+    <option name="totallyTimeSpent" value="279279000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2707889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27665246" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -735,111 +615,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/NewsCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="5" selection-start-line="5" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/NsxController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/OrderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/PageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/PartnersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" selection-start-line="5" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/PaymentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ReportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/SiteConfigController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#40#59#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/SliderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/TransactionController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/SubscriberController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/product-category/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/news/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="171" column="30" lean-forward="true" selection-start-line="144" selection-start-column="24" selection-end-line="171" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/add.blade.php" />
     <entry file="file://$PROJECT_DIR$/laravel/app/Subscriber.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -868,49 +644,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1220">
           <caret line="67" column="57" lean-forward="true" selection-start-line="67" selection-start-column="57" selection-end-line="67" selection-end-column="57" />
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/ProductCategory.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Product.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="149" column="5" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductCategoryController.php" />
+    <entry file="file://$PROJECT_DIR$/laravel/app/ProductCategory.php" />
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductContactController.php" />
     <entry file="file://$PROJECT_DIR$/laravel/app/ProContact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -918,51 +657,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="141" column="9" lean-forward="true" selection-start-line="141" selection-start-column="9" selection-end-line="141" selection-end-column="9" />
-          <folding>
-            <element signature="e#39#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/add.blade.php" />
     <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/layout/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="927">
-          <caret line="89" column="30" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/create.blade.php" />
     <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -970,120 +669,246 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/list.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="116" column="13" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/SubcateController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/ProCate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProSubcateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-860">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProCateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="72" column="37" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel/app/ProMaker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="280">
           <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/app/ProSubcate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding>
-            <element signature="e#23#62#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="420">
           <caret line="21" column="101" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="101" />
-          <folding>
-            <element signature="e#2439#2456#0#HTML" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/layout/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/layout/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="47" column="57" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProContactController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" selection-start-line="11" selection-end-line="14" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-contact/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/list.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1640">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
+        <state relative-caret-position="210">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="68" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProCateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="131" column="13" selection-start-line="128" selection-start-column="12" selection-end-line="131" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-520">
-          <caret line="25" column="81" lean-forward="true" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+        <state relative-caret-position="1091">
+          <caret line="96" column="58" selection-start-line="96" selection-start-column="58" selection-end-line="96" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProSubcateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-subcate/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="71" column="71" lean-forward="true" selection-start-line="71" selection-start-column="71" selection-end-line="71" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-maker/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="24" column="60" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProMakerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/NewsCategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="66" column="36" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_5.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/layout/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/product/contactlist.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/product/contactview.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/_types.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="105" column="13" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/partner/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="52" column="41" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Http/Controllers/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1587">
+          <caret line="130" column="38" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/ProSubcate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="51" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/product/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Providers/AppServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/includes/menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="23" column="67" selection-start-line="23" selection-start-column="65" selection-end-line="23" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/ProCate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Cate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="5" selection-start-line="10" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/app/Subcate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/partner/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/laravel/resources/views/admin/pro-cate/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2420">
+          <caret line="121" column="30" selection-start-line="98" selection-start-column="24" selection-end-line="121" selection-end-column="30" />
         </state>
       </provider>
     </entry>

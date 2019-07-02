@@ -9,10 +9,6 @@
 					</h1>
 				</div>
 				<div class="col-lg-12">
-					<a class="btn btn-success" href="{{url($create_route)}}" >Thêm mới</a>
-					<p></p>
-				</div>
-				<div class="col-lg-12">
 					@if(session('info'))
 						<div class="alert alert-info">
 							{{session('info')}}

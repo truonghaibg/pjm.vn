@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\ProMaker;
+use App\ProSubcate;
 use Illuminate\Http\Request;
 use App\Subcate;
 use App\Nsx;
@@ -28,7 +30,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $items = Product::orderBy('id', 'DESC')-get();
+        $items = Product::orderBy('id', 'DESC')->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -40,60 +42,23 @@ class ProductController extends Controller
 
     public function create()
     {
-        $nsx = Nsx::all();
-        $subcate = Subcate::all();
-        $items = ProductCategory::where('parent_id', null)->get();
+        $proMakers = ProMaker::all();
+        $proSubcates = ProSubcate::all();
         return view(self::CREATE_VIEW, [
-            'items' => $items,
             'title' => self::TITLE,
             "back_route" => self::HOME_LINK,
             "store_route" => self::STORE_LINK,
-            'nsx'=>$nsx,
-            'subcate'=>$subcate
+            'proMakers'=>$proMakers,
+            'proSubcates'=>$proSubcates
         ]);
     }
 
     public function store(Request $request)
     {
-        $this->validate($request,
-            [
-                'subcate_id' => 'required',
-                'title' => 'required|min:3|unique:product,title',
-            ],
-            [
-                'subcate_id.required' => 'Chuyên mục không được để trống',
-                'title.required' => 'Tên sản phẩm không được để trống',
-                'title.min' => 'Tên sản phẩm phải có ít nhất 3 kí tự',
-                'title.unique' => 'Tên sản phẩm đã tồn tại'
-            ]);
-
-        $product = new Product;
-        $product->title = $request->title;
-        $product->slug = getSlug($request->title);
-        $product->subcate_id = $request->subcate_id;
-        if (isset($request->nsx_id)) {
-            $product->nsx_id = $request->nsx_id;
-        } else {
-            $product->nsx_id = "0";
-        }
-        if(isset($request->is_suggest) && $request->is_suggest ==1){
-            $product->is_suggest =1;
-        }
-        $product->price = $request->price;
-        $product->product_info = $request->product_info;
-        $product->status = $request->status;
-        $product->product_model = $request->product_model;
-        $product->product_tag = $request->product_tag;
-        $product->product_salevalue = $request->product_salevalue;
-        $product->image = "";
-        $product->meta_keywords = $request->meta_keywords;
-        $product->meta_description = $request->meta_description;
-
         $rules = [
-            'title' => 'required',
-            'status' => 'required|integer',
-            'code' => 'required',
-            'product_category_id' => 'required|integer'
+            'subcate_id' => 'required',
+            'title' => 'required|min:3|unique:product,title',
+            'image' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
 
@@ -102,25 +67,30 @@ class ProductController extends Controller
         } else {
             $item = new Product();
             $item->title = $request->title;
-            $item->code = $request->code;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
+            if (isset($request->slug)) {
                 $item->slug = $slug;
             } else {
                 $item->slug = $request->slug;
             }
-            $item->description = $request->description;
+            $item->subcate_id = $request->subcate_id;
+            $item->maker_id = $request->maker_id;
             $item->price = $request->price;
-            $item->category_id = $request->product_category_id;
-            $item->content = $request->content_text;
+            $item->is_suggest = $request->is_suggest;
+            $item->is_sale = $request->is_sale;
+            $item->is_new = $request->is_new;
+            $item->product_model = $request->product_model;
+            $item->product_tag = $request->product_tag;
+            $item->product_salevalue = $request->product_salevalue;
+            $item->desc_short = $request->desc_short;
+            $item->desc_long = $request->desc_long;
             $item->status = $request->status;
             $item->meta_keywords = $request->meta_keywords;
             $item->meta_description = $request->meta_description;
             $currentDate = \Carbon\Carbon::now();
             $item->created_at = $currentDate;
             $item->updated_at = $currentDate;
-            $item->created_by = Auth::user()->email;
-            $item->updated_by = Auth::user()->email;
+
             $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
             if ($image != null) {
                 $item->image = $image;
@@ -151,19 +121,15 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $nsx = Nsx::orderBy('subcate_id')->get();
-        $subcate = Subcate::orderBy('cate_id')->get();
-        $product = Product::find($id);
-        $images = $product->images()->orderBy("sort")->get();
-        return view('admin.product.edit',['product'=>$product,'subcate'=>$subcate,'nsx'=>$nsx, 'images'=>$images]);
-
+        $proMakers = ProMaker::orderBy('subcate_id')->get();
+        $proSubcates = ProSubcate::orderBy('cate_id')->get();
         $item = Product::find($id);
         if (is_null($item)) {
             return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
         }
-        $newsCategories = ProductCategory::where('parent_id', null)->get();
         return view(self::EDIT_VIEW, [
-            'items' => $newsCategories,
+            'proMakers' => $proMakers,
+            "proSubcates" => $proSubcates,
             "item" => $item,
             "title" => self::TITLE,
             "back_route" => self::HOME_LINK,
@@ -173,38 +139,6 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
-
-        $product = Product::find($id);
-        $this->validate($request,
-            [
-                'title'=>'required|min:3',
-            ],
-            [
-                'title.required'=>'Tên sản phẩm không được để trống',
-                'title.min'=>'Tên sản phẩm phải có ít nhất 3 kí tự'
-            ]);
-        $product->title = $request->title;
-        $product->slug = getSlug($request->title);
-        $product->subcate_id = $request->subcate_id;
-        if(isset($request->is_suggest) && $request->is_suggest ==1){
-            $product->is_suggest =1;
-        } else {
-            $product->is_suggest = 0;
-        }
-        if (isset($request->nsx_id)) {
-            $product->nsx_id = $request->nsx_id;
-        } else{
-            $product->nsx_id ="0";
-        }
-        $product->price = $request->price;
-        $product->product_info = $request->product_info;
-        $product->status = $request->status;
-        $product->product_model = $request->product_model;
-        $product->product_tag = $request->product_tag;
-        $product->product_salevalue = $request->product_salevalue;
-        $product->meta_keywords = $request->meta_keywords;
-        $product->meta_description = $request->meta_description;
-
         $rules = [
             'title' => 'required',
             'status' => 'required|integer',
@@ -218,20 +152,27 @@ class ProductController extends Controller
             $item = Product::find($id);
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
+            if (isset($request->slug)) {
                 $item->slug = $slug;
             } else {
                 $item->slug = $request->slug;
             }
-            $item->description = $request->description;
-            $item->category_id = $request->category_id;
-            $item->content = $request->content_text;
+            $item->subcate_id = $request->subcate_id;
+            $item->maker_id = $request->maker_id;
+            $item->price = $request->price;
+            $item->is_suggest = $request->is_suggest;
+            $item->is_sale = $request->is_sale;
+            $item->is_new = $request->is_new;
+            $item->product_model = $request->product_model;
+            $item->product_tag = $request->product_tag;
+            $item->product_salevalue = $request->product_salevalue;
+            $item->desc_short = $request->desc_short;
+            $item->desc_long = $request->desc_long;
             $item->status = $request->status;
             $item->meta_keywords = $request->meta_keywords;
             $item->meta_description = $request->meta_description;
             $currentDate = \Carbon\Carbon::now();
             $item->updated_at = $currentDate;
-            $item->updated_by = Auth::user()->email;
 
             $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $item->image);
             if ($image != null) {

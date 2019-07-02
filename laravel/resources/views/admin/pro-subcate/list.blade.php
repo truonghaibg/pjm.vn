@@ -31,11 +31,8 @@
                         <tr align="center">
                             <th>ID</th>
                             <th>Danh mục cha</th>
-                            <th>Hình ảnh</th>
                             <th>Tiêu đề</th>
                             <th>Slug</th>
-                            <th>Sắp xếp</th>
-                            <th>Trạng thái</th>
                             <th>Action</th>
                         </tr>
                         </thead>
@@ -44,15 +41,8 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$item->id}}</td>
                                 <td>{{is_null($item->parent)? '' : $item->parent->title}}</td>
-                                <td>
-                                    @if(!is_null($item->image))
-                                        <img style="width: 100px;" src="{{url($item->image)}}" />
-                                    @endif
-                                </td>
                                 <td>{{$item->title}}</td>
                                 <td>{{$item->slug}}</td>
-                                <td>{{$item->order}}</td>
-                                <td>{{$item->status}}</td>
                                 <td class="center">
                                     <a href="{{url($edit_route, $item->id)}}">
                                         <button type="button" class="btn btn-outline-warning btn-sm">Edit</button>

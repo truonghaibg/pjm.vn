@@ -38,7 +38,7 @@ class ProMakerController extends Controller
 
     public function create()
     {
-        $item = ProMaker::all();
+        $item = ProSubcate::all();
         return view(self::CREATE_VIEW, [
             'items' => $item,
             'title' => self::TITLE,
@@ -61,11 +61,7 @@ class ProMakerController extends Controller
             $item = new ProMaker();
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->subcate_id = $request->subcate_id;
             $currentDate = \Carbon\Carbon::now();
             $item->created_at = $currentDate;
@@ -105,11 +101,7 @@ class ProMakerController extends Controller
             $item = ProMaker::find($id);
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->subcate_id = $request->subcate_id;
             $currentDate = \Carbon\Carbon::now();
             $item->updated_at = $currentDate;

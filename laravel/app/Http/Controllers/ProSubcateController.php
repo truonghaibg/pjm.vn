@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\ProCate;
 use App\ProSubcate;
-use App\Subcate;
 use Illuminate\Http\Request;
+use Validator;
 
 class ProSubcateController extends Controller
 {
@@ -51,32 +51,24 @@ class ProSubcateController extends Controller
     {
         $rules = [
             'title' => 'required',
-            'status' => 'required|integer',
-            'category_id' => 'required|integer'
+            'cate_id' => 'required|integer'
         ];
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $item = new ProCate();
+            $item = new ProSubcate();
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->desc = $request->desc;
             $item->cate_id = $request->cate_id;
-            $item->status = $request->status;
             $item->meta_keywords = $request->meta_keywords;
             $item->meta_description = $request->meta_description;
             $currentDate = \Carbon\Carbon::now();
             $item->created_at = $currentDate;
             $item->updated_at = $currentDate;
-            $item->created_by = Auth::user()->email;
-            $item->updated_by = Auth::user()->email;
             $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
             if ($image != null) {
                 $item->image = $image;
@@ -106,8 +98,7 @@ class ProSubcateController extends Controller
     {
         $rules = [
             'title' => 'required',
-            'status' => 'required|integer',
-            'category_id' => 'required|integer'
+            'cate_id' => 'required|integer'
         ];
         $validator = Validator::make($request->all(), $rules);
 
@@ -124,14 +115,11 @@ class ProSubcateController extends Controller
             }
             $item->desc = $request->desc;
             $item->cate_id = $request->cate_id;
-            $item->status = $request->status;
             $item->meta_keywords = $request->meta_keywords;
             $item->meta_description = $request->meta_description;
             $currentDate = \Carbon\Carbon::now();
             $item->updated_at = $currentDate;
-            $item->updated_by = Auth::user()->email;
-
-            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $item->logo);
+            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $item->image);
             if ($image != null) {
                 $item->image = $image;
             }
@@ -143,10 +131,7 @@ class ProSubcateController extends Controller
     public function destroy($id)
     {
         $item = ProSubcate::find($id);
-        $image = $item->image;
-        if ($item->delete()) {
-            deleteImageWithPath($image);
-        }
+        $item->delete();
         return redirect(self::HOME_LINK)->with("info", "Xóa thành công!");
     }
 }

@@ -4,135 +4,183 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">{{$title}}
-                    <small>Thêm mới</small>
+                <h1 class="page-header">
+                    {{$title}}<small> Danh sách</small>
                 </h1>
             </div>
-            <!-- /.col-lg-12 -->
             <div class="col-lg-12" style="padding-bottom:120px">
-            @if(count($errors)>0)
-                <div class="alert alert-danger">
-                    @foreach($errors->all() as $err)
-                        {{$err}}<br>
-                    @endforeach
-                </div>
-            @endif
-
-            @if(session('info'))
-                <div class="alert alert-success">
-                    {{session('thongbao')}}
-                </div>
-            @endif
                 <form action="{{url($store_route)}}" method="POST" enctype="multipart/form-data">
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-                    <div class="form-group">
-                        <label>Chuyên mục</label>
-                        <select class="form-control" name="subcate_id" id="subcate_id">
-                        @foreach($subcate as $ct)
-                            <option value="{{$ct->id}}">{{$ct->title}}</option>
-                        @endforeach
-                        </select>
+                    {{ csrf_field() }}
+                    @if(count($errors))
+                        <div class="alert alert-danger">
+                            @foreach($errors->all() as $err)
+                                {{$err}}<br>
+                            @endforeach
+                        </div>
+                    @endif
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Chuyên mục</label>
+                                <select class="form-control" name="subcate_id" id="subcate_id">
+                                    @foreach($subcate as $ct)
+                                        <option value="{{$ct->id}}">{{$ct->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
-					<div class="form-group">
-                        <label>Đề xuất</label>
-                        <input class="form-check-input" type="checkbox" value="1"  name="is_suggest">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Hãng</label>
+                                <select class="form-control" name="nsx_id" id="nsx_id">
+                                    @foreach($nsx as $sc)
+                                        <option value="{{$sc->id}}">{{$sc->nsx_name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label>Hãng</label>
-                        <select class="form-control" name="nsx_id" id="nsx_id">
-                        @foreach($nsx as $sc)
-                            <option value="{{$sc->id}}">{{$sc->nsx_name}}</option>
-                        @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Tên sản phẩm</label>
-                        <input class="form-control" name="title" placeholder="Điền Tên sản phẩm" />
-                    </div>
-                    <div class="form-group">
-                        <label>Model sản phẩm</label>
-                        <input class="form-control" name="product_model" placeholder="Điền Model sản phẩm" />
-                    </div>
-                    <div class="form-group">
-                        <label>Trạng thái</label>
-                        <label class="radio-inline">
-                            <input name="status" value="1" checked="" type="radio">Hàng mới về
-                        </label>
-                        <label class="radio-inline">
-                            <input name="status" value="2" type="radio">Còn hàng
-                        </label>
-                        <label class="radio-inline">
-                            <input name="status" value="3" type="radio">Liên hệ
-                        </label>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Giá</label>
-                        <input class="form-control" name="price" placeholder="Điền giá sản phẩm" />
-                    </div>
-                    <div class="form-group">
-                        <label>Phần trăm giảm giá</label>
-                        <input class="form-control" name="product_salevalue" placeholder="Điền Phần trăm giảm giá" />
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Sản phẩm đề xuất</label>
+                            <input class="form-check-input" type="checkbox" value="1"  name="is_suggest">
+                        </div>
+                        <div class="col-md-2">
+                            <label>Sản phẩm mới</label>
+                            <input class="form-check-input" type="checkbox" value="1"  name="is_new">
+                        </div>
+                        <div class="col-md-2">
+                            <label>Sản phẩm bán chạy</label>
+                            <input class="form-check-input" type="checkbox" value="1"  name="is_sale">
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Ảnh sản phẩm</label>
-                        <div class="form-group">
-							<?php 
-							$i =1;
-							while($i < 6){ ?>
-								
-									<div class="image_block" >
-										<p>
-											<input class="form-control" multiple="multiple" type="file" name="product_img[{{$i}}]"  />
-										</p>
-									</div>	
-							<?php
-							$i++;							
-							}
-							?>
-
-							<style>
-								.image_block {
-									width: 19%;
-									foat: left;
-									padding: 10px;
-									display: inline-block;
-									position: relative;
-								}
-								.remove_image {
-									position : absolute;
-									top:0;
-									right:20px
-								}
-							</style>
-							
-						</div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Tên sản phẩm</label>
+                                <input class="form-control" name="title" placeholder="Điền Tên sản phẩm" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Tag sản phẩm</label>
-                        <input class="form-control" name="product_tag" placeholder="Điền tag sản phẩm" />
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Model sản phẩm</label>
+                                <input class="form-control" name="product_model" placeholder="Điền Model sản phẩm" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Thông tin sản phẩm</label>
-                        <textarea class="form-control summernote" rows="5" name="product_info"></textarea>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Trạng thái</label>
+                                <label class="radio-inline">
+                                    <input name="status" value="1" checked="" type="radio">Hàng mới về
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="status" value="2" type="radio">Còn hàng
+                                </label>
+                                <label class="radio-inline">
+                                    <input name="status" value="3" type="radio">Liên hệ
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Meta keywords</label>
-                        <input class="form-control" name="meta_keywords" />
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Giá</label>
+                                <input class="form-control" name="price" placeholder="Điền giá sản phẩm" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Meta description</label>
-                        <input class="form-control" name="meta_description" />
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Phần trăm giảm giá</label>
+                                <input class="form-control" name="product_salevalue" placeholder="Điền Phần trăm giảm giá" />
+                            </div>
+                        </div>
                     </div>
 
-                    <a href="{{URL::previous()}}" class="btn btn-default">Quay lại</a>
-                    <button type="submit" class="btn btn-default">Thêm mới</button>
-                    <button type="reset" class="btn btn-default">Làm mới</button>
+                    <div class="row">
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label>Hình ảnh</label>
+                                <input class="form-control" multiple="multiple" type="file" name="image"  />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <input class="form-control" multiple="multiple" type="file" name="image01"  />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <input class="form-control" multiple="multiple" type="file" name="image02"  />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <input class="form-control" multiple="multiple" type="file" name="image03"  />
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="form-group">
+                                <input class="form-control" multiple="multiple" type="file" name="image04"  />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Thông tin sản phẩm</label>
+                                <textarea class="form-control summernote" rows="5" name="product_info"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="control-label">Meta keywords</label>
+                                <input type="text" class="form-control" name="meta_keywords">
+                                <div class="text-block">
+                                    @if($errors->has('meta_keywords'))
+                                        <p style="color:red">{{$errors->first('meta_keywords')}}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="control-label">Meta description</label>
+                                <input type="text" class="form-control" name="meta_description">
+                                <div class="text-block">
+                                    @if($errors->has('meta_description'))
+                                        <p style="color:red">{{$errors->first('meta_description')}}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <a href="{{url($back_route)}}" class="btn btn-default">Quay lại</a>
+                                <button type="submit" class="btn btn-default">Thêm mới</button>
+                                <button type="reset" class="btn btn-default">Làm mới</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -140,17 +188,4 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-@endsection
-@section('script')
-    <script>
-        $(document).ready(function(){
-            $("#subcate_id").change(function(){
-                var subcate_id = $(this).val();
-                $.get("admin/ajax/nsx/"+subcate_id,function(data){
-                    $("#nsx_id").html(data);
-                });
-            });
-            $('.summernote').summernote();
-        });
-    </script>
 @endsection

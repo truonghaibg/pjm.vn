@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\ProContact;
 use Illuminate\Http\Request;
 
 class ProContactController extends Controller
 {
-    const TITLE = 'Tin tức';
-    const PREFIX = "news";
+    const TITLE = 'Yêu cầu báo giá';
+    const PREFIX = "pro-contact";
     const IMAGE_PATH = "upload/".self::PREFIX."/";
 
     const HOME_LINK = "admin/".self::PREFIX;
@@ -23,7 +24,7 @@ class ProContactController extends Controller
 
     public function index()
     {
-        $items = News::all();
+        $items = ProContact::all();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -35,9 +36,7 @@ class ProContactController extends Controller
 
     public function create()
     {
-        $newsCategories = NewsCategory::all();
         return view(self::CREATE_VIEW, [
-            'items' => $newsCategories,
             'title' => self::TITLE,
             "back_route" => self::HOME_LINK,
             "store_route" => self::STORE_LINK
@@ -47,52 +46,35 @@ class ProContactController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'title' => 'required',
-            'status' => 'required|integer',
-            'category_id' => 'required|integer'
+            'product_id' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $news = new News();
-            $news->title = $request->title;
-            $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
-                $news->slug = $slug;
-            } else {
-                $news->slug = $request->slug;
-            }
-            $news->desc_short = $request->description;
-            $news->category_id = $request->category_id;
-            $news->desc_long = $request->content_text;
-            $news->status = $request->status;
-            $news->meta_keywords = $request->meta_keywords;
-            $news->meta_description = $request->meta_description;
+            $item = new ProContact();
+            $item->product_id = $request->product_id;
+            $item->email = $request->email;
+            $item->phone = $request->phone;
+            $item->content = $request->content_text;
+            $item->status = $request->status;
+            $item->number = $request->number;
             $currentDate = \Carbon\Carbon::now();
-            $news->created_at = $currentDate;
-            $news->updated_at = $currentDate;
-            $news->created_by = Auth::user()->email;
-            $news->updated_by = Auth::user()->email;
-            $image = handlerFileCreate($request, self::IMAGE_PATH, "image", $slug);
-            if ($image != null) {
-                $news->image = $image;
-            }
-            $news->save();
+            $item->created_at = $currentDate;
+            $item->updated_at = $currentDate;
+            $item->save();
             return redirect(self::HOME_LINK)->with("info", "Tạo thành công!");
         }
     }
 
     public function edit($id)
     {
-        $item = News::find($id);
+        $item = ProContact::find($id);
         if (is_null($item)) {
             return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
         }
-        $newsCategories = NewsCategory::all();
         return view(self::EDIT_VIEW, [
-            'items' => $newsCategories,
             "item" => $item,
             "title" => self::TITLE,
             "back_route" => self::HOME_LINK,
@@ -103,49 +85,32 @@ class ProContactController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'title' => 'required',
-            'status' => 'required|integer',
-            'category_id' => 'required|integer'
+            'product_id' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
         } else {
-            $news = News::find($id);
-            $news->title = $request->title;
-            $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
-                $news->slug = $slug;
-            } else {
-                $news->slug = $request->slug;
-            }
-            $news->desc_short = $request->description;
-            $news->category_id = $request->category_id;
-            $news->desc_long = $request->content_text;
-            $news->status = $request->status;
-            $news->meta_keywords = $request->meta_keywords;
-            $news->meta_description = $request->meta_description;
+            $item = ProContact::find($id);
+            $item->product_id = $request->product_id;
+            $item->email = $request->email;
+            $item->phone = $request->phone;
+            $item->content = $request->content_text;
+            $item->status = $request->status;
+            $item->number = $request->number;
             $currentDate = \Carbon\Carbon::now();
-            $news->updated_at = $currentDate;
-            $news->updated_by = Auth::user()->email;
+            $item->updated_at = $currentDate;
 
-            $image = handlerFileUpdate($request, self::IMAGE_PATH, "image", $slug, $news->logo);
-            if ($image != null) {
-                $news->image = $image;
-            }
-            $news->save();
+            $item->save();
             return redirect(self::HOME_LINK)->with("info", "Cập nhật thành công!");
         }
     }
 
     public function destroy($id)
     {
-        $item = News::find($id);
-        $image = $item->image;
-        if ($item->delete()) {
-            deleteImageWithPath($image);
-        }
+        $item = ProContact::find($id);
+        $item->delete();
         return redirect(self::HOME_LINK)->with("info", "Xóa thành công!");
     }
 }

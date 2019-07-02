@@ -107,13 +107,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 		Route::get('product-contact-details/{id}', 'ProductContactController@GetContactDetails');
 		Route::post('product-contact-details/{id}', 'ProductContactController@PostContactDetails');
 		Route::get('product-contact-details-delete/{id}', 'ProductContactController@RemoveContactDetails');
-		Route::get('list', 'ProductController@getList');
-        Route::get('edit/{id}', 'ProductController@getEdit');
-        Route::post('edit/{id}', 'ProductController@postEdit');
-        Route::get('add', 'ProductController@getAdd');
-        Route::post('add', 'ProductController@postAdd');
-        Route::get('del/{id}', 'ProductController@getDel');
-
 
         Route::get('create', 'ProductController@create');
         Route::post('store', 'ProductController@store');
@@ -254,8 +247,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
     });
 
     Route::group(['prefix'=>'pro-contact'], function () {
-        Route::get('create', 'ProContactController@create');
-        Route::post('store', 'ProContactController@store');
         Route::get('', 'ProContactController@index');
         Route::get('index', 'ProContactController@index');
         Route::get('edit/{id}', 'ProContactController@edit')->where(['id'=>'[0-9]+']);
