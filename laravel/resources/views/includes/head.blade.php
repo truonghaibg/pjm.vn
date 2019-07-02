@@ -32,11 +32,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {{--Boostrap 4.3.1--}}
-<script src="{{url('template_asset/bootstrap-4.3.1/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{url('template_asset/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
 <link rel="stylesheet" href="{{url('template_asset/bootstrap-4.3.1/css/bootstrap.min.css')}}" type="text/css" />
-<link rel="stylesheet" href="{{url('template_asset/bootstrap-4.3.1/css/bootstrap-grid.min.css')}}" type="text/css" />
-<link rel="stylesheet" href="{{url('template_asset/bootstrap-4.3.1/css/bootstrap-reboot.min.css')}}" type="text/css" />
 
 <!-- Import New -->
 <link rel="shortcut icon" href="{{url($siteConfig->favicon)}}" />
@@ -47,7 +44,6 @@
 <script src="{{url('template_asset/js/menu.js')}}"></script>
 <script type="text/javascript" src="{{url('template_asset/js/slider.js')}}"></script>
 
-<script src="{{url('js/owl.carousel.js')}}"></script>
 <script src="{{url('js/owl.carousel.min.js')}}"></script>
 <script src="{{url('js/jquery-ui.min.js')}}"></script>
 <script src="{{url('js/jquery-migrate-1.2.1.min.js')}}"></script>
@@ -56,7 +52,6 @@
 
 <script src="{{url('template_asset/js/myscript.js')}}"></script>
 <script src="{{url('js/numeric/jquery.numeric.min.js')}}"></script>
-<script type="text/javascript" src="{{url('template_asset/js/owl.carousel.min.js')}}"></script>
 <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
 <link rel="stylesheet" href="{{url('owl.carousel.min.css')}}" type="text/css" />
 <link rel="stylesheet" href="{{url('owl.theme.default.min.css')}}" type="text/css" />
