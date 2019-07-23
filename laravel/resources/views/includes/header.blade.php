@@ -52,7 +52,6 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 pull-left" style="margin: auto">
-               
                     <div class="input-group center-block">
                         <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 						<input type="hidden" name="current" value="1" />
@@ -67,11 +66,10 @@
 							}
 						</script>
                     </div>
-                
             </div>
             <div class="col-md-3 d-none d-md-block">
                 <div class="header-right">
-                    <img width="85%" src="{{url('template_asset/images/logo/hotline.png')}}" title="" alt="">
+                    <a href="tel:{{$siteConfig->mobile}}"><img width="85%" src="{{url('template_asset/images/logo/hotline.png')}}" title="{{$siteConfig->title}}" alt="{{$siteConfig->title}}"></a>
                 </div>
             </div>
         </div>

@@ -106,7 +106,8 @@
 						</script>
 						<div class="boder-line"></div>
 						<div class="hotline">
-							<h5><i class="fa fa-phone"></i>&nbsp;Hotline Mr. Vũ: 0939 66 1010</h5>
+							<h5><i class="fa fa-phone"></i>&nbsp;Hotline Mr. Vũ: <a href="tel:0939661010">0939.66.10.10</a></h5>
+							<h5><i class="fa fa-phone"></i>&nbsp;Hotline Ms. Vân: <a href="tel:0983786622">0983.78.66.22</a></h5>
 						</div>
 						<div class="boder-line"></div>
 						<div class="boder-line"></div>

@@ -31,9 +31,6 @@
                             <th>Hình ảnh</th>
                             <th>Tiêu đề</th>
                             <th>Slug</th>
-                            <th>SP Đề xuất</th>
-                            <th>SP Mới</th>
-                            <th>SP Bán chạy</th>
                             <th>Trạng thái</th>
                             <th>Action</th>
                         </tr>
@@ -50,9 +47,6 @@
                                 </td>
                                 <td>{{$item->title}}</td>
                                 <td>{{$item->slug}}</td>
-                                <td>{{$item->is_suggest}}</td>
-                                <td>{{$item->is_new}}</td>
-                                <td>{{$item->is_sale}}</td>
                                 <td>{{$item->status}}</td>
                                 <td class="center">
                                     <a href="{{url($edit_route, $item->id)}}">

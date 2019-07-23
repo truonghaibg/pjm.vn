@@ -28,6 +28,42 @@ class ProductController extends Controller
     const CREATE_VIEW = "admin.".self::PREFIX.".create";
     const EDIT_VIEW = "admin.".self::PREFIX.".edit";
 
+    public function feature()
+    {
+        $items = Product::where('is_suggest', 1)->orderBy('id', 'DESC')->get();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
+    }
+
+    public function latest()
+    {
+        $items = Product::where('is_new', 1)->orderBy('id', 'DESC')->get();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
+    }
+
+    public function sale()
+    {
+        $items = Product::where('is_sale', 1)->orderBy('id', 'DESC')->get();
+        return view(self::LIST_VIEW, [
+            "items" => $items,
+            "title" => self::TITLE,
+            'create_route' => self::CREATE_LINK,
+            'edit_route' => self::EDIT_LINK,
+            'delete_route' => self::DELETE_LINK
+        ]);
+    }
+
     public function index()
     {
         $items = Product::orderBy('id', 'DESC')->get();
@@ -57,7 +93,7 @@ class ProductController extends Controller
     {
         $rules = [
             'subcate_id' => 'required',
-            'title' => 'required|min:3|unique:product,title',
+            'title' => 'required',
             'image' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
@@ -74,7 +110,7 @@ class ProductController extends Controller
                 $item->slug = $request->slug;
             }
             $item->subcate_id = $request->subcate_id;
-            $item->maker_id = $request->maker_id;
+            $item->nsx_id = $request->maker_id;
             $item->price = $request->price;
             $item->is_suggest = $request->is_suggest;
             $item->is_sale = $request->is_sale;
@@ -121,16 +157,17 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $proMakers = ProMaker::orderBy('subcate_id')->get();
-        $proSubcates = ProSubcate::orderBy('cate_id')->get();
+
         $item = Product::find($id);
         if (is_null($item)) {
             return redirect(self::HOME_LINK)->with("info", "Không tồn tại!");
         }
+        $proMakers = ProMaker::orderBy('subcate_id')->get();
+        $proSubcates = ProSubcate::orderBy('cate_id')->get();
         return view(self::EDIT_VIEW, [
+            "item" => $item,
             'proMakers' => $proMakers,
             "proSubcates" => $proSubcates,
-            "item" => $item,
             "title" => self::TITLE,
             "back_route" => self::HOME_LINK,
             "update_route" => self::UPDATE_LINK
@@ -140,9 +177,8 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $rules = [
-            'title' => 'required',
-            'status' => 'required|integer',
-            'category_id' => 'required|integer'
+            'subcate_id' => 'required',
+            'title' => 'required'
         ];
         $validator = Validator::make($request->all(), $rules);
 
@@ -158,7 +194,7 @@ class ProductController extends Controller
                 $item->slug = $request->slug;
             }
             $item->subcate_id = $request->subcate_id;
-            $item->maker_id = $request->maker_id;
+            $item->nsx_id = $request->maker_id;
             $item->price = $request->price;
             $item->is_suggest = $request->is_suggest;
             $item->is_sale = $request->is_sale;

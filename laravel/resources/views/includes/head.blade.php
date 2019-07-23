@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {{--CSS--}}
-<link rel="stylesheet" href="{{url('template_asset/bootstrap-4.3.1/css/bootstrap.min.css')}}" type="text/css" />
+<link rel="stylesheet" href="{{url('template/bootstrap-4.3.1/css/bootstrap.min.css')}}" type="text/css" />
 <link rel="stylesheet" href="{{url('template_asset/css/owl.carousel.css')}}" type="text/css">
 <link rel="stylesheet" href="{{url('template_asset/css/style.css')}}" type="text/css" />
 {{--<link rel="stylesheet" href="{{url('owl.theme.default.min.css')}}" type="text/css" />--}}
@@ -25,8 +25,8 @@
 {{--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">--}}
 
 {{--JS--}}
-<script type="text/javascript" src="{{url('js/jquery-3.4.1.min.js')}}" async></script>
-<script type="text/javascript" src="{{url('template_asset/bootstrap-4.3.1/js/bootstrap.min.js')}}" async></script>
+<script type="text/javascript" src="{{url('template/js/jquery-3.4.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url('template/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
 {{--<script type="text/javascript" src="{{url('template_asset/js/jquery.nivo.slider.pack.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('template_asset/js/jquery.elevatezoom.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('template_asset/js/script.js')}}" async></script>--}}
@@ -35,28 +35,8 @@
 {{--<script type="text/javascript" src="{{url('js/owl.carousel.min.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('js/jquery-migrate-1.2.1.min.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('js/waterfall-light.js')}}" async></script>--}}
-{{--<script type="text/javascript" src="{{url('template_asset/js/myscript.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('js/numeric/jquery.numeric.min.js')}}" async></script>--}}
 
-<script type="text/javascript">
-    //<![CDATA[
-    jQuery(function() {
-        jQuery(".slideshow").cycle({
-            fx: 'scrollHorz',
-            easing: 'easeInOutCubic',
-            timeout: 10000,
-            speedOut: 800,
-            speedIn: 800,
-            sync: 1,
-            pause: 1,
-            fit: 0,
-            pager: '#home-slides-pager',
-            prev: '#home-slides-prev',
-            next: '#home-slides-next'
-        });
-    });
-    //]]>
-</script>
 <!-- Google Tag Manager -->
 <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

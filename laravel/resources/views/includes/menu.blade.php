@@ -1,3 +1,38 @@
+<style>
+	.menu-wrap .menu-dropdown #navId {
+		position: absolute !important;
+		z-index:999; width: 100%;
+		border: 1px solid #ebebeb;
+		background: #fff;
+	}
+    .nav-bar-category:hover .menu-dropdown {
+        display: block;
+    }
+</style>
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery('h3.module-title').click( function () {
+            if(jQuery(".module-ct .nav").hasClass("show")) {
+                jQuery(".module-ct .nav").removeClass("show");
+            }  	else {
+                jQuery(".module-ct .nav").addClass("show");
+            }
+        });
+    });
+</script>
+<script>
+    jQuery(".ul2 .sub2 ").each(function() {
+        var childItemCount = jQuery(this).find('.sub3').length;
+        if(childItemCount >= 20 ){
+            jQuery(this).removeClass("col-lg-4");
+            jQuery(this).removeClass("col-md-4");
+            jQuery(this).addClass("col-lg-12");
+            jQuery(this).addClass("col-md-12");
+            jQuery(this).find(".sub3").addClass("col3");
+        }
+    })
+</script>
 <div class="menu-wrap">
     <div class="container">
         <div class="row menu-bar">
@@ -9,11 +44,11 @@
                         </h3>
 						<div class="menu-dropdown">
 							<div class="module-ct">
-								<ul class="nav nav-pills nav-stacked hide" style="<?php if (Route::getCurrentRoute()->uri() == '/') { ?> display : block !important;position: relative !important <?php } else { ?>position: absolute !important; z-index:999; width: 100%;border: 1px solid #ebebeb;background: #fff; <?php } ?>">
+								<ul class="nav nav-pills nav-stacked hide" id="navId">
 									@foreach ($proCate as $c)
 										<li class="sub1">
 											<span class=''>
-												<a class='a1' href="{{url('danh-sach/'.$c->slug)}}" style="padding: 13px 5px">
+												<a class='a1' href="{{url('danh-sach',$c->slug)}}" style="padding: 13px 5px">
 													{{$c->title}}
 												</a>
 												<span class="menu-icon-down"><img src="{{url('template_asset/images/site/scroll-to-up/scrollbutton4-white2.png')}}" /></span>
@@ -40,18 +75,6 @@
 															</div>
 														@endforeach
 													</div>
-													<script>
-														jQuery(".ul2 .sub2 ").each(function() {
-															var childItemCount = jQuery(this).find('.sub3').length;
-															if(childItemCount >= 20 ){
-																jQuery(this).removeClass("col-lg-4");
-																jQuery(this).removeClass("col-md-4");
-																jQuery(this).addClass("col-lg-12");
-																jQuery(this).addClass("col-md-12");
-																jQuery(this).find(".sub3").addClass("col3");
-															}
-														})
-													</script>
 												</div>
 											</div>
 										</li>
@@ -59,38 +82,7 @@
 								</ul>
 							</div>
 						</div>
-                        <?php if (Route::getCurrentRoute()->uri() != '/') { ?>
-							<style>
-							.nav-bar-category:hover .menu-dropdown {
-								display: block;
-							}
-							</style>
-							<script>
-								jQuery(document).ready(function () {
-									jQuery('h3.module-title').click( function () {
-										if(jQuery(".module-ct .nav").hasClass("show")) {
-											jQuery(".module-ct .nav").removeClass("show");
-										}  	else {
-											jQuery(".module-ct .nav").addClass("show");
-										}
-									});
-								});
-							</script>
-						<?php } else { ?>
-							<script>
-								jQuery(document).ready(function () {
-									if (jQuery(window).width() < 768 ){
-										jQuery('h3.module-title').click( function () {
-											if(jQuery(".module-ct .nav").hasClass("show")) {
-												jQuery(".module-ct .nav").removeClass("show");
-											}  	else {
-												jQuery(".module-ct .nav").addClass("show");
-											}
-										});
-									}
-								});
-							</script>
-						<?php } ?>
+
                     </div>
                 </div>
             </div>

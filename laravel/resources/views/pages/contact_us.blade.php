@@ -3,13 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-main col-sm-9 wow bounceInUp animated">
+            <div class="col-main col-md-9 col-xs-12 wow bounceInUp animated">
                 <div class="page-title">
                     <h2>Liên hệ</h2>
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col">
+                    <div class="col-md d-md-block d-none">
                         <?php echo $siteConfig->google_map; ?>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-xs-12">
                 <div class="box_left">
                     <div class="title_box_left">Danh mục bài viết</div>
                     <div class="content_box_left list_cat_news">

@@ -45,6 +45,15 @@
                 <a href="{{url("admin/product")}}"><i class="fa fa-archive fa-fw"></i> Sản phẩm</a>
             </li>
             <li>
+                <a href="{{url("admin/product/feature")}}"><i class="fa fa-archive fa-fw"></i> Sản phẩm nổi bật</a>
+            </li>
+            <li>
+                <a href="{{url("admin/product/latest")}}"><i class="fa fa-archive fa-fw"></i> Sản phẩm mới</a>
+            </li>
+            <li>
+                <a href="{{url("admin/product/sale")}}"><i class="fa fa-archive fa-fw"></i> Sản phẩm bán chạy</a>
+            </li>
+            <li>
                 <a href="admin/pro-contact"><i class="fa fa-barcode fa-fw"></i> Yêu cầu báo giá</a>
             </li>
             <li>

@@ -10,10 +10,10 @@ use App\Slider;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Post;
+use Cart;
 use App\Product;
 use App\News;
 use App\Events;
-use Cart;
 use Excel;
 use App\ProductContact;
 use Validator;
@@ -83,9 +83,18 @@ class PageController extends Controller
         $phantram = ($product->product_salevalue) / 100;
         $tiensale = ($product->price) * $phantram;
         $price = ($product->price) - $tiensale;
-        Cart::add(['id' => $product->id, 'name' => $product->title, 'options' => array('img' => $product->image,
-            'slug' => $product->slug, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
-            'qty' => 1, 'price' => $price]);
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->title,
+            'options' => array(
+                'img' => $product->image,
+                'slug' => $product->slug,
+                'sale' => $product->product_salevalue,
+                'model' => $product->product_model
+            ),
+            'qty' => 1,
+            'price' => $price
+        ]);
         return redirect('item/' . $product->slug);
     }
 
@@ -95,9 +104,18 @@ class PageController extends Controller
         $phantram = ($product->product_salevalue) / 100;
         $tiensale = ($product->price) * $phantram;
         $price = ($product->price) - $tiensale;
-        Cart::add(['id' => $product->id, 'name' => $product->title, 'options' => array('img' => $product->image,
-            'slug' => $product->slug, 'sale' => $product->product_salevalue, 'model' => $product->product_model),
-            'qty' => 1, 'price' => $price]);
+        Cart::add([
+            'id' => $product->id,
+            'name' => $product->title,
+            'options' => array(
+                'img' => $product->image,
+                'slug' => $product->slug,
+                'sale' => $product->product_salevalue,
+                'model' => $product->product_model
+            ),
+            'qty' => 1,
+            'price' => $price
+        ]);
         return redirect('gio-hang');
     }
 

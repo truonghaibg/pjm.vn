@@ -108,6 +108,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
 		Route::post('product-contact-details/{id}', 'ProductContactController@PostContactDetails');
 		Route::get('product-contact-details-delete/{id}', 'ProductContactController@RemoveContactDetails');
 
+        Route::get('sale', 'ProductController@sale');
+        Route::get('latest', 'ProductController@latest');
+        Route::get('feature', 'ProductController@feature');
+
         Route::get('create', 'ProductController@create');
         Route::post('store', 'ProductController@store');
         Route::get('', 'ProductController@index');

@@ -55,24 +55,38 @@
         <?php echo $siteConfig->footer ?>
     </div>
 </div>
-
-<a href="{{url('')}}" class="back-to-top" style="display: none;">
-    <img src="{{url('template_asset/images/site/scroll-to-up/scrollbutton3.png')}}" title="Back to top" alt="Back to top">
+<a href="#" id="back-to-top">
+    <img src="{{url('images/back-top.png')}}" title="Back to top" alt="Back to top">
 </a>
-<div class="call-us-fixed">
-    <div class="hotlinetext">
+
+<div class="hotline-phone-ring-wrap">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+            <a href="tel:0357375363" class="pps-btn-img">
+                <img src="{{url('images/phone-ring.png')}}" alt="Gọi điện thoại" width="50">
+            </a>
+        </div>
+    </div>
+    <div class="hotline-bar">
         <a href="tel:{{$siteConfig->mobile}}">
-            <button type="button" class="btn btn-outline-danger"><img src="{{url('images/call-now.png')}}"> 0939.66.1010</button>
+            <span class="text-hotline">0939.66.1010</span>
         </a>
     </div>
 </div>
-<style>
-    .call-us-fixed {
-        position: fixed;
-        left: 20px;
-        bottom: 10px;
-    }
-    .call-us-fixed button {
-        background: #e4e4e4;
-    }
-</style>
+
+<script>
+    var btn = $('#back-to-top');
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 200) {
+            btn.addClass('show');
+        } else {
+            btn.removeClass('show');
+        }
+    });
+    btn.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '300');
+    });
+</script>

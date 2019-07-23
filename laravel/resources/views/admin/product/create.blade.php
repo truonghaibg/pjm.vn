@@ -23,10 +23,15 @@
                             <div class="form-group">
                                 <label>Chuyên mục</label>
                                 <select class="form-control" name="subcate_id" id="subcate_id">
-                                    @foreach($subcate as $ct)
-                                        <option value="{{$ct->id}}">{{$ct->title}}</option>
+                                    @foreach($proSubcates as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
                                     @endforeach
                                 </select>
+                                <div class="text-block">
+                                    @if($errors->has('subcate_id'))
+                                        <p style="color:red">{{$errors->first('subcate_id')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -34,26 +39,59 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Hãng</label>
-                                <select class="form-control" name="nsx_id" id="nsx_id">
-                                    @foreach($nsx as $sc)
-                                        <option value="{{$sc->id}}">{{$sc->nsx_name}}</option>
+                                <select class="form-control" name="maker_id" id="maker_id">
+                                    @foreach($proMakers as $item)
+                                        <option value="{{$item->id}}">{{$item->title}}</option>
                                     @endforeach
                                 </select>
+                                <div class="text-block">
+                                    @if($errors->has('proMaker'))
+                                        <p style="color:red">{{$errors->first('proMaker')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
-                        <div class="col-md-2">
-                            <label>Sản phẩm đề xuất</label>
-                            <input class="form-check-input" type="checkbox" value="1"  name="is_suggest">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Sản phẩm đề xuất</label>
+                                <input class="form-control" name="is_suggest"/>
+                                <div class="text-block">
+                                    @if($errors->has('is_suggest'))
+                                        <p style="color:red">{{$errors->first('is_suggest')}}</p>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <label>Sản phẩm mới</label>
-                            <input class="form-check-input" type="checkbox" value="1"  name="is_new">
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Sản phẩm mới</label>
+                                <input class="form-control" name="is_new"/>
+                                <div class="text-block">
+                                    @if($errors->has('is_new'))
+                                        <p style="color:red">{{$errors->first('is_new')}}</p>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-2">
-                            <label>Sản phẩm bán chạy</label>
-                            <input class="form-check-input" type="checkbox" value="1"  name="is_sale">
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Sản phẩm bán chạy</label>
+                                <input class="form-control" name="is_sale"/>
+                                <div class="text-block">
+                                    @if($errors->has('is_sale'))
+                                        <p style="color:red">{{$errors->first('is_sale')}}</p>
+                                    @endif
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -61,7 +99,26 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Tên sản phẩm</label>
-                                <input class="form-control" name="title" placeholder="Điền Tên sản phẩm" />
+                                <input class="form-control" name="title"/>
+                                <div class="text-block">
+                                    @if($errors->has('title'))
+                                        <p style="color:red">{{$errors->first('title')}}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Slug</label>
+                                <input class="form-control" name="slug" readonly/>
+                                <div class="text-block">
+                                    @if($errors->has('slug'))
+                                        <p style="color:red">{{$errors->first('slug')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,7 +127,26 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Model sản phẩm</label>
-                                <input class="form-control" name="product_model" placeholder="Điền Model sản phẩm" />
+                                <input class="form-control" name="product_model"/>
+                                <div class="text-block">
+                                    @if($errors->has('product_model'))
+                                        <p style="color:red">{{$errors->first('product_model')}}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Tag sản phẩm</label>
+                                <input class="form-control" name="product_tag"/>
+                                <div class="text-block">
+                                    @if($errors->has('product_tag'))
+                                        <p style="color:red">{{$errors->first('product_tag')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -79,15 +155,12 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Trạng thái</label>
-                                <label class="radio-inline">
-                                    <input name="status" value="1" checked="" type="radio">Hàng mới về
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="status" value="2" type="radio">Còn hàng
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="status" value="3" type="radio">Liên hệ
-                                </label>
+                                <input class="form-control" name="status"/>
+                                <div class="text-block">
+                                    @if($errors->has('status'))
+                                        <p style="color:red">{{$errors->first('status')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,7 +169,12 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Giá</label>
-                                <input class="form-control" name="price" placeholder="Điền giá sản phẩm" />
+                                <input class="form-control" name="price"/>
+                                <div class="text-block">
+                                    @if($errors->has('price'))
+                                        <p style="color:red">{{$errors->first('price')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,7 +183,12 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Phần trăm giảm giá</label>
-                                <input class="form-control" name="product_salevalue" placeholder="Điền Phần trăm giảm giá" />
+                                <input class="form-control" name="product_salevalue"/>
+                                <div class="text-block">
+                                    @if($errors->has('product_salevalue'))
+                                        <p style="color:red">{{$errors->first('product_salevalue')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -142,8 +225,27 @@
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
+                                <label>Thông tin mô tả</label>
+                                <textarea class="form-control summernote" rows="3" name="desc_short"></textarea>
+                                <div class="text-block">
+                                    @if($errors->has('desc_short'))
+                                        <p style="color:red">{{$errors->first('desc_short')}}</p>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
                                 <label>Thông tin sản phẩm</label>
-                                <textarea class="form-control summernote" rows="5" name="product_info"></textarea>
+                                <textarea class="form-control summernote" rows="5" name="desc_long"></textarea>
+                                <div class="text-block">
+                                    @if($errors->has('desc_long'))
+                                        <p style="color:red">{{$errors->first('desc_long')}}</p>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
