@@ -104,11 +104,7 @@ class ProductController extends Controller
             $item = new Product();
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (isset($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->subcate_id = $request->subcate_id;
             $item->nsx_id = $request->maker_id;
             $item->price = $request->price;
@@ -188,11 +184,7 @@ class ProductController extends Controller
             $item = Product::find($id);
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            if (isset($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->subcate_id = $request->subcate_id;
             $item->nsx_id = $request->maker_id;
             $item->price = $request->price;

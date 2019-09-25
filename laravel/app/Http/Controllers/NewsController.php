@@ -62,7 +62,7 @@ class NewsController extends Controller
             $news = new News();
             $news->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
+            if (isset($request->slug)) {
                 $news->slug = $slug;
             } else {
                 $news->slug = $request->slug;
@@ -118,7 +118,7 @@ class NewsController extends Controller
             $news = News::find($id);
             $news->title = $request->title;
             $slug = getSlug($request->title);
-            if (is_null($request->slug)) {
+            if (!isset($request->slug)) {
                 $news->slug = $slug;
             } else {
                 $news->slug = $request->slug;
