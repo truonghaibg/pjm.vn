@@ -26,7 +26,7 @@ class NewsController extends Controller
 
     public function index()
     {
-        $items = News::all();
+        $items = News::orderBy('id','desc')->take(500)->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -62,14 +62,10 @@ class NewsController extends Controller
             $news = new News();
             $news->title = $request->title;
             $slug = getSlug($request->title);
-            if (isset($request->slug)) {
-                $news->slug = $slug;
-            } else {
-                $news->slug = $request->slug;
-            }
-            $news->desc_short = $request->description;
+            $news->slug = $slug;
+            $news->desc_short = $request->desc_short;
             $news->category_id = $request->category_id;
-            $news->desc_long = $request->content_text;
+            $news->desc_long = $request->desc_long;
             $news->status = $request->status;
             $news->meta_keywords = $request->meta_keywords;
             $news->meta_description = $request->meta_description;
@@ -118,14 +114,10 @@ class NewsController extends Controller
             $news = News::find($id);
             $news->title = $request->title;
             $slug = getSlug($request->title);
-            if (!isset($request->slug)) {
-                $news->slug = $slug;
-            } else {
-                $news->slug = $request->slug;
-            }
-            $news->desc_short = $request->description;
+           
+            $news->desc_short = $request->desc_short;
             $news->category_id = $request->category_id;
-            $news->desc_long = $request->content_text;
+            $news->desc_long = $request->desc_long;
             $news->status = $request->status;
             $news->meta_keywords = $request->meta_keywords;
             $news->meta_description = $request->meta_description;

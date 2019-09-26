@@ -1853,8 +1853,8 @@ ul.b_l li .img-bank {
     height: 30px;
     width: 30px;
     position: fixed;
-    bottom: 10px;
-    right: 20px;
+    bottom: 6px;
+    right: 6px;
     visibility: hidden;
     z-index: 1000;
 }

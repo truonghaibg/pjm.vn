@@ -30,7 +30,7 @@ class ProductController extends Controller
 
     public function feature()
     {
-        $items = Product::where('is_suggest', 1)->orderBy('id', 'DESC')->get();
+        $items = Product::where('is_suggest', 1)->orderBy('id', 'DESC')->take(1000)->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -42,7 +42,7 @@ class ProductController extends Controller
 
     public function latest()
     {
-        $items = Product::where('is_new', 1)->orderBy('id', 'DESC')->get();
+        $items = Product::where('is_new', 1)->orderBy('id', 'DESC')->take(1000)->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -54,7 +54,7 @@ class ProductController extends Controller
 
     public function sale()
     {
-        $items = Product::where('is_sale', 1)->orderBy('id', 'DESC')->get();
+        $items = Product::where('is_sale', 1)->orderBy('id', 'DESC')->take(1000)->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -66,7 +66,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $items = Product::orderBy('id', 'DESC')->get();
+        $items = Product::orderBy('id', 'DESC')->take(1000)->get();
         return view(self::LIST_VIEW, [
             "items" => $items,
             "title" => self::TITLE,
@@ -184,7 +184,7 @@ class ProductController extends Controller
             $item = Product::find($id);
             $item->title = $request->title;
             $slug = getSlug($request->title);
-            $item->slug = $slug;
+            
             $item->subcate_id = $request->subcate_id;
             $item->nsx_id = $request->maker_id;
             $item->price = $request->price;

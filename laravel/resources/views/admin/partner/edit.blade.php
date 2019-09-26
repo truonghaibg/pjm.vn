@@ -32,163 +32,101 @@
                                 </div>
                             </div>
                         </div>
-                        {{ csrf_field() }}
-                        @if(count($errors))
-                            <div class="alert alert-danger">
-                                @foreach($errors->all() as $err)
-                                    {{$err}}<br>
-                                @endforeach
-                            </div>
-                        @endif
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label>Chuyên mục</label>
-                                    <select class="form-control" name="subcate_id" id="subcate_id">
-                                        @foreach($subcate as $ct)
-                                            <option value="{{$ct->id}}">{{$ct->title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Hãng</label>
-                                    <select class="form-control" name="nsx_id" id="nsx_id">
-                                        @foreach($nsx as $sc)
-                                            <option value="{{$sc->id}}">{{$sc->nsx_name}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label>Sản phẩm đề xuất</label>
-                                <input class="form-check-input" type="checkbox" value="1"  name="is_suggest">
-                            </div>
-                            <div class="col-md-2">
-                                <label>Sản phẩm mới</label>
-                                <input class="form-check-input" type="checkbox" value="1"  name="is_new">
-                            </div>
-                            <div class="col-md-2">
-                                <label>Sản phẩm bán chạy</label>
-                                <input class="form-check-input" type="checkbox" value="1"  name="is_sale">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Tên sản phẩm</label>
-                                    <input class="form-control" name="title" value="{{$item->title}}" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Model sản phẩm</label>
-                                    <input class="form-control" name="product_model" value="{{$item->product_model}}"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Trạng thái</label>
-                                    <label class="radio-inline">
-                                        <input name="status" value="1" checked="" type="radio">Hàng mới về
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input name="status" value="2" type="radio">Còn hàng
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input name="status" value="3" type="radio">Liên hệ
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Giá</label>
-                                    <input class="form-control" name="price" value="{{$item->price}}"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Phần trăm giảm giá</label>
-                                    <input class="form-control" name="product_salevalue" value="{{$item->product_salevalue}}"/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <label>Hình ảnh</label>
-                                    <input class="form-control" multiple="multiple" type="file" name="image"  />
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <input class="form-control" multiple="multiple" type="file" name="image01"  />
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <input class="form-control" multiple="multiple" type="file" name="image02"  />
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <input class="form-control" multiple="multiple" type="file" name="image03"  />
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="form-group">
-                                    <input class="form-control" multiple="multiple" type="file" name="image04"  />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>Thông tin sản phẩm</label>
-                                    <textarea class="form-control summernote" rows="5" name="product_info" value="{{$item->product_info}}"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="control-label">Meta keywords</label>
-                                    <input type="text" class="form-control" name="meta_keywords" value="{{$item->meta_keywords}}">
+                                    <label>Tên đối tác</label>
+                                    <input class="form-control" name="title" placeholder="Tên đối tác" value="{{$item->title}}"/>
                                     <div class="text-block">
-                                        @if($errors->has('meta_keywords'))
-                                            <p style="color:red">{{$errors->first('meta_keywords')}}</p>
+                                        @if($errors->has('title'))
+                                            <p style="color:red">{{$errors->first('title')}}</p>
                                         @endif
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <label class="control-label">Meta description</label>
-                                    <input type="text" class="form-control" name="meta_description" value="{{$item->meta_description}}">
+                                    <label>Hình ảnh</label>
+                                    @if(!is_null($item->image))
+                                        <img style="width: 100px;" src="{{url($item->image)}}" />
+                                    @endif
+
+                                    <input class="form-control" type="file" name="image" value="{{$item->image}}" />
                                     <div class="text-block">
-                                        @if($errors->has('meta_description'))
-                                            <p style="color:red">{{$errors->first('meta_description')}}</p>
+                                        @if($errors->has('image'))
+                                            <p style="color:red">{{$errors->first('image')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Mô tả</label>
+                                    <textarea class="form-control summernote" rows="5" name="description">{{$item->description}}</textarea>
+                                    <div class="text-block">
+                                        @if($errors->has('description'))
+                                            <p style="color:red">{{$errors->first('description')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Website</label>
+                                    <input class="form-control" name="link" value="{{$item->link}}" />
+                                    <div class="text-block">
+                                        @if($errors->has('link'))
+                                            <p style="color:red">{{$errors->first('link')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Địa chỉ</label>
+                                    <input class="form-control" name="address" value="{{$item->address}}" />
+                                    <div class="text-block">
+                                        @if($errors->has('address'))
+                                            <p style="color:red">{{$errors->first('address')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Điện thoại</label>
+                                    <input class="form-control" name="mobile" value="{{$item->mobile}}"/>
+                                    <div class="text-block">
+                                        @if($errors->has('mobile'))
+                                            <p style="color:red">{{$errors->first('mobile')}}</p>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Trạng thái</label>
+                                    <input class="form-control" name="status" value="{{$item->status}}"/>
+                                    <div class="text-block">
+                                        @if($errors->has('status'))
+                                            <p style="color:red">{{$errors->first('status')}}</p>
                                         @endif
                                     </div>
                                 </div>

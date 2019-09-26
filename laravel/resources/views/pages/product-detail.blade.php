@@ -92,8 +92,8 @@
 						</div>button
                     <?php if ($price!=0) { ?>
 						<div class="button_buy">
-							<a class="btn-red" href="{{url('gh/'.$product->id)}}">Mua ngay</a>
-							<a class="btn-blue" onclick="return kiemtra();" href="{{url('cart/'.$product->id)}}">Cho vào
+							<a class="btn-red" href="#">Mua ngay</a>
+							<a class="btn-blue" onclick="return kiemtra();" href="#">Cho vào
 								giỏ</a>
 						</div>
 						<?php } ?>

@@ -101,7 +101,7 @@ class PostController extends Controller
         } else {
             $post = Post::find($id);
             $post->title = $request->title;
-
+            $slug = getSlug($request->title);
             $post->description = $request->description;
             $post->content = $request->content_text;
             $post->meta_keywords = $request->meta_keywords;

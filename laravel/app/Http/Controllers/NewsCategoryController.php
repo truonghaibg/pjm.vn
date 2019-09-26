@@ -63,11 +63,7 @@ class NewsCategoryController extends Controller
             $title = $request->title;
             $item->title = $title;
             $slug = getSlug($title);
-            if (is_null($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
+            $item->slug = $slug;
             $item->description = $request->description;
             $parentId = $request->parent_id;
             if (is_int($parentId)) {
@@ -123,11 +119,6 @@ class NewsCategoryController extends Controller
             $title = $request->title;
             $item->title = $title;
             $slug = getSlug($title);
-            if (is_null($request->slug)) {
-                $item->slug = $slug;
-            } else {
-                $item->slug = $request->slug;
-            }
             $item->description = $request->description;
             $parentId = $request->parent_id;
             if (is_int($parentId)) {

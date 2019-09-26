@@ -64,7 +64,7 @@
         <div class="hotline-phone-ring-circle"></div>
         <div class="hotline-phone-ring-circle-fill"></div>
         <div class="hotline-phone-ring-img-circle">
-            <a href="tel:0357375363" class="pps-btn-img">
+            <a href="tel:{{$siteConfig->mobile}}" class="pps-btn-img">
                 <img src="{{url('images/phone-ring.png')}}" alt="Gọi điện thoại" width="50">
             </a>
         </div>
