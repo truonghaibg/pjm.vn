@@ -261,5 +261,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'adminLogin'], function () {
     Route::group(['prefix'=>'migrate'], function () {
         Route::get('product_image', 'MigrateController@migrateProduct');
         Route::get('path_image', 'MigrateController@pathImage');
+        Route::get('image', 'MigrateController@checkDimensionImage');
     });
 });

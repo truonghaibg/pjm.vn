@@ -14,7 +14,7 @@
                                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                                     <div class="text-center">
                                         <a href="{{url('tin-tuc', $item->slug)}}" alt="{{$item->title}}">
-                                            <img src="{{url($item->image)}}" alt="{{$item->title}}" class="img-fluid mx-auto d-block" />
+                                            <img data-src="{{url($item->image)}}" alt="{{$item->title}}" class="lazyload img-fluid mx-auto d-block" />
                                         </a>
                                     </div>
                                 </div>

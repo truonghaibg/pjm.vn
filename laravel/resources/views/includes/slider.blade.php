@@ -7,7 +7,7 @@
                         @foreach($sliders as $item)
                             <div class="carousel-item">
                                 <a href="{{$item->link}}" target="_blank"  title="{{$item->title}}">
-                                    <img src="{{url($item->image)}}" class="d-block w-100" alt="{{$item->title}}">
+                                    <img data-src="{{url($item->image)}}" class="lazyload d-block w-100" alt="{{$item->title}}">
                                 </a>
                             </div>
                         @endforeach
@@ -27,4 +27,5 @@
 </div>
 <script>
     $('.slider-wrap').find('.carousel-item').first().addClass('active');
+
 </script>

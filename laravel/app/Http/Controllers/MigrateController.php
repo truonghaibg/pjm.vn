@@ -96,4 +96,27 @@ class MigrateController extends Controller
         }
     }
 
+    public function checkDimensionImage() {
+        $dir = 'upload/slider/*.*';
+
+        foreach(glob($dir) as $file)
+        {
+            $size = getimagesize($file);
+            echo $file.'<br>';
+            $width=$size[0];
+            echo $width.'<br>';
+            $height=$size[1];
+            echo $height.'<br>';
+            if ($width > 800) {
+                $newwidth = $width - 100;
+                $newheight = $height*($newwidth/$width);
+                $pic = new Imagick( $file);//specify name
+                $pic->resizeImage($newwidth,$newheight,Imagick::FILTER_LANCZOS,1);
+                //again might have width and heing confused
+                $pic->writeImage($file);//output name
+                $pic->destroy();
+            }
+        }
+    }
+
 }

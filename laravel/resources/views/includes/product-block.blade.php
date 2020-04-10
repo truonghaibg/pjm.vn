@@ -2,7 +2,7 @@
     <div class="product-item text-center">
     <a class='pro-a' href="{{url('san-pham',$item->slug)}}"
        title="{{$item->title}}">
-        <img class="item-img rounded" src="{{url($item->image)}}" alt="{{$item->title}}">
+        <img class="lazyload item-img rounded" data-src="{{url($item->image)}}" alt="{{$item->title}}">
         <img class="sale-value-img"
              <?php if ($item->product_salevalue == 0) {
             echo "style='display:none;'";
