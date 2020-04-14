@@ -95,8 +95,8 @@
                             </a>
                         </li>
                         <li class="toplink">
-                            <a href="{{url('tin-tuc')}}">
-                                Hoạt động
+                            <a href="{{url('danh-muc-tin-tuc/1')}}">
+                                Dự án thực hiện
                             </a>
                         </li>
                         <li class="toplink has-child" style="position: relative;">

@@ -2,8 +2,9 @@
 @section('head')
 	<title> {{$new->title}} | {{$siteConfig->title}}</title>
 	<meta property="og:title" content="{{$new->title}}"/>
-	@if(!isset($new->image))
+	@if(isset($new->image))
 		<meta property="og:image" content="{{url($new->image)}}"/>
+		<meta property="og:image:alt" content="{{url($new->image)}}"/>
 	@endif
 	<meta name="description" content="{{$new->meta_description}}">
 	<meta property="og:description" content="{{$new->meta_description}}">

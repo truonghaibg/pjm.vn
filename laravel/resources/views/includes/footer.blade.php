@@ -6,7 +6,7 @@
                 <div class="footer-block">
                     <h5 class="header-footer">Thông tin PJM</h5>
                     <ul class="list-footer">
-                        <li><a href="{{url('bai-viet/tuyen-dung')}}">Giới thiệu</a></li>
+                        <li><a href="{{url('bai-viet/gioi-thieu')}}">Giới thiệu</a></li>
                         <li><a href="{{url('tin-tuc')}}">Tin tức</a></li>
                         <li><a href="{{url('bai-viet/tuyen-dung')}}">Tuyển dụng</a></li>
                         <li><a href="{{url('bai-viet/lien-he')}}">Liên hệ, Hợp tác</a></li>

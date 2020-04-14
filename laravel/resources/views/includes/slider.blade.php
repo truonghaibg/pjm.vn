@@ -27,5 +27,4 @@
 </div>
 <script>
     $('.slider-wrap').find('.carousel-item').first().addClass('active');
-
 </script>

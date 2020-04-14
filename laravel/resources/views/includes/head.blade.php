@@ -27,8 +27,8 @@
 {{--JS--}}
 <script type="text/javascript" src="{{url('template/js/jquery-3.4.1.min.js')}}"></script>
 <script type="text/javascript" src="{{url('template/bootstrap-4.3.1/js/bootstrap.min.js')}}"></script>
-{{--<script type="text/javascript" src="https://rawgit.com/tuupola/jquery_lazyload/2.x/lazyload.js"></script>--}}
 <script type="text/javascript" src="{{url('template/js/lazyload.js')}}"></script>
+{{--<script type="text/javascript" src="{{url('template_asset/js/jquery.nivo.slider.pack.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('template_asset/js/jquery.elevatezoom.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('template_asset/js/script.js')}}" async></script>--}}
 {{--<script type="text/javascript" src="{{url('template_asset/js/menu.js')}}" async></script>--}}
